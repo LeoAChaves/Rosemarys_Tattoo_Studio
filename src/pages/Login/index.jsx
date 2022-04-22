@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import ClienteIMG from "../../assets/cliente.svg"
-import FuncionarioIMG from "../../assets/funcionario.svg"
+import ClienteIMG from "../../assets/cliente.svg";
+import FuncionarioIMG from "../../assets/funcionario.svg";
 
-import * as S from "./styled"
+import * as S from "./styled";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ function Login() {
         <button className="btnSubmit">Criar nova conta</button>
       </S.Form>
     </S.Container>
-  )
+  );
 }
 
-export default Login
+export default Login;
