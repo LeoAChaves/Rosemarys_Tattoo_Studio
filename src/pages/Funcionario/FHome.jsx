@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import FHeader from "../../components/Funcionario/FHeader";
+import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
 import funcionarioBackground from "../../assets/images/funcionarioBackground.png";
 
 function FHome() {
