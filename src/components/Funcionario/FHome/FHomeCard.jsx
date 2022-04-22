@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
-function FHomeMainCard({ tipo, texto }) {
-  const FHomeMainCard = styled.div`
+function FHomeCard({ tipo, texto }) {
+  const FHomeCard = styled.div`
     width: 480px;
     height: 320px;
     background-color: ${({ theme }) => theme.primary};
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
     transition: 1s;
     p {
       color: ${({ theme }) => theme.text};
@@ -17,15 +16,16 @@ function FHomeMainCard({ tipo, texto }) {
     }
     &:hover {
       background-color: ${({ theme }) => theme.primary_solid};
+      cursor: pointer;
     }
     &.primeiro {
       position: absolute;
-      top: 150px;
+      top: 115px;
       left: 10px;
     }
     &.segundo {
       position: absolute;
-      top: 200px;
+      top: 205px;
       margin-left: auto;
       margin-right: auto;
       left: 0;
@@ -34,15 +34,15 @@ function FHomeMainCard({ tipo, texto }) {
     }
     &.terceiro {
       position: absolute;
-      top: 250px;
+      top: 295px;
       right: 10px;
     }
   `;
   return (
-    <FHomeMainCard className={tipo}>
+    <FHomeCard className={tipo}>
       <p>{texto}</p>
-    </FHomeMainCard>
+    </FHomeCard>
   );
 }
 
-export default FHomeMainCard;
+export default FHomeCard;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 function FHeader() {
   const FHeader = styled.header`
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: ${({ theme }) => theme.primary};
     display: flex;
     align-items: center;
@@ -17,6 +17,9 @@ function FHeader() {
     ul {
       color: ${({ theme }) => theme.text};
     }
+    ul.info {
+      font-size: 12px;
+    }
     .logout {
       width: 120px;
       display: flex;
@@ -25,7 +28,7 @@ function FHeader() {
   `;
   return (
     <FHeader>
-      <ul>
+      <ul className="info">
         <li>ID:</li>
         <li>Nome:</li>
         <li>Função:</li>
