@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
 import funcionarioBackground from "../../assets/images/funcionarioBackground.png";
+import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
 import FHomeMain from "../../components/Funcionario/FHome/FHomeMain.jsx";
+import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FHome() {
   const FHome = styled.body`
@@ -15,6 +16,7 @@ function FHome() {
     <FHome>
       <FHeader />
       <FHomeMain />
+      <FFooter />
     </FHome>
   );
 }
