@@ -1,18 +1,19 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
+import FHome from "./pages/Funcionario/FHome.jsx";
 
 function App() {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
-      <h1>Rosemery's Tattoo Studio</h1>
-      <h2>Rosemery's Tattoo Studio</h2>
-      <h3>Rosemery's Tattoo Studio</h3>
-      <h4>Rosemery's Tattoo Studio</h4>
-      <h5>Rosemery's Tattoo Studio</h5>
-      <h6>Rosemery's Tattoo Studio</h6>
+      <Router>
+        <Routes>
+          <Route path="/funcionario/home" element={<FHome />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
