@@ -7,7 +7,7 @@ import FHome from "./pages/Funcionario/FHome.jsx";
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <Router>
         <Routes>

@@ -1,3 +1,6 @@
+import funcBGdark from "../assets/images/funcBGdark.png";
+import funcBGlight from "../assets/images/funcBGlight.png";
+
 export const lightTheme = {
   body: "#ffffff",
   primary: "#E5E1D280",
@@ -12,6 +15,7 @@ export const lightTheme = {
   card_text: "#7B0000",
   card_text2: "#211F1E",
   card_info: "#5E5A57",
+  funcBG: funcBGlight,
 };
 
 export const darkTheme = {
@@ -28,4 +32,5 @@ export const darkTheme = {
   card_text: "#000000",
   card_text2: "#211F1E",
   card_info: "#5E5A57",
+  funcBG: funcBGdark,
 };
