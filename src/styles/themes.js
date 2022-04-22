@@ -1,6 +1,7 @@
 export const lightTheme = {
   body: "#ffffff",
   primary: "#E5E1D280",
+  primary_solid: "#E5E1D2",
   text: "#7B0000",
   button: "#FFB930",
   button_text: "#282320",
@@ -15,6 +16,7 @@ export const lightTheme = {
 export const darkTheme = {
   body: "#000000",
   primary: "#7B000080",
+  primary_solid: "#7B0000",
   text: "#E5E1D2",
   button: "#282320",
   button_text: "#E5E1D2",
