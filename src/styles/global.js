@@ -8,7 +8,4 @@ export const GlobalStyle = createGlobalStyle`
 li {
     list-style: none;
 }
-body {
-    background: ${({ theme }) => theme.body}
-    }
 `;
