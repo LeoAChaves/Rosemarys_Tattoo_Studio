@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
 import FHome from "./pages/Funcionario/FHome.jsx";
 import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/cadastro" element={<Cadastro />}/>
         </Routes>
       </Router>
     </ThemeProvider>
