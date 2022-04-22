@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-function FHeader({}) {
+function FHeader() {
   const FHeader = styled.header`
     width: 100%;
     height: 100px;
