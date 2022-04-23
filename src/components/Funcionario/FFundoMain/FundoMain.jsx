@@ -1,9 +1,13 @@
-function fundoMain(titulo) {
+import * as S from "./styled.js";
+
+function fundoMain(props) {
   return (
-    <section>
-      <h2>{titulo}</h2>
-      <div></div>
-    </section>
+    <S.Container>
+      <section>
+        <h2>{props.titulo}</h2>
+        <div></div>
+      </section>
+    </S.Container>
   );
 }
 export default fundoMain;
