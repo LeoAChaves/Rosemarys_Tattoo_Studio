@@ -1,11 +1,6 @@
 import * as S from "./styled.js";
-import FundoMain from "../FFundoMain/FundoMain.jsx";
 
 function FAgendamentoMain() {
-  return (
-    <S.Container>
-      <FundoMain />
-    </S.Container>
-  );
+  return <S.Container></S.Container>;
 }
 export default FAgendamentoMain;

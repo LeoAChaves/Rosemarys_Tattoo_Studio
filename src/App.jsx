@@ -10,7 +10,7 @@ import FAgendamento from "./pages/Funcionario/FAgendamento.jsx";
 
 function App() {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
       <Router>
         <Routes>
