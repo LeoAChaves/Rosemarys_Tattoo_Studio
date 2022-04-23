@@ -12,7 +12,7 @@ function FormEstoque() {
             <Input placeholder="ITEM" type="text" name="item" id="item"></Input>
             <Input
               placeholder="QUANTIDADE"
-              type="text"
+              type="number"
               name="qtd"
               id="qtd"
             ></Input>
@@ -20,7 +20,7 @@ function FormEstoque() {
           <div>
             <Input
               placeholder="PRECO"
-              type="text"
+              type="number"
               name="preco"
               id="preco"
             ></Input>

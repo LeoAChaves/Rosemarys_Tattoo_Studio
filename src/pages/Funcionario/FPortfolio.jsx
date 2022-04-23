@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
-import FPortfolioMain from "../../components/Funcionario/FPortfolio/FPortfolioMain.jsx";
+import FormPortfolio from "../../components/Funcionario/FormPortfolio/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FPortfolio() {
@@ -14,7 +14,7 @@ function FPortfolio() {
   return (
     <FPortfolio>
       <FHeader />
-      <FPortfolioMain />
+      <FormPortfolio />
       <FFooter />
     </FPortfolio>
   );

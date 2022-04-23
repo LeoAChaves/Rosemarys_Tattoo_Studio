@@ -25,20 +25,36 @@ export const Quadro = styled.section`
 `;
 
 export const Form = styled.section`
+  width: 100%;
   height: 70%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  margin: 40px 0;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px;
 
+.caixa{
+  display:flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+#foto{
+  padding-top:12px
+}
+
+label{
+font-size: 16px;
+color:${({ theme }) => theme.text};
+font-weight:600;
+margin-bottom:10px;
+}
   Input {
     width: 500px;
     height: 50px;
     background-color: ${({ theme }) => theme.input};
     border-radius: 10px;
     padding-left: 10px;
-    margin: 0 40px;
+    margin-bottom: 30px;
     border: none;
     font-size: 16px;
   }
@@ -46,11 +62,27 @@ export const Form = styled.section`
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
   }
+
+  textarea {
+    width: 500px;
+    background-color: ${({ theme }) => theme.input};
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-top:10px;
+    border: none;
+    font-size: 16px;
+  }
+
+  textarea::placeholder {
+    color: ${({ theme }) => theme.input_placeholder};
+  }
+
+
   Button {
     align-self: flex-end;
     width: 130px;
     height: 50px;
-    margin-right:40px;
+    margin-top: 20px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
