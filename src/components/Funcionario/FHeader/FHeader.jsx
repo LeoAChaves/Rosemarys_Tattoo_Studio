@@ -3,13 +3,13 @@ import styled from "styled-components";
 function FHeader() {
   const FHeader = styled.header`
     width: 100%;
-    height: 70px;
+    height: 80px;
     background-color: ${({ theme }) => theme.primary};
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    font-weight: 700;
+    font-weight: 600;
     h1 {
       text-transform: uppercase;
       color: ${({ theme }) => theme.text};
@@ -18,7 +18,7 @@ function FHeader() {
       color: ${({ theme }) => theme.text};
     }
     ul.info {
-      font-size: 12px;
+      font-size: 13px;
     }
     .logout {
       width: 120px;
