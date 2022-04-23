@@ -17,6 +17,7 @@ export const Quadro = styled.section`
 
   h2 {
     padding: 30px 10px 0 0;
+    margin-bottom: 20px;
     color: ${({ theme }) => theme.text};
     font-size: 24px;
     font-weight: 400;
@@ -38,24 +39,13 @@ export const Form = styled.section`
   margin: 20px;
 }
 
-#foto{
-  padding-top:12px
-}
-
-label{
-font-size: 16px;
-color:${({ theme }) => theme.text};
-font-weight:600;
-margin-bottom:5px;
-}
-
   Input {
     width: 500px;
     height: 50px;
     background-color: ${({ theme }) => theme.input};
     border-radius: 10px;
-    padding-left: 10px;
-    margin-bottom: 30px;
+    padding: 10px;
+    margin-bottom: 40px;
     border: none;
     font-size: 16px;
   }
@@ -64,25 +54,14 @@ margin-bottom:5px;
     color: ${({ theme }) => theme.input_placeholder};
   }
 
-  input[type="file"] {
+  input[type="time"] {
     color: ${({ theme }) => theme.input_placeholder}
   }
 
-  textarea {
-    width: 500px;
-    background-color: ${({ theme }) => theme.input};
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-top:10px;
-    border: none;
-    font-size: 16px;
+  input[type="date"] {
+    color: ${({ theme }) => theme.input_placeholder}
   }
-
-  textarea::placeholder {
-    color: ${({ theme }) => theme.input_placeholder};
-  }
-
-
+  
   Button {
     align-self: flex-end;
     width: 130px;

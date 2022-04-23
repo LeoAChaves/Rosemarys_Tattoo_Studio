@@ -6,7 +6,7 @@ import { GlobalStyle } from "./styles/global.js";
 import FHome from "./pages/Funcionario/FHome.jsx";
 import FEstoque from "./pages/Funcionario/FEstoque.jsx";
 import FPortfolio from "./pages/Funcionario/FPortfolio.jsx";
-import FAgendamento from "./pages/Funcionario/FAgendamento.jsx";
+import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
 
 function App() {
   return (

@@ -2,11 +2,11 @@ import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
-function FormPortfolio() {
+function FormAgenda() {
   return (
     <S.Container>
       <S.Quadro>
-        <h2>Portfólio</h2>
+        <h2>Agendamento</h2>
         <S.Form>
           <div class="caixa">
             <Input
@@ -21,23 +21,32 @@ function FormPortfolio() {
               name="func_id"
               id="func_id"
             ></Input>
-            <textarea
-              placeholder="DESCRICAO"
-              type="text"
-              rows="8"
-              name="descricao"
-              id="descricao"
-            ></textarea>
+            <Input
+              placeholder="DATA"
+              type="date"
+              name="func_id"
+              id="func_id"
+            ></Input>
           </div>
           <div class="caixa">
+            <Input
+              placeholder="HORA"
+              type="time"
+              name="func_id"
+              id="func_id"
+            ></Input>
+            <Input
+              placeholder="SERVIÇO"
+              type="text"
+              name="func_id"
+              id="func_id"
+            ></Input>
             <Input
               placeholder="DURACAO"
               type="text"
               name="duracao"
               id="duracao"
             ></Input>
-            <label>FOTO:</label>
-            <Input placeholder="FOTO" type="file" name="foto" id="foto"></Input>
             <Button type="submit" nome="INSERIR"></Button>
           </div>
         </S.Form>
@@ -45,4 +54,4 @@ function FormPortfolio() {
     </S.Container>
   );
 }
-export default FormPortfolio;
+export default FormAgenda;

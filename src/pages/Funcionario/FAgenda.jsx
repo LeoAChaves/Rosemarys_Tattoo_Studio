@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
-import FAgendamentoMain from "../../components/Funcionario/FAgendamento/FAgendamentoMain.jsx";
+import FormAgenda from "../../components/Funcionario/FormAgenda/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FAgendamento() {
@@ -14,7 +14,7 @@ function FAgendamento() {
   return (
     <FAgendamento>
       <FHeader />
-      <FAgendamentoMain />
+      <FormAgenda />
       <FFooter />
     </FAgendamento>
   );
