@@ -4,7 +4,7 @@ import FHomeCard from "./FHomeCard.jsx";
 function FHomeMain() {
   const FHomeMain = styled.main`
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 80px);
   `;
   return (
     <FHomeMain>
