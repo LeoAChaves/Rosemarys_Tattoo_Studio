@@ -7,6 +7,7 @@ import FHome from "./pages/Funcionario/FHome.jsx";
 import FEstoque from "./pages/Funcionario/FEstoque.jsx";
 import FPortfolio from "./pages/Funcionario/FPortfolio.jsx";
 import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
+import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/funcionario/estoque" element={<FEstoque />} />
           <Route path="/funcionario/portfolio" element={<FPortfolio />} />
           <Route path="/funcionario/agendamento" element={<FAgendamento />} />
+          <Route path="/funcionario/agenda" element={<FAgendaView />} />
         </Routes>
       </Router>
     </ThemeProvider>
