@@ -8,6 +8,8 @@ import FEstoque from "./pages/Funcionario/FEstoque.jsx";
 import FPortfolio from "./pages/Funcionario/FPortfolio.jsx";
 import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
 import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
+import FPortfolioView from "./pages/Funcionario/FPortfolioView.jsx";
+import FEstoqueView from "./pages/Funcionario/FEstoqueView.jsx";
 
 function App() {
   return (
@@ -20,6 +22,11 @@ function App() {
           <Route path="/funcionario/portfolio" element={<FPortfolio />} />
           <Route path="/funcionario/agendamento" element={<FAgendamento />} />
           <Route path="/funcionario/agenda" element={<FAgendaView />} />
+          <Route
+            path="/funcionario/portfolio-view"
+            element={<FPortfolioView />}
+          />
+          <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
         </Routes>
       </Router>
     </ThemeProvider>

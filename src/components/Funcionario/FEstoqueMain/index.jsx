@@ -1,16 +1,11 @@
 import * as S from "./styled.js";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 
-function FAgendaMain() {
+function FEstoqueMain() {
   return (
     <S.Container>
       <S.Quadro>
-        <h2>Agenda</h2>
+        <h2>Estoque</h2>
         <S.Form>
-          <div class="caixa">
-            <Calendar />
-          </div>
           <div class="lista">
             <div>
               <p>Agendamento 1</p>
@@ -30,4 +25,4 @@ function FAgendaMain() {
     </S.Container>
   );
 }
-export default FAgendaMain;
+export default FEstoqueMain;

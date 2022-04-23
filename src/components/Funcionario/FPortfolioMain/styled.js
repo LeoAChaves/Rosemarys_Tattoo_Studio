@@ -32,17 +32,8 @@ export const Form = styled.section`
   align-items: flex-start;
   margin: 20px;
 
-.caixa{
-  width:30%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  margin: 20px;
-}
-
 .lista{
-    width:30%;
+    width:50%;
     height:100%;
     display:flex;
     flex-direction: column;
@@ -77,6 +68,6 @@ export const Form = styled.section`
     height: 50px;
     background: ${({ theme }) => theme.button};
     font-size: 14px;
-    color:  ${({ theme }) => theme.text};
+    color:  ${({ theme }) => theme.card_info};
     
 `;
