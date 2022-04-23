@@ -5,7 +5,7 @@ import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
 import FHome from "./pages/Funcionario/FHome.jsx";
 import FormLogin from "./components/Form/FormLogin";
-import Cadastro from "./pages/Cadastro";
+import FormCadastro from "./components/Form/FormCadastro";
 import Usuario from "./pages/Usuario";
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/login" element={<FormLogin />}/>
-          <Route path="/cadastro" element={<Cadastro />}/>
+          <Route path="/cadastro" element={<FormCadastro />}/>
           <Route path="/usuario" element={<Usuario />}/>
         </Routes>
       </Router>
