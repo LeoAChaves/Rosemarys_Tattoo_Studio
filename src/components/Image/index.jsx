@@ -1,9 +1,7 @@
 function Image({src, alt}){
     return(
-        <>
-            <img src={src} alt={alt} />
-        </>
+        <img src={src} alt={alt} />
     );
 }
 
-export default Image();
+export default Image;
