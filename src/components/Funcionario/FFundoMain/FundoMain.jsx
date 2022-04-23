@@ -3,10 +3,10 @@ import * as S from "./styled.js";
 function fundoMain(props) {
   return (
     <S.Container>
-      <section>
+      <div>
         <h2>{props.titulo}</h2>
         <div></div>
-      </section>
+      </div>
     </S.Container>
   );
 }
