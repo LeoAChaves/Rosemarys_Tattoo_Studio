@@ -8,22 +8,35 @@ import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
 
 import * as S from "./styled.js";
+import { apiCliente } from "../../../services/api";
 
 function FormLogin(){
 
-    const [email, setEmail] = useState("");
-    const [senha, setSenha] = useState("");
+    const [usuarioLogin, setLogin] = useState({});
     const [tipoLogin, setTipoLogin] = useState("");
+
+    const handleOnchange = (e) => {
+        setLogin({...usuarioLogin, [e.target.name]: e.target.value})
+    }
 
     const handleTipoLogin = (e, value) => {
         e.preventDefault();
         setTipoLogin(value);
     }
 
+    const loginCliente = async (e) =>{
+        e.preventDefault();
+        try {
+            const response = await apiCliente.post('/cliente/login', usuarioLogin)
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     return(
         <S.Container>
-            <S.Form>
+            <S.Form onSubmit={(e)=> loginCliente(e)}>
                 <S.ParagrafoConta>Escolha o tipo de conta</S.ParagrafoConta>
 
                 <S.ContainerTipo>
@@ -38,9 +51,9 @@ function FormLogin(){
                     </S.SeletorTipo>
                 </S.ContainerTipo>
                 
-                <Input placeholder="Email" type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
+                <Input placeholder="Email" type="email" name="email" id="email"  onChange={(e) => handleOnchange(e)}/>
             
-                <Input placeholder="Senha" type="password" name="senha" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)}/>
+                <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)}/>
 
                 <Button className="btnSubmit" type="submit" nome="Entrar"></Button>
 
@@ -48,7 +61,7 @@ function FormLogin(){
                 
                 <div className="linhaPontilhada"></div>
 
-                <Button className="btnSubmit" onClick="" nome="Criar nova conta"></Button>
+                <Button className="btnSubmit" onClick="" nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
             </S.Form>
         </S.Container>
     );
