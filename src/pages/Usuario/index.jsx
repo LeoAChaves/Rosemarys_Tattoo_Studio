@@ -1,56 +1,49 @@
 import Moldura from "../../assets/molduraDadosUsuario.png";
 
+import Header from "../../components/Header";
+import FormUsuario from "../../components/Form/FormUsuario";
+import Paragrafo from "../../components/Paragrafo";
+import Subtitulo from "../../components/Subtitulo";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
+
 import * as S from "./styled";
 
-function Usuario(){
+function Usuario({changeTheme}){
+    const style = {
+        height: "70px",
+    }
+
     return(
-        <main>
-            <div>
-                <h2>Bem vindo de volta nome</h2>
-                <section>
-                    <p>Você não tem agendamentos disponíveis</p>
-                </section>
-            </div>
-            {/* <div>
-                <form>
-                    <h2>Agende sua sessão</h2>
-
-                    <label htmlFor="servico">Selecione o serviço</label>
-                    <select name="servico" id="servico">
-                        <option value="piercing">Body Piercing</option>
-                        <option value="tatuagem">Tatuador</option>
-                    </select>
-
-                    <label htmlFor="profissional">Selecione o Profissional</label>
-                    <select name="profissional" id="profissional">
-                        <option value=""></option>
-                        <option value="#God">Só Deus sabe</option>
-                    </select>
-                    <small>Caso não saiba qual escolher, confira no <a>portfólio</a> as artes ou perfurações que prefereir</small>
-
-                    <label htmlFor="whatsapp">Whatsapp</label>
-                    <input type="number" name="whatsapp" id="whatsapp" />
-
-                    <textarea placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" name="descricao" id="descricao" cols="30" rows="10"></textarea>
-                    <small>Sua mensagem será respondida em no máximo 2 horas se a mensagem for enviada em horário de expediente.</small>
-
-                    <button>Enviar</button>
-                </form>
+        <>
+            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme}></Header>
+            <S.Main>
+                <S.BlocoUm>
+                    <Subtitulo texto="Bem vindo de volta {nome}" nome=""></Subtitulo>
+                    <section>
+                        <p>Você não tem agendamentos disponíveis</p>
+                    </section>
+                </S.BlocoUm>
+                <S.BlocoDois>
+                    <FormUsuario></FormUsuario>
+                    <section>
+                        <img src={Moldura} alt="Moldura" />
+                        <div>
+                            <h2>Seus dados</h2>
+                            <Paragrafo texto="Nome completo:" atributo=""></Paragrafo>
+                            <Paragrafo texto="Data de nascimento:" atributo=""></Paragrafo>
+                            <Paragrafo texto="Gênero:" atributo=""></Paragrafo>
+                            <Paragrafo texto="CPF:" atributo=""></Paragrafo>
+                            <Paragrafo texto="Email:" atributo=""></Paragrafo>
                 
-                <section>
-                    <img src={Moldura} alt="Moldura" />
-                    <h2>Seus dados</h2>
-                    <p>Nome completo: </p>
-                    <p>Data de nascimento: </p>
-                    <p>Gênero: </p>
-                    <p>CPF: </p>
-                    <p>Email: </p>
+                            <Button nome="Alterar"></Button>
+                        </div>
+                    </section>
 
-                    <button>Alterar</button>
-                </section>
-
-            </div> */}
-        </main>
+                </S.BlocoDois>
+            </S.Main>
+            <Footer></Footer>
+        </>
     );
 }
 

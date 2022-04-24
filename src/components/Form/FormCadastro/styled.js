@@ -9,6 +9,7 @@ export const Container = styled.main`
   
   background-image: url(${LoginBackground});
   height: 100vh;
+  width: 100%;
 `
 
 export const Form = styled.form`

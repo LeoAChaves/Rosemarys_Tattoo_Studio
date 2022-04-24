@@ -1,3 +1,7 @@
+import BackgroundDark from "../assets/backgroundDark.png";
+import BackgroundLight from "../assets/backgroundLight.png";
+
+
 const branco_rosado_opaco = "#e5e1d2b6";
 
 export const lightTheme = {
@@ -12,12 +16,9 @@ export const lightTheme = {
   card_border: "#7B0000",
   card_text: "#7B0000",
   card_info: "#5E5A57",
-  // vermelho: "#7B0000",
-  // preto: "#0A0807",
-  // amarelo: "#FFB930",
-  // branco: "#FDFDFD",
-  // cinza: "#E5E1D280",
   branco_rosado_opaco,
+  background: BackgroundLight,
+  agendamento: "#FFB930",
 };
 
 export const darkTheme = {
@@ -33,4 +34,6 @@ export const darkTheme = {
   card_text: "#000000",
   card_info: "#5E5A57",
   branco_rosado_opaco,
+  background: BackgroundDark,
+  agendamento: "#E5E1D280",
 };
