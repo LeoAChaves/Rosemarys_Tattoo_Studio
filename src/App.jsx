@@ -10,7 +10,7 @@ import Usuario from "./pages/Usuario";
 
 function App() {
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={darkTheme}>
       <GlobalStyle />
       <Router>
         <Routes>
