@@ -52,5 +52,8 @@ export const Form = styled.form`
     margin: 20px 0;
 
     cursor: pointer;
+
+    background-color: ${({ theme }) => theme.btn_agendamento};
+    color: ${({ theme }) => theme.button_text};
   }
 `

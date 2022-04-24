@@ -55,13 +55,13 @@ function FormLogin(){
             
                 <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)}/>
 
-                <Button className="btnSubmit" type="submit" nome="Entrar"></Button>
+                <Button className="btnSubmit entrar" type="submit" nome="Entrar"></Button>
 
                 <a>Esqueceu a senha?</a>
                 
                 <div className="linhaPontilhada"></div>
 
-                <Button className="btnSubmit" onClick="" nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
+                <Button className="btnSubmit cadastro" onClick="" nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
             </S.Form>
         </S.Container>
     );

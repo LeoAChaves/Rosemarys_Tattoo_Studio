@@ -14,6 +14,8 @@ function Usuario({changeTheme}){
         height: "70px",
     }
 
+    
+
     return(
         <>
             <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
@@ -36,7 +38,7 @@ function Usuario({changeTheme}){
                             <Paragrafo texto="CPF:" atributo="" />
                             <Paragrafo texto="Email:" atributo="" />
                 
-                            <Button nome="Alterar" />
+                            <Button className="btnAlterar" nome="Alterar" />
                         </div>
                     </section>
 

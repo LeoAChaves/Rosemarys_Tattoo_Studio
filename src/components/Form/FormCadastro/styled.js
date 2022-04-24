@@ -75,6 +75,11 @@ export const Form = styled.form`
     display: flex;
     align-self: flex-start;
   }
+
+  small{
+    display: flex;
+    align-items: center;
+  }
   
   button{
     width: 120px;
@@ -85,6 +90,9 @@ export const Form = styled.form`
     margin-top: 40px;
 
     cursor: pointer;
+
+    background-color: ${({ theme }) => theme.vermelho};
+    color: white;
   }
 `
 

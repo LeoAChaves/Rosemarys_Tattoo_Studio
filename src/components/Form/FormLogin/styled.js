@@ -45,6 +45,16 @@ export const Form = styled.form`
     cursor: pointer;
   }
 
+  .entrar{
+    background-color: ${({ theme }) => theme.vermelho};
+    color: white;
+  }
+
+  .cadastro{
+    background-color: ${({ theme }) => theme.amarelo};
+    color: white;
+  }
+
   a{
     margin: 20px;
     cursor: pointer;

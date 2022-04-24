@@ -3,9 +3,13 @@ import * as S from "./styled";
 import Input from "../../Input";
 import Button from "../../Button";
 import Label from "../../Label";
+
 import { apiCliente } from "../../../services/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+import { IoIosArrowForward } from "react-icons/io";
+
 
 function FormCadastro(){
     const navigate = useNavigate()
@@ -68,7 +72,7 @@ function FormCadastro(){
                 </div>
                 </S.DivCenter>
                 
-                <small>A senha deve ter no mínimo 8 dígitos</small>
+                <small><IoIosArrowForward />A senha deve ter no mínimo 8 dígitos</small>
 
                 <Button type="submit" nome="Cadastrar"></Button>
             </S.Form>

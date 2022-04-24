@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Main = styled.main`
     color: ${({ theme }) => theme.text};
     
-    height: 100vh;
+    height: 110vh;
     width: 100%;
 
     padding: 20px;
@@ -56,7 +56,7 @@ export const BlocoDois = styled.div`
         text-align: center;
     }
 
-    button{
+    .btnAlterar{
         width: 120px;
         height: 40px;
 
@@ -64,5 +64,8 @@ export const BlocoDois = styled.div`
         border: none;
 
         cursor: pointer;
+        
+        background-color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.body};
     }
 `
