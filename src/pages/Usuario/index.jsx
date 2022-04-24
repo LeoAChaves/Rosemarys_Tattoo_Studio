@@ -16,33 +16,33 @@ function Usuario({changeTheme}){
 
     return(
         <>
-            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme}></Header>
+            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
             <S.Main>
                 <S.BlocoUm>
-                    <Subtitulo texto="Bem vindo de volta {nome}" nome=""></Subtitulo>
+                    <Subtitulo texto="Bem vindo de volta {nome}" nome="" />
                     <section>
                         <p>Você não tem agendamentos disponíveis</p>
                     </section>
                 </S.BlocoUm>
                 <S.BlocoDois>
-                    <FormUsuario></FormUsuario>
+                    <FormUsuario />
                     <section>
                         <img src={Moldura} alt="Moldura" />
                         <div>
                             <h2>Seus dados</h2>
-                            <Paragrafo texto="Nome completo:" atributo=""></Paragrafo>
-                            <Paragrafo texto="Data de nascimento:" atributo=""></Paragrafo>
-                            <Paragrafo texto="Gênero:" atributo=""></Paragrafo>
-                            <Paragrafo texto="CPF:" atributo=""></Paragrafo>
-                            <Paragrafo texto="Email:" atributo=""></Paragrafo>
+                            <Paragrafo texto="Nome completo:" atributo="" />
+                            <Paragrafo texto="Data de nascimento:" atributo="" />
+                            <Paragrafo texto="Gênero:" atributo="" />
+                            <Paragrafo texto="CPF:" atributo="" />
+                            <Paragrafo texto="Email:" atributo="" />
                 
-                            <Button nome="Alterar"></Button>
+                            <Button nome="Alterar" />
                         </div>
                     </section>
 
                 </S.BlocoDois>
             </S.Main>
-            <Footer></Footer>
+            <Footer />
         </>
     );
 }
