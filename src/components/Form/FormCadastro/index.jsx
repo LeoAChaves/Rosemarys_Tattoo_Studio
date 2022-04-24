@@ -35,23 +35,23 @@ function FormCadastro(){
                 <Input placeholder="Nome completo" className="inputNormal" type="text" name="nome" id="nome" onChange={(e)=> handleOnchange(e)} />
                 
                 <S.DivCenter>
-                <div>
-                    <S.DivCenter className="labelTeste">
-                    <Label htmlFor="data_nascimento" nome="Data de Nascimento"></Label>
-                    </S.DivCenter>
+                    <div>
+                        <S.DivCenter className="labelTeste">
+                            <Label htmlFor="dtNascimento" nome="Data de Nascimento" />
+                        </S.DivCenter>
 
-                    <Input className="inputDtNasc" type="date" name="data_nascimento" id="dtNascimento" onChange={(e)=> handleOnchange(e)}/>
-                </div>
-                
-                <div>
-                    <Label htmlFor="genero" nome="Gênero"></Label>
-                    <select className="inputGenero" name="genero" id="genero" onChange={handleOnchange}> 
-                        <option value=""></option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
+                        <Input className="inputDtNasc" type="date" name="data_nascimento" id="dtNascimento" onChange={(e)=> handleOnchange(e)}/>
+                    </div>
+                    
+                    <div>
+                        <Label htmlFor="genero" nome="Gênero"></Label>
+                        <select className="inputGenero" name="genero" id="genero" onChange={handleOnchange}> 
+                            <option value=""></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
                 </S.DivCenter>
 
                 <Input placeholder="CPF" className="inputNormal" type="text" name="cpf" id="cpf" onChange={(e)=> handleOnchange(e)}/>
