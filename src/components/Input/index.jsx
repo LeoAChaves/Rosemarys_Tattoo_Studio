@@ -1,6 +1,6 @@
-function Input({className, placeholder, type, name, id, value, onChange}){
+function Input({className, placeholder, type, name, id, value, disabled, onChange}){
     return(
-        <input className={className} placeholder={placeholder} type={type} name={name} id={id} value={value} onChange={onChange} />
+        <input className={className} placeholder={placeholder} type={type} name={name} id={id} value={value} disabled={disabled} onChange={onChange} />
     );
 }
 
