@@ -1,7 +1,6 @@
 import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
-import Image from "../../Image/index.jsx";
 
 function FPortfolioMain() {
   return (

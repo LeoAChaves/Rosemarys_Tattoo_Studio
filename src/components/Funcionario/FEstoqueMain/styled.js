@@ -26,48 +26,62 @@ export const Quadro = styled.section`
 
 export const Form = styled.section`
   width: 100%;
-  height: 70%;
+  height: 75%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin: 20px;
 
-.lista{
-    width:50%;
-    height:100%;
-    display:flex;
-    flex-direction: column;
+  .busca{
+    align-self: flex-end;
+    margin:30px;
+  }
+
+  Input {
+    width: 200px;
+    height: 30px;
+    background-color: ${({ theme }) => theme.input};
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+    
+  Button {
+    width: 100px;
+    height: 33px;
+    background: ${({ theme }) => theme.button};
+    font-size: 14px;
+    color:  ${({ theme }) => theme.button_text};
+    border: 2px solid #000000;
+`;
+export const Cards = styled.section`
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  .lista {
+    width: 20%;
+    height: 100%;
+    padding: 20px;
+    align-self: center;
+    display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: space-between;
     margin: 20px;
-    padding:20px;
-    background-color: #FDFDFD;
+    padding: 20px;
+    background-color: ${({ theme }) => theme.card};
     border: 4px solid ${({ theme }) => theme.button};
     border-radius: 10px;
   }
 
-  .lista div{
-    padding:20px;
-    border-bottom: 2px solid  #282320 
+  .lista img {
+    width: 350px;
+    height: 320px;
   }
-
-  Input {
-    width: 500px;
-    height: 50px;
-    background-color: ${({ theme }) => theme.input};
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 40px;
-    border: none;
-    font-size: 16px;
+  .lista li {
+    padding-bottom: 20px;
   }
-
-  
-  Button {
-    width: 130px;
-    height: 50px;
-    background: ${({ theme }) => theme.button};
-    font-size: 14px;
-    color:  ${({ theme }) => theme.card_info};
-    
 `;
