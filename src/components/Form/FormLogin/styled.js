@@ -6,8 +6,11 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
   
-  background-image: url(${LoginBackground});
+  background: url(${LoginBackground}) no-repeat bottom center scroll;
   height: 100vh;
+  width: 100%;
+  background-position: 0% 0%;
+  background-size: cover;
 `
 
 export const Form = styled.form`
