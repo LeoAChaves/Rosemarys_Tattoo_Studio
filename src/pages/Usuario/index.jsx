@@ -9,14 +9,14 @@ import Footer from "../../components/Footer";
 
 import * as S from "./styled";
 
-function Usuario(){
+function Usuario({changeTheme}){
     const style = {
         height: "70px",
     }
 
     return(
         <>
-            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair"></Header>
+            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme}></Header>
             <S.Main>
                 <S.BlocoUm>
                     <Subtitulo texto="Bem vindo de volta {nome}" nome=""></Subtitulo>

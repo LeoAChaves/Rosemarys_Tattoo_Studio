@@ -7,17 +7,23 @@ import FHome from "./pages/Funcionario/FHome.jsx";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
+import { useState } from "react";
 
 function App() {
+  const [theme, setTheme ] = useState(darkTheme)
+
+  const changeTheme = ()=>{
+    setTheme(theme === darkTheme ? lightTheme : darkTheme)
+  }
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Routes>
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/cadastro" element={<Cadastro />}/>
-          <Route path="/usuario" element={<Usuario />}/>
+          <Route path="/usuario" element={<Usuario changeTheme={changeTheme}/>}/>
         </Routes>
       </Router>
     </ThemeProvider>

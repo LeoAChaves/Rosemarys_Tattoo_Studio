@@ -6,7 +6,7 @@ import Image from "../Image";
 
 import { VscColorMode } from "react-icons/vsc";
 
-function Header({style, div, sair, portfolio, a, b, c}){
+function Header({style, div, sair, portfolio, a, b, c, changeTheme}){
 
     return(
         <S.Header style = {style}>
@@ -25,7 +25,7 @@ function Header({style, div, sair, portfolio, a, b, c}){
                 <Button nome={b} />
                 <Button nome={c} />
                 <Button nome={sair} />
-                <VscColorMode className="themeMode"/>
+                <VscColorMode className="themeMode" onClick={changeTheme}/>
             </div>
         </S.Header>
     );
