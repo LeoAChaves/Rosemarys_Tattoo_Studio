@@ -1,0 +1,10 @@
+button{
+    transition-duration: 0.3s;
+    transition-property: transform;
+}
+
+button:hover,
+button:focus,
+button:active {
+    transform: scale(1.1);
+}
