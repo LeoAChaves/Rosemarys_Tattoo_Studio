@@ -3,6 +3,7 @@ import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
+import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiPortfolio } from "../../../services/api.js";
 
@@ -19,10 +20,10 @@ function FormPortfolio() {
     try {
       const response = await apiPortfolio.post("/portfolio", portfolio);
       console.log(response.data.mensagem);
-      alert(response.data.mensagem);
+      toast.success(response.data.mensagem);
     } catch (error) {
       console.log(error);
-      alert(error);
+      toast.error(error.response.data.mensagem);
     }
   };
 
