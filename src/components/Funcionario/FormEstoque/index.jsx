@@ -1,32 +1,77 @@
 import * as S from "./styled.js";
+
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
+import { useState } from "react";
+import { apiEstoque } from "../../../services/api.js";
+
 function FormEstoque() {
+  const [estoque, setEstoque] = useState([]);
+
+  const handleOnchange = (e) => {
+    e.preventDefault();
+    setEstoque({ ...estoque, [e.target.name]: e.target.value });
+  };
+  const handleOnchangeNumber = (e) => {
+    e.preventDefault();
+    setEstoque({
+      ...estoque,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+  const inserirEstoque = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await apiEstoque.post("/estoque", estoque);
+      console.log(response.data.mensagem);
+      alert(response.data.mensagem);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <S.Container>
       <S.Quadro>
         <h2>Estoque</h2>
         <S.Form>
           <div>
-            <Input placeholder="ITEM" type="text" name="item" id="item"></Input>
+            <Input
+              placeholder="ITEM"
+              type="text"
+              name="NOME"
+              id="item"
+              onChange={(e) => handleOnchange(e)}
+            ></Input>
             <Input
               placeholder="QUANTIDADE"
               type="number"
-              name="qtd"
+              name="QUANTIDADE"
               id="qtd"
+              onChange={(e) => handleOnchangeNumber(e)}
             ></Input>
           </div>
           <div>
             <Input
               placeholder="PRECO"
               type="number"
-              name="preco"
+              name="PRECO"
               id="preco"
+              onChange={(e) => handleOnchange(e)}
             ></Input>
-            <Input placeholder="TIPO" type="text" name="tipo" id="tipo"></Input>
+            <Input
+              placeholder="TIPO"
+              type="text"
+              name="TIPO"
+              id="tipo"
+              onChange={(e) => handleOnchange(e)}
+            ></Input>
           </div>
-          <Button type="submit" nome="INSERIR"></Button>
+          <Button
+            type="submit"
+            nome="INSERIR"
+            onClick={(e) => inserirEstoque(e)}
+          ></Button>
         </S.Form>
       </S.Quadro>
     </S.Container>
