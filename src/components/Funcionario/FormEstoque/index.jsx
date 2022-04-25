@@ -9,11 +9,11 @@ import { apiEstoque } from "../../../services/api.js";
 function FormEstoque() {
   const [estoque, setEstoque] = useState([]);
 
-  const handleOnchange = (e) => {
+  const handleOnChange = (e) => {
     e.preventDefault();
     setEstoque({ ...estoque, [e.target.name]: e.target.value });
   };
-  const handleOnchangeNumber = (e) => {
+  const handleOnChangeNumber = (e) => {
     e.preventDefault();
     setEstoque({
       ...estoque,
@@ -28,6 +28,7 @@ function FormEstoque() {
       alert(response.data.mensagem);
     } catch (error) {
       console.log(error);
+      alert(error);
     }
   };
   return (
@@ -41,14 +42,14 @@ function FormEstoque() {
               type="text"
               name="NOME"
               id="item"
-              onChange={(e) => handleOnchange(e)}
+              onChange={(e) => handleOnChange(e)}
             ></Input>
             <Input
               placeholder="QUANTIDADE"
               type="number"
               name="QUANTIDADE"
               id="qtd"
-              onChange={(e) => handleOnchangeNumber(e)}
+              onChange={(e) => handleOnChangeNumber(e)}
             ></Input>
           </div>
           <div>
@@ -57,14 +58,14 @@ function FormEstoque() {
               type="number"
               name="PRECO"
               id="preco"
-              onChange={(e) => handleOnchange(e)}
+              onChange={(e) => handleOnChange(e)}
             ></Input>
             <Input
               placeholder="TIPO"
               type="text"
               name="TIPO"
               id="tipo"
-              onChange={(e) => handleOnchange(e)}
+              onChange={(e) => handleOnChange(e)}
             ></Input>
           </div>
           <Button
