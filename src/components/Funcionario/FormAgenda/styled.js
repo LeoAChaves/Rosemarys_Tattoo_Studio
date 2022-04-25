@@ -33,11 +33,11 @@ export const Form = styled.section`
   align-items: flex-start;
   margin: 20px;
 
-.caixa{
-  display:flex;
-  flex-direction: column;
-  margin: 20px;
-}
+  .caixa {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
 
   Input {
     width: 500px;
@@ -55,13 +55,13 @@ export const Form = styled.section`
   }
 
   input[type="time"] {
-    color: ${({ theme }) => theme.input_placeholder}
+    color: ${({ theme }) => theme.input_placeholder};
   }
 
   input[type="date"] {
-    color: ${({ theme }) => theme.input_placeholder}
+    color: ${({ theme }) => theme.input_placeholder};
   }
-  
+
   Button {
     align-self: flex-end;
     width: 130px;
@@ -70,6 +70,6 @@ export const Form = styled.section`
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
-    color:  ${({ theme }) => theme.button_text};
-    
+    color: ${({ theme }) => theme.button_text};
+  }
 `;
