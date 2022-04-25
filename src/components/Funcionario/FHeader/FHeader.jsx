@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+
 function FHeader() {
+  const navigate = useNavigate();
   const FHeader = styled.header`
     width: 100%;
     height: 80px;
@@ -25,6 +28,9 @@ function FHeader() {
       display: flex;
       justify-content: space-between;
     }
+    .pointer:hover {
+      cursor: pointer;
+    }
   `;
   return (
     <FHeader>
@@ -36,8 +42,12 @@ function FHeader() {
       </ul>
       <h1>Rosemary's</h1>
       <ul className="logout">
-        <li>Return</li>
-        <li>Logout</li>
+        <li className="pointer" onClick={() => navigate("/funcionario/home")}>
+          Return
+        </li>
+        <li className="pointer" onClick={() => navigate("/login")}>
+          Logout
+        </li>
       </ul>
     </FHeader>
   );
