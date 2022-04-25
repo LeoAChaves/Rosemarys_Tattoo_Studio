@@ -3,6 +3,7 @@ import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
+import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
@@ -25,11 +26,11 @@ function FormAgenda() {
     e.preventDefault();
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
+      toast.success(response.data.message);
       console.log(response.data.message);
-      alert(response.data.message);
     } catch (error) {
+      toast.error(error.response.data.message);
       console.log(error.response.data.message);
-      alert(error.response.data.message);
     }
   };
   return (
