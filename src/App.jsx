@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
+import EsqueceuSenha from "./pages/EsqueceuSenha";
 import { useState } from "react";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/login" element={<Login />}/>
+          <Route path="/esqueceuSenha" element={<EsqueceuSenha />}/>
           <Route path="/cadastro" element={<Cadastro />}/>
           <Route path="/usuario" element={<Usuario changeTheme={changeTheme}/>}/>
           <Route path="/atualizarUsuario" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
