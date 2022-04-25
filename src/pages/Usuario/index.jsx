@@ -1,5 +1,3 @@
-import Moldura from "../../assets/molduraDadosUsuario.png";
-
 import Header from "../../components/Header";
 import FormUsuario from "../../components/Form/FormUsuario";
 import Paragrafo from "../../components/Paragrafo";
@@ -14,8 +12,6 @@ function Usuario({changeTheme}){
         height: "70px",
     }
 
-    
-
     return(
         <>
             <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
@@ -29,16 +25,20 @@ function Usuario({changeTheme}){
                 <S.BlocoDois>
                     <FormUsuario />
                     <section>
-                        <img src={Moldura} alt="Moldura" />
-                        <div>
-                            <h2>Seus dados</h2>
-                            <Paragrafo texto="Nome completo:" atributo="" />
-                            <Paragrafo texto="Data de nascimento:" atributo="" />
-                            <Paragrafo texto="Gênero:" atributo="" />
-                            <Paragrafo texto="CPF:" atributo="" />
-                            <Paragrafo texto="Email:" atributo="" />
-                
-                            <Button className="btnAlterar" nome="Alterar" />
+                        <div className="container">
+                            <div className="bordaAnimada"></div>
+                            <div className="corner">
+                                <div className="dados">
+                                    <h2>Seus dados</h2>
+                                    <Paragrafo texto="Nome completo:" atributo="" />
+                                    <Paragrafo texto="Data de nascimento:" atributo="" />
+                                    <Paragrafo texto="Gênero:" atributo="" />
+                                    <Paragrafo texto="CPF:" atributo="" />
+                                    <Paragrafo texto="Email:" atributo="" />
+                        
+                                    <Button className="btnAlterar" nome="Alterar" />
+                                </div>
+                            </div>
                         </div>
                     </section>
 

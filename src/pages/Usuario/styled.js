@@ -36,17 +36,71 @@ export const BlocoDois = styled.div`
         align-items: center;
     }
 
-    img{
+    .container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        position: relative;
+        overflow: hidden;
+
+
+        width: 425px;
+        height: 425px;
+
+        background: linear-gradient(90deg, rgba(255,185,48,1) 0%, rgba(123,0,0,1) 35%);
+
+        border-radius: 10px;
+    }
+
+    .bordaAnimada{
+        width: 620px;
+        height: 410px;
+
+        background-color: white;
+
         position: absolute;
-        top: 30%;
-        left: 59%;
+
+        animation: rotate 4s infinite ease-in-out;
+    }
+
+    .corner{
+        width: 418px;
+        height: 418px;
+
+        background-color: ${({ theme }) => theme.body};
+
+        z-index: 1;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dados{
+        width: 400px;
+        height: 400px;
+
+        background-color: ${({ theme }) => theme.body};
+        z-index: 2;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        border: 2px solid ${({ theme }) => theme.text};
+    }
+
+    @keyframes rotate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
     }
 
     div{
-        position: relative;
-
-        height: 50vh;
-
         display: flex;
         flex-direction: column;
         justify-content: space-around;
