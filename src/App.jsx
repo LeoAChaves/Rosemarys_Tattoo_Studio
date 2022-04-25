@@ -31,7 +31,10 @@ function App() {
           <Route path="/funcionario/estoque" element={<FEstoque />} />
           <Route path="/funcionario/portfolio" element={<FPortfolio />} />
           <Route path="/funcionario/agendamento" element={<FAgendamento />} />
-          <Route path="/funcionario/agenda" element={<FAgendaView />} />
+          <Route
+            path="/funcionario/agendamento-view"
+            element={<FAgendaView />}
+          />
           <Route
             path="/funcionario/portfolio-view"
             element={<FPortfolioView />}

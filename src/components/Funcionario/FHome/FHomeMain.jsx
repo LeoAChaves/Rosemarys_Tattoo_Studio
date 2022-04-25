@@ -13,7 +13,7 @@ function FHomeMain() {
       <FHomeCard
         tipo="agendamento"
         texto="Agendamento"
-        onClickVisu={() => navigate("/funcionario/agenda")}
+        onClickVisu={() => navigate("/funcionario/agendamento-view")}
         onClickInse={() => navigate("/funcionario/agendamento")}
       />
       <FHomeCard
