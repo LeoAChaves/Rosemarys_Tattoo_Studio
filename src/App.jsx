@@ -14,6 +14,7 @@ import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
+import EsqueceuSenha from "./pages/EsqueceuSenha";
 import { useState } from "react";
 
 function App() {
@@ -50,6 +51,8 @@ function App() {
             path="/atualizarUsuario/:id"
             element={<AtualizarUsuario changeTheme={changeTheme} />}
           />
+          <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
+          <Route path="/cadastro" element={<Cadastro />} />
         </Routes>
       </Router>
     </ThemeProvider>
