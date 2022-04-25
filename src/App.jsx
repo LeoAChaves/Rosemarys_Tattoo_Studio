@@ -10,10 +10,20 @@ import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
 import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
 import FPortfolioView from "./pages/Funcionario/FPortfolioView.jsx";
 import FEstoqueView from "./pages/Funcionario/FEstoqueView.jsx";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import Usuario from "./pages/Usuario";
+import AtualizarUsuario from "./pages/AtualizarUsuario";
+import { useState } from "react";
 
 function App() {
+  const [theme, setTheme] = useState(darkTheme);
+
+  const changeTheme = () => {
+    setTheme(theme === darkTheme ? lightTheme : darkTheme);
+  };
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Router>
         <Routes>
@@ -27,6 +37,16 @@ function App() {
             element={<FPortfolioView />}
           />
           <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route
+            path="/usuario/:id"
+            element={<Usuario changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/atualizarUsuario/:id"
+            element={<AtualizarUsuario changeTheme={changeTheme} />}
+          />
         </Routes>
       </Router>
     </ThemeProvider>
