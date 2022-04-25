@@ -26,8 +26,8 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/esqueceuSenha" element={<EsqueceuSenha />}/>
           <Route path="/cadastro" element={<Cadastro />}/>
-          <Route path="/usuario" element={<Usuario changeTheme={changeTheme}/>}/>
-          <Route path="/atualizarUsuario" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
+          <Route path="/usuario/:id" element={<Usuario changeTheme={changeTheme}/>}/>
+          <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
         </Routes>
       </Router>
     </ThemeProvider>

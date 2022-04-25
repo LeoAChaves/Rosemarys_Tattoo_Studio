@@ -1,8 +1,9 @@
 import { useState } from "react";
-
+import { useNavigate} from "react-router-dom";
 import Input from "../../Input";
 import Image from "../../Image";
 import Button from "../../Button";
+import toast, { Toaster } from 'react-hot-toast';
 
 import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
@@ -11,7 +12,8 @@ import * as S from "./styled.js";
 import { apiCliente } from "../../../services/api";
 
 function FormLogin(){
-
+    const navigate = useNavigate()
+   
     const [usuarioLogin, setLogin] = useState({});
     const [tipoLogin, setTipoLogin] = useState("");
 
@@ -28,9 +30,10 @@ function FormLogin(){
         e.preventDefault();
         try {
             const response = await apiCliente.post('/cliente/login', usuarioLogin)
-            console.log(response)
+            const idUsuario = response.data.cliente._id
+            navigate(`/usuario/${idUsuario}`)   
         } catch (error) {
-            console.log(error)
+            console.log(error.response)
         }
     }
 
@@ -61,7 +64,7 @@ function FormLogin(){
                 
                 <div className="linhaPontilhada"></div>
 
-                <Button className="btnSubmit cadastro" onClick="" nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
+                <Button className="btnSubmit cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
             </S.Form>
         </S.Container>
     );
