@@ -10,6 +10,7 @@ import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
 import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
 import FPortfolioView from "./pages/Funcionario/FPortfolioView.jsx";
 import FEstoqueView from "./pages/Funcionario/FEstoqueView.jsx";
+import Home from "./pages/Home/index.jsx";
 import Login from "./pages/Login";
 import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
@@ -28,6 +29,7 @@ function App() {
       <GlobalStyle />
       <Router>
         <Routes>
+          <Route path="/home" element={<Home changeTheme={changeTheme}/>} />
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/funcionario/estoque" element={<FEstoque />} />
           <Route path="/funcionario/portfolio" element={<FPortfolio />} />
