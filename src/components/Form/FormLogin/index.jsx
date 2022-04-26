@@ -57,17 +57,13 @@ function FormLogin(){
             
                 <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)}/>
 
-                <Button className="btnSubmit entrar" type="submit" nome="Entrar"></Button>
+                <Button className="styleForm entrar" type="submit" nome="Entrar"></Button>
 
                 <a>Esqueceu a senha?</a>
                 
                 <div className="linhaPontilhada"></div>
 
-                    <button class="btn btn-three">
-                        Criar nova conta
-                    </button>
-
-                {/* <Button className="btnSubmit cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button> */}
+                <Button className="styleForm cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
             </S.Form>
         </S.Container>
     );

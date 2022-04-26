@@ -64,7 +64,7 @@ function Usuario({changeTheme}){
                                     <Paragrafo texto="CPF:" atributo={usuario.cpf} />
                                     <Paragrafo texto="Email:" atributo={usuario.email} />
                         
-                                    <Button className="btnAlterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
+                                    <Button className="styleForm alterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
                                 </div>
                             </div>
                         </div>

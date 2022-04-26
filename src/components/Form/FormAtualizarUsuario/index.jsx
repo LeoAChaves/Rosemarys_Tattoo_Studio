@@ -79,8 +79,8 @@ function AtualizarUsuario() {
                 </div>
             </S.DivCenter>
             <div>
-                <Button className="alterar" nome="Alterar" onClick={(e)=> atualizarDados(e)}/>
-                <Button className="deletar" nome="Apagar conta"/>
+                <Button className="styleForm alterar" nome="Alterar" onClick={(e)=> atualizarDados(e)}/>
+                <Button className="styleForm deletar" nome="Apagar conta"/>
             </div>
         </S.Form>
     );

@@ -38,18 +38,13 @@ export const Form = styled.form`
     padding: 10px;
   }
 
-  .btnSubmit{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-    margin-top: 20px;
-
-    cursor: pointer;
-
-    background-color:  ${({ theme }) => theme.vermelho};
+  .enviar{
+    background-color: ${({ theme }) => theme.vermelho};
     color: white;
+  }
+
+  .enviar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.vermelho};
   }
 
   @media(min-width: 800px) {

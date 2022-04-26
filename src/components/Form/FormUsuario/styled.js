@@ -46,18 +46,14 @@ export const Form = styled.form`
     margin-top: 20px;
   }
 
-  button{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
+  .enviar{
     margin: 20px 0;
-
-    cursor: pointer;
-
     background-color: ${({ theme }) => theme.btn_agendamento};
     color: ${({ theme }) => theme.button_text};
+  }
+
+  .enviar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.btn_agendamento};
   }
 
   @media(min-width: 1000px) {

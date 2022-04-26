@@ -38,25 +38,22 @@ export const Form = styled.form`
     padding: 10px;
   }
 
-  .btnSubmit{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-    margin-top: 20px;
-
-    cursor: pointer;
-  }
-
   .entrar{
     background-color: ${({ theme }) => theme.vermelho};
     color: white;
   }
 
+  .entrar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.vermelho};
+  }
+
   .cadastro{
     background-color: ${({ theme }) => theme.amarelo};
     color: white;
+  }
+
+  .cadastro:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.amarelo};
   }
 
   a{

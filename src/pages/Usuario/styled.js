@@ -116,18 +116,15 @@ export const BlocoDois = styled.div`
         text-align: center;
     }
 
-    .btnAlterar{
-        width: 120px;
-        height: 40px;
-
-        border-radius: 10px;
-        border: none;
-
-        cursor: pointer;
-        
+    .alterar{
         background-color: ${({ theme }) => theme.text};
         color: ${({ theme }) => theme.body};
     }
+
+    .alterar:hover{
+        box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.text};
+    }
+
 
     @media(min-width: 1000px) {
         flex-direction: row;

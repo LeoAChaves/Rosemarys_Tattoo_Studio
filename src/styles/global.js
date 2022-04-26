@@ -28,6 +28,7 @@ textarea{
   margin: 20px;
   outline: none;
 }
+
 .custom-btn {
   width: 100px;
   height: 40px;
@@ -86,59 +87,32 @@ textarea{
 }
 
 /* BTN FORM */
-button{
+.styleForm {
+  width: 120px;
+  height: 40px;
+
+  border-radius: 10px;
   border: none;
-  background-color: transparent;
+  margin-top: 20px;
+
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.5s;
+  transition-property: transform;
 }
 
-.btn {
-	line-height: 50px;
-	height: 50px;
-	text-align: center;
-	width: 150px;
-	cursor: pointer;
+.styleForm:hover{
+  transform: scale(1.1);
 }
 
-.btn-three {
-  color: black;
-	transition: all 0.5s;
-	position: relative;
-}
-
-.btn-three::before {
-  content: 'Criar nova conta';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-  z-index: 1;
-	background-color: #ffb930;
-	transition: all 0.3s;
-}
-
-.btn-three:hover::before {
-	opacity: 0 ;
-	transform: scale(0.5,0.5);
-}
-
-.btn-three::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	opacity: 0;
-	transition: all 0.3s;
-	border: 1px solid #ffb930;
-	transform: scale(1.2,1.2);
-}
-
-.btn-three:hover::after {
-	opacity: 1;
-	transform: scale(1,1);
+/* Tags "A" */
+a:hover{
+  border-bottom: 1px solid black;
 }
 
 `;

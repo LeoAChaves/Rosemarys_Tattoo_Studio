@@ -37,26 +37,27 @@ export const Form = styled.form`
 
         margin: 20px;
     }
-
-    button{
-        width: 120px;
-        height: 40px;
-
-        border-radius: 10px;
-        border: none;
+    
+    .alterar, .deletar{
         margin: 20px;
-
-        cursor: pointer;
-
-        color: ${({ theme }) => theme.text};
+        color: white;
     }
-
+    
     .alterar{
         background-color: ${({ theme }) => theme.amarelo};
+        
+    }
+
+    .alterar:hover{
+        box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.amarelo};
     }
 
     .deletar{
         background-color: ${({ theme }) => theme.preto};
+    }
+
+    .deletar:hover{
+        box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.preto};
     }
 
     @media(min-width: 1000px) {

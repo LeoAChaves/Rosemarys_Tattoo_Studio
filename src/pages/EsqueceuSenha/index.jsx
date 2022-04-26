@@ -26,7 +26,7 @@ function EsqueceuSenha({changeTheme}) {
                     
                     <Input placeholder="Email" type="email"/>
                 
-                    <Button onClick={(e) => notify(e)} className="btnSubmit" nome="Enviar" />
+                    <Button onClick={(e) => notify(e)} className="styleForm enviar" nome="Enviar" />
                 </S.Form>
             </S.Container>
             <Footer />
