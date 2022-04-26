@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import FormUsuario from "../../components/Form/FormUsuario";
 import Paragrafo from "../../components/Paragrafo";
