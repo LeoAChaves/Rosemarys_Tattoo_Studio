@@ -6,9 +6,10 @@ import Paragrafo from "../../components/Paragrafo";
 import Subtitulo from "../../components/Subtitulo";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
-
+import toast from "react-hot-toast";
 import * as S from "./styled";
 import { apiCliente } from "../../services/api";
+
 
 function Usuario({changeTheme}){
     const style = {
@@ -19,6 +20,7 @@ function Usuario({changeTheme}){
     const navigate = useNavigate()
     const [usuario, setUsuario] = useState({})
     const [load, setLoad] = useState(true)
+    
     useEffect(() => {
         async function buscaUsuario(){
             try {
@@ -40,14 +42,31 @@ function Usuario({changeTheme}){
         return `${dia}-${dataArr.pop()}-${ano}`
     }
 
+    const [agendamentos, setAgendamentos] = useState([])
+
+    useEffect(()=>{
+        const agendamentos = localStorage.getItem('agendamentos')
+        const agendamentosParse = JSON.parse(agendamentos) || []
+        
+        setAgendamentos(agendamentosParse);
+       
+    }, [])
+
+
     return(
         <>
             <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
             <S.Main>
                 <S.BlocoUm>
-                    <Subtitulo texto="Bem vindo de volta {nome}" nome="" />
+                    <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
                     <section>
-                        <p>Você não tem agendamentos disponíveis</p>
+                        {agendamentos.length === 0 ? 
+                        <p>Você não tem agendamentos disponíveis</p> 
+                         :
+                         agendamentos.length > 1 ? <p>Você tem {agendamentos.length} agendamentos pendentes</p> 
+                         :
+                         <p>Você tem {agendamentos.length} agendamento pendente</p> 
+                    }
                     </section>
                 </S.BlocoUm>
                 <S.BlocoDois>
