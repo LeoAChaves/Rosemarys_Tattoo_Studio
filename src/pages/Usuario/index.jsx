@@ -43,6 +43,11 @@ function Usuario({ changeTheme }) {
   return (
     <>
       <Header
+        btnHome={{ display: "none" }}
+        btnVoltar={{ display: "none" }}
+        btnLogin={{ display: "none" }}
+        btnInicial={{ display: "none" }}
+        className={"btn custom-btn styleHeader"}
         style={style}
         div={{ display: "none" }}
         portfolio="Portifólio"
@@ -76,7 +81,7 @@ function Usuario({ changeTheme }) {
                   <Paragrafo texto="Email:" atributo={usuario.email} />
 
                   <Button
-                    className="btnAlterar"
+                    className="styleForm alterar"
                     nome="Alterar"
                     onClick={() => navigate(`/atualizarUsuario/${id}`)}
                   />
@@ -84,6 +89,12 @@ function Usuario({ changeTheme }) {
               </div>
             </div>
           </section>
+
+          <Button
+            className="btnAlterar"
+            nome="Alterar"
+            onClick={() => navigate(`/atualizarUsuario/${id}`)}
+          />
         </S.BlocoDois>
       </S.Main>
       <Footer />

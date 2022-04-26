@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
@@ -16,7 +16,6 @@ import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
-import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -27,36 +26,25 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home changeTheme={changeTheme}/>} />
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/funcionario/estoque" element={<FEstoque />} />
           <Route path="/funcionario/portfolio" element={<FPortfolio />} />
           <Route path="/funcionario/agendamento" element={<FAgendamento />} />
-          <Route
-            path="/funcionario/agendamento-view"
-            element={<FAgendaView />}
-          />
-          <Route
-            path="/funcionario/portfolio-view"
-            element={<FPortfolioView />}
-          />
+          <Route path="/funcionario/agendamento-view" element={<FAgendaView />}/>
+          <Route path="/funcionario/portfolio-view" element={<FPortfolioView />}/>
           <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cadastro" element={<Cadastro />} />
-          <Route
-            path="/usuario/:id"
-            element={<Usuario changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/atualizarUsuario/:id"
-            element={<AtualizarUsuario changeTheme={changeTheme} />}
-          />
           <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
           <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/login" element={<Login changeTheme={changeTheme}/>}/>
+          <Route path="/esqueceuSenha" element={<EsqueceuSenha changeTheme={changeTheme}/>}/>
+          <Route path="/cadastro" element={<Cadastro changeTheme={changeTheme}/>}/>
+          <Route path="/usuario/:id" element={<Usuario changeTheme={changeTheme}/>}/>
+          <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
         </Routes>
-      </Router>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
