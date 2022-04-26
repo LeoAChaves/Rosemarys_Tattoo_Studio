@@ -27,16 +27,34 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/funcionario/home" element={<FHome />} />
-          <Route path="/funcionario/estoque" element={<FEstoque />} />
-          <Route path="/funcionario/portfolio" element={<FPortfolio />} />
-          <Route path="/funcionario/agendamento" element={<FAgendamento />} />
-          <Route path="/funcionario/agenda" element={<FAgendaView />} />
+          <Route
+            path="/funcionario/home"
+            element={<FHome changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/estoque"
+            element={<FEstoque changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio"
+            element={<FPortfolio changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/agendamento"
+            element={<FAgendamento changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/agenda"
+            element={<FAgendaView changeTheme={changeTheme} />}
+          />
           <Route
             path="/funcionario/portfolio-view"
             element={<FPortfolioView />}
           />
-          <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
+          <Route
+            path="/funcionario/estoque-view"
+            element={<FEstoqueView changeTheme={changeTheme} />}
+          />
           <Route path="/login" element={<Login changeTheme={changeTheme} />} />
           <Route
             path="/esqueceuSenha"
