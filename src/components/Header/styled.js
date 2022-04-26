@@ -11,7 +11,7 @@ export const Header = styled.header`
     padding: 30px;
     
     img{
-        width: 100px;
+        width: 65px;
     }
 
     .divLinks{
@@ -21,7 +21,7 @@ export const Header = styled.header`
     }
 
     .divLinks > button{
-        margin: 0 5px;
+        margin: 0 20px;
 
         cursor: pointer;
     }
@@ -33,7 +33,7 @@ export const Header = styled.header`
     }
 
     .themeMode{
-        margin-left: 5px;
+        margin: 0 20px;
         cursor: pointer;
         color: ${({ theme }) => theme.text};
     }

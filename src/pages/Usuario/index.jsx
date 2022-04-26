@@ -55,7 +55,7 @@ function Usuario({changeTheme}){
 
     return(
         <>
-            <Header style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
+            <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
             <S.Main>
                 <S.BlocoUm>
                     <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
@@ -75,7 +75,7 @@ function Usuario({changeTheme}){
                         <div className="container">
                             <div className="bordaAnimada"></div>
                             <div className="corner">
-                                <div>
+                                <div className="dados">
                                     <h2>Seus dados</h2>
                                     <Paragrafo texto="Nome completo:" atributo={usuario.nome} />
                                     <Paragrafo texto="Data de nascimento:" atributo={load === false ? dataCorreta(usuario.data_nascimento) : ''}/>
@@ -83,7 +83,7 @@ function Usuario({changeTheme}){
                                     <Paragrafo texto="CPF:" atributo={usuario.cpf} />
                                     <Paragrafo texto="Email:" atributo={usuario.email} />
                         
-                                    <Button className="btnAlterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
+                                    <Button className="styleForm alterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
                                 </div>
                             </div>
                         </div>

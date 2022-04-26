@@ -7,7 +7,7 @@ export const Container = styled.main`
   align-items: center;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 88vh;
+  min-height: 88vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -19,11 +19,15 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 60vh;
-  width: 800px;
+  height: 100vh;
+  width: 100%;
   border-radius: 4px;
   
   background-color: ${({ theme }) => theme.branco_rosado_opaco};
+
+  p{
+    margin: 30px;
+  }
 
   input{
     border-radius: 10px;
@@ -34,18 +38,18 @@ export const Form = styled.form`
     padding: 10px;
   }
 
-  .btnSubmit{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-    margin-top: 20px;
-
-    cursor: pointer;
-
-    background-color:  ${({ theme }) => theme.vermelho};
+  .enviar{
+    background-color: ${({ theme }) => theme.vermelho};
     color: white;
+  }
+
+  .enviar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.vermelho};
+  }
+
+  @media(min-width: 800px) {
+    height: 60vh;
+    width: 800px;
   }
 `
 

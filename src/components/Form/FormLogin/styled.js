@@ -5,9 +5,12 @@ export const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -19,8 +22,9 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 82vh;
-  width: 480px;
+  height: 100vh;
+  width: 100%;
+  
   border-radius: 4px;
   
   background-color: ${({ theme }) => theme.branco_rosado_opaco};
@@ -34,25 +38,22 @@ export const Form = styled.form`
     padding: 10px;
   }
 
-  .btnSubmit{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-    margin-top: 20px;
-
-    cursor: pointer;
-  }
-
   .entrar{
     background-color: ${({ theme }) => theme.vermelho};
     color: white;
   }
 
+  .entrar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.vermelho};
+  }
+
   .cadastro{
     background-color: ${({ theme }) => theme.amarelo};
     color: white;
+  }
+
+  .cadastro:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.amarelo};
   }
 
   a{
@@ -63,6 +64,11 @@ export const Form = styled.form`
   .linhaPontilhada{
     border: 1px dashed #757575;
     width: 400px;
+  }
+
+  @media(min-width: 600px) {
+    height: 82vh;
+    width: 480px;
   }
 `
 

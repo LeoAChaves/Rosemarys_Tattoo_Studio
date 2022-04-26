@@ -7,8 +7,11 @@ export const Container = styled.main`
   justify-content: center;
   align-items: center;
   
+  overflow-y: hidden;
+  overflow-x: hidden;
+
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -20,8 +23,8 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 82vh;
-  width: 450px;
+  height: 100vh;
+  width: 100%;
   border-radius: 4px;
   
   background-color: ${({ theme }) => theme.branco_rosado_opaco};
@@ -81,18 +84,18 @@ export const Form = styled.form`
     align-items: center;
   }
   
-  button{
-    width: 120px;
-    height: 40px;
-
-    border-radius: 10px;
-    border: none;
-    margin-top: 40px;
-
-    cursor: pointer;
-
+  .cadastrar{
     background-color: ${({ theme }) => theme.vermelho};
     color: white;
+  }
+
+  .cadastrar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.vermelho};
+  }
+
+  @media(min-width: 600px) {
+    height: 82vh;
+    width: 450px;
   }
 `
 

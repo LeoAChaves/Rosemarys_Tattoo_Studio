@@ -43,10 +43,16 @@ function AtualizarUsuario() {
     return (
         <S.Form>
             <h1>Seus Dados</h1>
-            <div>
-                <Input className="inputNormal" placeholder="Nome completo" type="text" nome="nome" name="nome" onChange={(e)=> handleChange(e)} value={usuario.nome}/>
-                <Input className="inputNormal" placeholder="Email" type="email" name="email" onChange={(e)=> handleChange(e)} value={usuario.email}/>
-            </div>
+            <S.DivCenter>
+                <div className="labelInput">
+                    <Label htmlFor="nome" nome="Nome Completo" name="nome"  />
+                    <Input type="text" id="nome" nome="nome" name="nome" onChange={(e)=> handleChange(e)} value={usuario.nome}/>
+                </div>
+                <div className="labelInput">
+                    <Label htmlFor="email" nome="Email" name="email"  />
+                    <Input id="email" type="email" name="email" onChange={(e)=> handleChange(e)} value={usuario.email}/>
+                </div>
+            </S.DivCenter>
             <S.DivCenter>
                 <div className="labelInput">
                     <Label htmlFor="dtNascimento" nome="Data de Nascimento" name="data_nascimento"  />
@@ -62,13 +68,19 @@ function AtualizarUsuario() {
                     </select>
                 </div>
             </S.DivCenter>
+            <S.DivCenter>
+                <div className="labelInput">
+                    <Label htmlFor="cpf" nome="CPF" name="cpf"  />
+                    <Input id="cpf" type="text" name="cpf"  onChange={(e)=> handleChange(e)}  value={usuario.cpf}/>
+                </div>
+                <div className="labelInput">
+                    <Label htmlFor="senha" nome="Senha" name="senha"  />
+                    <Input type="password" id="senha" name="senha" onChange={(e)=> handleChange(e)} value={usuario.senha}/>
+                </div>
+            </S.DivCenter>
             <div>
-                <Input className="inputNormal" placeholder="CPF" type="text" name="cpf"  onChange={(e)=> handleChange(e)}  value={usuario.cpf}/>
-                <Input className="inputNormal" placeholder="Senha" type="password" name="senha"  onChange={(e)=> handleChange(e)} value={usuario.senha}/>
-            </div>
-            <div>
-                <Button className="alterar" nome="Alterar" onClick={(e)=> atualizarDados(e)}/>
-                <Button className="deletar" nome="Apagar conta"/>
+                <Button className="styleForm alterar" nome="Alterar" onClick={(e)=> atualizarDados(e)}/>
+                <Button className="styleForm deletar" nome="Apagar conta"/>
             </div>
         </S.Form>
     );

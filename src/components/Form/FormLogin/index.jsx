@@ -3,7 +3,6 @@ import { useNavigate} from "react-router-dom";
 import Input from "../../Input";
 import Image from "../../Image";
 import Button from "../../Button";
-import toast, { Toaster } from 'react-hot-toast';
 
 import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
@@ -58,13 +57,13 @@ function FormLogin(){
             
                 <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)}/>
 
-                <Button className="btnSubmit entrar" type="submit" nome="Entrar"></Button>
+                <Button className="styleForm entrar" type="submit" nome="Entrar"></Button>
 
-                <a>Esqueceu a senha?</a>
+                <a onClick={()=>navigate(`/esqueceuSenha`)}>Esqueceu a senha?</a>
                 
                 <div className="linhaPontilhada"></div>
 
-                <Button className="btnSubmit cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
+                <Button className="styleForm cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
             </S.Form>
         </S.Container>
     );
