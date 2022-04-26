@@ -4,6 +4,7 @@ import Input from "../../Input";
 import Button from "../../Button";
 import Label from "../../Label";
 
+
 import { apiCliente } from "../../../services/api";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +15,6 @@ import { IoIosArrowForward } from "react-icons/io";
 function FormCadastro(){
     const navigate = useNavigate()
     const [usuario, setUsuario] = useState([])
-
     const handleOnchange = (e) => {
         e.preventDefault()
         setUsuario({...usuario, [e.target.name]: e.target.value})
@@ -28,14 +28,14 @@ function FormCadastro(){
             console.log(response)
             navigate('/login')
         } catch (error) {
-            console.log(error.response.data.msg)
+            console.log(error.response.data.message)
         }
     }
     return(
         <S.Container>
             <S.Form onSubmit={(e=> cadastroCliente(e))}>
             <h1>Cadastro</h1>
-                <Input placeholder="Nome completo" className="inputNormal" type="text" name="nome" id="nome" onChange={(e)=> handleOnchange(e)} />
+                <Input placeholder="Nome completo" className="inputNormal" type="text" id="nome" onChange={(e)=> handleOnchange(e)}/>
                 
                 <S.DivCenter>
                     <div>
