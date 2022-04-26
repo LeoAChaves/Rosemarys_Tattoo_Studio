@@ -1,8 +1,18 @@
+import Header from "../../components/Header";
 import FormLogin from "../../components/Form/FormLogin";
+import Footer from "../../components/Footer";
 
-function Login(){
+function Login({changeTheme}){
+    const style = {
+        height: "70px",
+    }
+
     return(
-        <FormLogin />
+        <>
+            <Header btnVoltar={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
+            <FormLogin />
+            <Footer />
+        </>
     );
 }
 
