@@ -15,6 +15,7 @@ import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
+import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -44,7 +45,7 @@ function App() {
             element={<FAgendamento changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/agenda"
+            path="/funcionario/agendamento-view"
             element={<FAgendaView changeTheme={changeTheme} />}
           />
           <Route

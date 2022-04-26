@@ -1,53 +1,93 @@
 import * as S from "./styled.js";
+
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { apiAgenda } from "../../../services/api.js";
+
 function FormAgenda() {
+  const [agendamento, setAgendamento] = useState([]);
+
+  const handleOnchange = (e) => {
+    e.preventDefault();
+    setAgendamento({ ...agendamento, [e.target.name]: e.target.value });
+  };
+  const handleOnchangeNumber = (e) => {
+    e.preventDefault();
+    setAgendamento({
+      ...agendamento,
+      [e.target.name]: parseInt(e.target.value),
+    });
+  };
+
+  const inserirAgendamento = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await apiAgenda.post("/agenda", agendamento);
+      toast.success(response.data.message);
+      console.log(response.data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
+    }
+  };
   return (
     <S.Container>
       <S.Quadro>
         <h2>Agendamento</h2>
         <S.Form>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="CLIENTE_ID"
               type="number"
-              name="cliente_id"
+              name="Cliente_ID"
               id="cId"
+              onChange={(e) => handleOnchangeNumber(e)}
             ></Input>
             <Input
               placeholder="FUNCIONARIO_ID"
               type="number"
-              name="func_id"
+              name="Funcionario_ID"
               id="func_id"
+              onChange={(e) => handleOnchangeNumber(e)}
             ></Input>
             <Input
               placeholder="DATA"
               type="date"
-              name="func_id"
+              name="Data"
               id="func_id"
+              onChange={(e) => handleOnchange(e)}
             ></Input>
           </div>
           <div class="caixa">
             <Input
               placeholder="HORA"
               type="time"
-              name="func_id"
+              name="Hora"
               id="func_id"
+              onChange={(e) => handleOnchange(e)}
             ></Input>
             <Input
               placeholder="SERVIÇO"
               type="text"
-              name="func_id"
+              name="Servico"
               id="func_id"
+              onChange={(e) => handleOnchange(e)}
             ></Input>
             <Input
               placeholder="DURACAO"
               type="text"
-              name="duracao"
+              name="Duracao"
               id="duracao"
+              onChange={(e) => handleOnchangeNumber(e)}
             ></Input>
-            <Button type="submit" nome="INSERIR"></Button>
+            <Button
+              type="submit"
+              nome="INSERIR"
+              onClick={(e) => inserirAgendamento(e)}
+            ></Button>
           </div>
         </S.Form>
       </S.Quadro>
