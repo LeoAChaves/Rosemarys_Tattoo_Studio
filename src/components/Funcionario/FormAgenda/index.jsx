@@ -61,7 +61,7 @@ function FormAgenda() {
               onChange={(e) => handleOnchange(e)}
             ></Input>
           </div>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="HORA"
               type="time"
@@ -84,6 +84,7 @@ function FormAgenda() {
               onChange={(e) => handleOnchangeNumber(e)}
             ></Input>
             <Button
+              className="styleForm"
               type="submit"
               nome="INSERIR"
               onClick={(e) => inserirAgendamento(e)}

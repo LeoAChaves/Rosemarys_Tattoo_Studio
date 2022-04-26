@@ -32,7 +32,7 @@ function FormPortfolio() {
       <S.Quadro>
         <h2>Portfólio</h2>
         <S.Form>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="CLIENTE_ID"
               type="number"
@@ -56,7 +56,7 @@ function FormPortfolio() {
               onChange={(e) => handleOnChange(e)}
             ></textarea>
           </div>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="DURACAO"
               type="text"
