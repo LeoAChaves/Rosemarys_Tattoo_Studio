@@ -7,7 +7,7 @@ function FPortfolio() {
   const FPortfolio = styled.body`
     height: 100vh;
     width: 100%;
-    background-image: url(${({ theme }) => theme.funcBG});
+    background-image: url(${({ theme }) => theme.background});
     background-size: cover;
     background-position: center;
   `;
