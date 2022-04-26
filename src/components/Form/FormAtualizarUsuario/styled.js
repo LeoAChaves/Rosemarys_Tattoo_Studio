@@ -9,13 +9,12 @@ export const Form = styled.form`
     justify-content: center;
     align-items: center;
 
-    width: 60vw;
+    min-width: 60vw;
     border-radius: 4px;
 
     h1{
         margin: 20px 0;
-    }  
-
+    }
 
     input, .inputGenero{
         border-radius: 10px;
@@ -25,10 +24,6 @@ export const Form = styled.form`
         padding: 10px;
 
         width: 250px;
-    }
-
-    .inputNormal{
-        margin: 20px;
     }
 
     .inputDtNasc{
@@ -49,7 +44,7 @@ export const Form = styled.form`
 
         border-radius: 10px;
         border: none;
-        margin: 40px;
+        margin: 20px;
 
         cursor: pointer;
 
@@ -63,10 +58,21 @@ export const Form = styled.form`
     .deletar{
         background-color: ${({ theme }) => theme.preto};
     }
+
+    @media(min-width: 1000px) {
+        button{
+            margin: 40px;
+        }
+    }
 `
 
 export const DivCenter = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @media(min-width: 1000px) {
+        flex-direction: row;
+    }
 `

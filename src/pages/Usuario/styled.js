@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Main = styled.main`
     color: ${({ theme }) => theme.text};
     
-    height: 110vh;
+    min-height: 110vh;
     width: 100%;
 
     padding: 20px;
@@ -16,6 +16,7 @@ export const BlocoUm = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
 
     margin-bottom: 20px;
 
@@ -23,14 +24,19 @@ export const BlocoUm = styled.div`
         background-color: ${({ theme }) => theme.agendamento};
         padding: 30px;
         border-radius: 10px;
+
+        margin: 20px;
     }
 `
 
 export const BlocoDois = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     section{
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,5 +127,13 @@ export const BlocoDois = styled.div`
         
         background-color: ${({ theme }) => theme.text};
         color: ${({ theme }) => theme.body};
+    }
+
+    @media(min-width: 1000px) {
+        flex-direction: row;
+
+        section{
+            width: 50%;
+        }
     }
 `

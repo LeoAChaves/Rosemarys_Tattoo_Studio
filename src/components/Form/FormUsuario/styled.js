@@ -8,7 +8,10 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
 
-  width: 50vw;
+  width: 100vw;
+  min-height: auto;
+
+  margin-bottom: 40px;
 
   border-radius: 10px;
 
@@ -24,7 +27,7 @@ export const Form = styled.form`
     margin: 10px;
     padding: 10px;
 
-    width: 30vw;
+    width: 60vw;
   }
 
   .selectForm{
@@ -55,5 +58,19 @@ export const Form = styled.form`
 
     background-color: ${({ theme }) => theme.btn_agendamento};
     color: ${({ theme }) => theme.button_text};
+  }
+
+  @media(min-width: 1000px) {
+    width: 50vw;
+    margin-bottom: 0px;
+
+    input, .selectForm{
+      height: 40px;
+      width: 30vw;
+    }
+
+    .textareaForm{
+      width: 30vw;
+    }
   }
 `

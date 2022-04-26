@@ -3,7 +3,6 @@ import { useNavigate} from "react-router-dom";
 import Input from "../../Input";
 import Image from "../../Image";
 import Button from "../../Button";
-import toast, { Toaster } from 'react-hot-toast';
 
 import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
@@ -64,7 +63,11 @@ function FormLogin(){
                 
                 <div className="linhaPontilhada"></div>
 
-                <Button className="btnSubmit cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button>
+                    <button class="btn btn-three">
+                        Criar nova conta
+                    </button>
+
+                {/* <Button className="btnSubmit cadastro" onClick={()=>navigate('/cadastro')} nome="Criar nova conta" style={{display:  tipoLogin == "FUNCIONARIO" ? 'none': 'block'}}></Button> */}
             </S.Form>
         </S.Container>
     );

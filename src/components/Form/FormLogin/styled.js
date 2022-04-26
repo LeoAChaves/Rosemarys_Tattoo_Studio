@@ -5,9 +5,12 @@ export const Container = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 100vh;
+  height: 95vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -19,8 +22,9 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 82vh;
-  width: 480px;
+  height: 100vh;
+  width: 100%;
+  
   border-radius: 4px;
   
   background-color: ${({ theme }) => theme.branco_rosado_opaco};
@@ -63,6 +67,11 @@ export const Form = styled.form`
   .linhaPontilhada{
     border: 1px dashed #757575;
     width: 400px;
+  }
+
+  @media(min-width: 600px) {
+    height: 82vh;
+    width: 480px;
   }
 `
 

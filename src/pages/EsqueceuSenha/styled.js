@@ -7,7 +7,7 @@ export const Container = styled.main`
   align-items: center;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 88vh;
+  min-height: 88vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -19,11 +19,15 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
 
-  height: 60vh;
-  width: 800px;
+  height: 100vh;
+  width: 100%;
   border-radius: 4px;
   
   background-color: ${({ theme }) => theme.branco_rosado_opaco};
+
+  p{
+    margin: 30px;
+  }
 
   input{
     border-radius: 10px;
@@ -46,6 +50,11 @@ export const Form = styled.form`
 
     background-color:  ${({ theme }) => theme.vermelho};
     color: white;
+  }
+
+  @media(min-width: 800px) {
+    height: 60vh;
+    width: 800px;
   }
 `
 

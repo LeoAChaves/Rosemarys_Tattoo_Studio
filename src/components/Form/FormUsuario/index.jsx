@@ -33,7 +33,7 @@ function FormUsuario(){
             <small>Caso não saiba qual escolher, confira no <a>portfólio</a> as artes ou perfurações que prefereir</small>
 
             <Label className="labelWhatsapp" htmlFor="whatsapp"></Label>
-            <Input type="number" id="whatsapp" />
+            <Input placeholder="Whatsapp" type="number" id="whatsapp" />
 
             <textarea className="textareaForm" placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" id="descricao" cols="60"></textarea>
             <small><IoIosArrowForward />Sua mensagem será respondida em no máximo 2 horas se a mensagem for enviada em horário de expediente.</small>
