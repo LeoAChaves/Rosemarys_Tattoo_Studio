@@ -27,6 +27,7 @@ function Home({ changeTheme }) {
 
         <S.BlocoDois>
           <Subtitulo texto="Sobre o Rosemary's" />
+          <S.Line />
           <S.DivCard>
             <S.DivTexto>
               <S.H1>Quem somos</S.H1>
@@ -50,7 +51,7 @@ function Home({ changeTheme }) {
               />
             </S.DivImage>
           </S.DivCard>
-
+          <S.Line2 />
           <S.DivCard>
             <S.DivImage>
               <Image
@@ -74,12 +75,51 @@ function Home({ changeTheme }) {
               </S.Paragrafo>
             </S.DivTexto>
           </S.DivCard>
+
+          <S.Line />
         </S.BlocoDois>
 
         <S.BlocoTres>
           <div>
             <Subtitulo texto="Time" />
           </div>
+
+          <S.Line2 />
+
+          <S.Time>
+          <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+              <Image
+                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                alt="cao"
+              />
+          </S.Time>
         </S.BlocoTres>
 
         <S.BlocoQuatro>

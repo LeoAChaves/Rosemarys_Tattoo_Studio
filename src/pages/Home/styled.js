@@ -33,20 +33,36 @@ export const BlocoDois = styled.div`
   padding: 20px;
 `;
 
+export const Line = styled.div`
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.text};
+`;
+
+export const Line2 = styled.div`
+  display: flex;
+  align-items: center;
+  width: 30%;
+  height: 1px;
+  background-color: ${({ theme }) => theme.text};
+`;
 
 export const DivCard = styled.div`
   display: inline-grid;
   grid-template-columns: 3fr 3fr;
   margin: 20px;
+  height: 80vh;
 `;
 
 export const DivTexto = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
 
 export const H1 = styled.h1`
   font-size: 50px;
@@ -58,6 +74,8 @@ export const Paragrafo = styled.p`
 `;
 
 export const DivImage = styled.div`
+display: flex;
+align-items: center;
   img {
     width: 250px;
     height: 309px;
@@ -70,10 +88,23 @@ export const BlocoTres = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: auto;
   width: 100%;
   background-color: ${({ theme }) => theme.homeBG};
+  padding: 20px;
 `;
+
+export const Time = styled.div`
+display: grid;
+grid-template-columns: repeat(4, 4fr);
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin: 30px 30px 100px 30px;
+  }
+
+`
 
 export const BlocoQuatro = styled.div`
   height: 100vh;
