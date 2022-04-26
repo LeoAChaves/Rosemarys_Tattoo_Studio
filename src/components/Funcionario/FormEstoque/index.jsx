@@ -70,6 +70,7 @@ function FormEstoque() {
             ></Input>
           </div>
           <Button
+            className="styleForm"
             type="submit"
             nome="INSERIR"
             onClick={(e) => inserirEstoque(e)}

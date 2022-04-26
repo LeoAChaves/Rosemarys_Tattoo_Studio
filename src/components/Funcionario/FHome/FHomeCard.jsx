@@ -3,7 +3,7 @@ import styled from "styled-components";
 function FHomeCard({ tipo, texto, onClickVisu, onClickInse }) {
   const FHomeCard = styled.div`
     width: 35%;
-    height: 320px;
+    height: 50%;
     background-color: ${({ theme }) => theme.primary};
     display: flex;
     flex-direction: column;

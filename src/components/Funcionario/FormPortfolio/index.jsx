@@ -73,6 +73,7 @@ function FormPortfolio() {
               onChange={(e) => handleOnChange(e)}
             ></Input>
             <Button
+              className="styleForm"
               type="submit"
               nome="INSERIR"
               onClick={(e) => inserirPortfolio(e)}

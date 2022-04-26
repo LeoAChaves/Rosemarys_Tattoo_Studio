@@ -30,7 +30,7 @@ function FPortfolioMain() {
             <div className="imagem">
               <label>FOTO:</label>
               <img
-                src="https://api.inkclub.tattoo/Content/images/tatuagens/1540_21_8_2021_340.png"
+                src="https://i.pinimg.com/736x/cd/83/c0/cd83c0569f4bb8087c9885fbbde9b336.jpg"
                 alt="Tatto_Portfólio"
               />
             </div>

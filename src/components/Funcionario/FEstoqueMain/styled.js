@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 130px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Quadro = styled.section`
   background-color: ${({ theme }) => theme.primary};
   width: 100%;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -2,6 +2,7 @@ import * as S from "./styled.js";
 
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
+import Label from "../../Label/index.jsx";
 
 import toast from "react-hot-toast";
 import { useState } from "react";
@@ -76,13 +77,27 @@ function FormAgenda() {
               id="func_id"
               onChange={(e) => handleOnchange(e)}
             ></Input>
-            <Input
-              placeholder="DURACAO"
-              type="text"
-              name="Duracao"
-              id="duracao"
-              onChange={(e) => handleOnchangeNumber(e)}
-            ></Input>
+
+            <div>
+              <select
+                className="inputduracao"
+                name="duracao"
+                id="duracao"
+                onChange={handleOnchange}
+              >
+                <option value="">DURAÇÃO EM MINUTOS</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="30">45</option>
+                <option value="30">60</option>
+                <option value="30">90</option>
+                <option value="30">120</option>
+                <option value="30">150</option>
+                <option value="30">180</option>
+              </select>
+            </div>
+
             <Button
               className="styleForm"
               type="submit"
