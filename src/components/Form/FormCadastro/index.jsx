@@ -31,7 +31,7 @@ function FormCadastro(){
             console.log(response)
             navigate('/login')
         } catch (error) {
-            console.log(error.response.data.msg)
+            console.log(error.response.data.message)
         }
     }
 
