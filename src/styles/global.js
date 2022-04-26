@@ -8,15 +8,13 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: "Amaranth";
 }
+
 li {
   list-style: none;
 }
-body {
+
+body{
   background: ${({ theme }) => theme.body};
-  
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
 
 textarea{

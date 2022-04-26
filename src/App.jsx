@@ -3,12 +3,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
+import AtualizarUsuario from "./pages/AtualizarUsuario";
+import Cadastro from "./pages/Cadastro";
+import EsqueceuSenha from "./pages/EsqueceuSenha";
 import FHome from "./pages/Funcionario/FHome.jsx";
 import Login from "./pages/Login";
-import Cadastro from "./pages/Cadastro";
+import Portfolio from "./pages/Portfolio";
 import Usuario from "./pages/Usuario";
-import AtualizarUsuario from "./pages/AtualizarUsuario";
-import EsqueceuSenha from "./pages/EsqueceuSenha";
 
 function App() {
   const [theme, setTheme ] = useState(darkTheme)
@@ -27,6 +28,7 @@ function App() {
           <Route path="/cadastro" element={<Cadastro changeTheme={changeTheme}/>}/>
           <Route path="/usuario/:id" element={<Usuario changeTheme={changeTheme}/>}/>
           <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
+          <Route path="/portfolio" element={<Portfolio changeTheme={changeTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
