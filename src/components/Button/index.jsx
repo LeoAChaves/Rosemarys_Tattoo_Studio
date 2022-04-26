@@ -1,10 +1,8 @@
-function Button({ className, onClick, nome }) {
+function Button({ className, onClick, nome, style }) {
   return (
-    <>
-      <button type="submit" className={className} onClick={onClick}>
-        {nome}
-      </button>
-    </>
+    <button type="submit" className={className} onClick={onClick} style={style}>
+      {nome}
+    </button>
   );
 }
 

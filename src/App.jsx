@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
@@ -10,12 +10,22 @@ import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
 import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
 import FPortfolioView from "./pages/Funcionario/FPortfolioView.jsx";
 import FEstoqueView from "./pages/Funcionario/FEstoqueView.jsx";
+import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
+import Usuario from "./pages/Usuario";
+import AtualizarUsuario from "./pages/AtualizarUsuario";
+import EsqueceuSenha from "./pages/EsqueceuSenha";
 
 function App() {
+  const [theme, setTheme] = useState(darkTheme);
+
+  const changeTheme = () => {
+    setTheme(theme === darkTheme ? lightTheme : darkTheme);
+  };
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Router>
+      <BrowserRouter>
         <Routes>
           <Route path="/funcionario/home" element={<FHome />} />
           <Route path="/funcionario/estoque" element={<FEstoque />} />
@@ -27,8 +37,25 @@ function App() {
             element={<FPortfolioView />}
           />
           <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
+          <Route path="/login" element={<Login changeTheme={changeTheme} />} />
+          <Route
+            path="/esqueceuSenha"
+            element={<EsqueceuSenha changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/cadastro"
+            element={<Cadastro changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/usuario/:id"
+            element={<Usuario changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/atualizarUsuario/:id"
+            element={<AtualizarUsuario changeTheme={changeTheme} />}
+          />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
