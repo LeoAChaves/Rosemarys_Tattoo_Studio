@@ -38,6 +38,10 @@ export const Form = styled.form`
     margin: 0 20px;
   }
 
+  a{
+    color: ${({ theme }) => theme.portfolioAgendamento};
+  }
+
   .textareaForm{
     height: 10vh;
   }

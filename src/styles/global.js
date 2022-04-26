@@ -113,6 +113,7 @@ textarea{
 /* Tags "A" */
 a:hover{
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 `;

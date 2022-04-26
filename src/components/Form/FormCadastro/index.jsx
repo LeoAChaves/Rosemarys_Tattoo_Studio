@@ -17,8 +17,6 @@ import { IoIosArrowForward } from "react-icons/io";
 function FormCadastro(){
     const navigate = useNavigate()
     const [usuario, setUsuario] = useState({})
-
-    const [status, setStatus] = useState({type:"", mensagem:""}) 
     
     const handleOnchange = (e) => {
         e.preventDefault()
@@ -39,8 +37,11 @@ function FormCadastro(){
 
     async function validate(){
         let schema = yup.object().shape({
-            nome: yup.string("Preencher nome").required("Preencher nome"),
-            data_nascimento: yup.date("Formato data").required("Preencher data de nascimento")
+            nome: yup.string("Campo de nome completo deve ser preenchido com letras").required("Campo de nome completo não pode estar vazio"),
+            data_nascimento: yup.date("Campo de data de nascimento só aceita data").required("Campo de data de nascimento não pode estar vazio"),
+            genero: yup.string("").required("Campo de gênero não pode estar vazio"),
+            cpf: yup.number("Campo de CPF deve ser preenchido com números").required("Campo de CPF não pode estar vazio"),
+            email: yup.string("Campo de nome completo deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
         })
         try {
             await schema.validate(usuario)
