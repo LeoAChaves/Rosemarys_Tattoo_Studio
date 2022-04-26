@@ -15,7 +15,6 @@ import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
-import { useState } from "react";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -50,7 +49,7 @@ function App() {
           />
           <Route
             path="/funcionario/portfolio-view"
-            element={<FPortfolioView />}
+            element={<FPortfolioView changeTheme={changeTheme} />}
           />
           <Route
             path="/funcionario/estoque-view"

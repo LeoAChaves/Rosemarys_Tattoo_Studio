@@ -21,10 +21,10 @@ function FHome({ changeTheme }) {
         btnVoltar={{ display: "none" }}
         btnLogin={{ display: "none" }}
         btnInicial={{ display: "none" }}
+        btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
         div={{ display: "block" }}
-        portfolio="Portifólio"
         sair="Sair"
         changeTheme={changeTheme}
       />
