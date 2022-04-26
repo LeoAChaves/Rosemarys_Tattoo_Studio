@@ -1,9 +1,9 @@
 import * as S from "./styled.js";
 
 import Header from "../../components/Header";
-import Subtitulo from "../../components/Subtitulo/index.jsx";
 import HeroText from "../../components/Hero/index.jsx";
 import Image from "../../components/Image/index.jsx";
+import { GiDaggerRose } from "react-icons/gi";
 
 function Home({ changeTheme }) {
   const style = {
@@ -13,9 +13,15 @@ function Home({ changeTheme }) {
   return (
     <>
       <Header
+        btnHome={{ display: "none" }}
+        btnVoltar={{ display: "none" }}
+        btnInicial={{ display: "none" }}
+        btnSair={{ display: "none" }}
+        className={"btn custom-btn styleHeader"}
         style={style}
         div={{ display: "none" }}
         portfolio="Portifólio"
+        login="Login"
         changeTheme={changeTheme}
       />
       <S.Main>
@@ -28,7 +34,7 @@ function Home({ changeTheme }) {
           <S.DivCard>
             <S.DivTexto>
               <S.H1>Nossa filosofia</S.H1>
-              <S.Line /> 
+              <S.Line />
               <S.Paragrafo>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -37,6 +43,7 @@ function Home({ changeTheme }) {
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur.
               </S.Paragrafo>
+              <S.IconFD><GiDaggerRose className="themeMode"/></S.IconFD>
             </S.DivTexto>
             <S.DivImage>
               <Image
@@ -72,131 +79,134 @@ function Home({ changeTheme }) {
                 in reprehenderit in voluptate velit esse cillum dolore eu fugiat
                 nulla pariatur.
               </S.Paragrafo>
+              <S.IconFD><GiDaggerRose className="themeMode"/></S.IconFD>
             </S.DivTexto>
           </S.DivCard>
-
         </S.BlocoDois>
 
         <S.BlocoTres>
-
           <S.Time>
             <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
 
-              <S.Artista>
+            <S.Artista>
               <Image
                 src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
                 alt="cao"
               />
-              <S.Paragrafo>Nome</S.Paragrafo>
-              </S.Artista>
-             
+              <S.Paragrafo2>Nome</S.Paragrafo2>
+            </S.Artista>
           </S.Time>
         </S.BlocoTres>
 
         <S.BlocoQuatro>
-            <Subtitulo texto="Últimos trabalhos" />
+        <S.IconFD><GiDaggerRose className="themeMode"/></S.IconFD>
+          <S.H2>Últimos trabalhos</S.H2>
 
-            <S.Trabalhos>
+          <S.Trabalhos>
             <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-              <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
-                alt="cao"
-              />
-            </S.Trabalhos>
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+            <Image
+              src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+              alt="cao"
+            />
+          </S.Trabalhos>
         </S.BlocoQuatro>
 
         <S.BlocoCinco>
           <div>
-            <Subtitulo texto="Quer ser cliente/Quer ser do time" />
+            <S.H2>Quer nos dizer algo?</S.H2>
+            <S.Paragrafo3>
+              Manda aí pra gente se tem uma sugestão ou dúvida que logo entramos
+              em contato!
+            </S.Paragrafo3>
           </div>
         </S.BlocoCinco>
       </S.Main>
