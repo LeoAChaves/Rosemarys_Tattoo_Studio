@@ -1,7 +1,7 @@
 import * as S from "./styled.js";
 
 import { apiPortfolio } from "../../../services/api.js";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 
 import Button from "../../Button/index.jsx";
@@ -12,6 +12,7 @@ import iconNext from "../../../assets/iconNext.png";
 function FPortfolioMain() {
   const [portfolio, setPortifolio] = useState([]);
   const [load, setLoad] = useState(true);
+  const carousel = useRef(null);
 
   useEffect(() => {
     async function getPortfolios() {
@@ -26,22 +27,16 @@ function FPortfolioMain() {
     getPortfolios();
   }, []);
 
-  /* const carouseul = useRef(null);
-  useEffect(() => {
-    fetch(apiPortfolio)
-      .then((response) => response.json())
-      .then(console.log);
-  }, []);
-
   const handleBackClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current);
+    console.log(carousel.current.offsetWidth);
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
   };
-
   const handleNextClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current);
-  }; */
+    console.log(carousel.current.offsetWidth);
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
 
   return (
     <>
@@ -52,7 +47,7 @@ function FPortfolioMain() {
           <S.Container>
             <S.Quadro>
               <h2>Portfólio</h2>
-              <S.Form>
+              <S.Form ref={carousel}>
                 <div className="busca">
                   <Input
                     placeholder="palavra-chave"
@@ -62,6 +57,7 @@ function FPortfolioMain() {
                   ></Input>
                   <Button type="submit" nome="Buscar"></Button>
                 </div>
+
                 {portfolio.map((portfolio) => {
                   return (
                     <div className="lista" key={portfolio.ID}>
@@ -97,10 +93,10 @@ function FPortfolioMain() {
                 })}
               </S.Form>
               <div className="seta">
-                <button>
+                <button onClick={handleBackClick}>
                   <img src={iconBack} alt="back"></img>
                 </button>
-                <button>
+                <button onClick={handleNextClick}>
                   <img src={iconNext} alt="next"></img>
                 </button>
               </div>
