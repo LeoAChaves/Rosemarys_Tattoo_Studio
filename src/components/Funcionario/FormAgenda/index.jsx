@@ -79,23 +79,13 @@ function FormAgenda({ botao }) {
             ></Input>
 
             <div>
-              <select
+              <Input
+                placeholder="DURAÇÃO EM MINUTOS"
                 className="inputduracao"
-                name="duracao"
-                id="duracao"
-                onChange={handleOnchange}
-              >
-                <option value="">DURAÇÃO EM MINUTOS</option>
-                <option value="10">10</option>
-                <option value="20">20</option>
-                <option value="30">30</option>
-                <option value="30">45</option>
-                <option value="30">60</option>
-                <option value="30">90</option>
-                <option value="30">120</option>
-                <option value="30">150</option>
-                <option value="30">180</option>
-              </select>
+                name="Duracao"
+                id="Duracao"
+                onChange={(e) => handleOnchange(e)}
+              ></Input>
             </div>
             <Button
               className="styleForm"
