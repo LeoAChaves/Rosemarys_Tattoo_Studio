@@ -4,6 +4,8 @@ import Label from "../../Label";
 import Input from "../../Input";
 import Button from "../../Button";
 import { useState } from "react";
+
+import * as yup from "yup";
 import toast from 'react-hot-toast';
 
 import { IoIosArrowForward } from "react-icons/io";
@@ -26,10 +28,22 @@ function FormUsuario(){
         agendamentosSalvos.push(agendamento)
    
         localStorage.setItem('agendamentos', JSON.stringify(agendamentosSalvos)) 
-   
-   
-       }
+    }
 
+    // async function validate(){
+    //     let schema = yup.object().shape({
+    //         servico: yup.string("").required("Campo de gênero não pode estar vazio"),
+    //         profissional: yup.string("Campo de nome completo deve ser preenchido com letras").required("Campo de nome completo não pode estar vazio"),
+    //         whatsapp: yup.string("Campo de Whatsapp deve ser preenchido com números").required("Campo de whatsapp não pode estar vazio").min(11, 'O whatsapp precisa ter 11 digitos').max(11,'O whatsapp precisa ter 11 digitos'),
+    //     })
+    //     try {
+    //         await schema.validate(agendamento)
+    //         return true
+    //     } catch (error) {
+    //         toast.error(error.errors)
+    //     }
+    //     return false
+    // }
     
     return(
         <S.Form>
@@ -49,8 +63,8 @@ function FormUsuario(){
             </select>
             <small>Caso não saiba qual escolher, confira no <a>portfólio</a> as artes ou perfurações que prefereir</small>
 
-            <Label className="labelWhatsapp" htmlFor="whatsapp"></Label>
-            <Input type="number" id="whatsapp" name="whatsapp" onChange={handleChange}/>
+            <Label className="labelWhatsapp" htmlFor="whatsapp" nome="Whatsapp"></Label>
+            <Input type="number" id="whatsapp" name="whatsapp" placeholder="(XX) XXXXX-XXXX" onChange={handleChange}/>
 
             <textarea className="textareaForm" placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" id="descricao" cols="60"></textarea>
             <small><IoIosArrowForward />Sua mensagem será respondida em no máximo 2 horas se a mensagem for enviada em horário de expediente.</small>
