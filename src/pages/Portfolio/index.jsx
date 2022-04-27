@@ -1,9 +1,12 @@
-import * as S from "./styled.js";
 import { useEffect, useState } from "react";
+
 import Header from "../../components/Header";
-import Image from "../../components/Image";
 import Footer from "../../components/Footer";
 import ImagemGaleria from "../../components/ImagemGaleria";
+import Label from "../../components/Label";
+
+import * as S from "./styled.js";
+
 import { apiPortifolio } from "../../services/api.js";
 
 function Portfolio({changeTheme}) {
@@ -28,12 +31,21 @@ function Portfolio({changeTheme}) {
         <div>
             <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
             <S.Main>
-                {portfolio.map(portfolio=>{
-                   return <ImagemGaleria id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
-                })
-
-                }
-              
+                <h1>Galeria</h1>
+                <div>
+                    <Label htmlFor="profissional" nome="Profissional"></Label>
+                    <select className="inputProfissional" name="profissional" id="profissional"> 
+                        <option value=""></option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+                <div className="grid">
+                    {portfolio.map(portfolio=>{
+                    return <ImagemGaleria id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                    })}
+                </div>
             </S.Main>
             <Footer />
         </div>
