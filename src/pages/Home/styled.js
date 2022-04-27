@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Image from "../../components/Image";
 
 export const Main = styled.main`
   color: ${({ theme }) => theme.text};
@@ -34,9 +33,9 @@ export const BlocoDois = styled.div`
 `;
 
 export const IconFD = styled.div`
-font-size: 45px;
-margin-top: 28px;
-`
+  font-size: 45px;
+  margin-top: 28px;
+`;
 
 export const Line = styled.div`
   display: flex;
@@ -74,7 +73,7 @@ export const H1 = styled.h1`
   font-size: 50px;
 `;
 
-export const H2 = styled.h1`
+export const H2 = styled.h2`
   font-size: 35px;
   text-transform: uppercase;
   margin-bottom: 5px;
@@ -89,6 +88,8 @@ export const Paragrafo2 = styled.p`
   font-size: 20px;
   width: 300px;
   color: ${({ theme }) => theme.branco_rosado_opaco};
+  position: relative;
+  z-index: 1000;
 `;
 
 export const Paragrafo3 = styled.p`
@@ -104,6 +105,8 @@ export const DivImage = styled.div`
     height: 309px;
     border-radius: 5px;
     margin: 20px;
+    object-fit: cover;
+    border: 3px solid ${({ theme }) => theme.text};
   }
 `;
 
@@ -123,22 +126,46 @@ export const Time = styled.div`
 `;
 
 export const Artista = styled.div`
-margin: 30px 30px 100px 30px;
-text-align: center;
-img {
+  position: relative;
+  margin: 50px 30px 50px 30px;
+  text-align: center;
+  cursor: pointer;
+  img {
     width: 250px;
-    height: 250px;
+    height: 400px;
     border-radius: 3px;
     margin-bottom: 5px;
-    cursor: pointer;
+    object-fit: cover;
   }
   border: 2px solid ${({ theme }) => theme.branco_rosado_opaco};
-  padding: 20px 0 15px 0;
+  padding: 20px 20px 15px 20px;
   border-radius: 5px;
-`
+  div {
+    display: none;
+    transition: 10s;
+  }
+  &:hover div {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+
+    background-color: ${({ theme }) => theme.preto_opaco};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 export const BlocoQuatro = styled.div`
-   display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -160,13 +187,14 @@ export const Trabalhos = styled.div`
 `;
 
 export const BlocoCinco = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
   width: 100%;
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center scroll;
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center
+    scroll;
   padding: 25px;
 `;
