@@ -3,6 +3,7 @@ import * as S from "./styled.js";
 import Image from "../Image";
 import Button from "../Button";
 
+
 function ImagemGaleria() {
     return (
         <S.Div>
