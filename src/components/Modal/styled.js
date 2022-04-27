@@ -30,6 +30,8 @@ export const Container = styled.div`
     .modalContainer:target {
         display: flex;
         position: absolute;
+        
+        width: 100%;
     }
 
 
@@ -71,8 +73,10 @@ export const Container = styled.div`
     }
 
     .imgModal{
-        width: 300px;
-        height: 300px;
+        max-width:400px;
+        max-height:400px;
+        width: auto;
+        height: auto;
     }
 
     .fechar{
