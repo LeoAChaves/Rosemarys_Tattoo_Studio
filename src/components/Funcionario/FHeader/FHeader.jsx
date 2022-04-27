@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
-function FHeader({}) {
+import { useNavigate } from "react-router-dom";
+
+function FHeader() {
+  const navigate = useNavigate();
   const FHeader = styled.header`
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: ${({ theme }) => theme.primary};
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    font-weight: 700;
+    font-weight: 600;
     h1 {
       text-transform: uppercase;
       color: ${({ theme }) => theme.text};
@@ -17,15 +20,21 @@ function FHeader({}) {
     ul {
       color: ${({ theme }) => theme.text};
     }
+    ul.info {
+      font-size: 13px;
+    }
     .logout {
       width: 120px;
       display: flex;
       justify-content: space-between;
     }
+    .pointer:hover {
+      cursor: pointer;
+    }
   `;
   return (
     <FHeader>
-      <ul>
+      <ul className="info">
         <li>ID:</li>
         <li>Nome:</li>
         <li>Função:</li>
@@ -33,8 +42,12 @@ function FHeader({}) {
       </ul>
       <h1>Rosemary's</h1>
       <ul className="logout">
-        <li>Return</li>
-        <li>Logout</li>
+        <li className="pointer" onClick={() => navigate("/funcionario/home")}>
+          Return
+        </li>
+        <li className="pointer" onClick={() => navigate("/login")}>
+          Logout
+        </li>
       </ul>
     </FHeader>
   );

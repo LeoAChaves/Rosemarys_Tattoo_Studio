@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
-import FHomeMain from "../../components/Funcionario/FHome/FHomeMain.jsx";
+import FAgendaMain from "../../components/Funcionario/FAgendaMain/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
-function FHome() {
-  const FHome = styled.body`
+function FAgendaView() {
+  const FAgendaView = styled.body`
     height: 100vh;
     width: 100%;
     background-image: url(${({ theme }) => theme.funcBG});
@@ -12,12 +12,12 @@ function FHome() {
     background-position: center;
   `;
   return (
-    <FHome>
+    <FAgendaView>
       <FHeader />
-      <FHomeMain />
+      <FAgendaMain />
       <FFooter />
-    </FHome>
+    </FAgendaView>
   );
 }
 
-export default FHome;
+export default FAgendaView;

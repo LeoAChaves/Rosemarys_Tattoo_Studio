@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
-import FHomeMain from "../../components/Funcionario/FHome/FHomeMain.jsx";
+import FEstoqueMain from "../../components/Funcionario/FEstoqueMain/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
-function FHome() {
-  const FHome = styled.body`
+function FEstoqueView() {
+  const FEstoqueView = styled.body`
     height: 100vh;
     width: 100%;
     background-image: url(${({ theme }) => theme.funcBG});
@@ -12,12 +12,12 @@ function FHome() {
     background-position: center;
   `;
   return (
-    <FHome>
+    <FEstoqueView>
       <FHeader />
-      <FHomeMain />
+      <FEstoqueMain />
       <FFooter />
-    </FHome>
+    </FEstoqueView>
   );
 }
 
-export default FHome;
+export default FEstoqueView;

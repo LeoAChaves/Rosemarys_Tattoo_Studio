@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import FHeader from "../../components/Funcionario/FHeader/FHeader.jsx";
-import FHomeMain from "../../components/Funcionario/FHome/FHomeMain.jsx";
+import FormEstoque from "../../components/Funcionario/FormEstoque/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
-function FHome() {
-  const FHome = styled.body`
+function FEstoque() {
+  const FEstoque = styled.body`
     height: 100vh;
     width: 100%;
     background-image: url(${({ theme }) => theme.funcBG});
@@ -12,12 +12,12 @@ function FHome() {
     background-position: center;
   `;
   return (
-    <FHome>
+    <FEstoque>
       <FHeader />
-      <FHomeMain />
+      <FormEstoque />
       <FFooter />
-    </FHome>
+    </FEstoque>
   );
 }
 
-export default FHome;
+export default FEstoque;
