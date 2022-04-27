@@ -9,8 +9,8 @@ import Label from "../../Label";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { apiCliente } from "../../../services/api.js";
-
-function AtualizarUsuario() {
+import Header from "../../Header/index.jsx";
+function AtualizarUsuario({changeTheme}) {
     
     const [usuario, setUsuario] = useState({})
     const {id} = useParams()
@@ -60,8 +60,13 @@ function AtualizarUsuario() {
         }
         return false
     }
+    const style = {
+        height: "70px",
+    }
+
 
     return (
+        
         <S.Form>
             <h1>Seus Dados</h1>
             <S.DivCenter>

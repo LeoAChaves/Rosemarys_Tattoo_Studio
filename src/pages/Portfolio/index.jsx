@@ -27,6 +27,8 @@ function Portfolio({changeTheme}) {
         }
         getPortfolios()
     }, []);
+
+  
     return (
         <div>
             <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
@@ -34,7 +36,7 @@ function Portfolio({changeTheme}) {
                 <h1>Galeria</h1>
                 <div className="grid">
                     {portfolio.map(portfolio=>{
-                    return <ImagemGaleria id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                    return <ImagemGaleria key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
                     })}
                 </div>
             </S.Main>
