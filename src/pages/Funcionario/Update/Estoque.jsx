@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "../../../components/Header/index.jsx";
-import FormEstoque from "../../../components/Funcionario/FormEstoque/index.jsx";
+import FormEstoqueUpdate from "../../../components/Funcionario/FormEstoqueUpdate/index.jsx";
 import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FEstoqueUpdate({ changeTheme }) {
@@ -28,7 +28,7 @@ function FEstoqueUpdate({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormEstoque botao="ALTERAR" />
+      <FormEstoqueUpdate />
       <FFooter />
     </FEstoqueUpdate>
   );

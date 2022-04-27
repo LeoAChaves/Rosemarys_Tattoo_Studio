@@ -39,7 +39,7 @@ export const Form = styled.section`
   width: 100%;
   height: 75%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 20px;
   overflow-x: auto;

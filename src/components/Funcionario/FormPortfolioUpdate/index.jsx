@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiPortfolio } from "../../../services/api.js";
 
-function FormPortfolio({ botao }) {
+function FormPortfolioUpdate({ botao }) {
   const [portfolio, setPortfolio] = useState([]);
 
   const handleOnChange = (e) => {
@@ -15,7 +15,7 @@ function FormPortfolio({ botao }) {
     setPortfolio({ ...portfolio, [e.target.name]: e.target.value });
   };
 
-  const inserirPortfolio = async (e) => {
+  const alterarPortfolio = async (e) => {
     e.preventDefault();
     try {
       const response = await apiPortfolio.post("/portfolio", portfolio);
@@ -75,8 +75,8 @@ function FormPortfolio({ botao }) {
             <Button
               className="styleForm"
               type="submit"
-              nome="Inserir"
-              onClick={(e) => inserirPortfolio(e)}
+              nome="Alterar"
+              onClick={(e) => alterarPortfolio(e)}
             ></Button>
           </div>
         </S.Form>
@@ -84,4 +84,4 @@ function FormPortfolio({ botao }) {
     </S.Container>
   );
 }
-export default FormPortfolio;
+export default FormPortfolioUpdate;

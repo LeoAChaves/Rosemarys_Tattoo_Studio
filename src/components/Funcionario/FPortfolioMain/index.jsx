@@ -48,7 +48,7 @@ function FPortfolioMain() {
             <S.Quadro>
               <h2>Portfólio</h2>
               <S.Form ref={carousel}>
-                <div className="busca">
+                {/* <div className="busca">
                   <Input
                     placeholder="palavra-chave"
                     type="text"
@@ -56,9 +56,10 @@ function FPortfolioMain() {
                     id="search"
                   ></Input>
                   <Button type="submit" nome="Buscar"></Button>
-                </div>
+                </div> */}
 
                 {portfolio.map((portfolio) => {
+                  console.log(portfolio);
                   return (
                     <div className="lista" key={portfolio.ID}>
                       <div className="dados">
