@@ -2,15 +2,18 @@ import * as S from "./styled.js";
 import "react-calendar/dist/Calendar.css";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
+import iconBack from "../../../assets/iconBack.png";
+import iconNext from "../../../assets/iconNext.png";
 
 import { apiAgenda } from "../../../services/api.js";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
 
 function FAgendaMain() {
   const [agenda, setAgenda] = useState([]);
   const [load, setLoad] = useState(true);
+  const carousel = useRef(null);
 
   useEffect(() => {
     async function getagenda() {
@@ -24,6 +27,17 @@ function FAgendaMain() {
     }
     getagenda();
   }, []);
+
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current.offsetWidth);
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+  };
+  const handleNextClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current.offsetWidth);
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
 
   async function deletarAgendamento(id) {
     try {
@@ -44,14 +58,14 @@ function FAgendaMain() {
             <h2>Agenda</h2>
             <div class="busca">
               <Input
-                placeholder="palavra-chave"
+                placeholder="digite a data desejada"
                 type="text"
                 name="search"
                 id="search"
               ></Input>
               <Button type="submit" nome="Buscar"></Button>
             </div>
-            <S.Form>
+            <S.Form ref={carousel}>
               {/* <div class="caixa">
             <Calendar />
           </div> */}
@@ -87,6 +101,14 @@ function FAgendaMain() {
                 );
               })}
             </S.Form>
+            <div className="seta">
+              <button onClick={handleBackClick}>
+                <img src={iconBack} alt="back"></img>
+              </button>
+              <button onClick={handleNextClick}>
+                <img src={iconNext} alt="next"></img>
+              </button>
+            </div>
           </S.Quadro>
         </S.Container>
       )}

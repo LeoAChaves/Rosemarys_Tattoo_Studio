@@ -22,15 +22,33 @@ export const Quadro = styled.section`
     font-weight: 400;
     text-align: center;
   }
+
+  .seta button {
+    background: none;
+    widht: 80px;
+    height: 35px;
+    margin: 0 10px 20px 10px;
+    border: 4px solid ${({ theme }) => theme.button};
+  }
+
+  .seta img {
+    widht: 30px;
+    height: 30px;
+  }
 `;
 
 export const Form = styled.section`
   width: 100%;
   height: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   margin: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
 .caixa{
   width:30%;
@@ -45,6 +63,7 @@ export const Form = styled.section`
     width:30%;
     height:100%;
     display:flex;
+    flex: none;
     flex-direction: column;
     align-items: center;
     justify-content:center;
