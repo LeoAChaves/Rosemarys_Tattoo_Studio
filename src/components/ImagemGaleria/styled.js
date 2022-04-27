@@ -73,6 +73,48 @@ export const Div = styled.div`
 `
 
 export const Article = styled.article`
+    .editHover{
+        position: relative;
+    }
+
+    a{
+        display:none;
+    }
+
+    .editHover:hover a {
+        display:block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        margin: auto;
+        z-index: 999;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .editHover:hover > *:not(.iconHover), .editHover:focus, .editHover:active {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+        transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        transition: all 1s ease;
+        -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+        filter: blur(5px);
+    }
+
+    .iconHover{
+        font-size: 40px;
+        color: ${({ theme }) => theme.body};
+    }
+
+    .iconHover:active{
+        color: ${({ theme }) => theme.text};
+    }
 
     img{
         width: 290px;

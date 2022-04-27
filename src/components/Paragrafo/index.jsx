@@ -1,6 +1,6 @@
-function Paragrafo({texto, atributo}){
+function Paragrafo({texto, atributo, className}){
     return(
-        <p>{texto} {atributo}</p>
+        <p className={className}>{texto} {atributo}</p>
     );
 }
 

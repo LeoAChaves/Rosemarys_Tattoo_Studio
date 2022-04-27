@@ -1,10 +1,11 @@
 import * as S from "./styled.js";
 
 import Image from "../Image";
-import Button from "../Button";
+import Modal from "../Modal";
 
+import {HiOutlineArrowsExpand} from "react-icons/hi";
 
-function ImagemGaleria() {
+function ImagemGaleria({src, alt, href, descricao}) {
     return (
         <S.Div>
             <div>
@@ -15,51 +16,15 @@ function ImagemGaleria() {
                     <div className="bordaAnimada"></div>
                     <div className="corner">
                         <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
-                        </S.Article>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
-                        </S.Article>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
-                        </S.Article>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
-                        </S.Article>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
-                        </S.Article>
-                    </div>
-                </div>
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <a href=""><Image src="https://images-ext-2.discordapp.net/external/wrlV2sCdYGTN2lWZVRe1wa3xbYZKVHgx8c5olCSgBfY/%3Fquality%3D90%26strip%3Dinfo%26resize%3D680%2C453/https/super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?width=678&height=452" alt="cachorro fofinho"/></a>
+                            <div className="editHover">
+                                <Image className="imgGaleria" src={src} alt={alt}/>
+                                <a className="iconHover" href={href}><HiOutlineArrowsExpand/></a>
+                            </div>
                         </S.Article>
                     </div>
                 </div>
             </div>
+            <Modal /*>id={href}*/ id="1" src={src} alt={alt} descricao={descricao} />
         </S.Div>
     );
 }
