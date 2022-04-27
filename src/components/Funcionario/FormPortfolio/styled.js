@@ -83,15 +83,18 @@ export const Form = styled.section`
     color: ${({ theme }) => theme.input_placeholder};
   }
 
-  Button {
+  .botao {
     align-self: flex-end;
-    width: 130px;
-    height: 50px;
+  }
+  Button {
+    width: 100px;
+    height: 40px;
     margin-top: 20px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 13px;
     color: ${({ theme }) => theme.button_text};
+    margin-left: 15px;
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
