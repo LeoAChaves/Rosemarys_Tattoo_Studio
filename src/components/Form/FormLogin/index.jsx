@@ -3,6 +3,8 @@ import { useNavigate} from "react-router-dom";
 import Input from "../../Input";
 import Image from "../../Image";
 import Button from "../../Button";
+import * as yup from "yup";
+import toast from 'react-hot-toast';
 
 import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
@@ -27,13 +29,28 @@ function FormLogin(){
 
     const loginCliente = async (e) =>{
         e.preventDefault();
+        if(!(await validate())) return
         try {
             const response = await apiCliente.post('/cliente/login', usuarioLogin)
             const idUsuario = response.data.cliente._id
             navigate(`/usuario/${idUsuario}`)   
         } catch (error) {
-            console.log(error.response)
+            toast.error(error.response.data.message)
         }
+    }
+
+    async function validate(){
+        let schema = yup.object().shape({
+            email: yup.string("Campo de nome completo deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
+            senha: yup.string().required('Campo de senha não pode estar vazio, sua senha deve ter no mínimo 8 dígitos, letras e números ').min(8, 'Senha deve ter no mínimo 8 dígitos, letras e números').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[0-9])/, 'Senha deve ter no mínimo 8 dígitos, letras e números')
+        })
+        try {
+            await schema.validate(usuarioLogin)
+            return true
+        } catch (error) {
+            toast.error(error.errors)
+        }
+        return false
     }
 
     return(
