@@ -1,6 +1,7 @@
 import * as S from "./styled.js";
 import "react-calendar/dist/Calendar.css";
 import Button from "../../Button/index.jsx";
+import Input from "../../Input/index.jsx";
 
 import { apiAgenda } from "../../../services/api.js";
 import { useEffect, useState } from "react";
@@ -41,6 +42,15 @@ function FAgendaMain() {
         <S.Container>
           <S.Quadro>
             <h2>Agenda</h2>
+            <div class="busca">
+              <Input
+                placeholder="palavra-chave"
+                type="text"
+                name="search"
+                id="search"
+              ></Input>
+              <Button type="submit" nome="Buscar"></Button>
+            </div>
             <S.Form>
               {/* <div class="caixa">
             <Calendar />
