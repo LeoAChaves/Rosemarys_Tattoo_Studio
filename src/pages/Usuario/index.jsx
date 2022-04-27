@@ -6,7 +6,7 @@ import Paragrafo from "../../components/Paragrafo";
 import Subtitulo from "../../components/Subtitulo";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
-import toast from "react-hot-toast";
+import Carregando from "../../components/Carregando";
 import * as S from "./styled";
 import { apiCliente } from "../../services/api";
 
@@ -44,36 +44,40 @@ function Usuario({changeTheme}){
 
     return(
         <>
-            <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
-          
-            <S.Main>
-                <S.BlocoUm>
-                    <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
-                    <Button nome="Visualizar agendamento" onClick={()=>navigate('/agendamentoPendente')}/>
-             </S.BlocoUm>
-                <S.BlocoDois>
-                    <FormUsuario />
-                    <section>                            
-                        <div className="container">
-                            <div className="bordaAnimada"></div>
-                            <div className="corner">
-                                <div className="dados">
-                                    <h2>Seus dados</h2>
-                                    <Paragrafo texto="Nome completo:" atributo={usuario.nome} />
-                                    <Paragrafo texto="Data de nascimento:" atributo={load === false ? dataCorreta(usuario.data_nascimento) : ''}/>
-                                    <Paragrafo texto="Gênero:" atributo={usuario.genero} />
-                                    <Paragrafo texto="CPF:" atributo={usuario.cpf} />
-                                    <Paragrafo texto="Email:" atributo={usuario.email} />
-                        
-                                    <Button className="styleForm alterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
+            {load ? <Carregando />
+            :
+                <div>
+                    <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
+                
+                    <S.Main>
+                        <S.BlocoUm>
+                            <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
+                            <Button className="styleForm visualizar" nome="Visualizar agendamento" onClick={()=>navigate('/agendamentoPendente')}/>
+                        </S.BlocoUm>
+                        <S.BlocoDois>
+                            <FormUsuario />
+                            <section>                            
+                                <div className="container">
+                                    <div className="bordaAnimada"></div>
+                                    <div className="corner">
+                                        <div className="dados">
+                                            <h2>Seus dados</h2>
+                                            <Paragrafo texto="Nome completo:" atributo={usuario.nome} />
+                                            <Paragrafo texto="Data de nascimento:" atributo={load === false ? dataCorreta(usuario.data_nascimento) : ''}/>
+                                            <Paragrafo texto="Gênero:" atributo={usuario.genero} />
+                                            <Paragrafo texto="CPF:" atributo={usuario.cpf} />
+                                            <Paragrafo texto="Email:" atributo={usuario.email} />
+                                
+                                            <Button className="styleForm alterar" nome="Alterar" onClick={()=>navigate(`/atualizarUsuario/${id}`)}/>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
-
-                </S.BlocoDois>
-            </S.Main>
-            <Footer />
+                            </section>
+                        </S.BlocoDois>
+                    </S.Main>
+                    <Footer />
+                </div>
+            }
         </>
     );
 }
