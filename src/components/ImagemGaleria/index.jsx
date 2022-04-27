@@ -8,20 +8,15 @@ import {HiOutlineArrowsExpand} from "react-icons/hi";
 function ImagemGaleria({src, alt, href, descricao, id}) {
     return (
         <S.Div>
-            <div>
-           
-            </div>
-            <div className="grid">
-                <div className="container">
-                    <div className="bordaAnimada"></div>
-                    <div className="corner">
-                        <S.Article>
-                            <div className="editHover">
-                                <Image className="imgGaleria" src={src} alt={alt}/>
-                                <a className="iconHover" href={href}><HiOutlineArrowsExpand/></a>
-                            </div>
-                        </S.Article>
-                    </div>
+            <div className="container">
+                <div className="bordaAnimada"></div>
+                <div className="corner">
+                    <S.Article>
+                        <div className="editHover">
+                            <Image className="imgGaleria" src={src} alt={alt}/>
+                            <a className="iconHover" href={href}><HiOutlineArrowsExpand/></a>
+                        </div>
+                    </S.Article>
                 </div>
             </div>
             <Modal id={id} src={src} alt={alt} descricao={descricao} />

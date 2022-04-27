@@ -3,21 +3,6 @@ import styled from "styled-components";
 export const Div = styled.div`
     margin: 30px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    
-    h1{
-        margin: 20px;
-        color: ${({ theme }) => theme.text};
-    }
-
-    .grid{
-        display: grid;
-        grid-template-columns: repeat(3, 3fr);
-    }
-
     .container{
         display: flex;
         justify-content: space-around;
