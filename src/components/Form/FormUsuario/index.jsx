@@ -19,8 +19,8 @@ function FormUsuario(){
         setAgendamento({...agendamento, [e.target.name]: e.target.value})
     }
 
-    const salvaAgendamento = ()=>{
-        
+    const salvaAgendamento = (e)=>{
+        e.preventDefault()
         const meusAgendamentos = localStorage.getItem('agendamentos')
    
         const agendamentosSalvos = JSON.parse(meusAgendamentos) || []
@@ -64,12 +64,12 @@ function FormUsuario(){
             <small>Caso não saiba qual escolher, confira no <a>portfólio</a> as artes ou perfurações que prefereir</small>
 
             <Label className="labelWhatsapp" htmlFor="whatsapp" nome="Whatsapp"></Label>
-            <Input type="number" id="whatsapp" name="whatsapp" placeholder="(XX) XXXXX-XXXX" onChange={handleChange}/>
+            <Input type="number" id="whatsapp" name="whatsapp" placeholder="(XX) XXXXX-XXXX"/>
 
-            <textarea className="textareaForm" placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" id="descricao" cols="60"></textarea>
+            <textarea className="textareaForm" placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" id="descricao" cols="60" name="descricao" onChange={handleChange}></textarea>
             <small><IoIosArrowForward />Sua mensagem será respondida em no máximo 2 horas se a mensagem for enviada em horário de expediente.</small>
 
-            <Button className="styleForm enviar" onClick={()=>salvaAgendamento()} nome="Enviar" />
+            <Button className="styleForm enviar" onClick={(e)=>salvaAgendamento(e)} nome="Enviar" />
         </S.Form>
     );
 }
