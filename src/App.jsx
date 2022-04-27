@@ -15,6 +15,9 @@ import Cadastro from "./pages/Cadastro";
 import Usuario from "./pages/Usuario";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
+import FAgendamentoUpdate from "./pages/Funcionario/Update/Agendamento.jsx";
+import FEstoqueUpdate from "./pages/Funcionario/Update/Estoque.jsx";
+import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio.jsx";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -36,8 +39,24 @@ function App() {
             element={<FEstoque changeTheme={changeTheme} />}
           />
           <Route
+            path="/funcionario/estoque-view"
+            element={<FEstoqueView changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/estoque-update"
+            element={<FEstoqueUpdate changeTheme={changeTheme} />}
+          />
+          <Route
             path="/funcionario/portfolio"
             element={<FPortfolio changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio-view"
+            element={<FPortfolioView changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio-update"
+            element={<FPortfolioUpdate changeTheme={changeTheme} />}
           />
           <Route
             path="/funcionario/agendamento"
@@ -48,13 +67,10 @@ function App() {
             element={<FAgendaView changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/portfolio-view"
-            element={<FPortfolioView changeTheme={changeTheme} />}
+            path="/funcionario/agendamento-update"
+            element={<FAgendamentoUpdate changeTheme={changeTheme} />}
           />
-          <Route
-            path="/funcionario/estoque-view"
-            element={<FEstoqueView changeTheme={changeTheme} />}
-          />
+
           <Route path="/login" element={<Login changeTheme={changeTheme} />} />
           <Route
             path="/esqueceuSenha"

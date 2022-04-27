@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
-function FormAgenda() {
+function FormAgenda({ botao }) {
   const [agendamento, setAgendamento] = useState([]);
 
   const handleOnchange = (e) => {
@@ -100,7 +100,7 @@ function FormAgenda() {
             <Button
               className="styleForm"
               type="submit"
-              nome="INSERIR"
+              nome={botao}
               onClick={(e) => inserirAgendamento(e)}
             ></Button>
           </div>

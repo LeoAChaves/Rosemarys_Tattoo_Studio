@@ -28,7 +28,7 @@ function FEstoque({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormEstoque />
+      <FormEstoque botao="INSERIR" />
       <FFooter />
     </FEstoque>
   );
