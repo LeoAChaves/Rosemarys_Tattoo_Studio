@@ -22,6 +22,17 @@ export const Quadro = styled.section`
     font-weight: 400;
     text-align: center;
   }
+
+  .seta button {
+    background: none;
+    widht: 30px;
+    height: 30px;
+  }
+
+  .seta img {
+    widht: 30px;
+    height: 30px;
+  }
 `;
 
 export const Form = styled.section`
