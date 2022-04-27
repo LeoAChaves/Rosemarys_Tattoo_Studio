@@ -1,19 +1,32 @@
 import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
-import { apiPortfolio } from "../../../services/api.js";
-import { useEffect } from "react";
+//import { apiPortfolio } from "../../../services/api.js";
+//import { useEffect, UseState, UseRef } from "react";
+import iconBack from "../../../assets/iconBack.png";
+import iconNext from "../../../assets/iconNext.png";
 
 function FPortfolioMain() {
+  /* const carouseul = useRef(null);
   useEffect(() => {
     fetch(apiPortfolio)
       .then((response) => response.json())
       .then(console.log);
   }, []);
 
+  const handleBackClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current);
+  };
+
+  const handleNextClick = (e) => {
+    e.preventDefault();
+    console.log(carousel.current);
+  }; */
+
   return (
     <S.Container>
-      <S.Quadro>
+      <S.Quadro ref={carouseul}>
         <h2>Portfólio</h2>
         <S.Form>
           <div className="busca">
@@ -59,11 +72,11 @@ function FPortfolioMain() {
           </div>
         </S.Form>
         <div className="seta">
-          <button>
-            <img src="../../../../assets/icon-back.png" alt="back"></img>
+          <button onClick={handleBackClick}>
+            <img src={iconBack} alt="back"></img>
           </button>
-          <button>
-            <img src="../../assets/icon-next.png" alt="next"></img>
+          <button onClick={handleNextClick}>
+            <img src={iconNext} alt="next"></img>
           </button>
         </div>
       </S.Quadro>
