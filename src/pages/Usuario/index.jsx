@@ -25,8 +25,8 @@ function Usuario({changeTheme}){
         async function buscaUsuario(){
             try {
               const response = await apiCliente.get(`/cliente/${id}`)
-                setLoad(false)
                 setUsuario(response.data.cliente)
+                setLoad(false)
             } catch (error) {
                 console.log(error);
             }
@@ -42,20 +42,10 @@ function Usuario({changeTheme}){
         return `${dia}-${dataArr.pop()}-${ano}`
     }
 
-    const [agendamentos, setAgendamentos] = useState([])
-
-    useEffect(()=>{
-        const agendamentos = localStorage.getItem('agendamentos')
-        const agendamentosParse = JSON.parse(agendamentos) || []
-        
-        setAgendamentos(agendamentosParse);
-       
-    }, [])
-
-
     return(
         <>
             <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
+          
             <S.Main>
                 <S.BlocoUm>
                     <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
