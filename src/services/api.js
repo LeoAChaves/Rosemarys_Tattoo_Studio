@@ -5,7 +5,7 @@ export const apiCliente = axios.create({
 });
 
 export const apiAgenda = axios.create({
-  baseURL: "https://rosemary-api-leo.herokuapp.com",
+  baseURL: "https://rosemary-leo-api.herokuapp.com",
 });
 
 export const apiEstoque = axios.create({
