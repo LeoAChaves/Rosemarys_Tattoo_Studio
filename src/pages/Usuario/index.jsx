@@ -15,7 +15,7 @@ function Usuario({changeTheme}){
     const style = {
         height: "70px",
     }
-
+    
     const {id} = useParams()
     const navigate = useNavigate()
     const [usuario, setUsuario] = useState({})
@@ -59,16 +59,8 @@ function Usuario({changeTheme}){
             <S.Main>
                 <S.BlocoUm>
                     <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
-                    <section>
-                        {agendamentos.length === 0 ? 
-                        <p>Você não tem agendamentos disponíveis</p> 
-                         :
-                         agendamentos.length > 1 ? <p>Você tem {agendamentos.length} agendamentos pendentes</p> 
-                         :
-                         <p>Você tem {agendamentos.length} agendamento pendente</p> 
-                    }
-                    </section>
-                </S.BlocoUm>
+                    <Button nome="Visualizar agendamento" onClick={()=>navigate('/agendamentoPendente')}/>
+             </S.BlocoUm>
                 <S.BlocoDois>
                     <FormUsuario />
                     <section>                            
