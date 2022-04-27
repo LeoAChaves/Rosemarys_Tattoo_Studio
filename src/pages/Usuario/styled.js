@@ -10,6 +10,19 @@ export const Main = styled.main`
     background: url(${({ theme }) => theme.background}) no-repeat bottom center scroll;
     background-position: 30% 0%;
     background-size: cover;
+
+    .visualizar{
+        margin-right: 10px;
+    }
+
+    .alterar, .visualizar{
+        background-color: ${({ theme }) => theme.text};
+        color: ${({ theme }) => theme.body};
+    }
+
+    .alterar:hover, .visualizar:hover{
+        box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.text};
+    }
 `
 
 export const BlocoUm = styled.div`
@@ -115,16 +128,6 @@ export const BlocoDois = styled.div`
     h2{
         text-align: center;
     }
-
-    .alterar{
-        background-color: ${({ theme }) => theme.text};
-        color: ${({ theme }) => theme.body};
-    }
-
-    .alterar:hover{
-        box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.text};
-    }
-
 
     @media(min-width: 1000px) {
         flex-direction: row;
