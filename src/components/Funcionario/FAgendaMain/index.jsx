@@ -24,6 +24,15 @@ function FAgendaMain() {
     getagenda();
   }, []);
 
+  async function deletarAgendamento(id) {
+    try {
+      const response = await apiAgenda.delete(`/agenda/id/${id}`);
+      toast.success(response.data.message);
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  }
+
   return (
     <>
       {load ? (
@@ -58,7 +67,9 @@ function FAgendaMain() {
                           className="styleForm"
                           type="submit"
                           nome="Deletar"
-                          //onClick={(e) => deletaragenda(e)}
+                          onClick={(e) => {
+                            deletarAgendamento(agendamento.ID);
+                          }}
                         ></Button>
                       </div>
                     </ul>
