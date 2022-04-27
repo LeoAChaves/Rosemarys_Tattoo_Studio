@@ -26,7 +26,7 @@ export const Quadro = styled.section`
 
 export const Form = styled.section`
   width: 100%;
-  height: 70%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: flex-start;

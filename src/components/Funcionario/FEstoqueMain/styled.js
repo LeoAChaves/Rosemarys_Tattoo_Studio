@@ -16,26 +16,44 @@ export const Quadro = styled.section`
   align-items: center;
 
   h2 {
-    padding: 30px 10px 0 0;
+    padding-top: 30px;
     color: ${({ theme }) => theme.text};
     font-size: 24px;
     font-weight: 400;
     text-align: center;
   }
+
+  .seta button {
+    background: none;
+    widht: 80px;
+    height: 35px;
+    margin: 0 10px 20px 10px;
+    border: 4px solid ${({ theme }) => theme.button};
+  }
+
+  .seta img {
+    widht: 30px;
+    height: 30px;
+  }
 `;
 
 export const Form = styled.section`
   width: 100%;
-  height: 75%;
+  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
-  .busca{
+  .busca {
     align-self: flex-end;
-    margin:30px;
+    margin: 30px;
   }
 
   Input {
@@ -59,15 +77,15 @@ export const Cards = styled.section`
   width: 100%;
   height: 75%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
 
   .lista {
     width: 20%;
     height: 100%;
     padding: 20px;
-    align-self: center;
     display: flex;
+    flex: none;
     align-items: center;
     justify-content: space-between;
     margin: 20px;
@@ -77,12 +95,8 @@ export const Cards = styled.section`
     border-radius: 10px;
   }
 
-  .lista img {
-    width: 350px;
-    height: 320px;
-  }
   .lista li {
-    padding-bottom: 20px;
+    padding: 10px 0;
   }
 
   .botao {
