@@ -70,7 +70,7 @@ function Header({
           style={btnVoltar}
           className={className}
           nome={voltar}
-          onClick={() => navigate("/login")}
+          onClick={() => navigate("/funcionario/home")}
         />
         <Button
           style={btnSair}
