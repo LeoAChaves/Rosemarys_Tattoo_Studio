@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 
 import * as S from "./styled.js";
 
-function Agendamento({changeTheme}) {
+function AgendamentoPendente({changeTheme}) {
     const style = {
         height: "70px",
     }
@@ -22,4 +22,4 @@ function Agendamento({changeTheme}) {
     );
 }
 
-export default Agendamento;
+export default AgendamentoPendente;
