@@ -1,6 +1,7 @@
+import Button from "../Button/index.jsx";
 import * as S from "./styled.js";
 
-function Card({numeroAgendamento, servico, profissional, descricao}) {
+function Card({numeroAgendamento, servico, profissional, descricao, onClick}) {
     return ( 
         <S.Div>
             <div className="card">
@@ -11,6 +12,7 @@ function Card({numeroAgendamento, servico, profissional, descricao}) {
                 <span>{profissional}</span>
                 <p>Descrição:</p>
                 <span>{descricao}</span>
+                <Button nome="Apagar agendamento" onClick={onClick}/>
             </div>
         </S.Div>
     );
