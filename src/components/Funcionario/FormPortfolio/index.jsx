@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiPortfolio } from "../../../services/api.js";
 
-function FormPortfolio() {
+function FormPortfolio({ botao }) {
   const [portfolio, setPortfolio] = useState([]);
 
   const handleOnChange = (e) => {
@@ -32,7 +32,7 @@ function FormPortfolio() {
       <S.Quadro>
         <h2>Portfólio</h2>
         <S.Form>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="CLIENTE_ID"
               type="number"
@@ -56,7 +56,7 @@ function FormPortfolio() {
               onChange={(e) => handleOnChange(e)}
             ></textarea>
           </div>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="DURACAO"
               type="text"
@@ -73,8 +73,9 @@ function FormPortfolio() {
               onChange={(e) => handleOnChange(e)}
             ></Input>
             <Button
+              className="styleForm"
               type="submit"
-              nome="INSERIR"
+              nome={botao}
               onClick={(e) => inserirPortfolio(e)}
             ></Button>
           </div>

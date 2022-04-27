@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 130px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Quadro = styled.section`
   background-color: ${({ theme }) => theme.primary};
   width: 100%;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,5 +83,23 @@ export const Cards = styled.section`
   }
   .lista li {
     padding-bottom: 20px;
+  }
+
+  .botao {
+    align-self: flex-start;
+  }
+
+  .botao Button {
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    background: ${({ theme }) => theme.button};
+    border-radius: 10px;
+    font-size: 13px;
+    color: ${({ theme }) => theme.button_text};
+    margin-right: 15px;
+  }
+  .botao Button:hover {
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
   }
 `;

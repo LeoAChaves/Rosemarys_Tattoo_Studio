@@ -2,12 +2,13 @@ import * as S from "./styled.js";
 
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
+import Label from "../../Label/index.jsx";
 
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
-function FormAgenda() {
+function FormAgenda({ botao }) {
   const [agendamento, setAgendamento] = useState([]);
 
   const handleOnchange = (e) => {
@@ -61,7 +62,7 @@ function FormAgenda() {
               onChange={(e) => handleOnchange(e)}
             ></Input>
           </div>
-          <div class="caixa">
+          <div className="caixa">
             <Input
               placeholder="HORA"
               type="time"
@@ -76,16 +77,30 @@ function FormAgenda() {
               id="func_id"
               onChange={(e) => handleOnchange(e)}
             ></Input>
-            <Input
-              placeholder="DURACAO"
-              type="text"
-              name="Duracao"
-              id="duracao"
-              onChange={(e) => handleOnchangeNumber(e)}
-            ></Input>
+
+            <div>
+              <select
+                className="inputduracao"
+                name="duracao"
+                id="duracao"
+                onChange={handleOnchange}
+              >
+                <option value="">DURAÇÃO EM MINUTOS</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="30">45</option>
+                <option value="30">60</option>
+                <option value="30">90</option>
+                <option value="30">120</option>
+                <option value="30">150</option>
+                <option value="30">180</option>
+              </select>
+            </div>
             <Button
+              className="styleForm"
               type="submit"
-              nome="INSERIR"
+              nome={botao}
               onClick={(e) => inserirAgendamento(e)}
             ></Button>
           </div>

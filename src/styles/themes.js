@@ -1,5 +1,3 @@
-import funcBGdark from "../assets/images/funcBGdark.png";
-import funcBGlight from "../assets/images/funcBGlight.png";
 import BackgroundDark from "../assets/backgroundDark.png";
 import BackgroundLight from "../assets/backgroundLight.png";
 
@@ -24,7 +22,6 @@ export const lightTheme = {
   card_text: "#7B0000",
   card_text2: "#211F1E",
   card_info: "#5E5A57",
-  funcBG: funcBGlight,
   branco_rosado_opaco,
   background: BackgroundLight,
   agendamento: "#FFB930",
@@ -50,7 +47,6 @@ export const darkTheme = {
   card_text: "#000000",
   card_text2: "#211F1E",
   card_info: "#5E5A57",
-  funcBG: funcBGdark,
   btn_agendamento: "#0A0807",
   branco_rosado_opaco,
   background: BackgroundDark,

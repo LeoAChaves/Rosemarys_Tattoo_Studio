@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 130px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Quadro = styled.section`
   background-color: ${({ theme }) => theme.primary};
   width: 100%;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,38 +33,60 @@ export const Form = styled.section`
   align-items: flex-start;
   margin: 20px;
 
-.lista{
-    width:55%;
-    height:100%;
+  .lista {
+    width: 55%;
+    height: 100%;
     align-self: center;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     margin: 20px;
-    padding:20px;
+    padding: 20px;
     background-color: ${({ theme }) => theme.card};
     border: 4px solid ${({ theme }) => theme.button};
     border-radius: 10px;
   }
 
-  .lista div{
-    padding:20px;
-  }
- 
-  .lista img{
-    width: 350px;
-    height: 320px;
-  }
-.lista li{
-  padding-bottom:20px;
-}
-  .imagem{
-    display: flex;
-    flex-direction: column;
-    align-self: center
+  .dados{
+    padding: 20px;
   }
 
-  .busca{
+  .lista li {
+    padding-bottom: 20px;
+  }
+
+  
+  .botao {
+    align-self: flex-start; 
+  }
+
+  .botao Button{
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    background: ${({ theme }) => theme.button};
+    border-radius: 10px;
+    font-size: 13px;
+    color: ${({ theme }) => theme.button_text};
+    margin-right: 15px;
+  }
+  .botao Button:hover {
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
+  .imagem {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 20px;
+  }
+
+  .imagem img {
+    width: 100%
+    height: 80%
+  }
+
+  .busca {
     align-self: flex-end;
     margin-right: 30px;
   }
@@ -78,14 +100,16 @@ export const Form = styled.section`
     font-size: 16px;
   }
 
- 
-    
   Button {
     width: 100px;
     height: 33px;
     background: ${({ theme }) => theme.button};
     font-size: 14px;
-    color:  ${({ theme }) => theme.button_text};
-    border: 2px solid #000000;
-    
+    color: ${({ theme }) => theme.button_text};
+    border: 1px solid #000000;
+  }
+
+  Button:hover {
+    transform: scale(1.1);
+  }
 `;

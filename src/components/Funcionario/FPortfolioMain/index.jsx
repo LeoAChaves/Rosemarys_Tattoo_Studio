@@ -8,7 +8,7 @@ function FPortfolioMain() {
       <S.Quadro>
         <h2>Portfólio</h2>
         <S.Form>
-          <div class="busca">
+          <div className="busca">
             <Input
               placeholder="palavra-chave"
               type="text"
@@ -17,8 +17,8 @@ function FPortfolioMain() {
             ></Input>
             <Button type="submit" nome="Buscar"></Button>
           </div>
-          <div class="lista">
-            <div>
+          <div className="lista">
+            <div className="dados">
               <ul>
                 <li>ID:</li>
                 <li>CLIENTE_ID:</li>
@@ -26,11 +26,25 @@ function FPortfolioMain() {
                 <li>DURAÇÃO:</li>
                 <li>DESCRIÇÃO:</li>
               </ul>
+              <div className="botao">
+                <Button
+                  className="styleForm"
+                  type="submit"
+                  nome="Alterar"
+                  //onClick={(e) => alterarPortfolio(e)}
+                ></Button>
+                <Button
+                  className="styleForm"
+                  type="submit"
+                  nome="Deletar"
+                  //onClick={(e) => deletarPortfolio(e)}
+                ></Button>
+              </div>
             </div>
-            <div class="imagem">
+            <div className="imagem">
               <label>FOTO:</label>
               <img
-                src="https://api.inkclub.tattoo/Content/images/tatuagens/1540_21_8_2021_340.png"
+                src="https://i.pinimg.com/736x/cd/83/c0/cd83c0569f4bb8087c9885fbbde9b336.jpg"
                 alt="Tatto_Portfólio"
               />
             </div>

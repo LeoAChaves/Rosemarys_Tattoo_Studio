@@ -2,15 +2,15 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 130px);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Quadro = styled.section`
   background-color: ${({ theme }) => theme.primary};
   width: 100%;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,22 +32,22 @@ export const Form = styled.section`
   align-items: flex-start;
   margin: 20px;
 
-.caixa{
-  display:flex;
-  flex-direction: column;
-  margin: 20px;
-}
+  .caixa {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
 
-#foto{
-  padding-top:12px
-}
+  #foto {
+    padding-top: 12px;
+  }
 
-label{
-font-size: 16px;
-color:${({ theme }) => theme.text};
-font-weight:600;
-margin-bottom:5px;
-}
+  label {
+    font-size: 16px;
+    color: ${({ theme }) => theme.text};
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
 
   Input {
     width: 500px;
@@ -65,7 +65,7 @@ margin-bottom:5px;
   }
 
   input[type="file"] {
-    color: ${({ theme }) => theme.input_placeholder}
+    color: ${({ theme }) => theme.input_placeholder};
   }
 
   textarea {
@@ -73,15 +73,15 @@ margin-bottom:5px;
     background-color: ${({ theme }) => theme.input};
     border-radius: 10px;
     padding-left: 10px;
-    padding-top:10px;
+    padding-top: 10px;
     border: none;
     font-size: 16px;
+    resize: none;
   }
 
   textarea::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
   }
-
 
   Button {
     align-self: flex-end;
@@ -91,6 +91,10 @@ margin-bottom:5px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
-    color:  ${({ theme }) => theme.button_text};
-    
+    color: ${({ theme }) => theme.button_text};
+    margin-left: 15px;
+  }
+  Button:hover {
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
 `;

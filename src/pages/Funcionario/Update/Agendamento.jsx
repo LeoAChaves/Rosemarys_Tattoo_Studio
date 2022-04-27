@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import Header from "../../components/Header/index.jsx";
-import FormAgenda from "../../components/Funcionario/FormAgenda/index.jsx";
-import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
+import Header from "../../../components/Header/index.jsx";
+import FormAgenda from "../../../components/Funcionario/FormAgenda/index.jsx";
+import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
-function FAgendamento({ changeTheme }) {
+function FAgendamentoUpdate({ changeTheme }) {
   const style = {
     height: "80px",
   };
-  const FAgendamento = styled.body`
+  const FAgendamentoUpdate = styled.body`
     height: 100vh;
     width: 100%;
     background-image: url(${({ theme }) => theme.background});
@@ -15,7 +15,7 @@ function FAgendamento({ changeTheme }) {
     background-position: center;
   `;
   return (
-    <FAgendamento>
+    <FAgendamentoUpdate>
       <Header
         btnHome={{ display: "none" }}
         btnLogin={{ display: "none" }}
@@ -28,10 +28,10 @@ function FAgendamento({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormAgenda botao="INSERIR" />
+      <FormAgenda botao="ALTERAR" />
       <FFooter />
-    </FAgendamento>
+    </FAgendamentoUpdate>
   );
 }
 
-export default FAgendamento;
+export default FAgendamentoUpdate;

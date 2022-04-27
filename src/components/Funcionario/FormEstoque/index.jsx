@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiEstoque } from "../../../services/api.js";
 
-function FormEstoque() {
+function FormEstoque({ botao }) {
   const [estoque, setEstoque] = useState([]);
 
   const handleOnChange = (e) => {
@@ -69,9 +69,11 @@ function FormEstoque() {
               onChange={(e) => handleOnChange(e)}
             ></Input>
           </div>
+
           <Button
+            className="styleForm"
             type="submit"
-            nome="INSERIR"
+            nome={botao}
             onClick={(e) => inserirEstoque(e)}
           ></Button>
         </S.Form>

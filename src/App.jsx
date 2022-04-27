@@ -19,6 +19,9 @@ import Home from "./pages/Home/index.jsx";
 import Login from "./pages/Login";
 import Portfolio from "./pages/Portfolio";
 import Usuario from "./pages/Usuario";
+import FAgendamentoUpdate from "./pages/Funcionario/Update/Agendamento.jsx";
+import FEstoqueUpdate from "./pages/Funcionario/Update/Estoque.jsx";
+import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio.jsx";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -48,6 +51,9 @@ function App() {
           <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
           <Route path="/portfolio" element={<Portfolio changeTheme={changeTheme}/>}/>
           <Route path="/agendamentoPendente" element={<AgendamentoPendente changeTheme={changeTheme}/>}/>
+          <Route path="/funcionario/estoque-update" element={<FEstoqueUpdate changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/portfolio-update" element={<FPortfolioUpdate changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/agendamento-update" element={<FAgendamentoUpdate changeTheme={changeTheme} />}/> 
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
