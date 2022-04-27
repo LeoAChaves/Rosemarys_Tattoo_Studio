@@ -31,15 +31,18 @@ function Portfolio({changeTheme}) {
         <div>
             <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
             <S.Main>
-                <h1>Galeria</h1>
-                <div>
-                    <Label htmlFor="profissional" nome="Profissional"></Label>
-                    <select className="inputProfissional" name="profissional" id="profissional"> 
-                        <option value=""></option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outros">Outros</option>
-                    </select>
+                <div className="blocoUm">
+                    <div className="invisivel"></div>
+                    <h1>Galeria</h1>
+                    <div className="selectProfissional">
+                        <Label htmlFor="profissional" nome="Filtrar profissional"></Label>
+                        <select className="inputProfissional" name="profissional" id="profissional"> 
+                            <option value=""></option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
                 </div>
                 <div className="grid">
                     {portfolio.map(portfolio=>{
