@@ -3,7 +3,7 @@ import * as S from "./styled.js";
 import Header from "../../components/Header";
 import HeroText from "../../components/Hero/index.jsx";
 import Image from "../../components/Image/index.jsx";
-import { GiDaggerRose } from "react-icons/gi";
+import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 
 function Home({ changeTheme }) {
   const style = {
@@ -47,11 +47,11 @@ function Home({ changeTheme }) {
             </S.DivTexto>
             <S.DivImage>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/1304469/pexels-photo-1304469.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/4123707/pexels-photo-4123707.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
             </S.DivImage>
@@ -60,11 +60,11 @@ function Home({ changeTheme }) {
           <S.DivCard>
             <S.DivImage>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/4123712/pexels-photo-4123712.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://i.pinimg.com/564x/cc/d7/4d/ccd74dcfa5b67f092eb7cbe5674586f2.jpg"
                 alt="cao"
               />
             </S.DivImage>
@@ -88,74 +88,83 @@ function Home({ changeTheme }) {
           <S.Time>
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/7147841/pexels-photo-7147841.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Rose Herculano</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/8375273/pexels-photo-8375273.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Maurício Castro</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/7005665/pexels-photo-7005665.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Pietro Alves</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/3376116/pexels-photo-3376116.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Amanda Santos</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/7005726/pexels-photo-7005726.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Maria Andrade</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/8521181/pexels-photo-8521181.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiRose className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Gabriel Fernandes</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/7594057/pexels-photo-7594057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiSacrificialDagger className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Maria Eugenia Chaves</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/5235735/pexels-photo-5235735.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiSacrificialDagger className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Fernanda Vasconcelos</S.Paragrafo2>
             </S.Artista>
 
             <S.Artista>
               <Image
-                src="https://super.abril.com.br/wp-content/uploads/2018/05/filhotes-de-cachorro-alcanc3a7am-o-c3a1pice-de-fofura-com-8-semanas1.png?quality=90&strip=info&resize=680,453"
+                src="https://images.pexels.com/photos/3728826/pexels-photo-3728826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
                 alt="cao"
               />
-              <S.Paragrafo2>Nome</S.Paragrafo2>
+              <S.IconFD><GiSacrificialDagger className="themeMode"/></S.IconFD>
+              <S.Paragrafo2>Lucca Rodrigues</S.Paragrafo2>
             </S.Artista>
           </S.Time>
         </S.BlocoTres>
