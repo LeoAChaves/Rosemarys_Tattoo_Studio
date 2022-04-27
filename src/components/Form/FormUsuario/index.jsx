@@ -55,7 +55,7 @@ function FormUsuario(){
             <textarea className="textareaForm" placeholder="Ja teve alguma idéia de tatuagem ou já sabe a perfuração que vai fazer? Essa é a hora e nos contar, aproveite e fale os dias e horários disponíveis!" id="descricao" cols="60"></textarea>
             <small><IoIosArrowForward />Sua mensagem será respondida em no máximo 2 horas se a mensagem for enviada em horário de expediente.</small>
 
-            <Button onClick={()=>salvaAgendamento()} nome="Enviar" />
+            <Button className="styleForm enviar" onClick={()=>salvaAgendamento()} nome="Enviar" />
         </S.Form>
     );
 }
