@@ -47,6 +47,9 @@ function AtualizarUsuario() {
         let schema = yup.object().shape({
             nome: yup.string("Campo de nome completo deve ser preenchido com letras").required("Campo de nome completo não pode estar vazio"),
             email: yup.string("Campo de nome completo deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
+            genero: yup.string("").required("Campo de gênero não pode estar vazio"),
+            cpf: yup.string("Campo de CPF deve ser preenchido com números").required("Campo de CPF não pode estar vazio").min(11, 'O cpf precisa ter 11 digitos').max(11,'O cpf precisa ter 11 digitos'),
+            senha: yup.string().required('Campo de senha não pode estar vazio, sua senha deve ter no mínimo 8 dígitos, letras e números ').min(8, 'Senha deve ter no mínimo 8 dígitos, letras e números').matches(/^(?=.*\d)(?=.*[a-z])(?=.*[0-9])/, 'Senha deve ter no mínimo 8 dígitos, letras e números')
         })
         try {
             await schema.validate(usuario)
