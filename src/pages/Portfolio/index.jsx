@@ -27,23 +27,17 @@ function Portfolio({changeTheme}) {
         }
         getPortfolios()
     }, []);
+
+  
     return (
         <div>
             <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
             <S.Main>
                 <h1>Galeria</h1>
-                <div>
-                    <Label htmlFor="profissional" nome="Profissional"></Label>
-                    <select className="inputProfissional" name="profissional" id="profissional"> 
-                        <option value=""></option>
-                        <option value="Masculino">Masculino</option>
-                        <option value="Feminino">Feminino</option>
-                        <option value="Outros">Outros</option>
-                    </select>
-                </div>
+               
                 <div className="grid">
                     {portfolio.map(portfolio=>{
-                    return <ImagemGaleria id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                    return <ImagemGaleria key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
                     })}
                 </div>
             </S.Main>
