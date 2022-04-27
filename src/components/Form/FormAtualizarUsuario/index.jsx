@@ -1,5 +1,8 @@
 import * as S from "./styled.js";
 
+import * as yup from "yup";
+import toast from 'react-hot-toast';
+
 import Input from "../../Input";
 import Button from "../../Button";
 import Label from "../../Label";
@@ -8,10 +11,10 @@ import { useParams } from "react-router-dom";
 import { apiCliente } from "../../../services/api.js";
 
 function AtualizarUsuario() {
-
-  
+    
     const [usuario, setUsuario] = useState({})
     const {id} = useParams()
+
     useEffect(() => {
         async function buscaUsuario(){
             try {
@@ -31,15 +34,30 @@ function AtualizarUsuario() {
 
     async function atualizarDados(e) {
         e.preventDefault()
+        if(!(await validate())) return
         try {
            const response = await apiCliente.patch(`/cliente/${id}`, usuario)
            console.log(response);
         } catch (error) {
             console.log(error.response);
         }
-
-     
     }
+
+    async function validate(){
+        let schema = yup.object().shape({
+            nome: yup.string("Campo de nome completo deve ser preenchido com letras").required("Campo de nome completo não pode estar vazio"),
+            email: yup.string("Campo de nome completo deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
+        })
+        try {
+            await schema.validate(usuario)
+            toast.success("teste")
+            return true
+        } catch (error) {
+            toast.error(error.errors)
+        }
+        return false
+    }
+
     return (
         <S.Form>
             <h1>Seus Dados</h1>
