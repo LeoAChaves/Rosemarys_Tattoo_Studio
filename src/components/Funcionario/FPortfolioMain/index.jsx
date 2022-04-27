@@ -1,8 +1,16 @@
 import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
+import { apiPortfolio } from "../../../services/api.js";
+import { useEffect } from "react";
 
 function FPortfolioMain() {
+  useEffect(() => {
+    fetch(apiPortfolio)
+      .then((response) => response.json())
+      .then(console.log);
+  }, []);
+
   return (
     <S.Container>
       <S.Quadro>
@@ -50,6 +58,14 @@ function FPortfolioMain() {
             </div>
           </div>
         </S.Form>
+        <div className="seta">
+          <button>
+            <img src="../../../../assets/icon-back.png" alt="back"></img>
+          </button>
+          <button>
+            <img src="../../assets/icon-next.png" alt="next"></img>
+          </button>
+        </div>
       </S.Quadro>
     </S.Container>
   );

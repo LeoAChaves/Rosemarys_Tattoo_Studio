@@ -28,10 +28,12 @@ export const Form = styled.section`
   width: 100%;
   height: 75%;
   display: flex;
+  flex: none;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin: 20px;
+  scroll-behavior: smooth;
 
   .lista {
     width: 55%;
