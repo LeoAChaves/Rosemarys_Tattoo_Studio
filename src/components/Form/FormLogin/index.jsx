@@ -70,9 +70,9 @@ function FormLogin(){
                     </S.SeletorTipo>
                 </S.ContainerTipo>
                 
-                <Input placeholder="Email" type="email" name="email" id="email"  onChange={(e) => handleOnchange(e)}/>
+                <Input placeholder="Email" type="email" name="email" id="email"  onChange={(e) => handleOnchange(e)} disabled={tipoLogin.length === 0 ? true : false}/>
             
-                <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)}/>
+                <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)} disabled={tipoLogin.length === 0 ? true : false}/>
 
                 <Button className="styleForm entrar" type="submit" nome="Entrar"></Button>
 
