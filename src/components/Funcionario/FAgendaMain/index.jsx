@@ -15,9 +15,9 @@ function FAgendaMain() {
           <div class="lista">
             <ul>
               <li>ID:</li>
-              <li>CLIENTE_ID</li>
-              <li>FUNCIONARIO_ID</li>
-              <li>DATA;</li>
+              <li>CLIENTE_ID:</li>
+              <li>FUNCIONARIO_ID:</li>
+              <li>DATA:</li>
               <li>HORA:</li>
               <li>SERVIÇO:</li>
               <li>DURAÇÃO:</li>
