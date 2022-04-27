@@ -89,3 +89,8 @@ export const Form = styled.section`
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
   }
 `;
+
+/* @media(min-width: 600px) {
+  height: 82vh;
+  width: 450px;
+} */
