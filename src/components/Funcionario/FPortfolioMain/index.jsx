@@ -26,7 +26,7 @@ function FPortfolioMain() {
 
   return (
     <S.Container>
-      <S.Quadro ref={carouseul}>
+      <S.Quadro>
         <h2>Portfólio</h2>
         <S.Form>
           <div className="busca">
@@ -72,10 +72,10 @@ function FPortfolioMain() {
           </div>
         </S.Form>
         <div className="seta">
-          <button onClick={handleBackClick}>
+          <button>
             <img src={iconBack} alt="back"></img>
           </button>
-          <button onClick={handleNextClick}>
+          <button>
             <img src={iconNext} alt="next"></img>
           </button>
         </div>
