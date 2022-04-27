@@ -12,7 +12,7 @@ function Card({numeroAgendamento, servico, profissional, descricao, onClick}) {
                 <span>{profissional}</span>
                 <p>Descrição:</p>
                 <span>{descricao}</span>
-                <Button nome="Apagar agendamento" onClick={onClick}/>
+                <Button className="styleForm apagar" nome="Apagar agendamento" onClick={onClick}/>
             </div>
         </S.Div>
     );
