@@ -33,10 +33,9 @@ function AgendamentoPendente({changeTheme}) {
             <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} inicialUsuario="Página Inicial" sair="Sair" changeTheme={changeTheme}/>
             <S.Main> 
                 <div className="grid">
-                    {agendamentos.length === 0 ? <p>Voce nao tem agendamentos</p>
+                    {agendamentos.length === 0 ? <h2 className="avisoAgendamento">Voce nao tem agendamentos</h2>
                     :
                     agendamentos.map((agendamentos, index)=> <Card numeroAgendamento={index+1} servico={agendamentos.servico} profissional={agendamentos.profissional} descricao={agendamentos.descricao} onClick={()=> excluiAgendamento(index)}/>)}
-                   
                 </div>
             </S.Main>
             <Footer />

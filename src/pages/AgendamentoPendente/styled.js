@@ -13,6 +13,11 @@ export const Main = styled.main`
     align-items: center;
     flex-direction: column;
 
+    .avisoAgendamento{
+        color: ${({ theme }) => theme.text};
+        text-align: center;
+    }
+
     .grid{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
