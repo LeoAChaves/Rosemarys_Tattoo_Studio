@@ -3,6 +3,7 @@ import * as S from "./styled.js";
 import { apiPortfolio } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
+import toast from "react-hot-toast";
 
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
@@ -21,20 +22,29 @@ function FPortfolioMain() {
         setPortifolio(response.data.portfolios);
         setLoad(false);
       } catch (error) {
-        console.log(error);
+        toast.error(error.response.data.mensagem);
       }
     }
     getPortfolios();
   }, []);
 
+  async function deletarPortfolio(id) {
+    try {
+      const response = await apiPortfolio.delete(
+        `/portfolio/portfolioId/${id}`
+      );
+      toast.success(response.data.mensagem);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
+    }
+  }
+
   const handleBackClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
   };
   const handleNextClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 
@@ -58,7 +68,6 @@ function FPortfolioMain() {
               </div>
               <S.Form ref={carousel}>
                 {portfolio.map((portfolio) => {
-                  console.log(portfolio);
                   return (
                     <div className="lista" key={portfolio.ID}>
                       <div className="dados">
@@ -91,7 +100,9 @@ function FPortfolioMain() {
                             className="styleForm"
                             type="submit"
                             nome="Deletar"
-                            //onClick={(e) => deletarPortfolio(e)}
+                            onClick={(e) => {
+                              deletarPortfolio(portfolio.ID);
+                            }}
                           ></Button>
                         </div>
                       </div>
