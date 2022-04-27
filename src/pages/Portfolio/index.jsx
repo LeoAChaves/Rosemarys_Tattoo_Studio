@@ -7,7 +7,7 @@ import Carregando from "../../components/Carregando";
 
 import * as S from "./styled.js";
 
-import { apiPortifolio } from "../../services/api.js";
+import { apiPortfolio } from "../../services/api.js";
 
 function Portfolio({changeTheme}) {
     const style = {
@@ -19,7 +19,7 @@ function Portfolio({changeTheme}) {
     useEffect(() => {
         async function getPortfolios() {
             try {
-                const response = await apiPortifolio.get('/portfolio')
+                const response = await apiPortfolio.get('/portfolio')
                 setPortifolio(response.data.portfolios)
                 setLoad(false)
             } catch (error) {
