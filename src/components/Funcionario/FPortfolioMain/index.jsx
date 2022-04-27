@@ -47,28 +47,38 @@ function FPortfolioMain() {
           <S.Container>
             <S.Quadro>
               <h2>Portfólio</h2>
+              <div className="busca">
+                <Input
+                  placeholder="palavra-chave"
+                  type="text"
+                  name="search"
+                  id="search"
+                ></Input>
+                <Button type="submit" nome="Buscar"></Button>
+              </div>
               <S.Form ref={carousel}>
-                {/* <div className="busca">
-                  <Input
-                    placeholder="palavra-chave"
-                    type="text"
-                    name="search"
-                    id="search"
-                  ></Input>
-                  <Button type="submit" nome="Buscar"></Button>
-                </div> */}
-
                 {portfolio.map((portfolio) => {
                   console.log(portfolio);
                   return (
                     <div className="lista" key={portfolio.ID}>
                       <div className="dados">
                         <ul>
-                          <li>ID:{portfolio.ID}</li>
-                          <li>CLIENTE_ID:{portfolio.CLIENTEID}</li>
-                          <li>FUNCIONARIO_ID:{portfolio.FUNCIONARIOID}</li>
-                          <li>DURAÇÃO:{portfolio.DURACAO}</li>
-                          <li>DESCRIÇÃO:{portfolio.DESCRICAO}</li>
+                          <li>
+                            ID: <span>{portfolio.ID}</span>
+                          </li>
+                          <li>
+                            CLIENTE_ID: <span>{portfolio.CLIENTEID}</span>
+                          </li>
+                          <li>
+                            FUNCIONARIO_ID:{" "}
+                            <span>{portfolio.FUNCIONARIOID}</span>
+                          </li>
+                          <li>
+                            DURAÇÃO: <span>{portfolio.DURACAO}</span>
+                          </li>
+                          <li>
+                            DESCRIÇÃO: <span>{portfolio.DESCRICAO}</span>
+                          </li>
                         </ul>
                         <div className="botao">
                           <Button
@@ -94,10 +104,10 @@ function FPortfolioMain() {
                 })}
               </S.Form>
               <div className="seta">
-                <button onClick={handleBackClick}>
+                <button className="btnBusca" onClick={handleBackClick}>
                   <img src={iconBack} alt="back"></img>
                 </button>
-                <button onClick={handleNextClick}>
+                <button className="btnBusca" onClick={handleNextClick}>
                   <img src={iconNext} alt="next"></img>
                 </button>
               </div>

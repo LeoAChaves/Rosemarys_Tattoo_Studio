@@ -23,10 +23,39 @@ export const Quadro = styled.section`
     text-align: center;
   }
 
-  .seta button {
-    background: none;
-    widht: 30px;
+  .busca {
+    align-self: flex-end;
+    margin-right: 30px;
+  }
+
+  .busca Button {
+    width: 100px;
+    height: 33px;
+    background: ${({ theme }) => theme.button};
+    font-size: 14px;
+    color: ${({ theme }) => theme.button_text};
+    border: 1px solid #000000;
+  }
+
+  Button:hover {
+    transform: scale(1.1);
+  }
+
+  Input {
+    width: 200px;
     height: 30px;
+    background-color: ${({ theme }) => theme.input};
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+
+  .btnBusca {
+    background: none;
+    widht: 40px;
+    height: 35px;
+    margin: 0 10px 20px;
+    border: 4px solid ${({ theme }) => theme.button};
   }
 
   .seta img {
@@ -66,6 +95,9 @@ export const Form = styled.section`
   .dados {
     padding: 20px;
   }
+  .dados span {
+    color: #5e5a57;
+  }
 
   .lista li {
     padding-bottom: 20px;
@@ -100,32 +132,5 @@ export const Form = styled.section`
   .imagem img {
     width: 100%;
     height: 100%;
-  }
-
-  .busca {
-    align-self: flex-end;
-    margin-right: 30px;
-  }
-
-  Input {
-    width: 200px;
-    height: 30px;
-    background-color: ${({ theme }) => theme.input};
-    padding: 10px;
-    border: none;
-    font-size: 16px;
-  }
-
-  Button {
-    width: 100px;
-    height: 33px;
-    background: ${({ theme }) => theme.button};
-    font-size: 14px;
-    color: ${({ theme }) => theme.button_text};
-    border: 1px solid #000000;
-  }
-
-  Button:hover {
-    transform: scale(1.1);
   }
 `;
