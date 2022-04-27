@@ -72,26 +72,12 @@ function FormPortfolio() {
               id="foto"
               onChange={(e) => handleOnChange(e)}
             ></Input>
-            <div className="botao">
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Inserir"
-                onClick={(e) => inserirPortfolio(e)}
-              ></Button>
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Alterar"
-                //onClick={(e) => alterarPortfolio(e)}
-              ></Button>
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Deletar"
-                //onClick={(e) => deletarPortfolio(e)}
-              ></Button>
-            </div>
+            <Button
+              className="styleForm"
+              type="submit"
+              nome="INSERIR"
+              onClick={(e) => inserirPortfolio(e)}
+            ></Button>
           </div>
         </S.Form>
       </S.Quadro>

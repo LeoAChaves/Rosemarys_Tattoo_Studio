@@ -25,6 +25,20 @@ function FEstoqueMain() {
                 <li>PREÇO:</li>
                 <li>QUANTIDADE:</li>
                 <li>TIPO:</li>
+                <div className="botao">
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Alterar"
+                    //onClick={(e) => alterarEstoque(e)}
+                  ></Button>
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Deletar"
+                    //onClick={(e) => deletarEstoque(e)}
+                  ></Button>
+                </div>
               </ul>
             </div>
 
@@ -35,6 +49,20 @@ function FEstoqueMain() {
                 <li>PREÇO:</li>
                 <li>QUANTIDADE:</li>
                 <li>TIPO:</li>
+                <div className="botao">
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Alterar"
+                    //onClick={(e) => alterarEstoque(e)}
+                  ></Button>
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Deletar"
+                    //onClick={(e) => deletarEstoque(e)}
+                  ></Button>
+                </div>
               </ul>
             </div>
 
@@ -45,6 +73,20 @@ function FEstoqueMain() {
                 <li>PREÇO:</li>
                 <li>QUANTIDADE:</li>
                 <li>TIPO:</li>
+                <div className="botao">
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Alterar"
+                    //onClick={(e) => alterarEstoque(e)}
+                  ></Button>
+                  <Button
+                    className="styleForm"
+                    type="submit"
+                    nome="Deletar"
+                    //onClick={(e) => deletarEstoque(e)}
+                  ></Button>
+                </div>
               </ul>
             </div>
           </S.Cards>

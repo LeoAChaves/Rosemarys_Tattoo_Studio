@@ -97,26 +97,12 @@ function FormAgenda() {
                 <option value="30">180</option>
               </select>
             </div>
-            <div className="botao">
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Inserir"
-                onClick={(e) => inserirAgendamento(e)}
-              ></Button>
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Alterar"
-                //onClick={(e) => alterarAgendamento(e)}
-              ></Button>
-              <Button
-                className="styleForm"
-                type="submit"
-                nome="Deletar"
-                //onClick={(e) => deletarAgendamento(e)}
-              ></Button>
-            </div>
+            <Button
+              className="styleForm"
+              type="submit"
+              nome="INSERIR"
+              onClick={(e) => inserirAgendamento(e)}
+            ></Button>
           </div>
         </S.Form>
       </S.Quadro>

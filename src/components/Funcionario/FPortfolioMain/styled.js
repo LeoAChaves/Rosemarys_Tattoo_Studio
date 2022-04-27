@@ -47,23 +47,43 @@ export const Form = styled.section`
     border-radius: 10px;
   }
 
-  .lista div {
+  .dados{
     padding: 20px;
   }
 
   .lista li {
     padding-bottom: 20px;
   }
+
+  
+  .botao {
+    align-self: flex-start; 
+  }
+
+  .botao Button{
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
+    background: ${({ theme }) => theme.button};
+    border-radius: 10px;
+    font-size: 13px;
+    color: ${({ theme }) => theme.button_text};
+    margin-right: 15px;
+  }
+  .botao Button:hover {
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
   .imagem {
     width: 300px;
     display: flex;
     flex-direction: column;
     align-self: center;
+    padding: 20px;
   }
 
   .imagem img {
     width: 100%
-    height: 100%
+    height: 80%
   }
 
   .busca {

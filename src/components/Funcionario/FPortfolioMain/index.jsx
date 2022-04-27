@@ -18,7 +18,7 @@ function FPortfolioMain() {
             <Button type="submit" nome="Buscar"></Button>
           </div>
           <div className="lista">
-            <div>
+            <div className="dados">
               <ul>
                 <li>ID:</li>
                 <li>CLIENTE_ID:</li>
@@ -26,6 +26,20 @@ function FPortfolioMain() {
                 <li>DURAÇÃO:</li>
                 <li>DESCRIÇÃO:</li>
               </ul>
+              <div className="botao">
+                <Button
+                  className="styleForm"
+                  type="submit"
+                  nome="Alterar"
+                  //onClick={(e) => alterarPortfolio(e)}
+                ></Button>
+                <Button
+                  className="styleForm"
+                  type="submit"
+                  nome="Deletar"
+                  //onClick={(e) => deletarPortfolio(e)}
+                ></Button>
+              </div>
             </div>
             <div className="imagem">
               <label>FOTO:</label>

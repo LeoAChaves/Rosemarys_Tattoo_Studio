@@ -69,26 +69,13 @@ function FormEstoque() {
               onChange={(e) => handleOnChange(e)}
             ></Input>
           </div>
-          <div className="botao">
-            <Button
-              className="styleForm"
-              type="submit"
-              nome="Inserir"
-              onClick={(e) => inserirEstoque(e)}
-            ></Button>
-            <Button
-              className="styleForm"
-              type="submit"
-              nome="Alterar"
-              //onClick={(e) => alterarEstoque(e)}
-            ></Button>
-            <Button
-              className="styleForm"
-              type="submit"
-              nome="Deletar"
-              //onClick={(e) => deletarEstoque(e)}
-            ></Button>
-          </div>
+
+          <Button
+            className="styleForm"
+            type="submit"
+            nome="INSERIR"
+            onClick={(e) => inserirEstoque(e)}
+          ></Button>
         </S.Form>
       </S.Quadro>
     </S.Container>
