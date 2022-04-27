@@ -6,6 +6,7 @@ import BackgroundLight from "../assets/backgroundLight.png";
 const branco_rosado_opaco = "#e5e1d2b6";
 const amarelo = "#FFB930";
 const preto = "#0A0807";
+const preto_opaco = "#0a080791"
 const vermelho = "#7B0000";
 
 export const lightTheme = {
@@ -31,6 +32,7 @@ export const lightTheme = {
   portfolioAgendamento: "#000000",
   amarelo,
   preto,
+  preto_opaco,
   vermelho,
 };
 
@@ -56,5 +58,6 @@ export const darkTheme = {
   portfolioAgendamento: "#FFB930",
   amarelo,
   preto,
+  preto_opaco,
   vermelho,
 };
