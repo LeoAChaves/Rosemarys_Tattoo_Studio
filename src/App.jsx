@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
+
+import AgendamentoPendente from "./pages/AgendamentoPendente";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import Cadastro from "./pages/Cadastro";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
@@ -29,6 +31,7 @@ function App() {
           <Route path="/usuario/:id" element={<Usuario changeTheme={changeTheme}/>}/>
           <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
           <Route path="/portfolio" element={<Portfolio changeTheme={changeTheme}/>}/>
+          <Route path="/agendamentoPendente" element={<AgendamentoPendente changeTheme={changeTheme}/>}/>
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

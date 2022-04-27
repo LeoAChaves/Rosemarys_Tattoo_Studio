@@ -27,7 +27,7 @@ function Header({style, div, btnPortfolio, btnVoltar, btnHome, btnLogin, btnInic
                 <Button style={btnLogin} className={className} nome={login} onClick={()=>navigate(`/login`)}/>
                 <Button style={btnInicial} className={className} nome={inicialUsuario} onClick={()=>window.history.back()}/>
                 <Button style={btnVoltar} className={className} nome={voltar} />
-                <Button style={btnSair} className={className} nome={sair} />
+                <Button style={btnSair} className={className} nome={sair} onClick={()=>navigate(`/login`)}/>
                 <VscColorMode className="themeMode" onClick={changeTheme}/>
             </div>
         </S.Header>
