@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
-function FormAgenda({ botao }) {
+function FormAgendaUpdate({ botao }) {
   const [agendamento, setAgendamento] = useState([]);
 
   const handleOnchange = (e) => {
@@ -23,7 +23,7 @@ function FormAgenda({ botao }) {
     });
   };
 
-  const inserirAgendamento = async (e) => {
+  const alterarAgendamento = async (e) => {
     e.preventDefault();
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
@@ -100,8 +100,8 @@ function FormAgenda({ botao }) {
             <Button
               className="styleForm"
               type="submit"
-              nome="Inserir"
-              onClick={(e) => inserirAgendamento(e)}
+              nome="Alterar"
+              onClick={(e) => alterarAgendamento(e)}
             ></Button>
           </div>
         </S.Form>
@@ -109,4 +109,4 @@ function FormAgenda({ botao }) {
     </S.Container>
   );
 }
-export default FormAgenda;
+export default FormAgendaUpdate;

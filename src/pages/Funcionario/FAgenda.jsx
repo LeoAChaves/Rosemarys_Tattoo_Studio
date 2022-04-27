@@ -28,7 +28,7 @@ function FAgendamento({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormAgenda botao="INSERIR" />
+      <FormAgenda />
       <FFooter />
     </FAgendamento>
   );

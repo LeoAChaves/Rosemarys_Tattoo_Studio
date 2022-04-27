@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiEstoque } from "../../../services/api.js";
 
-function FormEstoque({ botao }) {
+function FormEstoqueUpdate({ botao }) {
   const [estoque, setEstoque] = useState([]);
 
   const handleOnChange = (e) => {
@@ -21,7 +21,7 @@ function FormEstoque({ botao }) {
       [e.target.name]: parseInt(e.target.value),
     });
   };
-  const inserirEstoque = async (e) => {
+  const alterarEstoque = async (e) => {
     e.preventDefault();
     try {
       const response = await apiEstoque.post("/estoque", estoque);
@@ -73,12 +73,12 @@ function FormEstoque({ botao }) {
           <Button
             className="styleForm"
             type="submit"
-            nome="Inserir"
-            onClick={(e) => inserirEstoque(e)}
+            nome="Alterar"
+            onClick={(e) => alterarEstoque(e)}
           ></Button>
         </S.Form>
       </S.Quadro>
     </S.Container>
   );
 }
-export default FormEstoque;
+export default FormEstoqueUpdate;

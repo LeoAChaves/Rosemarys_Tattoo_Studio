@@ -4,7 +4,7 @@ export const Container = styled.main`
   width: 100%;
   height: calc(100vh - 130px);
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
 `;
 
 export const Quadro = styled.section`
@@ -39,18 +39,21 @@ export const Form = styled.section`
   width: 100%;
   height: 75%;
   display: flex;
-  flex: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   margin: 20px;
+  overflow-x: auto;
   scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 
   .lista {
     width: 55%;
     height: 100%;
     align-self: center;
     display: flex;
+    flex: none;
     align-items: center;
     justify-content: space-between;
     margin: 20px;
@@ -60,7 +63,7 @@ export const Form = styled.section`
     border-radius: 10px;
   }
 
-  .dados{
+  .dados {
     padding: 20px;
   }
 
@@ -68,12 +71,11 @@ export const Form = styled.section`
     padding-bottom: 20px;
   }
 
-  
   .botao {
-    align-self: flex-start; 
+    align-self: flex-start;
   }
 
-  .botao Button{
+  .botao Button {
     width: 90px;
     height: 40px;
     margin-top: 20px;
@@ -88,15 +90,16 @@ export const Form = styled.section`
   }
   .imagem {
     width: 300px;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-self: center;
-    padding: 20px;
+    align-self: flex-start;
+    padding: 0 20px 20px 20px;
   }
 
   .imagem img {
-    width: 100%
-    height: 80%
+    width: 100%;
+    height: 100%;
   }
 
   .busca {

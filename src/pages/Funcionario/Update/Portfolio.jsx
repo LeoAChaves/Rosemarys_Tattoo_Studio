@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "../../../components/Header/index.jsx";
-import FormPortfolio from "../../../components/Funcionario/FormPortfolio/index.jsx";
+import FormPortfolioUpdate from "../../../components/Funcionario/FormPortfolioUpdate/index.jsx";
 import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FPortfolioUpdate({ changeTheme }) {
@@ -28,7 +28,7 @@ function FPortfolioUpdate({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormPortfolio botao="ALTERAR" />
+      <FormPortfolioUpdate />
       <FFooter />
     </FPortfolioUpdate>
   );
