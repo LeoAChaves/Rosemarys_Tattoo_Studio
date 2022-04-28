@@ -80,7 +80,7 @@ function FormAgenda({ botao }) {
 
             <div>
               <Input
-                placeholder="DURAÇÃO EM MINUTOS"
+                placeholder="DURAÇÃO"
                 className="inputduracao"
                 name="Duracao"
                 id="Duracao"

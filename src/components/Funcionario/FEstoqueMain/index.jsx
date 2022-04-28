@@ -46,27 +46,37 @@ function FEstoqueMain() {
         <S.Container>
           <S.Quadro>
             <h2>Estoque</h2>
+            <div class="busca">
+              <Input
+                placeholder="palavra-chave"
+                type="text"
+                name="search"
+                id="search"
+              ></Input>
+              <Button type="submit" nome="Buscar"></Button>
+            </div>
 
             <S.Form ref={carousel}>
-              <div class="busca">
-                <Input
-                  placeholder="palavra-chave"
-                  type="text"
-                  name="search"
-                  id="search"
-                ></Input>
-                <Button type="submit" nome="Buscar"></Button>
-              </div>
               <S.Cards>
                 {estoque.map((estoque) => {
                   return (
-                    <div class="lista" key={estoque.ID}>
+                    <div class="lista dados" key={estoque.ID}>
                       <ul>
-                        <li>ID:{estoque.ID}</li>
-                        <li>ITEM:{estoque.NOME}</li>
-                        <li>PREÇO:{estoque.PRECO}</li>
-                        <li>QUANTIDADE:{estoque.QUANTIDADE}</li>
-                        <li>TIPO:{estoque.TIPO}</li>
+                        <li>
+                          ID: <span>{estoque.ID}</span>
+                        </li>
+                        <li>
+                          ITEM: <span>{estoque.NOME}</span>
+                        </li>
+                        <li>
+                          PREÇO: <span>{estoque.PRECO}</span>
+                        </li>
+                        <li>
+                          QUANTIDADE: <span>{estoque.QUANTIDADE}</span>
+                        </li>
+                        <li>
+                          TIPO: <span>{estoque.TIPO}</span>
+                        </li>
                         <div className="botao">
                           <Button
                             className="styleForm"
@@ -88,10 +98,10 @@ function FEstoqueMain() {
               </S.Cards>
             </S.Form>
             <div className="seta">
-              <button onClick={handleBackClick}>
+              <button className="btnBusca" onClick={handleBackClick}>
                 <img src={iconBack} alt="back"></img>
               </button>
-              <button onClick={handleNextClick}>
+              <button className="btnBusca" onClick={handleNextClick}>
                 <img src={iconNext} alt="next"></img>
               </button>
             </div>

@@ -23,9 +23,35 @@ export const Quadro = styled.section`
     text-align: center;
   }
 
-  .seta button {
+  .busca {
+    align-self: flex-end;
+    margin-right: 30px;
+  }
+
+  Input {
+    width: 200px;
+    height: 30px;
+    background-color: ${({ theme }) => theme.input};
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+
+  .busca Button {
+    width: 100px;
+    height: 33px;
+    background: ${({ theme }) => theme.button};
+    font-size: 14px;
+    color: ${({ theme }) => theme.button_text};
+    border: 2px solid #000000;
+  }
+  Button:hover {
+    transform: scale(1.1);
+  }
+
+  .btnBusca {
     background: none;
-    widht: 80px;
+    widht: 40px;
     height: 35px;
     margin: 0 10px 20px 10px;
     border: 4px solid ${({ theme }) => theme.button};
@@ -39,7 +65,6 @@ export const Quadro = styled.section`
 
 export const Form = styled.section`
   width: 100%;
-  height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,40 +75,16 @@ export const Form = styled.section`
   ::-webkit-scrollbar {
     display: none;
   }
-
-  .busca {
-    align-self: flex-end;
-    margin: 30px;
-  }
-
-  Input {
-    width: 200px;
-    height: 30px;
-    background-color: ${({ theme }) => theme.input};
-    padding: 10px;
-    border: none;
-    font-size: 16px;
-  }
-    
-  Button {
-    width: 100px;
-    height: 33px;
-    background: ${({ theme }) => theme.button};
-    font-size: 14px;
-    color:  ${({ theme }) => theme.button_text};
-    border: 2px solid #000000;
 `;
 export const Cards = styled.section`
   width: 100%;
-  height: 75%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 
   .lista {
     width: 20%;
-    height: 100%;
-    padding: 20px;
+    height: 80%;
     display: flex;
     flex: none;
     align-items: center;
@@ -98,7 +99,12 @@ export const Cards = styled.section`
   .lista li {
     padding: 10px 0;
   }
-
+  .dados {
+    padding: 20px;
+  }
+  .dados span {
+    color: #5e5a57;
+  }
   .botao {
     align-self: flex-start;
   }
