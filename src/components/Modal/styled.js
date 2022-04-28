@@ -64,6 +64,10 @@ export const Container = styled.div`
         margin: 20px;
     }
 
+    p{
+        color: ${({ theme }) => theme.text};
+    }
+
     .descricao-modal{
         margin: 20px;
     }

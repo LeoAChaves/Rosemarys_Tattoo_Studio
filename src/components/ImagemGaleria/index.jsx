@@ -5,7 +5,7 @@ import Modal from "../Modal";
 
 import {HiOutlineArrowsExpand} from "react-icons/hi";
 
-function ImagemGaleria({src, alt, href, descricao, id}) {
+function ImagemGaleria({src, alt, href, id, funcionario, descricao}) {
     return (
         <S.Div>
             <div className="container">
@@ -19,7 +19,7 @@ function ImagemGaleria({src, alt, href, descricao, id}) {
                     </S.Article>
                 </div>
             </div>
-            <Modal id={id} src={src} alt={alt} descricao={descricao} />
+            <Modal id={id} funcionario={funcionario} src={src} alt={alt} descricao={descricao} />
         </S.Div>
     );
 }

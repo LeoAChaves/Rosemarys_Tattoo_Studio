@@ -40,7 +40,7 @@ function Portfolio({changeTheme}) {
                         <h1>Galeria</h1>
                         <div className="grid">
                             {portfolio.map(portfolio=>{
-                            return <ImagemGaleria key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                            return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
                             })}
                         </div>
                     </S.Main>
