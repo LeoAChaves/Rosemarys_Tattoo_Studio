@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 function FEstoqueMain() {
   const [estoque, setEstoque] = useState([]);
   const [load, setLoad] = useState(true);
+  const [palavraChave, setPalavra] = useState('')
   const carousel = useRef(null);
 
   useEffect(() => {
@@ -38,6 +39,19 @@ function FEstoqueMain() {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 
+  const handleChange = (e)=>{
+    setPalavra(e.target.value)
+    console.log(e.target.value)
+  }
+
+  async function getPalavraChave() {
+    try {
+      const response = await apiEstoque.get('/estoque/nome-estoque/'+palavraChave)
+    } catch (error) {
+      
+    }
+  }
+
   return (
     <>
       {load ? (
@@ -52,6 +66,7 @@ function FEstoqueMain() {
                 type="text"
                 name="search"
                 id="search"
+                onChange={(e)=>handleChange(e)}
               ></Input>
               <Button type="submit" nome="Buscar"></Button>
             </div>
