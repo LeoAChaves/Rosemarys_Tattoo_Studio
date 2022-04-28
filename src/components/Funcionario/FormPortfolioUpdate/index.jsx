@@ -38,7 +38,8 @@ function FormPortfolioUpdate() {
     e.preventDefault();
     try {
       const response = await apiPortfolio.put(
-        `/portfolio/portfolioId/${update}`
+        `/portfolio/portfolioId/${update}`,
+        portfolio
       );
       toast.success(response.data.mensagem);
     } catch (error) {
