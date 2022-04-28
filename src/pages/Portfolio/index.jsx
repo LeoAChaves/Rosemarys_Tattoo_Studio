@@ -5,6 +5,8 @@ import Footer from "../../components/Footer";
 import ImagemGaleria from "../../components/ImagemGaleria";
 import Carregando from "../../components/Carregando";
 
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
+
 import * as S from "./styled.js";
 
 import { apiPortfolio } from "../../services/api.js";
@@ -36,7 +38,7 @@ function Portfolio({changeTheme}) {
             :
                 <div>
                     <Header btnHome={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" changeTheme={changeTheme}/>
-                    <S.Main>
+                    <S.Main id="inicio">
                         <h1>Galeria</h1>
                         <div className="grid">
                             {portfolio.map(portfolio=>{
@@ -45,6 +47,9 @@ function Portfolio({changeTheme}) {
                         </div>
                     </S.Main>
                     <Footer />
+                    <a href="#inicio" className="linkTopo">
+                        <BsFillArrowUpCircleFill className="iconLinkTopo"/>
+                    </a>
                 </div>
             }
         </>

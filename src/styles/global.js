@@ -126,4 +126,25 @@ textarea{
   cursor: pointer;
 }
 
+.linkTopo{
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background: #333333;
+  background: -webkit-linear-gradient(to right, #dd1818, #333333); 
+  background: linear-gradient(to right, #dd1818, #333333); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 0 .4rem .6rem #00000009;
+}
+
+.iconLinkTopo{
+  font-size: 40px;
+}
+
 `;
