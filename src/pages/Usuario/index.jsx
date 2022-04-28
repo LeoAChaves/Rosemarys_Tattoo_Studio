@@ -51,7 +51,7 @@ function Usuario({changeTheme}){
                 
                     <S.Main>
                         <S.BlocoUm>
-                            <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
+                            <Subtitulo texto="Bem-vindo de volta," nome={usuario.nome} />
                             <Button className="styleForm visualizar" nome="Visualizar agendamento" onClick={()=>navigate('/agendamentoPendente')}/>
                         </S.BlocoUm>
                         <S.BlocoDois>
