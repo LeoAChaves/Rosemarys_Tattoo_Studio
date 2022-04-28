@@ -1,7 +1,6 @@
 import Header from "../../components/Header";
 import FormCadastro from "../../components/Form/FormCadastro";
 import Footer from "../../components/Footer";
-import Carregando from "../../components/Carregando";
 
 function Cadastro({changeTheme}){
     const style = {
