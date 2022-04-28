@@ -1,15 +1,12 @@
-import styled from "styled-components";
-import FHomeCard from "./FHomeCard.jsx";
+import FHomeCard from "../FHomeCard/FHomeCard";
 import { useNavigate } from "react-router-dom";
+
+import * as S from "./styled.js";
 
 function FHomeMain() {
   const navigate = useNavigate();
-  const FHomeMain = styled.main`
-    width: 100%;
-    height: calc(100vh - 80px);
-  `;
   return (
-    <FHomeMain>
+    <S.HomeMain>
       <FHomeCard
         tipo="agendamento"
         texto="Agendamento"
@@ -28,7 +25,7 @@ function FHomeMain() {
         onClickVisu={() => navigate("/funcionario/estoque-view")}
         onClickInse={() => navigate("/funcionario/estoque")}
       />
-    </FHomeMain>
+    </S.HomeMain>
   );
 }
 

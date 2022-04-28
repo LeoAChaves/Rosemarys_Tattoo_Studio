@@ -8,7 +8,7 @@ export const Div = styled.div`
     height: 100vh;
 
     .icon{
-        color: white;
+        color: ${({ theme }) => theme.button_text};
         font-size: 50px;
         margin-bottom: 150px;
     }
