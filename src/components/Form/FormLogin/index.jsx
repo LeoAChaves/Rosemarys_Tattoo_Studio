@@ -10,7 +10,7 @@ import ClienteIMG from "../../../assets/cliente.svg"
 import FuncionarioIMG from "../../../assets/funcionario.svg";
 
 import * as S from "./styled.js";
-import { apiCliente } from "../../../services/api";
+import { apiCliente, apiFuncionario } from "../../../services/api";
 
 function FormLogin(){
     const navigate = useNavigate()
@@ -39,6 +39,18 @@ function FormLogin(){
         }
     }
 
+    const loginFuncionario = async (e) =>{
+        e.preventDefault();
+        if(!(await validate())) return
+        try {
+            const response = await apiFuncionario.post('/funcionario/login', usuarioLogin)
+            const idFuncionario = response.data.cliente[0].ID
+            navigate(`/funcionario/home/${idFuncionario}`)   
+        } catch (error) {
+            toast.error(error.response.data.message)
+        }
+    }
+
     async function validate(){
         let schema = yup.object().shape({
             email: yup.string("Campo de nome completo deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
@@ -55,7 +67,7 @@ function FormLogin(){
 
     return(
         <S.Container>
-            <S.Form onSubmit={(e)=> loginCliente(e)}>
+            <S.Form >
                 <S.ParagrafoConta>Escolha o tipo de conta</S.ParagrafoConta>
 
                 <S.ContainerTipo>
@@ -73,9 +85,10 @@ function FormLogin(){
                 <Input placeholder="Email" type="email" name="email" id="email"  onChange={(e) => handleOnchange(e)} disabled={tipoLogin.length === 0 ? true : false}/>
             
                 <Input placeholder="Senha" type="password" name="senha" id="senha"  onChange={(e) => handleOnchange(e)} disabled={tipoLogin.length === 0 ? true : false}/>
-
-                <Button className="styleForm entrar" type="submit" nome="Entrar"></Button>
-
+                {tipoLogin === 'CLIENTE' ? <Button className="styleForm entrar" type="submit" nome="Entrar" onClick={(e)=> loginCliente(e)}/>
+                :
+                <Button className="styleForm entrar" type="submit" nome="Entrar" onClick={(e)=> loginFuncionario(e)}/>}
+                
                 <a className="linkTagA" onClick={()=>navigate(`/esqueceuSenha`)}>Esqueceu a senha?</a>
                 
                 <div className="linhaPontilhada"></div>
