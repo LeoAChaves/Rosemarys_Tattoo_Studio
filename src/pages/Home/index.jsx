@@ -132,7 +132,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Rose Herculano</S.Paragrafo2>
+                  <S.H3>Rose Herculano</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -143,7 +143,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maurício Castro</S.Paragrafo2>
+                  <S.H3>Maurício Castro</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -154,7 +154,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Pietro Alves</S.Paragrafo2>
+                  <S.H3>Pietro Alves</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -165,7 +165,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Amanda Santos</S.Paragrafo2>
+                  <S.H3>Amanda Santos</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -176,7 +176,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maria Andrade</S.Paragrafo2>
+                  <S.H3>Maria Andrade</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -187,7 +187,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Gabriel Fernandes</S.Paragrafo2>
+                  <S.H3>Gabriel Fernandes</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -198,7 +198,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maria Eugenia Chaves</S.Paragrafo2>
+                  <S.H3>Maria Eugenia Chaves</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -209,7 +209,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Fernanda Vasconcelos</S.Paragrafo2>
+                  <S.H3>Fernanda Vasconcelos</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -220,7 +220,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Lucca Rodrigues</S.Paragrafo2>
+                  <S.H3>Lucca Rodrigues</S.H3>
                 </S.Artista>
               </S.Time>
             </S.BlocoTres>
@@ -286,10 +286,10 @@ function Home({ changeTheme }) {
             <S.BlocoCinco>
               <div>
                 <S.H2>Quer nos dizer algo?</S.H2>
-                <S.Paragrafo3>
+                <S.Paragrafo2>
                   Manda aí pra gente se tem uma sugestão ou dúvida que logo
                   entramos em contato!
-                </S.Paragrafo3>
+                </S.Paragrafo2>
               </div>
             </S.BlocoCinco>
           </S.Main>
