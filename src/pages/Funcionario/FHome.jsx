@@ -23,7 +23,6 @@ function FHome({ changeTheme }) {
     
           <FHome>
       <FHeader
-      
         btnHome={{ display: "none" }}
         btnVoltar={{ display: "none" }}
         className={"btn custom-btn styleHeader"}

@@ -43,12 +43,12 @@ function App() {
 
           {/* Rotas Funcionário */}
           <Route path="/funcionario/home/:id" element={<FHome changeTheme={changeTheme} />} />
-          <Route path="/funcionario/estoque" element={<FEstoque changeTheme={changeTheme} />} />
-          <Route path="/funcionario/portfolio" element={<FPortfolio changeTheme={changeTheme} />} />
-          <Route path="/funcionario/agendamento" element={<FAgendamento changeTheme={changeTheme} />} />
-          <Route path="/funcionario/agendamento-view" element={<FAgendaView changeTheme={changeTheme} />} />
-          <Route path="/funcionario/portfolio-view" element={<FPortfolioView changeTheme={changeTheme} />} />
-          <Route path="/funcionario/estoque-view" element={<FEstoqueView changeTheme={changeTheme} />} />
+          <Route path="/funcionario/estoque/:id" element={<FEstoque changeTheme={changeTheme} />} />
+          <Route path="/funcionario/portfolio/:id" element={<FPortfolio changeTheme={changeTheme} />} />
+          <Route path="/funcionario/agendamento/:id" element={<FAgendamento changeTheme={changeTheme} />} />
+          <Route path="/funcionario/agendamento-view/:id" element={<FAgendaView changeTheme={changeTheme} />} />
+          <Route path="/funcionario/portfolio-view/:id" element={<FPortfolioView changeTheme={changeTheme} />} />
+          <Route path="/funcionario/estoque-view/:id" element={<FEstoqueView changeTheme={changeTheme} />} />
           <Route path="/funcionario/estoque-update/:id/:update" element={<FEstoqueUpdate changeTheme={changeTheme} />} />
           <Route path="/funcionario/portfolio-update/:id/:update" element={<FPortfolioUpdate changeTheme={changeTheme} />} />
           <Route path="/funcionario/agendamento-update/:id/:update" element={<FAgendamentoUpdate changeTheme={changeTheme} />} />

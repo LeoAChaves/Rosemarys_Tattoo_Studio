@@ -19,18 +19,15 @@ function FPortfolioMain() {
   const navigate = useNavigate();
   const [funcionario] = useFuncionario();
 
-  useEffect(() => {
-    async function getPortfolios() {
-      try {
-        const response = await apiPortfolio.get("/portfolio");
-        setPortifolio(response.data.portfolios);
-        setLoad(false);
-      } catch (error) {
-        toast.error(error.response.data.mensagem);
-      }
+  async function getPortfolios() {
+    try {
+      const response = await apiPortfolio.get("/portfolio");
+      setPortifolio(response.data.portfolios);
+      setLoad(false);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
     }
-  })
-  
+  }
   useEffect(() => {
     getPortfolios();
   }, []);
