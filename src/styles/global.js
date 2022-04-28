@@ -1,16 +1,23 @@
 import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
+html{
+  scroll-behavior: smooth; /* Scrollar com suavidade */
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Amaranth";
 }
 
 li {
   list-style: none;
+}
+
+h1, h2, h3, .btn{
+  font-family: 'Rye', cursive;;
+  font-weight: 400;
 }
 
 body{
@@ -118,9 +125,42 @@ textarea{
 }
 
 /* Tags "A" */
-a:hover{
+.linkTagA:hover{
   border-bottom: 1px solid black;
   cursor: pointer;
+}
+
+.linkTopo{
+  position: fixed;
+  right: 3rem;
+  bottom: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background: #333333;
+  background: ${({ theme }) => theme.footer}; 
+  background: ${({ theme }) => theme.footer}; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0 0 .4rem .6rem #00000009;
+}
+
+.iconLinkTopo{
+  font-size: 40px;
+}
+
+.iconF{
+  margin-right: 20px;
+  font-size: 27px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  color:  ${({ theme }) => theme.branco_opaco};
+}
+
+.iconF:active{
+  color:  ${({ theme }) => theme.branco_opaco};
 }
 
 `;

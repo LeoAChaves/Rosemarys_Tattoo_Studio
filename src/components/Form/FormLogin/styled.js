@@ -10,7 +10,7 @@ export const Container = styled.main`
   overflow-x: hidden;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 95vh;
+  min-height: 95vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;
@@ -19,11 +19,14 @@ export const Container = styled.main`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
-  height: 100vh;
+  min-height: 90vh;
   width: 100%;
+
+  padding: 30px;
+  margin: 50px;
   
   border-radius: 4px;
   

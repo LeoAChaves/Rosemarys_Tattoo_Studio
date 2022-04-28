@@ -47,11 +47,11 @@ function Usuario({changeTheme}){
             {load ? <Carregando />
             :
                 <div>
-                    <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} portfolio="Portifólio" sair="Sair" changeTheme={changeTheme} />
+                    <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} portfolio="Galeria" sair="Sair" changeTheme={changeTheme} />
                 
                     <S.Main>
                         <S.BlocoUm>
-                            <Subtitulo texto="Bem vindo de volta" nome={usuario.nome} />
+                            <Subtitulo texto="Bem-vindo de volta," nome={usuario.nome} />
                             <Button className="styleForm visualizar" nome="Visualizar agendamento" onClick={()=>navigate('/agendamentoPendente')}/>
                         </S.BlocoUm>
                         <S.BlocoDois>

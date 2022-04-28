@@ -34,7 +34,7 @@ function EsqueceuSenha({changeTheme}) {
 
     return (
         <>
-            <Header btnInicial={{display: "none"}} btnVoltar={{display: "none"}} btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} login="Login" changeTheme={changeTheme}/>
+            <Header btnVoltar={{display: "none"}} btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} login="Login" changeTheme={changeTheme}/>
             <S.Container>
                 <S.Form>
                     <S.Paragrafo>Informe seu email de cadastro para receber uma nova senha de acesso para sua conta.</S.Paragrafo>

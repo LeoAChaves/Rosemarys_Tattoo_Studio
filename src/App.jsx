@@ -22,21 +22,23 @@ import Usuario from "./pages/Usuario";
 import FAgendamentoUpdate from "./pages/Funcionario/Update/Agendamento.jsx";
 import FEstoqueUpdate from "./pages/Funcionario/Update/Estoque.jsx";
 import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio.jsx";
-
+import { funcionarioProvider } from "./components/Hooks/funcionario.jsx";
 function App() {
   const [theme, setTheme] = useState(darkTheme);
+  
 
   const changeTheme = () => {
     setTheme(theme === darkTheme ? lightTheme : darkTheme);
   };
   return (
+
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home changeTheme={changeTheme} />} />
           <Route
-            path="/funcionario/home"
+            path="/funcionario/home/:id"
             element={<FHome changeTheme={changeTheme} />}
           />
           <Route
@@ -105,6 +107,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
+ 
   );
 }
 

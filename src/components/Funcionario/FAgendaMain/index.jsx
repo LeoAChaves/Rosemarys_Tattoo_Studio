@@ -56,7 +56,7 @@ function FAgendaMain() {
         <S.Container>
           <S.Quadro>
             <h2>Agenda</h2>
-            <div class="busca">
+            <div className="busca">
               <Input
                 placeholder="digite a data desejada"
                 type="text"
@@ -66,12 +66,9 @@ function FAgendaMain() {
               <Button type="submit" nome="Buscar"></Button>
             </div>
             <S.Form ref={carousel}>
-              {/* <div class="caixa">
-            <Calendar />
-          </div> */}
               {agenda.map((agendamento) => {
                 return (
-                  <div class="lista dados" key={agendamento.ID}>
+                  <div className="lista dados" key={agendamento.ID}>
                     <ul>
                       <li>
                         ID: <span>{agendamento.ID}</span>

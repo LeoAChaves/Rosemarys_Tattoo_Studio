@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Main = styled.main`
     color: ${({ theme }) => theme.text};
     
-    min-height: 81vh;
+    min-height: 90vh;
     width: 100%;
 
     padding: 20px;

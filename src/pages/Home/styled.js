@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const Main = styled.main`
   color: ${({ theme }) => theme.text};
 
-  height: 100vh;
+  height: auto;
   width: 100%;
 
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center
-    scroll;
+  
   background-position: 30% 0%;
   background-size: cover;
 `;
@@ -17,6 +16,9 @@ export const BlocoUm = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center
+    scroll;
+    
   height: 100vh;
   width: 100%;
 
@@ -84,15 +86,15 @@ export const Paragrafo = styled.p`
   width: 300px;
 `;
 
-export const Paragrafo2 = styled.p`
+export const H3 = styled.h3`
   font-size: 20px;
   width: 300px;
-  color: ${({ theme }) => theme.branco_rosado_opaco};
+  color: ${({ theme }) => theme.branco_opaco};
   position: relative;
   z-index: 1000;
 `;
 
-export const Paragrafo3 = styled.p`
+export const Paragrafo2 = styled.p`
   font-size: 20px;
   color: ${({ theme }) => theme.text};
 `;
@@ -137,13 +139,21 @@ export const Artista = styled.div`
     margin-bottom: 5px;
     object-fit: cover;
   }
+  &:hover img {
+    opacity: 80%;
+    transition: all 1s ease;
+    -webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+    filter: blur(2px);
+  }
+
   border: 2px solid ${({ theme }) => theme.branco_rosado_opaco};
   padding: 20px 20px 15px 20px;
   border-radius: 5px;
   div {
     display: none;
-    transition: 10s;
   }
+
+  transition: all 1s ease;
   &:hover div {
     display: block;
     position: absolute;
@@ -156,7 +166,6 @@ export const Artista = styled.div`
     margin: auto;
     z-index: 999;
 
-    background-color: ${({ theme }) => theme.preto_opaco};
 
     display: flex;
     justify-content: center;
@@ -182,6 +191,13 @@ export const Trabalhos = styled.div`
     height: 300px;
     width: 100%;
     cursor: pointer;
+    object-fit: cover;
+    transition: all 1s ease;
+  }
+  
+  .fotoTrab:hover{
+    opacity: 60%;
+    transition: all 1s ease;
   }
   margin-top: 45px;
 `;
@@ -198,3 +214,53 @@ export const BlocoCinco = styled.div`
     scroll;
   padding: 25px;
 `;
+
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+
+  .formContato{
+    height: 400px;
+    width: 500px;
+    
+    background-color:  ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.text};
+
+    padding: 30px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cardForm{
+    border-radius: 10px;
+    border: none;
+    
+    margin: 10px;
+    padding: 10px;
+
+    width: 30vw;
+  }
+
+  input{
+    height: 40px;
+  }
+
+  textarea{
+    height: 60px;
+  }
+
+  .enviar{
+    background-color: ${({ theme }) => theme.btn_agendamento};
+    color: ${({ theme }) => theme.button_text};
+  }
+
+  .enviar:hover{
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.btn_agendamento};
+  }
+`

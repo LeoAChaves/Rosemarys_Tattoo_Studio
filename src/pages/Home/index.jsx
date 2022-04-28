@@ -3,16 +3,52 @@ import * as S from "./styled.js";
 import { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
-import HeroText from "../../components/Hero/index.jsx";
-import Image from "../../components/Image/index.jsx";
+import HeroText from "../../components/Hero";
+import Image from "../../components/Image";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+
+import * as yup from "yup";
+import toast from 'react-hot-toast';
+
 import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 import Carregando from "../../components/Carregando";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 import { apiPortfolio } from "../../services/api.js";
+import Footer from "../../components/Footer/index.jsx";
+import FooterMain from "../../components/Footer/FooterMain/index.jsx";
 
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
+  const [contato, setContato] = useState([]);
   const [load, setLoad] = useState(true);
+
+  const handleOnchange = (e)=>{
+    setContato({...contato, [e.target.name]: e.target.value})
+  }
+
+  const pegaContato = async (e) => {
+    e.preventDefault()
+    if(!(await validate())) return
+  }
+
+  async function validate(){
+    let schema = yup.object().shape({
+        nome: yup.string("").required("Campo de nome não pode estar vazio"),
+        email: yup.string("Campo de email deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
+        celular: yup.string("Campo de celular deve ser preenchido com números").required("Campo de celular não pode estar vazio").min(11, 'O celular precisa ter 11 digitos'),
+        textarea: yup.string("").required("Campo de descrição não pode estar vazio"),
+    })
+    try {
+        await schema.validate(contato)
+        toast.success("Seu comentário foi enviado para a equipe e será respondido em algumas horas em seu número de contato! ✨")
+        return true
+    } catch (error) {
+        toast.error(error.errors)
+    }
+    return false
+  }
 
   useEffect(() => {
     async function getPortfolios() {
@@ -47,14 +83,13 @@ function Home({ changeTheme }) {
       ) : (
         <div>
           <Header
+            id="inicio"
             btnHome={{ display: "none" }}
             btnVoltar={{ display: "none" }}
-            btnInicial={{ display: "none" }}
             btnSair={{ display: "none" }}
             className={"btn custom-btn styleHeader"}
             style={style}
-            div={{ display: "none" }}
-            portfolio="Portifólio"
+            portfolio="Galeria"
             login="Login"
             changeTheme={changeTheme}
           />
@@ -78,7 +113,7 @@ function Home({ changeTheme }) {
                     esse cillum dolore eu fugiat nulla pariatur.
                   </S.Paragrafo>
                   <S.IconFD>
-                    <GiDaggerRose className="themeMode" />
+                    <GiDaggerRose />
                   </S.IconFD>
                 </S.DivTexto>
                 <S.DivImage>
@@ -132,7 +167,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Rose Herculano</S.Paragrafo2>
+                  <S.H3>Rose Herculano</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -143,7 +178,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maurício Castro</S.Paragrafo2>
+                  <S.H3>Maurício Castro</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -154,7 +189,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Pietro Alves</S.Paragrafo2>
+                  <S.H3>Pietro Alves</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -165,7 +200,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Amanda Santos</S.Paragrafo2>
+                  <S.H3>Amanda Santos</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -176,7 +211,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maria Andrade</S.Paragrafo2>
+                  <S.H3>Maria Andrade</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -187,7 +222,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiRose className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Gabriel Fernandes</S.Paragrafo2>
+                  <S.H3>Gabriel Fernandes</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -198,7 +233,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Maria Eugenia Chaves</S.Paragrafo2>
+                  <S.H3>Maria Eugenia Chaves</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -209,7 +244,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Fernanda Vasconcelos</S.Paragrafo2>
+                  <S.H3>Fernanda Vasconcelos</S.H3>
                 </S.Artista>
 
                 <S.Artista>
@@ -220,7 +255,7 @@ function Home({ changeTheme }) {
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
                   </S.IconFD>
-                  <S.Paragrafo2>Lucca Rodrigues</S.Paragrafo2>
+                  <S.H3>Lucca Rodrigues</S.H3>
                 </S.Artista>
               </S.Time>
             </S.BlocoTres>
@@ -237,48 +272,56 @@ function Home({ changeTheme }) {
                   id={ultimoTrabalho8.ID}
                   alt={ultimoTrabalho8.DESCRICAO}
                   src={ultimoTrabalho8.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho7.ID}
                   id={ultimoTrabalho7.ID}
                   alt={ultimoTrabalho7.DESCRICAO}
                   src={ultimoTrabalho7.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho6.ID}
                   id={ultimoTrabalho6.ID}
                   alt={ultimoTrabalho6.DESCRICAO}
                   src={ultimoTrabalho6.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho5.ID}
                   id={ultimoTrabalho5.ID}
                   alt={ultimoTrabalho5.DESCRICAO}
                   src={ultimoTrabalho5.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho4.ID}
                   id={ultimoTrabalho4.ID}
                   alt={ultimoTrabalho4.DESCRICAO}
                   src={ultimoTrabalho4.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho3.ID}
                   id={ultimoTrabalho3.ID}
                   alt={ultimoTrabalho3.DESCRICAO}
                   src={ultimoTrabalho3.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho2.ID}
                   id={ultimoTrabalho2.ID}
                   alt={ultimoTrabalho2.DESCRICAO}
                   src={ultimoTrabalho2.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho1.ID}
                   id={ultimoTrabalho1.ID}
                   alt={ultimoTrabalho1.DESCRICAO}
                   src={ultimoTrabalho1.FOTO}
+                  className="fotoTrab"
                 />
               </S.Trabalhos>
             </S.BlocoQuatro>
@@ -286,13 +329,28 @@ function Home({ changeTheme }) {
             <S.BlocoCinco>
               <div>
                 <S.H2>Quer nos dizer algo?</S.H2>
-                <S.Paragrafo3>
+                <S.Paragrafo2>
                   Manda aí pra gente se tem uma sugestão ou dúvida que logo
                   entramos em contato!
-                </S.Paragrafo3>
+                  <S.Form onSubmit={(e=> pegaContato(e))}>
+                    <div className="formContato">
+                      <Input className="cardForm" placeholder="Nome" type="text" name="nome"  onChange={(e)=> handleOnchange(e)}/>
+                      <Input className="cardForm" placeholder="Email" type="text" name="email"  onChange={(e)=> handleOnchange(e)}/>
+                      <Input className="cardForm" placeholder="Celular" type="text" name="celular"  onChange={(e)=> handleOnchange(e)}/>
+                      <textarea className="cardForm" placeholder="Digite aqui sua sugestão ou dúvida" type="text" name="textarea"  onChange={(e)=> handleOnchange(e)}/>
+                      <Button className="styleForm enviar" onClick={(e)=>pegaContato(e)} nome="Enviar"/>
+                    </div>
+                  </S.Form>
+                </S.Paragrafo2>
               </div>
             </S.BlocoCinco>
           </S.Main>
+
+         <FooterMain/>
+         <Footer />
+         <a href="#inicio" className="linkTopo">
+            <BsFillArrowUpCircleFill className="iconLinkTopo"/>
+          </a>
         </div>
       )}
     </>
