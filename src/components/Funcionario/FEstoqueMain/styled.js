@@ -112,12 +112,11 @@ export const Cards = styled.section`
   .botao Button {
     width: 90px;
     height: 40px;
-    margin-top: 20px;
+    margin: 20px 15px 10px 0;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 13px;
     color: ${({ theme }) => theme.button_text};
-    margin-right: 15px;
   }
   .botao Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
