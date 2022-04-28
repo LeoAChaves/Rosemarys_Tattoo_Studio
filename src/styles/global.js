@@ -125,17 +125,4 @@ textarea{
   border-bottom: 1px solid black;
   cursor: pointer;
 }
-
-.iconF{
-  margin-right: 20px;
-  font-size: 27px;
-  margin-top: 10px;
-  margin-bottom: 18px;
-  color:  ${({ theme }) => theme.branco_opaco};
-}
-
-.iconF:active{
-  color:  ${({ theme }) => theme.branco_opaco};
-}
-
 `;
