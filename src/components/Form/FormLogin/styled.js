@@ -10,7 +10,7 @@ export const Container = styled.main`
   overflow-x: hidden;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  height: 95vh;
+  min-height: 95vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;

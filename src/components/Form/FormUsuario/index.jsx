@@ -73,7 +73,7 @@ function FormUsuario(){
                 <option value="Fernanda Vasconcelos">Fernanda Vasconcelos</option>
                 <option value="Lucca Rodrigues">Lucca Rodrigues</option>
             </select>
-            <small>Caso não saiba qual escolher, confira no <a onClick={()=>navigate(`/portfolio`)}>portfólio</a> as artes ou perfurações que prefereir</small>
+            <small>Caso não saiba qual escolher, confira no <a className="linkTagA" onClick={()=>navigate(`/portfolio`)}>portfólio</a> as artes ou perfurações que prefereir</small>
 
             <Label className="labelWhatsapp" htmlFor="whatsapp" nome="Whatsapp"></Label>
             <Input type="number" id="whatsapp" name="whatsapp"  onChange={(e)=> handleOnchange(e)} placeholder="(XX) XXXXX-XXXX"/>

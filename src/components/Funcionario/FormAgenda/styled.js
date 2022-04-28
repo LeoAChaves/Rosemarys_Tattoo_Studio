@@ -4,7 +4,7 @@ export const Container = styled.main`
   width: 100%;
   height: calc(100vh - 130px);
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
 `;
 
 export const Quadro = styled.section`
@@ -27,7 +27,7 @@ export const Quadro = styled.section`
 
 export const Form = styled.section`
   width: 100%;
-  height: 70%;
+  height: 90%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -89,3 +89,8 @@ export const Form = styled.section`
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
   }
 `;
+
+/* @media(min-width: 600px) {
+  height: 82vh;
+  width: 450px;
+} */

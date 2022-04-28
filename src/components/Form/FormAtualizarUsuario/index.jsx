@@ -6,12 +6,14 @@ import toast from 'react-hot-toast';
 import Input from "../../Input";
 import Button from "../../Button";
 import Label from "../../Label";
+
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { apiCliente } from "../../../services/api.js";
-import Header from "../../Header/index.jsx";
-function AtualizarUsuario({changeTheme}) {
+
+function AtualizarUsuario() {
     
+    const navigate = useNavigate()
     const [usuario, setUsuario] = useState({})
     const {id} = useParams()
 
@@ -36,12 +38,23 @@ function AtualizarUsuario({changeTheme}) {
         e.preventDefault()
         if(!(await validate())) return
         try {
-           const response = await apiCliente.patch(`/cliente/${id}`, usuario)
-           console.log(response);
+            await apiCliente.patch(`/cliente/${id}`, usuario)
         } catch (error) {
             console.log(error.response);
         }
     }
+
+    async function deletarConta(e) {
+        e.preventDefault()
+        try {
+         const response =  await apiCliente.delete(`/cliente/${id}`)
+         toast.success(response.data.message)
+           navigate('/home')
+        } catch (error) {
+            console.log(error.response);
+        }
+    }
+
 
     async function validate(){
         let schema = yup.object().shape({
@@ -53,20 +66,15 @@ function AtualizarUsuario({changeTheme}) {
         })
         try {
             await schema.validate(usuario)
-            toast.success("teste")
+            toast.success("Usuário atualizado com sucesso! ✨")
             return true
         } catch (error) {
             toast.error(error.errors)
         }
         return false
     }
-    const style = {
-        height: "70px",
-    }
-
 
     return (
-        
         <S.Form>
             <h1>Seus Dados</h1>
             <S.DivCenter>
@@ -106,7 +114,7 @@ function AtualizarUsuario({changeTheme}) {
             </S.DivCenter>
             <div>
                 <Button className="styleForm alterar" nome="Alterar" onClick={(e)=> atualizarDados(e)}/>
-                <Button className="styleForm deletar" nome="Apagar conta"/>
+                <Button className="styleForm deletar" nome="Apagar conta" onClick={(e)=> deletarConta(e)}/>
             </div>
         </S.Form>
     );

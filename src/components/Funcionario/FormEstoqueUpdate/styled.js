@@ -25,29 +25,12 @@ export const Quadro = styled.section`
 `;
 
 export const Form = styled.section`
-  width: 100%;
-  height: 90%;
+  height: 70%;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 20px;
-
-  .caixa {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-  }
-
-  #foto {
-    padding-top: 12px;
-  }
-
-  label {
-    font-size: 16px;
-    color: ${({ theme }) => theme.text};
-    font-weight: 600;
-    margin-bottom: 5px;
-  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 40px 0;
 
   Input {
     width: 500px;
@@ -55,7 +38,7 @@ export const Form = styled.section`
     background-color: ${({ theme }) => theme.input};
     border-radius: 10px;
     padding-left: 10px;
-    margin-bottom: 30px;
+    margin: 0 40px;
     border: none;
     font-size: 16px;
   }
@@ -64,35 +47,15 @@ export const Form = styled.section`
     color: ${({ theme }) => theme.input_placeholder};
   }
 
-  input[type="file"] {
-    color: ${({ theme }) => theme.input_placeholder};
-  }
-
-  textarea {
-    width: 500px;
-    background-color: ${({ theme }) => theme.input};
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
-    border: none;
-    font-size: 16px;
-    resize: none;
-  }
-
-  textarea::placeholder {
-    color: ${({ theme }) => theme.input_placeholder};
-  }
-
   Button {
     align-self: flex-end;
     width: 130px;
     height: 50px;
-    margin-top: 20px;
+    margin-right: 40px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
     color: ${({ theme }) => theme.button_text};
-    margin-left: 15px;
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};

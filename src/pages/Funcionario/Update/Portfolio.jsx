@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../../../components/Header/index.jsx";
-import FormPortfolio from "../../../components/Funcionario/FormPortfolio/index.jsx";
+import FHeader from "../../../components/Funcionario/FHeader";
+import FormPortfolioUpdate from "../../../components/Funcionario/FormPortfolioUpdate/index.jsx";
 import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FPortfolioUpdate({ changeTheme }) {
@@ -16,19 +16,18 @@ function FPortfolioUpdate({ changeTheme }) {
   `;
   return (
     <FPortfolioUpdate>
-      <Header
+      <FHeader
         btnHome={{ display: "none" }}
         btnLogin={{ display: "none" }}
         btnInicial={{ display: "none" }}
         btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
-        div={{ display: "block" }}
         voltar="Voltar"
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormPortfolio botao="ALTERAR" />
+      <FormPortfolioUpdate />
       <FFooter />
     </FPortfolioUpdate>
   );

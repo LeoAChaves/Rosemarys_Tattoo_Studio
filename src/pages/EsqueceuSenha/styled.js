@@ -7,7 +7,7 @@ export const Container = styled.main`
   align-items: center;
   
   background: url(${LoginBackground}) no-repeat bottom center scroll;
-  min-height: 88vh;
+  min-height: 90vh;
   width: 100%;
   background-position: 0% 0%;
   background-size: cover;

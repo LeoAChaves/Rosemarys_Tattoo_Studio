@@ -35,12 +35,12 @@ function Portfolio({changeTheme}) {
             {load ? <Carregando />
             :
                 <div>
-                    <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" changeTheme={changeTheme}/>
+                    <Header btnHome={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" changeTheme={changeTheme}/>
                     <S.Main>
                         <h1>Galeria</h1>
                         <div className="grid">
                             {portfolio.map(portfolio=>{
-                            return <ImagemGaleria key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                            return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
                             })}
                         </div>
                     </S.Main>

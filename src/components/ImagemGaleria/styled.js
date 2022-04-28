@@ -104,5 +104,6 @@ export const Article = styled.article`
     img{
         width: 290px;
         height: 290px;
+        object-fit: cover;
     }
 `

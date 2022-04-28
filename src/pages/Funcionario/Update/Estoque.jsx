@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../../../components/Header/index.jsx";
-import FormEstoque from "../../../components/Funcionario/FormEstoque/index.jsx";
+import FHeader from "../../../components/Funcionario/FHeader";
+import FormEstoqueUpdate from "../../../components/Funcionario/FormEstoqueUpdate/index.jsx";
 import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FEstoqueUpdate({ changeTheme }) {
@@ -16,19 +16,18 @@ function FEstoqueUpdate({ changeTheme }) {
   `;
   return (
     <FEstoqueUpdate>
-      <Header
+      <FHeader
         btnHome={{ display: "none" }}
         btnLogin={{ display: "none" }}
         btnInicial={{ display: "none" }}
         btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
-        div={{ display: "block" }}
         voltar="Voltar"
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormEstoque botao="ALTERAR" />
+      <FormEstoqueUpdate />
       <FFooter />
     </FEstoqueUpdate>
   );

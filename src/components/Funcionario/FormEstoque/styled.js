@@ -4,7 +4,7 @@ export const Container = styled.main`
   width: 100%;
   height: calc(100vh - 130px);
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
 `;
 
 export const Quadro = styled.section`
@@ -25,7 +25,7 @@ export const Quadro = styled.section`
 `;
 
 export const Form = styled.section`
-  height: 70%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;

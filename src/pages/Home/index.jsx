@@ -3,8 +3,14 @@ import * as S from "./styled.js";
 import { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
-import HeroText from "../../components/Hero/index.jsx";
-import Image from "../../components/Image/index.jsx";
+import HeroText from "../../components/Hero";
+import Image from "../../components/Image";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+
+import * as yup from "yup";
+import toast from 'react-hot-toast';
+
 import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 import Carregando from "../../components/Carregando";
 
@@ -14,7 +20,34 @@ import FooterMain from "../../components/Footer/FooterMain/index.jsx";
 
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
+  const [contato, setContato] = useState([]);
   const [load, setLoad] = useState(true);
+
+  const handleOnchange = (e)=>{
+    setContato({...contato, [e.target.name]: e.target.value})
+  }
+
+  const pegaContato = async (e) => {
+    e.preventDefault()
+    if(!(await validate())) return
+  }
+
+  async function validate(){
+    let schema = yup.object().shape({
+        nome: yup.string("").required("Campo de nome não pode estar vazio"),
+        email: yup.string("Campo de email deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
+        celular: yup.string("Campo de celular deve ser preenchido com números").required("Campo de celular não pode estar vazio").min(11, 'O celular precisa ter 11 digitos'),
+        textarea: yup.string("").required("Campo de descrição não pode estar vazio"),
+    })
+    try {
+        await schema.validate(contato)
+        toast.success("Seu comentário foi enviado para a equipe e será respondido em algumas horas em seu número de contato! ✨")
+        return true
+    } catch (error) {
+        toast.error(error.errors)
+    }
+    return false
+  }
 
   useEffect(() => {
     async function getPortfolios() {
@@ -291,6 +324,15 @@ function Home({ changeTheme }) {
                 <S.Paragrafo2>
                   Manda aí pra gente se tem uma sugestão ou dúvida que logo
                   entramos em contato!
+                  <S.Form onSubmit={(e=> pegaContato(e))}>
+                    <div className="formContato">
+                      <Input className="cardForm" placeholder="Nome" type="text" name="nome"  onChange={(e)=> handleOnchange(e)}/>
+                      <Input className="cardForm" placeholder="Email" type="text" name="email"  onChange={(e)=> handleOnchange(e)}/>
+                      <Input className="cardForm" placeholder="Celular" type="text" name="celular"  onChange={(e)=> handleOnchange(e)}/>
+                      <textarea className="cardForm" placeholder="Digite aqui sua sugestão ou dúvida" type="text" name="textarea"  onChange={(e)=> handleOnchange(e)}/>
+                      <Button className="styleForm enviar" onClick={(e)=>pegaContato(e)} nome="Enviar"/>
+                    </div>
+                  </S.Form>
                 </S.Paragrafo2>
               </div>
             </S.BlocoCinco>

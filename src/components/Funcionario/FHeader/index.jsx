@@ -2,23 +2,21 @@ import { useNavigate } from "react-router-dom";
 
 import * as S from "./styled.js";
 
-import Paragrafo from "../Paragrafo";
-import Button from "../Button";
-import Image from "../Image";
+import Paragrafo from "../../Paragrafo";
+import Button from "../../Button";
+import Image from "../../Image";
 
 import { VscColorMode } from "react-icons/vsc";
 
 function Header({
   style,
   div,
-  btnPortfolio,
   btnVoltar,
   btnHome,
   btnLogin,
   btnSair,
   className,
   sair,
-  portfolio,
   home,
   login,
   voltar,
@@ -27,25 +25,19 @@ function Header({
   const navigate = useNavigate();
   return (
     <S.Header style={style}>
-      <S.Div div={div}>
+      <div>
         <Paragrafo texto="ID:" atributo="" />
         <Paragrafo texto="FUNCIONÁRIO:" atributo="" />
         <Paragrafo texto="FUNÇÃO:" atributo="" />
         <Paragrafo texto="STATUS:" atributo="" />
-      </S.Div>
+      </div>
       <div>
         <Image
           src="https://media.discordapp.net/attachments/968220165194014750/968303712965636156/unknown__2_-removebg-preview.png"
-          alt="periquito azul"
+          alt="logo"
         />
       </div>
       <div className="divLinks">
-        <Button
-          style={btnPortfolio}
-          className={className}
-          nome={portfolio}
-          onClick={() => navigate(`/portfolio`)}
-        />
         <Button
           style={btnHome}
           className={className}
