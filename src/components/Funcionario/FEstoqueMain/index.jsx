@@ -46,7 +46,7 @@ function FEstoqueMain() {
         <S.Container>
           <S.Quadro>
             <h2>Estoque</h2>
-            <div class="busca">
+            <div className="busca">
               <Input
                 placeholder="palavra-chave"
                 type="text"
@@ -60,7 +60,7 @@ function FEstoqueMain() {
               <S.Cards>
                 {estoque.map((estoque) => {
                   return (
-                    <div class="lista dados" key={estoque.ID}>
+                    <div className="lista dados" key={estoque.ID}>
                       <ul>
                         <li>
                           ID: <span>{estoque.ID}</span>
