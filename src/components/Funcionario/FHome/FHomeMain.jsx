@@ -1,10 +1,12 @@
 import FHomeCard from "../FHomeCard/FHomeCard";
 import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
 
 import * as S from "./styled.js";
 
 function FHomeMain() {
   const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
   return (
     <S.HomeMain>
       <FHomeCard
