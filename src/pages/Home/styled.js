@@ -84,15 +84,15 @@ export const Paragrafo = styled.p`
   width: 300px;
 `;
 
-export const Paragrafo2 = styled.p`
+export const H3 = styled.h3`
   font-size: 20px;
   width: 300px;
-  color: ${({ theme }) => theme.branco_rosado_opaco};
+  color: ${({ theme }) => theme.branco_opaco};
   position: relative;
   z-index: 1000;
 `;
 
-export const Paragrafo3 = styled.p`
+export const Paragrafo2 = styled.p`
   font-size: 20px;
   color: ${({ theme }) => theme.text};
 `;
@@ -137,13 +137,21 @@ export const Artista = styled.div`
     margin-bottom: 5px;
     object-fit: cover;
   }
+  &:hover img {
+    opacity: 80%;
+    transition: all 1s ease;
+    -webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+    filter: blur(2px);
+  }
+
   border: 2px solid ${({ theme }) => theme.branco_rosado_opaco};
   padding: 20px 20px 15px 20px;
   border-radius: 5px;
   div {
     display: none;
-    transition: 10s;
   }
+
+  transition: all 1s ease;
   &:hover div {
     display: block;
     position: absolute;
@@ -156,7 +164,6 @@ export const Artista = styled.div`
     margin: auto;
     z-index: 999;
 
-    background-color: ${({ theme }) => theme.preto_opaco};
 
     display: flex;
     justify-content: center;
@@ -182,6 +189,7 @@ export const Trabalhos = styled.div`
     height: 300px;
     width: 100%;
     cursor: pointer;
+    object-fit: cover;
   }
   margin-top: 45px;
 `;
