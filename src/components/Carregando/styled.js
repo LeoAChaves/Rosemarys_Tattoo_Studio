@@ -16,7 +16,7 @@ export const Div = styled.div`
         width:200px;
         height:60px;
         position: absolute;
-        left:49%;
+        left:48%;
         top:50%;
         transform: translate(-50%, -50%);
     }
