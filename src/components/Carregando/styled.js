@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
 export const Div = styled.div`
+
+    .icon{
+        color: white;
+        font-size: 30px;
+    }
     .wrapper{
         width:200px;
         height:60px;
@@ -45,6 +50,11 @@ export const Div = styled.div`
         right:15%;
         animation-delay: .3s;
     }
+    .circle:nth-child(4){
+        left:90%;
+        right:auto;
+        animation-delay: .4s;
+    }
     .shadow{
         width:20px;
         height:4px;
@@ -56,7 +66,7 @@ export const Div = styled.div`
         z-index: -1;
         left:15%;
         filter: blur(1px);
-        animation: shadow .5s alternate infinite ease;
+        animation: shadow .1s alternate infinite ease;
     }
 
     @keyframes shadow{
@@ -72,14 +82,19 @@ export const Div = styled.div`
             opacity: .4;
         }
     }
-    .shadow:nth-child(4){
+    .shadow:nth-child(5){
         left: 45%;
         animation-delay: .2s
     }
-    .shadow:nth-child(5){
+    .shadow:nth-child(6){
         left:auto;
         right:15%;
         animation-delay: .3s;
+    }
+    .shadow:nth-child(7){
+        left:95%;
+        right:auto;
+        animation-delay: .4s;
     }
     .wrapper span{
         position: absolute;
