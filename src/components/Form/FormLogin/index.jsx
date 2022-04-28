@@ -76,7 +76,7 @@ function FormLogin(){
 
                 <Button className="styleForm entrar" type="submit" nome="Entrar"></Button>
 
-                <a onClick={()=>navigate(`/esqueceuSenha`)}>Esqueceu a senha?</a>
+                <a className="linkTagA" onClick={()=>navigate(`/esqueceuSenha`)}>Esqueceu a senha?</a>
                 
                 <div className="linhaPontilhada"></div>
 
