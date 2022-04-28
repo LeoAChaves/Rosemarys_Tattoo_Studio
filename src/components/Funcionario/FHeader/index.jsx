@@ -10,15 +10,12 @@ import { VscColorMode } from "react-icons/vsc";
 
 function Header({
   style,
-  div,
   btnVoltar,
   btnHome,
-  btnLogin,
   btnSair,
   className,
   sair,
   home,
-  login,
   voltar,
   changeTheme,
 }) {
@@ -43,12 +40,6 @@ function Header({
           className={className}
           nome={home}
           onClick={() => navigate(`/home`)}
-        />
-        <Button
-          style={btnLogin}
-          className={className}
-          nome={login}
-          onClick={() => navigate(`/login`)}
         />
         <Button
           style={btnVoltar}

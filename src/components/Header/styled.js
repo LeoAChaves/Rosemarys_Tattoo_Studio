@@ -38,9 +38,3 @@ export const Header = styled.header`
     color: ${({ theme }) => theme.text};
   }
 `;
-
-export const Div = styled.div`
-  display: ${(props) => props.div.display};
-  color: ${({ theme }) => theme.text};
-  font-size: 14px;
-`;

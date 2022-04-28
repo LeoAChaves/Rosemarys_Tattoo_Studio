@@ -18,9 +18,6 @@ function FPortfolio({ changeTheme }) {
     <FPortfolio>
       <FHeader
         btnHome={{ display: "none" }}
-        btnLogin={{ display: "none" }}
-        btnInicial={{ display: "none" }}
-        btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
         voltar="Voltar"

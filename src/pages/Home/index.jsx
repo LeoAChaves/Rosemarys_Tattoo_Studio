@@ -13,6 +13,7 @@ import toast from 'react-hot-toast';
 
 import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 import Carregando from "../../components/Carregando";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 
 import { apiPortfolio } from "../../services/api.js";
 import Footer from "../../components/Footer/index.jsx";
@@ -82,13 +83,12 @@ function Home({ changeTheme }) {
       ) : (
         <div>
           <Header
+            id="inicio"
             btnHome={{ display: "none" }}
             btnVoltar={{ display: "none" }}
-            btnInicial={{ display: "none" }}
             btnSair={{ display: "none" }}
             className={"btn custom-btn styleHeader"}
             style={style}
-            div={{ display: "none" }}
             portfolio="Galeria"
             login="Login"
             changeTheme={changeTheme}
@@ -348,6 +348,9 @@ function Home({ changeTheme }) {
 
          <FooterMain/>
          <Footer />
+         <a href="#inicio" className="linkTopo">
+            <BsFillArrowUpCircleFill className="iconLinkTopo"/>
+          </a>
         </div>
       )}
     </>

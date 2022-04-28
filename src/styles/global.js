@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
 
+html{
+  scroll-behavior: smooth; /* Scrollar com suavidade */
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -133,8 +137,8 @@ textarea{
   width: 3rem;
   height: 3rem;
   background: #333333;
-  background: -webkit-linear-gradient(to right, #dd1818, #333333); 
-  background: linear-gradient(to right, #dd1818, #333333); 
+  background: ${({ theme }) => theme.footer}; 
+  background: ${({ theme }) => theme.footer}; 
   display: flex;
   justify-content: center;
   align-items: center;

@@ -25,9 +25,6 @@ function FHome({ changeTheme }) {
       
         btnHome={{ display: "none" }}
         btnVoltar={{ display: "none" }}
-        btnLogin={{ display: "none" }}
-        btnInicial={{ display: "none" }}
-        btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
         sair="Sair"
