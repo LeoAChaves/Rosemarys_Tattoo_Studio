@@ -4,7 +4,7 @@ import { GiSacrificialDagger } from "react-icons/gi";
 function Carregando() {
     return ( 
         <S.Div>
-            <div>
+            <div className="container">
                 <GiSacrificialDagger className="icon"/>
             </div>
             <div class="wrapper">
