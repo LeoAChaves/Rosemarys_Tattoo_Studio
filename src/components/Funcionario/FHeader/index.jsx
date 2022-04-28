@@ -7,7 +7,7 @@ import Button from "../../Button";
 import Image from "../../Image";
 
 import { VscColorMode } from "react-icons/vsc";
-import useFuncionario from '../../Hooks/funcionario.jsx'
+import useFuncionario from "../../Hooks/funcionario.jsx";
 function Header({
   style,
   btnVoltar,
@@ -20,14 +20,14 @@ function Header({
   changeTheme,
 }) {
   const navigate = useNavigate();
-  const [funcionario] = useFuncionario()
+  const [funcionario] = useFuncionario();
   return (
     <S.Header style={style}>
       <div>
-        <Paragrafo texto="ID:" atributo={funcionario.ID}/>
+        <Paragrafo texto="ID:" atributo={funcionario.ID} />
         <Paragrafo texto="FUNCIONÁRIO:" atributo={funcionario.NOME} />
         <Paragrafo texto="FUNÇÃO:" atributo={funcionario.CARGO} />
-        <Paragrafo texto="STATUS:" atributo={funcionario.STATUS}/>
+        <Paragrafo texto="STATUS:" atributo={funcionario.STATUS} />
       </div>
       <div>
         <Image
@@ -47,6 +47,7 @@ function Header({
           className={className}
           nome={voltar}
           onClick={() => window.history.back()}
+          onClick={() => navigate("/funcionario/home/" + funcionario.ID)}
         />
         <Button
           style={btnSair}

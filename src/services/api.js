@@ -17,7 +17,7 @@ export const apiPortfolio = axios.create({
 });
 
 export const apiFuncionario = axios.create({
-    baseURL: "https://rosemarys-funcionarios.herokuapp.com",
+    baseURL: "https://api-funcionarios-rosemary.herokuapp.com",
   });
   
 
