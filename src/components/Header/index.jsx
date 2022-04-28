@@ -15,14 +15,12 @@ function Header({
   btnVoltar,
   btnHome,
   btnLogin,
-  btnInicial,
   btnSair,
   className,
   sair,
   portfolio,
   home,
   login,
-  inicialUsuario,
   voltar,
   changeTheme,
 }) {
@@ -61,16 +59,10 @@ function Header({
           onClick={() => navigate(`/login`)}
         />
         <Button
-          style={btnInicial}
-          className={className}
-          nome={inicialUsuario}
-          onClick={() => window.history.back()}
-        />
-        <Button
           style={btnVoltar}
           className={className}
           nome={voltar}
-          onClick={() => navigate("/funcionario/home")}
+          onClick={() => window.history.back()}
         />
         <Button
           style={btnSair}

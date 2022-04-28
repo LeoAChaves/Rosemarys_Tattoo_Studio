@@ -54,7 +54,7 @@ function Header({
           style={btnVoltar}
           className={className}
           nome={voltar}
-          onClick={() => navigate("/funcionario/home")}
+          onClick={() => window.history.back()}
         />
         <Button
           style={btnSair}

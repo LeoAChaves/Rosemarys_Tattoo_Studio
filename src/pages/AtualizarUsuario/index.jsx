@@ -11,7 +11,7 @@ function AtualizarUsuario({changeTheme}){
 
     return(
         <>
-            <Header btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} inicialUsuario="Voltar" sair="Sair" changeTheme={changeTheme}  />
+            <Header btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" sair="Sair" changeTheme={changeTheme}  />
             <S.Main>
                 <FormAtualizarUsuario />
             </S.Main>
