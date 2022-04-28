@@ -42,6 +42,15 @@ function FEstoqueMain() {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 
+  async function deletarEstoque(id) {
+    try {
+      const response = await apiEstoque.delete(`/estoque/id/${id}`);
+      toast.success(response.data.mensagem);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
+    }
+  }
+
   return (
     <>
       {load ? (
@@ -96,7 +105,7 @@ function FEstoqueMain() {
                             className="styleForm"
                             type="submit"
                             nome="Deletar"
-                            //onClick={(e) => deletarEstoque(e)}
+                            onClick={() => deletarEstoque(estoque.ID)}
                           ></Button>
                         </div>
                       </ul>
