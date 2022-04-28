@@ -42,27 +42,27 @@ function App() {
             element={<FHome changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/estoque"
+            path="/funcionario/estoque/:id"
             element={<FEstoque changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/portfolio"
+            path="/funcionario/portfolio/:id"
             element={<FPortfolio changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/agendamento"
+            path="/funcionario/agendamento/:id"
             element={<FAgendamento changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/agendamento-view"
+            path="/funcionario/agendamento-view/:id"
             element={<FAgendaView changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/portfolio-view"
+            path="/funcionario/portfolio-view/:id"
             element={<FPortfolioView changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/estoque-view"
+            path="/funcionario/estoque-view/:id"
             element={<FEstoqueView changeTheme={changeTheme} />}
           />
           <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
