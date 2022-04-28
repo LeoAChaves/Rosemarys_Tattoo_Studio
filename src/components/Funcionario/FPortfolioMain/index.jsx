@@ -29,6 +29,9 @@ function FPortfolioMain() {
         toast.error(error.response.data.mensagem);
       }
     }
+  })
+  
+  useEffect(() => {
     getPortfolios();
   }, []);
 
@@ -38,6 +41,7 @@ function FPortfolioMain() {
         `/portfolio/portfolioId/${id}`
       );
       toast.success(response.data.mensagem);
+      getPortfolios();
     } catch (error) {
       toast.error(error.response.data.mensagem);
     }
