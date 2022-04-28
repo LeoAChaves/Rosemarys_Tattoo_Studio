@@ -25,13 +25,11 @@ import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio.jsx";
 import { funcionarioProvider } from "./components/Hooks/funcionario.jsx";
 function App() {
   const [theme, setTheme] = useState(darkTheme);
-  
 
   const changeTheme = () => {
     setTheme(theme === darkTheme ? lightTheme : darkTheme);
   };
   return (
-
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
@@ -93,21 +91,20 @@ function App() {
             element={<AgendamentoPendente changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/estoque-update"
+            path="/funcionario/estoque-update/:id"
             element={<FEstoqueUpdate changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/portfolio-update"
+            path="/funcionario/portfolio-update/:id"
             element={<FPortfolioUpdate changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/agendamento-update"
+            path="/funcionario/agendamento-update/:id"
             element={<FAgendamentoUpdate changeTheme={changeTheme} />}
           />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
- 
   );
 }
 

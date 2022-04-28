@@ -8,11 +8,15 @@ import { apiEstoque } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
 
 function FEstoqueMain() {
   const [estoque, setEstoque] = useState([]);
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
   useEffect(() => {
     async function getEstoque() {
@@ -82,7 +86,11 @@ function FEstoqueMain() {
                             className="styleForm"
                             type="submit"
                             nome="Alterar"
-                            //onClick={(e) => alterarEstoque(e)}
+                            onClick={() =>
+                              navigate(
+                                "/funcionario/estoque-update/" + funcionario.ID
+                              )
+                            }
                           ></Button>
                           <Button
                             className="styleForm"
