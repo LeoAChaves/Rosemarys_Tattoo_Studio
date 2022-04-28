@@ -6,11 +6,12 @@ import toast from 'react-hot-toast';
 import Input from "../../Input";
 import Button from "../../Button";
 import Label from "../../Label";
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { apiCliente } from "../../../services/api.js";
-import Header from "../../Header/index.jsx";
-function AtualizarUsuario({changeTheme}) {
+
+function AtualizarUsuario() {
     
     const [usuario, setUsuario] = useState({})
     const {id} = useParams()
@@ -53,17 +54,13 @@ function AtualizarUsuario({changeTheme}) {
         })
         try {
             await schema.validate(usuario)
-            toast.success("teste")
+            toast.success("Usuário atualizado com sucesso! ✨")
             return true
         } catch (error) {
             toast.error(error.errors)
         }
         return false
     }
-    const style = {
-        height: "70px",
-    }
-
 
     return (
         

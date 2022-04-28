@@ -2,14 +2,15 @@ import * as S from "./styled.js";
 
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
-import Label from "../../Label/index.jsx";
 
+import * as yup from "yup";
 import toast from "react-hot-toast";
+
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
 function FormAgenda({ botao }) {
-  const [agendamento, setAgendamento] = useState([]);
+  const [agendamento, setAgendamento] = useState({});
 
   const handleOnchange = (e) => {
     e.preventDefault();
@@ -25,15 +26,34 @@ function FormAgenda({ botao }) {
 
   const inserirAgendamento = async (e) => {
     e.preventDefault();
+    if(!(await validate())) return
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
-      toast.success(response.data.message);
       console.log(response.data.message);
     } catch (error) {
-      toast.error(error.response.data.message);
       console.log(error.response.data.message);
     }
   };
+
+  async function validate(){
+    let schema = yup.object().shape({
+      Cliente_ID: yup.number("Campo de clienteID deve ser preenchido com letras").required("Campo de ClienteID não pode estar vazio"),
+      Funcionario_ID: yup.number("Campo de FuncionarioID deve ser preenchido com letras").required("Campo de FuncionarioID não pode estar vazio"),
+      Data: yup.date("Campo só aceita data").required("Campo de data não pode estar vazio"),
+      Hora: yup.string("").required("Campo de hora não pode estar vazio"),
+      Servico: yup.string("Campo de serviço deve ser preenchido com letras").required("Campo de serviço não pode estar vazio"),
+      Duracao: yup.number("Campo de duração deve ser preenchido com números").required("Campo de duração não pode estar vazio"),
+    })
+    try {
+      await schema.validate(agendamento)
+      toast.success("Agendamento inserido com sucesso! 🗓️")
+      return true
+    } catch (error) {
+      toast.error(error.errors)
+    }
+    return false
+  }
+
   return (
     <S.Container>
       <S.Quadro>

@@ -56,6 +56,7 @@ export const Quadro = styled.section`
     height: 35px;
     margin: 0 10px 20px;
     border: 4px solid ${({ theme }) => theme.button};
+    cursor: pointer;
   }
 
   .seta img {

@@ -23,7 +23,6 @@ function FormCadastro(){
         setUsuario({...usuario, [e.target.name]: e.target.value})  
     }
 
-
     const cadastroCliente = async (e) => {
         e.preventDefault()
         if(!(await validate())) return
@@ -33,8 +32,6 @@ function FormCadastro(){
             navigate('/login')
         } catch (error) {
             toast.error(error.response.data.message)
-            
-            
         }
     }
 
