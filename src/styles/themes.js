@@ -31,6 +31,7 @@ export const lightTheme = {
   preto,
   vermelho,
   branco_opaco,
+  footer: "#7B0000",
 };
 
 export const darkTheme = {
@@ -56,4 +57,5 @@ export const darkTheme = {
   preto,
   vermelho,
   branco_opaco,
+  footer: preto,
 };
