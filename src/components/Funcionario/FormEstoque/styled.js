@@ -5,6 +5,10 @@ export const Container = styled.main`
   height: calc(100vh - 130px);
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 export const Quadro = styled.section`
@@ -21,6 +25,12 @@ export const Quadro = styled.section`
     font-size: 24px;
     font-weight: 400;
     text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 60px;
+    padding-bottom: 60px;
+    height: auto;
   }
 `;
 
@@ -59,5 +69,17 @@ export const Form = styled.section`
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    juatify-content: center;
+    width: 100%;
+    margin: 10px 0 0 10px;
+    Input {
+      width: 350px;
+      margin: 10px;
+    }
   }
 `;

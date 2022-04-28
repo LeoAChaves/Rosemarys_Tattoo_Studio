@@ -10,6 +10,13 @@ function FFooter() {
     color: ${({ theme }) => theme.text};
     position: absolute;
     bottom: 0;
+
+    @media (max-width: 600px) {
+      position: relative;
+      height: 60px;
+      bottom: none;
+      margin-top: 10px;
+    }
   `;
   return (
     <FFooter>
