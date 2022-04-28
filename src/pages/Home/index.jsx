@@ -9,6 +9,8 @@ import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 import Carregando from "../../components/Carregando";
 
 import { apiPortfolio } from "../../services/api.js";
+import Footer from "../../components/Footer/index.jsx";
+import FooterMain from "../../components/Footer/FooterMain/index.jsx";
 
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
@@ -54,7 +56,7 @@ function Home({ changeTheme }) {
             className={"btn custom-btn styleHeader"}
             style={style}
             div={{ display: "none" }}
-            portfolio="Portifólio"
+            portfolio="Galeria"
             login="Login"
             changeTheme={changeTheme}
           />
@@ -78,7 +80,7 @@ function Home({ changeTheme }) {
                     esse cillum dolore eu fugiat nulla pariatur.
                   </S.Paragrafo>
                   <S.IconFD>
-                    <GiDaggerRose className="themeMode" />
+                    <GiDaggerRose />
                   </S.IconFD>
                 </S.DivTexto>
                 <S.DivImage>
@@ -293,6 +295,9 @@ function Home({ changeTheme }) {
               </div>
             </S.BlocoCinco>
           </S.Main>
+
+         <FooterMain/>
+         <Footer />
         </div>
       )}
     </>
