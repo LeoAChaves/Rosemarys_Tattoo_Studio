@@ -14,6 +14,11 @@ export const Header = styled.header`
     width: 65px;
   }
 
+  p{
+    color: ${({ theme }) => theme.text};
+    font-size: 14px;
+  }
+
   .divLinks {
     display: flex;
     justify-content: space-between;
@@ -37,4 +42,4 @@ export const Header = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
-`;
+`

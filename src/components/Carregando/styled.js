@@ -2,15 +2,21 @@ import styled from "styled-components";
 
 export const Div = styled.div`
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
     .icon{
         color: white;
-        font-size: 30px;
+        font-size: 50px;
+        margin-bottom: 150px;
     }
     .wrapper{
         width:200px;
         height:60px;
         position: absolute;
-        left:50%;
+        left:49%;
         top:50%;
         transform: translate(-50%, -50%);
     }
@@ -42,16 +48,16 @@ export const Div = styled.div`
         }
     }
     .circle:nth-child(2){
-        left:45%;
+        left: 45%;
         animation-delay: .2s;
     }
     .circle:nth-child(3){
         left:auto;
-        right:15%;
+        right: 15%;
         animation-delay: .3s;
     }
     .circle:nth-child(4){
-        left:90%;
+        left: 100%;
         right:auto;
         animation-delay: .4s;
     }
@@ -88,11 +94,11 @@ export const Div = styled.div`
     }
     .shadow:nth-child(6){
         left:auto;
-        right:15%;
+        right: 15%;
         animation-delay: .3s;
     }
     .shadow:nth-child(7){
-        left:95%;
+        left: 100%;
         right:auto;
         animation-delay: .4s;
     }

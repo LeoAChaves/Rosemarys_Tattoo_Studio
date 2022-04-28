@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../../components/Header/index.jsx";
+import FHeader from "../../components/Funcionario/FHeader";
 import FHomeMain from "../../components/Funcionario/FHome/FHomeMain.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 import { useEffect, useState } from "react";
@@ -21,7 +21,7 @@ function FHome({ changeTheme }) {
   return (
     
           <FHome>
-      <Header
+      <FHeader
       
         btnHome={{ display: "none" }}
         btnVoltar={{ display: "none" }}
@@ -30,7 +30,6 @@ function FHome({ changeTheme }) {
         btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
-        div={{ display: "block" }}
         sair="Sair"
         changeTheme={changeTheme}
       

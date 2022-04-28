@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../../components/Header/index.jsx";
+import FHeader from "../../components/Funcionario/FHeader";
 import FormAgenda from "../../components/Funcionario/FormAgenda/index.jsx";
 import FFooter from "../../components/Funcionario/FFooter/FFooter.jsx";
 
@@ -16,14 +16,13 @@ function FAgendamento({ changeTheme }) {
   `;
   return (
     <FAgendamento>
-      <Header
+      <FHeader
         btnHome={{ display: "none" }}
         btnLogin={{ display: "none" }}
         btnInicial={{ display: "none" }}
         btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
-        div={{ display: "block" }}
         voltar="Voltar"
         sair="Sair"
         changeTheme={changeTheme}
