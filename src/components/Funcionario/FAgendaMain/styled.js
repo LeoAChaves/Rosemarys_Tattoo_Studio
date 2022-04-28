@@ -16,11 +16,46 @@ export const Quadro = styled.section`
   align-items: center;
 
   h2 {
-    padding: 30px 10px 0 0;
+    padding: 30px 0 0 0;
     color: ${({ theme }) => theme.text};
     font-size: 24px;
     font-weight: 400;
     text-align: center;
+  }
+
+  .busca {
+    align-self: flex-end;
+    margin-right: 30px;
+  }
+
+  .busca Button {
+    width: 100px;
+    height: 33px;
+    background: ${({ theme }) => theme.button};
+    font-size: 14px;
+    color: ${({ theme }) => theme.button_text};
+    border: 1px solid #000000;
+  }
+
+  Button:hover {
+    transform: scale(1.1);
+  }
+
+  Input {
+    width: 200px;
+    height: 30px;
+    background-color: ${({ theme }) => theme.input};
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+  }
+
+  .btnBusca {
+    background: none;
+    widht: 40px;
+    height: 35px;
+    margin: 0 20px 20px;
+    border: 4px solid ${({ theme }) => theme.button};
   }
 
   .seta button {
@@ -39,7 +74,7 @@ export const Quadro = styled.section`
 
 export const Form = styled.section`
   width: 100%;
-  height: 70%;
+  height: 75%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -50,52 +85,51 @@ export const Form = styled.section`
     display: none;
   }
 
-.caixa{
-  width:30%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items: center;
-  margin: 20px;
-}
-
-.lista{
-    width:30%;
-    height:100%;
-    display:flex;
-    flex: none;
-    flex-direction: column;
+  .caixa {
+    width: 30%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content:center;
     margin: 20px;
-    padding:20px;
-    background-color: #FDFDFD;
+  }
+
+  .lista {
+    width: 20%;
+    height: 80%;
+    padding: 20px;
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 20px;
+    background-color: ${({ theme }) => theme.card};
     border: 4px solid ${({ theme }) => theme.button};
     border-radius: 10px;
   }
 
-  .lista div{
-    padding:20px;
-    border-bottom: 2px solid  #282320 
+  .dados {
+    padding: 20px;
+  }
+  .dados span {
+    color: #5e5a57;
   }
 
-  Input {
-    width: 500px;
-    height: 50px;
-    background-color: ${({ theme }) => theme.input};
-    border-radius: 10px;
-    padding: 10px;
-    margin-bottom: 40px;
-    border: none;
-    font-size: 16px;
+  .botao {
+    align-self: flex-start;
   }
 
-  
-  Button {
-    width: 130px;
-    height: 50px;
+  .botao Button {
+    width: 90px;
+    height: 40px;
+    margin-top: 20px;
     background: ${({ theme }) => theme.button};
-    font-size: 14px;
-    color:  ${({ theme }) => theme.text};
-    
+    border-radius: 10px;
+    font-size: 13px;
+    color: ${({ theme }) => theme.button_text};
+    margin-right: 15px;
+  }
+  .botao Button:hover {
+    box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
 `;

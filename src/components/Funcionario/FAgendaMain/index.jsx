@@ -71,15 +71,30 @@ function FAgendaMain() {
           </div> */}
               {agenda.map((agendamento) => {
                 return (
-                  <div class="lista" key={agendamento.ID}>
+                  <div class="lista dados" key={agendamento.ID}>
                     <ul>
-                      <li>ID: {agendamento.ID}</li>
-                      <li>CLIENTE_ID: {agendamento.Cliente_ID}</li>
-                      <li>FUNCIONARIO_ID: {agendamento.Funcionario_ID}</li>
-                      <li>DATA: {agendamento.Data}</li>
-                      <li>HORA: {agendamento.Hora}</li>
-                      <li>SERVIÇO: {agendamento.Servico}</li>
-                      <li>DURAÇÃO: {agendamento.Duracao}</li>
+                      <li>
+                        ID: <span>{agendamento.ID}</span>
+                      </li>
+                      <li>
+                        CLIENTE_ID: <span>{agendamento.Cliente_ID}</span>
+                      </li>
+                      <li>
+                        FUNCIONARIO_ID:{" "}
+                        <span>{agendamento.Funcionario_ID}</span>
+                      </li>
+                      <li>
+                        DATA: <span>{agendamento.Data}</span>
+                      </li>
+                      <li>
+                        HORA: <span>{agendamento.Hora}</span>
+                      </li>
+                      <li>
+                        SERVIÇO: <span>{agendamento.Servico}</span>
+                      </li>
+                      <li>
+                        DURAÇÃO: <span>{agendamento.Duracao}</span>
+                      </li>
                       <div className="botao">
                         <Button
                           className="styleForm"
@@ -102,10 +117,10 @@ function FAgendaMain() {
               })}
             </S.Form>
             <div className="seta">
-              <button onClick={handleBackClick}>
+              <button className="btnBusca" onClick={handleBackClick}>
                 <img src={iconBack} alt="back"></img>
               </button>
-              <button onClick={handleNextClick}>
+              <button className="btnBusca" onClick={handleNextClick}>
                 <img src={iconNext} alt="next"></img>
               </button>
             </div>
