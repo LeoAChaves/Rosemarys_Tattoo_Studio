@@ -52,7 +52,7 @@ export const Quadro = styled.section`
 
   .btnBusca {
     background: none;
-    widht: 40px;
+    width: 40px;
     height: 35px;
     margin: 0 20px 20px;
     border: 4px solid ${({ theme }) => theme.button};
@@ -61,14 +61,14 @@ export const Quadro = styled.section`
 
   .seta button {
     background: none;
-    widht: 80px;
+    width: 80px;
     height: 35px;
     margin: 0 10px 20px 10px;
     border: 4px solid ${({ theme }) => theme.button};
   }
 
   .seta img {
-    widht: 30px;
+    width: 30px;
     height: 30px;
   }
 `;
