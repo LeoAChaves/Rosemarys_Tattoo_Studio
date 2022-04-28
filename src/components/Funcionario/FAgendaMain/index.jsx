@@ -9,11 +9,15 @@ import { apiAgenda } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
 
 function FAgendaMain() {
   const [agenda, setAgenda] = useState([]);
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
   useEffect(() => {
     async function getagenda() {
@@ -97,7 +101,12 @@ function FAgendaMain() {
                           className="styleForm"
                           type="submit"
                           nome="Alterar"
-                          //onClick={(e) => alteraragenda(e)}
+                          onClick={() =>
+                            navigate(
+                              "/funcionario/agendamento-update/" +
+                                funcionario.ID
+                            )
+                          }
                         ></Button>
                         <Button
                           className="styleForm"

@@ -4,16 +4,20 @@ import { apiPortfolio } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
-
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 import iconBack from "../../../assets/iconBack.png";
 import iconNext from "../../../assets/iconNext.png";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
 
 function FPortfolioMain() {
   const [portfolio, setPortifolio] = useState([]);
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
+  const [palavraChave, setPalavra] = useState("");
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
   useEffect(() => {
     async function getPortfolios() {
@@ -48,6 +52,18 @@ function FPortfolioMain() {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 
+  const handleChange = (e) => {
+    setPalavra(e.target.value);
+  };
+
+  async function getPalavraChave() {
+    try {
+      const reponse = await apiPortfolio.get("/portfolio/nome/" + palavraChave);
+      setPortifolio(reponse.data.portfolio);
+      console.log(reponse);
+    } catch (error) {}
+  }
+
   return (
     <>
       {load ? (
@@ -63,8 +79,13 @@ function FPortfolioMain() {
                   type="text"
                   name="search"
                   id="search"
+                  onChange={(e) => handleChange(e)}
                 ></Input>
-                <Button type="submit" nome="Buscar"></Button>
+                <Button
+                  type="submit"
+                  nome="Buscar"
+                  onClick={getPalavraChave}
+                ></Button>
               </div>
               <S.Form ref={carousel}>
                 {portfolio.map((portfolio) => {
@@ -94,7 +115,12 @@ function FPortfolioMain() {
                             className="styleForm"
                             type="submit"
                             nome="Alterar"
-                            //onClick={(e) => alterarPortfolio(e)}
+                            onClick={() =>
+                              navigate(
+                                "/funcionario/portfolio-update/" +
+                                  funcionario.ID
+                              )
+                            }
                           ></Button>
                           <Button
                             className="styleForm"

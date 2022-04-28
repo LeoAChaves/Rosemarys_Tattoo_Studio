@@ -28,13 +28,11 @@ import Cadastro from "./pages/Cadastro";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
-  
 
   const changeTheme = () => {
     setTheme(theme === darkTheme ? lightTheme : darkTheme);
   };
   return (
-
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
@@ -51,9 +49,9 @@ function App() {
           <Route path="/funcionario/agendamento-view" element={<FAgendaView changeTheme={changeTheme} />} />
           <Route path="/funcionario/portfolio-view" element={<FPortfolioView changeTheme={changeTheme} />} />
           <Route path="/funcionario/estoque-view" element={<FEstoqueView changeTheme={changeTheme} />} />
-          <Route path="/funcionario/estoque-update" element={<FEstoqueUpdate changeTheme={changeTheme} />} />
-          <Route path="/funcionario/portfolio-update" element={<FPortfolioUpdate changeTheme={changeTheme} />} />
-          <Route path="/funcionario/agendamento-update" element={<FAgendamentoUpdate changeTheme={changeTheme} />} />
+          <Route path="/funcionario/estoque-update/:id/:update" element={<FEstoqueUpdate changeTheme={changeTheme} />} />
+          <Route path="/funcionario/portfolio-update/:id/:update" element={<FPortfolioUpdate changeTheme={changeTheme} />} />
+          <Route path="/funcionario/agendamento-update/:id/:update" element={<FAgendamentoUpdate changeTheme={changeTheme} />} />
 
           {/* Rotas Usuário */}
           <Route path="/login" element={<Login changeTheme={changeTheme} />} />
@@ -66,7 +64,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
- 
   );
 }
 

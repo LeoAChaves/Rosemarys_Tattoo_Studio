@@ -37,4 +37,21 @@ export const Header = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    button {
+      width: 60px;
+    }
+  }
+`;
+
+export const Div = styled.div`
+  display: ${(props) => props.div.display};
+  color: ${({ theme }) => theme.text};
+  font-size: 14px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;

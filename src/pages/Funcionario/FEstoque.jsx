@@ -13,6 +13,11 @@ function FEstoque({ changeTheme }) {
     background-image: url(${({ theme }) => theme.background});
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 600px) {
+      background-size: cover;
+      height: auto;
+    }
   `;
   return (
     <FEstoque>

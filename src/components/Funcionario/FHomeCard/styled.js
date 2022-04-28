@@ -77,4 +77,31 @@ export const HomeCard = styled.div`
       transition: 0.5s;
       border-bottom: solid 2px ${({ theme }) => theme.amarelo};
     }
+
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 30%;
+      margin: 40px 0;
+      justify-content: space-around;
+      align-items: center;
+
+      &.agendamento {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+      &.portfolio {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+      &.estoque {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+    }
   `;
