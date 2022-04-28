@@ -20,7 +20,7 @@ function FAgendaMain() {
   const [funcionario] = useFuncionario();
 
   useEffect(() => {
-    async function getagenda() {
+    async function getAgenda() {
       try {
         const response = await apiAgenda.get("/agenda");
         setAgenda(response.data.agenda);
@@ -29,7 +29,7 @@ function FAgendaMain() {
         toast.error(error.response.data);
       }
     }
-    getagenda();
+    getAgenda();
   }, []);
 
   const handleBackClick = (e) => {
@@ -104,7 +104,9 @@ function FAgendaMain() {
                           onClick={() =>
                             navigate(
                               "/funcionario/agendamento-update/" +
-                                funcionario.ID
+                                funcionario.ID +
+                                "/" +
+                                agendamento.ID
                             )
                           }
                         ></Button>

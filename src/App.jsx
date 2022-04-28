@@ -91,15 +91,15 @@ function App() {
             element={<AgendamentoPendente changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/estoque-update/:id"
+            path="/funcionario/estoque-update/:id/:update"
             element={<FEstoqueUpdate changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/portfolio-update/:id"
+            path="/funcionario/portfolio-update/:id/:update"
             element={<FPortfolioUpdate changeTheme={changeTheme} />}
           />
           <Route
-            path="/funcionario/agendamento-update/:id"
+            path="/funcionario/agendamento-update/:id/:update"
             element={<FAgendamentoUpdate changeTheme={changeTheme} />}
           />
         </Routes>
