@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const Main = styled.main`
   color: ${({ theme }) => theme.text};
 
-  height: 100vh;
+  height: auto;
   width: 100%;
 
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center
-    scroll;
+  
   background-position: 30% 0%;
   background-size: cover;
 `;
@@ -17,6 +16,9 @@ export const BlocoUm = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center
+    scroll;
+    
   height: 100vh;
   width: 100%;
 
@@ -190,6 +192,12 @@ export const Trabalhos = styled.div`
     width: 100%;
     cursor: pointer;
     object-fit: cover;
+    transition: all 1s ease;
+  }
+  
+  .fotoTrab:hover{
+    opacity: 60%;
+    transition: all 1s ease;
   }
   margin-top: 45px;
 `;
