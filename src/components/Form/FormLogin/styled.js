@@ -19,11 +19,14 @@ export const Container = styled.main`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
-  height: 100vh;
+  min-height: 90vh;
   width: 100%;
+
+  padding: 30px;
+  margin: 50px;
   
   border-radius: 4px;
   
