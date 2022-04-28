@@ -14,7 +14,7 @@ export const Div = styled.div`
         height:20px;
         position: absolute;
         border-radius: 50%;
-        background-color: #fff;
+        background-color: ${({ theme }) => theme.button_text};
         left:15%;
         transform-origin: 50%;
         animation: circle .5s alternate infinite ease;
@@ -49,7 +49,7 @@ export const Div = styled.div`
         width:20px;
         height:4px;
         border-radius: 50%;
-        background-color: rgba(0,0,0,.5);
+        background-color: ${({ theme }) => theme.primary};
         position: absolute;
         top:62px;
         transform-origin: 50%;
@@ -84,10 +84,9 @@ export const Div = styled.div`
     .wrapper span{
         position: absolute;
         top:75px;
-        font-family: 'Lato';
         font-size: 20px;
         letter-spacing: 12px;
-        color: #fff;
+        color: ${({ theme }) => theme.text};
         left:15%;
     }
 `
