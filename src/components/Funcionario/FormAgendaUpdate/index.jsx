@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
-function FormAgenda({ botao }) {
+function FormAgendaUpdate({ botao }) {
   const [agendamento, setAgendamento] = useState([]);
 
   const handleOnchange = (e) => {
@@ -23,7 +23,7 @@ function FormAgenda({ botao }) {
     });
   };
 
-  const inserirAgendamento = async (e) => {
+  const alterarAgendamento = async (e) => {
     e.preventDefault();
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
@@ -79,19 +79,29 @@ function FormAgenda({ botao }) {
             ></Input>
 
             <div>
-              <Input
-                placeholder="DURAÇÃO"
+              <select
                 className="inputduracao"
-                name="Duracao"
-                id="Duracao"
-                onChange={(e) => handleOnchange(e)}
-              ></Input>
+                name="duracao"
+                id="duracao"
+                onChange={handleOnchange}
+              >
+                <option value="">DURAÇÃO EM MINUTOS</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="30">45</option>
+                <option value="30">60</option>
+                <option value="30">90</option>
+                <option value="30">120</option>
+                <option value="30">150</option>
+                <option value="30">180</option>
+              </select>
             </div>
             <Button
               className="styleForm"
               type="submit"
-              nome="Inserir"
-              onClick={(e) => inserirAgendamento(e)}
+              nome="Alterar"
+              onClick={(e) => alterarAgendamento(e)}
             ></Button>
           </div>
         </S.Form>
@@ -99,4 +109,4 @@ function FormAgenda({ botao }) {
     </S.Container>
   );
 }
-export default FormAgenda;
+export default FormAgendaUpdate;

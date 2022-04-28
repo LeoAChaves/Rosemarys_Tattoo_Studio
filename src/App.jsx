@@ -34,26 +34,74 @@ function App() {
       <GlobalStyle />
       <BrowserRouter>
         <Routes>
-          <Route path="/home" element={<Home changeTheme={changeTheme}/>} />
-          <Route path="/funcionario/home" element={<FHome />} />
-          <Route path="/funcionario/estoque" element={<FEstoque />} />
-          <Route path="/funcionario/portfolio" element={<FPortfolio />} />
-          <Route path="/funcionario/agendamento" element={<FAgendamento />} />
-          <Route path="/funcionario/agendamento-view" element={<FAgendaView />}/>
-          <Route path="/funcionario/portfolio-view" element={<FPortfolioView />}/>
-          <Route path="/funcionario/estoque-view" element={<FEstoqueView />} />
+          <Route path="/home" element={<Home changeTheme={changeTheme} />} />
+          <Route
+            path="/funcionario/home"
+            element={<FHome changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/estoque"
+            element={<FEstoque changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio"
+            element={<FPortfolio changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/agendamento"
+            element={<FAgendamento changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/agendamento-view"
+            element={<FAgendaView changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio-view"
+            element={<FPortfolioView changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/estoque-view"
+            element={<FEstoqueView changeTheme={changeTheme} />}
+          />
           <Route path="/esqueceuSenha" element={<EsqueceuSenha />} />
           <Route path="/cadastro" element={<Cadastro />} />
-          <Route path="/login" element={<Login changeTheme={changeTheme}/>}/>
-          <Route path="/esqueceuSenha" element={<EsqueceuSenha changeTheme={changeTheme}/>}/>
-          <Route path="/cadastro" element={<Cadastro changeTheme={changeTheme}/>}/>
-          <Route path="/usuario/:id" element={<Usuario changeTheme={changeTheme}/>}/>
-          <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme}/>}/>
-          <Route path="/portfolio" element={<Portfolio changeTheme={changeTheme}/>}/>
-          <Route path="/agendamentoPendente" element={<AgendamentoPendente changeTheme={changeTheme}/>}/>
-          <Route path="/funcionario/estoque-update" element={<FEstoqueUpdate changeTheme={changeTheme} />}/>
-          <Route path="/funcionario/portfolio-update" element={<FPortfolioUpdate changeTheme={changeTheme} />}/>
-          <Route path="/funcionario/agendamento-update" element={<FAgendamentoUpdate changeTheme={changeTheme} />}/> 
+          <Route path="/login" element={<Login changeTheme={changeTheme} />} />
+          <Route
+            path="/esqueceuSenha"
+            element={<EsqueceuSenha changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/cadastro"
+            element={<Cadastro changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/usuario/:id"
+            element={<Usuario changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/atualizarUsuario/:id"
+            element={<AtualizarUsuario changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/portfolio"
+            element={<Portfolio changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/agendamentoPendente"
+            element={<AgendamentoPendente changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/estoque-update"
+            element={<FEstoqueUpdate changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/portfolio-update"
+            element={<FPortfolioUpdate changeTheme={changeTheme} />}
+          />
+          <Route
+            path="/funcionario/agendamento-update"
+            element={<FAgendamentoUpdate changeTheme={changeTheme} />}
+          />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>

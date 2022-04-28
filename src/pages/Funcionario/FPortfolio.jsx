@@ -28,7 +28,7 @@ function FPortfolio({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormPortfolio botao="INSERIR" />
+      <FormPortfolio />
       <FFooter />
     </FPortfolio>
   );

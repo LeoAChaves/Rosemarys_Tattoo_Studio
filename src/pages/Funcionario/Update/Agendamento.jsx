@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "../../../components/Header/index.jsx";
-import FormAgenda from "../../../components/Funcionario/FormAgenda/index.jsx";
+import FormAgendaUpdate from "../../../components/Funcionario/FormAgendaUpdate/index.jsx";
 import FFooter from "../../../components/Funcionario/FFooter/FFooter.jsx";
 
 function FAgendamentoUpdate({ changeTheme }) {
@@ -28,7 +28,7 @@ function FAgendamentoUpdate({ changeTheme }) {
         sair="Sair"
         changeTheme={changeTheme}
       />
-      <FormAgenda botao="ALTERAR" />
+      <FormAgendaUpdate />
       <FFooter />
     </FAgendamentoUpdate>
   );
