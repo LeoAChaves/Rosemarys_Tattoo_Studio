@@ -4,7 +4,7 @@ import { GiDaggerRose } from "react-icons/gi";
 function Carregando() {
     return ( 
         <S.Div>
-            <GiDaggerRose classNameName="icon"/>
+            <GiDaggerRose className="icon"/>
             <div className="wrapper">
                 <div className="circle"></div>
                 <div className="circle"></div>
