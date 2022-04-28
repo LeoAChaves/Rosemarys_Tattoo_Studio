@@ -7,7 +7,7 @@ import Button from "../../Button";
 import Image from "../../Image";
 
 import { VscColorMode } from "react-icons/vsc";
-
+import useFuncionario from '../../Hooks/funcionario.jsx'
 function Header({
   style,
   div,
@@ -23,13 +23,14 @@ function Header({
   changeTheme,
 }) {
   const navigate = useNavigate();
+  const [funcionario] = useFuncionario()
   return (
     <S.Header style={style}>
       <div>
-        <Paragrafo texto="ID:" atributo="" />
-        <Paragrafo texto="FUNCIONÁRIO:" atributo="" />
-        <Paragrafo texto="FUNÇÃO:" atributo="" />
-        <Paragrafo texto="STATUS:" atributo="" />
+        <Paragrafo texto="ID:" atributo={funcionario.ID}/>
+        <Paragrafo texto="FUNCIONÁRIO:" atributo={funcionario.NOME} />
+        <Paragrafo texto="FUNÇÃO:" atributo={funcionario.CARGO} />
+        <Paragrafo texto="STATUS:" atributo={funcionario.STATUS}/>
       </div>
       <div>
         <Image
