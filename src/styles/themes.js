@@ -16,7 +16,6 @@ export const lightTheme = {
   button_text: "#282320",
   input: "#FDFDFD",
   card: "#FDFDFD",
-  text: "#7B0000",
   input_placeholder: "#7B0000",
   card_border: "#7B0000",
   card_text: "#7B0000",
