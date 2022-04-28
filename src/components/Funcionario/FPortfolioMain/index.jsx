@@ -15,16 +15,17 @@ function FPortfolioMain() {
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
   const [palavraChave, setPalavra] = useState('')
-  useEffect(() => {
-    async function getPortfolios() {
-      try {
-        const response = await apiPortfolio.get("/portfolio");
-        setPortifolio(response.data.portfolios);
-        setLoad(false);
-      } catch (error) {
-        toast.error(error.response.data.mensagem);
-      }
+
+  async function getPortfolios() {
+    try {
+      const response = await apiPortfolio.get("/portfolio");
+      setPortifolio(response.data.portfolios);
+      setLoad(false);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
     }
+  }
+  useEffect(() => {
     getPortfolios();
   }, []);
 
@@ -34,6 +35,7 @@ function FPortfolioMain() {
         `/portfolio/portfolioId/${id}`
       );
       toast.success(response.data.mensagem);
+      getPortfolios();
     } catch (error) {
       toast.error(error.response.data.mensagem);
     }
