@@ -3,12 +3,14 @@ import * as S from "./styled.js";
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
+import * as yup from "yup";
 import toast from "react-hot-toast";
+
 import { useState } from "react";
 import { apiEstoque } from "../../../services/api.js";
 
-function FormEstoque({ botao }) {
-  const [estoque, setEstoque] = useState([]);
+function FormEstoque() {
+  const [estoque, setEstoque] = useState({});
 
   const handleOnChange = (e) => {
     e.preventDefault();
@@ -23,15 +25,32 @@ function FormEstoque({ botao }) {
   };
   const inserirEstoque = async (e) => {
     e.preventDefault();
+    if(!(await validate())) return
     try {
       const response = await apiEstoque.post("/estoque", estoque);
       console.log(response.data.mensagem);
-      toast.success(response.data.mensagem);
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.mensagem);
     }
   };
+
+  async function validate(){
+    let schema = yup.object().shape({
+      NOME: yup.string("Campo de item deve ser preenchido com letras").required("Campo de item não pode estar vazio"),
+      QUANTIDADE: yup.number("Campo de quantidade deve ser preenchido com números").required("Campo de quantidade não pode estar vazio"),
+      PRECO: yup.string("Campo de preço deve ser preenchido com números decimais").required("Campo de preço não pode estar vazio"),
+      TIPO: yup.string("Campo de tipo deve ser preenchido com letras").required("Campo de tipo não pode estar vazio"),
+    })
+    try {
+        await schema.validate(estoque)
+        toast.success("Estoque inserido com sucesso! 🗃️")
+        return true
+    } catch (error) {
+        toast.error(error.errors)
+    }
+    return false
+  }
+
   return (
     <S.Container>
       <S.Quadro>

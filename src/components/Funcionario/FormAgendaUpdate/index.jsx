@@ -2,7 +2,6 @@ import * as S from "./styled.js";
 
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
-import Label from "../../Label/index.jsx";
 
 import toast from "react-hot-toast";
 import { useState } from "react";
