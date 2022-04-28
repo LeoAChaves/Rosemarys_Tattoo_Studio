@@ -119,11 +119,11 @@ function Home({ changeTheme }) {
                 <S.DivImage>
                   <Image
                     src="https://images.pexels.com/photos/1304469/pexels-photo-1304469.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto de tatuagem sendo realizada"
                   />
                   <Image
                     src="https://images.pexels.com/photos/4123707/pexels-photo-4123707.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto de flash de tatuagem"
                   />
                 </S.DivImage>
               </S.DivCard>
@@ -132,11 +132,11 @@ function Home({ changeTheme }) {
                 <S.DivImage>
                   <Image
                     src="https://images.pexels.com/photos/4123712/pexels-photo-4123712.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto de livros de tatuagem sobre a mesa"
                   />
                   <Image
                     src="https://i.pinimg.com/564x/cc/d7/4d/ccd74dcfa5b67f092eb7cbe5674586f2.jpg"
-                    alt="cao"
+                    alt="Foto de sofá de couro tatuado"
                   />
                 </S.DivImage>
                 <S.DivTexto>
@@ -162,7 +162,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/7147841/pexels-photo-7147841.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto da tatuadora Rose Herculano"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -173,7 +173,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/8375273/pexels-photo-8375273.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto do tatuador Maurício Castro"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -184,7 +184,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/7005665/pexels-photo-7005665.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto do tatuador Pietro ALves"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -195,7 +195,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/3376116/pexels-photo-3376116.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto da tatuadora Amanda Santos"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -206,7 +206,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/7005726/pexels-photo-7005726.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto da tatuadora Maria Andrade"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -217,7 +217,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/8521181/pexels-photo-8521181.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto do tatuador Gabriel Fernandes"
                   />
                   <S.IconFD>
                     <GiRose className="themeMode" />
@@ -228,7 +228,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/7594057/pexels-photo-7594057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    alt="cao"
+                    alt="Foto da perfuradora Maria Eugenia Chaves"
                   />
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
@@ -239,7 +239,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/5235735/pexels-photo-5235735.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                    alt="cao"
+                    alt="Foto da perfuradora Fernanda Vasconcelos"
                   />
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
@@ -250,7 +250,7 @@ function Home({ changeTheme }) {
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/3728826/pexels-photo-3728826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                    alt="cao"
+                    alt="Foto do perfurador Lucca Rodrigues"
                   />
                   <S.IconFD>
                     <GiSacrificialDagger className="themeMode" />
