@@ -272,48 +272,56 @@ function Home({ changeTheme }) {
                   id={ultimoTrabalho8.ID}
                   alt={ultimoTrabalho8.DESCRICAO}
                   src={ultimoTrabalho8.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho7.ID}
                   id={ultimoTrabalho7.ID}
                   alt={ultimoTrabalho7.DESCRICAO}
                   src={ultimoTrabalho7.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho6.ID}
                   id={ultimoTrabalho6.ID}
                   alt={ultimoTrabalho6.DESCRICAO}
                   src={ultimoTrabalho6.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho5.ID}
                   id={ultimoTrabalho5.ID}
                   alt={ultimoTrabalho5.DESCRICAO}
                   src={ultimoTrabalho5.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho4.ID}
                   id={ultimoTrabalho4.ID}
                   alt={ultimoTrabalho4.DESCRICAO}
                   src={ultimoTrabalho4.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho3.ID}
                   id={ultimoTrabalho3.ID}
                   alt={ultimoTrabalho3.DESCRICAO}
                   src={ultimoTrabalho3.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho2.ID}
                   id={ultimoTrabalho2.ID}
                   alt={ultimoTrabalho2.DESCRICAO}
                   src={ultimoTrabalho2.FOTO}
+                  className="fotoTrab"
                 />
                 <Image
                   key={ultimoTrabalho1.ID}
                   id={ultimoTrabalho1.ID}
                   alt={ultimoTrabalho1.DESCRICAO}
                   src={ultimoTrabalho1.FOTO}
+                  className="fotoTrab"
                 />
               </S.Trabalhos>
             </S.BlocoQuatro>
