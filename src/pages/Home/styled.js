@@ -192,6 +192,12 @@ export const Trabalhos = styled.div`
     width: 100%;
     cursor: pointer;
     object-fit: cover;
+    transition: all 1s ease;
+  }
+  
+  .fotoTrab:hover{
+    opacity: 60%;
+    transition: all 1s ease;
   }
   margin-top: 45px;
 `;
