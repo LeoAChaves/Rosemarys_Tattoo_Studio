@@ -16,6 +16,8 @@ function FPortfolioMain() {
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
   const [palavraChave, setPalavra] = useState("");
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
   async function getPortfolios() {
     try {

@@ -47,7 +47,6 @@ function Header({
           className={className}
           nome={voltar}
           onClick={() => window.history.back()}
-          onClick={() => navigate("/funcionario/home/" + funcionario.ID)}
         />
         <Button
           style={btnSair}

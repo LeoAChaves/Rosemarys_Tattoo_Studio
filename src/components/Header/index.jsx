@@ -9,7 +9,7 @@ import Image from "../Image";
 import { VscColorMode } from "react-icons/vsc";
 
 function Header({
-  id,
+  // id,
   style,
   btnPortfolio,
   btnVoltar,
@@ -26,7 +26,8 @@ function Header({
 }) {
   const navigate = useNavigate();
   return (
-    <S.Header id={id} style={style}>
+    <S.Header style={style}>
+    {/* <S.Header id={id} style={style}> */}
       <div>
         <Image
           src="https://media.discordapp.net/attachments/968220165194014750/968303712965636156/unknown__2_-removebg-preview.png"
