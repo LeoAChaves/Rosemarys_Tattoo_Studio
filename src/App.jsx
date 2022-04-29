@@ -5,19 +5,19 @@ import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
 
 // Page Site Institucional
-import Home from "./pages/Home/index.jsx";
+import Home from "./pages/Home";
 // Pages Funcionário
-import FEstoqueUpdate from "./pages/Funcionario/Update/Estoque.jsx";
-import FHome from "./pages/Funcionario/FHome.jsx";
-import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio.jsx";
-import FAgendamentoUpdate from "./pages/Funcionario/Update/Agendamento.jsx";
+import FEstoqueUpdate from "./pages/Funcionario/Update/Estoque";
+import FPortfolioUpdate from "./pages/Funcionario/Update/Portfolio";
+import FAgendamentoUpdate from "./pages/Funcionario/Update/Agendamento";
+import FHome from "./pages/Funcionario/FHome";
 import EsqueceuSenha from "./pages/EsqueceuSenha";
-import FEstoque from "./pages/Funcionario/FEstoque.jsx";
-import FPortfolio from "./pages/Funcionario/FPortfolio.jsx";
-import FAgendamento from "./pages/Funcionario/FAgenda.jsx";
-import FAgendaView from "./pages/Funcionario/FAgendaView.jsx";
-import FPortfolioView from "./pages/Funcionario/FPortfolioView.jsx";
-import FEstoqueView from "./pages/Funcionario/FEstoqueView.jsx";
+import FEstoque from "./pages/Funcionario/FEstoque";
+import FPortfolio from "./pages/Funcionario/FPortfolio";
+import FAgendamento from "./pages/Funcionario/FAgenda";
+import FAgendaView from "./pages/Funcionario/FAgendaView";
+import FPortfolioView from "./pages/Funcionario/FPortfolioView";
+import FEstoqueView from "./pages/Funcionario/FEstoqueView";
 // Pages Usuário
 import Login from "./pages/Login";
 import Portfolio from "./pages/Portfolio";
@@ -43,46 +43,16 @@ function App() {
           <Route path="/home" element={<Home changeTheme={changeTheme} />} />
 
           {/* Rotas Funcionário */}
-          <Route
-            path="/funcionario/home/:id"
-            element={<FHome changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/estoque/:id"
-            element={<FEstoque changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/portfolio/:id"
-            element={<FPortfolio changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/agendamento/:id"
-            element={<FAgendamento changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/agendamento-view/:id"
-            element={<FAgendaView changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/portfolio-view/:id"
-            element={<FPortfolioView changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/estoque-view/:id"
-            element={<FEstoqueView changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/estoque-update/:id/:update"
-            element={<FEstoqueUpdate changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/portfolio-update/:id/:update"
-            element={<FPortfolioUpdate changeTheme={changeTheme} />}
-          />
-          <Route
-            path="/funcionario/agendamento-update/:id/:update"
-            element={<FAgendamentoUpdate changeTheme={changeTheme} />}
-          />
+          <Route path="/funcionario/home/:id" element={<FHome changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/estoque/:id" element={<FEstoque changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/portfolio/:id" element={<FPortfolio changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/agendamento/:id" element={<FAgendamento changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/agendamento-view/:id" element={<FAgendaView changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/portfolio-view/:id" element={<FPortfolioView changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/estoque-view/:id" element={<FEstoqueView changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/estoque-update/:id/:update" element={<FEstoqueUpdate changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/portfolio-update/:id/:update" element={<FPortfolioUpdate changeTheme={changeTheme} />}/>
+          <Route path="/funcionario/agendamento-update/:id/:update" element={<FAgendamentoUpdate changeTheme={changeTheme} />}/>
 
           {/* Rotas Usuário */}
           <Route path="/login" element={<Login changeTheme={changeTheme} />} />

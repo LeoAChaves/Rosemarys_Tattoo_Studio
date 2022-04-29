@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 
 import * as S from "./styled.js";
 
-import Paragrafo from "../Paragrafo";
 import Button from "../Button";
 import Image from "../Image";
 
