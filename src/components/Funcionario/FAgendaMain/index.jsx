@@ -4,6 +4,7 @@ import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 import iconBack from "../../../assets/iconBack.png";
 import iconNext from "../../../assets/iconNext.png";
+import Carregando from "../../Carregando";
 
 import { apiAgenda } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
