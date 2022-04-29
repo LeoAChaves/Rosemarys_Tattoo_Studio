@@ -16,7 +16,7 @@ function FormEstoqueUpdate() {
     async function buscaEstoque() {
       try {
         const response = await apiEstoque.get(`/estoque/id/${update}`);
-        setEstoque(response.data.estoque);
+        setEstoque(response.data.estoque[0]);
       } catch (error) {
         toast.error(error.response.data.message);
       }
@@ -36,7 +36,7 @@ function FormEstoqueUpdate() {
   const alterarEstoque = async (e) => {
     e.preventDefault();
     try {
-      const response = await apiEstoque.post(`/estoque/id/${update}`, estoque);
+      const response = await apiEstoque.put(`/estoque/id/${update}`, estoque);
       toast.success(response.data.mensagem);
     } catch (error) {
       toast.error(error.response.data.mensagem);
