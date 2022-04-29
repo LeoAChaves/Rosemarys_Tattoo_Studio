@@ -16,7 +16,7 @@ function FEstoque({ changeTheme }) {
 
     @media (max-width: 600px) {
       background-size: cover;
-      height: auto;
+      height: 100vh;
     }
   `;
   return (

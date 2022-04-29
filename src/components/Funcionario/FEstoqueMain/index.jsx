@@ -16,7 +16,7 @@ import { MdOutlineSearchOff } from "react-icons/md";
 function FEstoqueMain() {
   const [estoque, setEstoque] = useState([]);
   const [load, setLoad] = useState(true);
-  const [palavraChave, setPalavra] = useState('')
+  const [palavraChave, setPalavra] = useState("");
   const carousel = useRef(null);
   const navigate = useNavigate();
   const [funcionario] = useFuncionario();
@@ -39,6 +39,7 @@ function FEstoqueMain() {
     console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
   };
+
   const handleNextClick = (e) => {
     e.preventDefault();
     console.log(carousel.current.offsetWidth);
@@ -53,11 +54,11 @@ function FEstoqueMain() {
       toast.error(error.response.data.mensagem);
     }
   }
-      
-  const handleChange = (e)=>{
-    setPalavra(e.target.value)
-    console.log(e.target.value)
-  }
+
+  const handleChange = (e) => {
+    setPalavra(e.target.value);
+    console.log(e.target.value);
+  };
 
   return (
     <>
@@ -76,7 +77,7 @@ function FEstoqueMain() {
                 type="text"
                 name="search"
                 id="search"
-                onChange={(e)=>handleChange(e)}
+                onChange={(e) => handleChange(e)}
               ></Input>
               <Button type="submit" nome="Buscar"></Button>
             </div>

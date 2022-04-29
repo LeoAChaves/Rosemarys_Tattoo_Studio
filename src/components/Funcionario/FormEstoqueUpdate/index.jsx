@@ -48,41 +48,53 @@ function FormEstoqueUpdate() {
       <S.Quadro>
         <h2>Estoque</h2>
         <S.Form>
-          <div>
-            <Input
-              placeholder="ITEM"
-              type="text"
-              name="NOME"
-              id="item"
-              onChange={(e) => handleOnChange(e)}
-              value={estoque.NOME}
-            ></Input>
-            <Input
-              placeholder="QUANTIDADE"
-              type="number"
-              name="QUANTIDADE"
-              id="qtd"
-              onChange={(e) => handleOnChangeNumber(e)}
-              value={estoque.QUANTIDADE}
-            ></Input>
+          <div className="campos">
+            <section>
+              <label>ITEM:</label>
+              <Input
+                placeholder="ITEM"
+                type="text"
+                name="NOME"
+                id="item"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.NOME}
+              ></Input>
+            </section>
+            <section>
+              <label>QUANTIDADE:</label>
+              <Input
+                placeholder="QUANTIDADE"
+                type="number"
+                name="QUANTIDADE"
+                id="qtd"
+                onChange={(e) => handleOnChangeNumber(e)}
+                value={estoque.QUANTIDADE}
+              ></Input>
+            </section>
           </div>
-          <div>
-            <Input
-              placeholder="PRECO"
-              type="number"
-              name="PRECO"
-              id="preco"
-              onChange={(e) => handleOnChange(e)}
-              value={estoque.PRECO}
-            ></Input>
-            <Input
-              placeholder="TIPO"
-              type="text"
-              name="TIPO"
-              id="tipo"
-              onChange={(e) => handleOnChange(e)}
-              value={estoque.TIPO}
-            ></Input>
+          <div className="campos">
+            <section>
+              <label>PREÇO:</label>
+              <Input
+                placeholder="PRECO"
+                type="number"
+                name="PRECO"
+                id="preco"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.PRECO}
+              ></Input>
+            </section>
+            <section>
+              <label>TIPO:</label>
+              <Input
+                placeholder="TIPO"
+                type="text"
+                name="TIPO"
+                id="tipo"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.TIPO}
+              ></Input>
+            </section>
           </div>
 
           <Button

@@ -51,6 +51,7 @@ function FormAgendaUpdate() {
         <h2>Agendamento</h2>
         <S.Form>
           <div className="caixa">
+            <label>CLIENTE_ID:</label>
             <Input
               placeholder="CLIENTE_ID"
               type="number"
@@ -59,6 +60,7 @@ function FormAgendaUpdate() {
               onChange={(e) => handleOnchangeNumber(e)}
               value={agendamento.Cliente_ID}
             ></Input>
+            <label>FUNCIONARIO_ID:</label>
             <Input
               placeholder="FUNCIONARIO_ID"
               type="number"
@@ -67,6 +69,7 @@ function FormAgendaUpdate() {
               onChange={(e) => handleOnchangeNumber(e)}
               value={agendamento.Funcionario_ID}
             ></Input>
+            <label>DATA:</label>
             <Input
               placeholder="DATA"
               type="date"
@@ -77,6 +80,7 @@ function FormAgendaUpdate() {
             ></Input>
           </div>
           <div className="caixa">
+            <label>HORA:</label>
             <Input
               placeholder="HORA"
               type="time"
@@ -85,6 +89,7 @@ function FormAgendaUpdate() {
               onChange={(e) => handleOnchange(e)}
               value={agendamento.Hora}
             ></Input>
+            <label>SERVIÇO:</label>
             <Input
               placeholder="SERVIÇO"
               type="text"
@@ -93,6 +98,7 @@ function FormAgendaUpdate() {
               onChange={(e) => handleOnchange(e)}
               value={agendamento.Servico}
             ></Input>
+            <label>DURAÇÃO:</label>
             <Input
               placeholder="DURAÇÃO"
               className="inputduracao"

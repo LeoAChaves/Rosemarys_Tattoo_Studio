@@ -28,9 +28,14 @@ export const Quadro = styled.section`
   }
 
   @media (max-width: 600px) {
-    margin-top: 60px;
+    margin-top: 80px;
     padding-bottom: 60px;
+    margin-bottom: 30px;
     height: auto;
+
+    h2 {
+      margin-bottom: 20px;
+    }
   }
 `;
 
@@ -55,6 +60,7 @@ export const Form = styled.section`
 
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
+    font-family: "Amaranth";
   }
 
   Button {
@@ -66,6 +72,7 @@ export const Form = styled.section`
     border-radius: 10px;
     font-size: 14px;
     color: ${({ theme }) => theme.button_text};
+    font-family: "Amaranth";
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
@@ -74,12 +81,13 @@ export const Form = styled.section`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
-    juatify-content: center;
+    justify-content: center;
     width: 100%;
-    margin: 10px 0 0 10px;
+    margin: 20px 0;
+
     Input {
-      width: 350px;
-      margin: 10px;
+      width: 360px;
+      margin-bottom: 30px;
     }
   }
 `;
