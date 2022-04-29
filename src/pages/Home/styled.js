@@ -12,6 +12,8 @@ export const Main = styled.main`
   background-position: 30% 0%;
   background-size: cover;
 
+  overflow-x: hidden;
+
 
   @media(max-width: 1200px){
     

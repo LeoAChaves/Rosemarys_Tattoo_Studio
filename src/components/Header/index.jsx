@@ -31,27 +31,33 @@ function Header({
     <S.Header id={id} style={style}>
       <div>
       
-        {cor === '#000000' ? <Image
+        {cor === '#000000' ? 
+        <Image
           className="logoGeral"
           src="https://media.discordapp.net/attachments/923686382659059742/969457766894813224/logoDark.png"
           alt="logoDark"
-        /> :
-        <Image
-          className="logoGeral"
-          src="https://media.discordapp.net/attachments/923686382659059742/969457767385563156/logoLight.png"
-          alt="logoLight"
-        />}
+        /> 
+        :
+          <Image
+            className="logoGeral"
+            src="https://media.discordapp.net/attachments/923686382659059742/969457767385563156/logoLight.png"
+            alt="logoLight"
+          />
+        }
        
-        {/* <Image
-          className="logoResponsivo"
-          src="https://media.discordapp.net/attachments/923686382659059742/969457767175843910/logoDarkR.png?width=670&height=670"
-          alt="logoDarkR"
-        /> */}
-        {/* <Image
+        {cor === '#000000' ?
+          <Image
           className="logoResponsivo"
           src="https://media.discordapp.net/attachments/923686382659059742/969457767582687323/logoLightR.png?width=670&height=670"
           alt="logoLightR"
-        /> */}
+        />
+          :
+          <Image
+            className="logoResponsivo"
+            src="https://media.discordapp.net/attachments/923686382659059742/969457767175843910/logoDarkR.png?width=670&height=670"
+            alt="logoDarkR"
+          /> 
+        }
       </div>
       <div className="divLinks">
         <Button
