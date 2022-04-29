@@ -11,11 +11,11 @@ export const Header = styled.header`
   padding: 30px;
 
   .logoGeral {
-    width: 300px;
+    width: 200px;
   }
 
   .logoResponsivo {
-    width: 80px;
+    width: 65px;
     display: none;
   }
 
