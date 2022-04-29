@@ -66,11 +66,11 @@ function Portfolio({changeTheme}) {
                             </div>
                         </div>
                         <div className="grid">
-                            {portfolio.length === 0 ? <p>Portfolio nao encontrado</p>
+                            {portfolio.length === 0 ? <div className="divMsgPort"><h2 className="msgNEncontradoPort">Portfolio nao encontrado...</h2></div>
                             :
                             portfolio.map(portfolio=>{
                                 return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
-                                })}
+                            })}
                         </div>
                     </S.Main>
                     <Footer />

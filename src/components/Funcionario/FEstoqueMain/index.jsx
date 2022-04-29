@@ -96,7 +96,7 @@ function FEstoqueMain() {
 
             <S.Form ref={carousel}>
               <S.Cards>
-                {estoque.length === 0 ? <p>Estoque nao encontrado</p> 
+                {estoque.length === 0 ? <h2 className="mensagemNaoEncontrado">Estoque não encontrado</h2> 
                 :
                 estoque.map((estoque) => {
                   return (

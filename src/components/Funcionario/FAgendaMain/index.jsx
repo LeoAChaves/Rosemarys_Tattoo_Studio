@@ -5,9 +5,8 @@ import Input from "../../Input/index.jsx";
 import iconBack from "../../../assets/iconBack.png";
 import iconNext from "../../../assets/iconNext.png";
 
-import { apiAgenda, apiEstoque } from "../../../services/api.js";
+import { apiAgenda } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
-import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useFuncionario from "../../Hooks/funcionario.jsx";
@@ -22,7 +21,7 @@ function FAgendaMain() {
   const navigate = useNavigate();
   const [funcionario] = useFuncionario();
 
-  async function getagenda() {
+  async function getAgenda() {
     try {
       const response = await apiAgenda.get("/agenda");
       setAgenda(response.data.agenda);
@@ -32,7 +31,7 @@ function FAgendaMain() {
     }
   }
   useEffect(() => {
-    getagenda();
+    getAgenda();
   }, []);
 
   const handleBackClick = (e) => {
@@ -50,7 +49,7 @@ function FAgendaMain() {
     try {
       const response = await apiAgenda.delete(`/agenda/id/${id}`);
       toast.success(response.data.message);
-      getagenda();
+      getAgenda();
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -83,15 +82,15 @@ function FAgendaMain() {
 
   return (
     <>
-      {load ? (
-        <Carregando />
-      ) : (
+    {load ? (
+      <Carregando />
+    ) : (
         <S.Container>
           <S.Quadro>
             <h2>Agenda</h2>
             <div className="busca">
                 <div className="divIcon">
-                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                  <MdOutlineSearchOff className="cancelarFiltro" onClick={()=> getAgenda()}/>
                 </div>
               <Input
                 placeholder="digite a data desejada"
@@ -174,8 +173,8 @@ function FAgendaMain() {
             </div>
           </S.Quadro>
         </S.Container>
-      )}
-    </>
-  );
+        )}
+        </>
+        );
 }
 export default FAgendaMain;

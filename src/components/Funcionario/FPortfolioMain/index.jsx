@@ -94,7 +94,7 @@ function FPortfolioMain() {
                 ></Button>
               </div>
               <S.Form ref={carousel}>
-                {portfolio.length === 0 ? <p>Portfolio nao encontrado</p> 
+                {portfolio.length === 0 ? <h2 className="mensagemNaoEncontrado">Portfolio não encontrado</h2> 
                 :
                 portfolio.map((portfolio) => {
                   return (
