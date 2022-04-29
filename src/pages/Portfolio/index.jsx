@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 import ImagemGaleria from "../../components/ImagemGaleria";
+import Footer from "../../components/Footer";
 import Carregando from "../../components/Carregando";
 
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
@@ -37,9 +39,15 @@ function Portfolio({changeTheme}) {
             {load ? <Carregando />
             :
                 <div>
-                    <Header id="inicio" btnHome={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" changeTheme={changeTheme}/>
+                    <Header id="inicio" btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" voltar="Voltar" changeTheme={changeTheme}/>
                     <S.Main>
-                        <h1>Galeria</h1>
+                        <div className="blocoUm">
+                            <h1>Galeria</h1>
+                            <div className="inputBtn">
+                                <Input placeholder="Filtrar" type="text" name="filtrar"/>
+                                <Button nome="Pesquisar"/>
+                            </div>
+                        </div>
                         <div className="grid">
                             {portfolio.map(portfolio=>{
                             return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
