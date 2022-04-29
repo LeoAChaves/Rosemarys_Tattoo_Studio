@@ -6,7 +6,6 @@ export const Main = styled.main`
   height: auto;
   width: 100%;
 
-  
   background-position: 30% 0%;
   background-size: cover;
 `;
@@ -16,9 +15,10 @@ export const BlocoUm = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center
-    scroll;
-    
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center scroll;
+  background-position: 30% 0%;
+  background-size: cover;
+
   height: 100vh;
   width: 100%;
 
@@ -220,12 +220,12 @@ export const Form = styled.form`
   justify-content: center;
 
   margin-top: 30px;
-
+  background-color:  ${({ theme }) => theme.primary};
+  min-height: 400px;
+  
   .formContato{
-    height: 400px;
     width: 500px;
     
-    background-color:  ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.text};
 
     padding: 30px;
@@ -248,7 +248,7 @@ export const Form = styled.form`
   }
 
   input{
-    height: 40px;
+    height: 30px;
   }
 
   textarea{
