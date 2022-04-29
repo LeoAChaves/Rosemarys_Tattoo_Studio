@@ -38,4 +38,21 @@ export const FM = styled.footer`
       }
     }
   }
+
+  @media (max-width: 1000px) {
+    .respoF{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    div{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    }
+  }
+  }
+  
 `;

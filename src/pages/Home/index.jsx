@@ -106,15 +106,15 @@ function Home({ changeTheme }) {
           />
           <S.Main>
             <S.BlocoUm>
-              <div>
+              <div className="respoH">
                 <S.H1 className="heroText">de artista</S.H1>
                 <S.H1 className="heroText">para artista</S.H1>
               </div>
             </S.BlocoUm>
 
-            <S.BlocoDois>
-              <S.DivCard>
-                <AnimationOnScroll animateIn="animate__fadeInLeft">
+            <S.BlocoDois  className="respo">
+              <S.DivCard className="respoDiv">
+                <AnimationOnScroll animateIn="animate__fadeInLeft" >
                 <S.DivTexto>
                 
                   <S.H1>Nossa filosofia</S.H1>
@@ -126,8 +126,10 @@ function Home({ changeTheme }) {
                     <GiDaggerRose />
                   </S.IconFD>
                   
-                </S.DivTexto></AnimationOnScroll>
-                <AnimationOnScroll animateIn="animate__fadeInRight"><S.DivImage>
+                </S.DivTexto>
+                </AnimationOnScroll>
+
+                <AnimationOnScroll animateIn="animate__fadeInRight"><S.DivImage className="socorro">
                 
                   <Image
                     src="https://images.pexels.com/photos/1304469/pexels-photo-1304469.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -138,11 +140,14 @@ function Home({ changeTheme }) {
                     alt="Foto de flash de tatuagem"
                   />
                   
-                </S.DivImage></AnimationOnScroll>
+                </S.DivImage>
+                </AnimationOnScroll>
               </S.DivCard>
-              <S.Line2 />
-              <S.DivCard><AnimationOnScroll animateIn="animate__fadeInLeft">
-                <S.DivImage>
+              <S.Line2></S.Line2>
+              
+              <S.DivCard  className="respoDiv" >
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
+                <S.DivImage className="socorro">
                 
                   <Image
                     src="https://images.pexels.com/photos/4123712/pexels-photo-4123712.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -170,7 +175,7 @@ function Home({ changeTheme }) {
             </S.BlocoDois>
 
             <S.BlocoTres>
-              <S.Time>
+              <S.Time className="respoTimeTrab">
                 <S.Artista>
                   <Image
                     src="https://images.pexels.com/photos/7147841/pexels-photo-7147841.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -278,7 +283,7 @@ function Home({ changeTheme }) {
               </S.IconFD>
               <S.H2>Últimos trabalhos</S.H2>
 
-              <S.Trabalhos>
+              <S.Trabalhos className="respoTimeTrab">
                 <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
                   <Image
                     key={ultimoTrabalho8.ID}
@@ -356,12 +361,12 @@ function Home({ changeTheme }) {
             </S.BlocoQuatro>
 
             <S.BlocoCinco>
-              <div>
+              <div >
                 <S.H2>Quer nos dizer algo?</S.H2>
                 <S.Paragrafo2>
                   Manda aí pra gente se tem uma sugestão ou dúvida que logo
                   entramos em contato!
-                  <S.Form onSubmit={(e) => pegaContato(e)}>
+                  <S.Form onSubmit={(e) => pegaContato(e)}  className="respoCinco">
                     <div className="formContato">
                       <Input
                         className="cardForm"

@@ -8,7 +8,7 @@ import {BsInstagram, BsFacebook} from "react-icons/bs"
 function FooterMain() {
   return (
     <S.FM>
-      <div>
+      <div className="respoF">
           <div>
               <Image src="https://media.discordapp.net/attachments/923686382659059742/969005498965823528/rose-dark_3.png?width=468&height=468" alt="Logo do Rosemary's Studio"/>
           </div>
