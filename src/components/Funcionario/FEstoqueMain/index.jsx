@@ -112,7 +112,10 @@ function FEstoqueMain() {
                             nome="Alterar"
                             onClick={() =>
                               navigate(
-                                "/funcionario/estoque-update/" + funcionario.ID
+                                "/funcionario/estoque-update/" +
+                                  funcionario.ID +
+                                  "/" +
+                                  estoque.ID
                               )
                             }
                           ></Button>

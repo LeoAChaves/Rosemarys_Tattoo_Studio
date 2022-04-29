@@ -51,8 +51,6 @@ function FAgendaMain() {
       const response = await apiAgenda.delete(`/agenda/id/${id}`);
       toast.success(response.data.message);
       getagenda();
-     
-      
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -136,7 +134,9 @@ function FAgendaMain() {
                           onClick={() =>
                             navigate(
                               "/funcionario/agendamento-update/" +
-                                funcionario.ID
+                                funcionario.ID +
+                                "/" +
+                                agendamento.ID
                             )
                           }
                         ></Button>

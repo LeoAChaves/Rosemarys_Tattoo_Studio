@@ -119,7 +119,9 @@ function FPortfolioMain() {
                             onClick={() =>
                               navigate(
                                 "/funcionario/portfolio-update/" +
-                                  funcionario.ID
+                                  funcionario.ID +
+                                  "/" +
+                                  portfolio.ID
                               )
                             }
                           ></Button>
