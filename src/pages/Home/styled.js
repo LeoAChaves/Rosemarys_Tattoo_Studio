@@ -1,9 +1,7 @@
-import styled, {keyframes} from "styled-components";
-import { rollIn, fadeIn } from 'react-animations'
-const rotateAnima = keyframes`${rollIn}`
-const fadeAnime = keyframes`${fadeIn}`
-
-
+import styled, { keyframes } from "styled-components";
+import { rollIn, fadeIn } from "react-animations";
+const rotateAnima = keyframes`${rollIn}`;
+const fadeAnime = keyframes`${fadeIn}`;
 
 export const Main = styled.main`
   color: ${({ theme }) => theme.text};
@@ -13,25 +11,62 @@ export const Main = styled.main`
 
   background-position: 30% 0%;
   background-size: cover;
-`;
+
+
+  @media(max-width: 1200px){
+    
+      .respo{
+        display: flex;
+             flex-direction: column;
+             justify-content: space-between;
+              height: auto;
+    }
+
+    .respoDiv{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      height: auto;
+    }
+
+    .respoTimeTrab{
+      display: grid;
+      grid-template-columns: repeat(2, 2fr)
+    }
+  }
+
+
+
+    @media(max-width: 850px){
+      .respoTimeTrab{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr)
+    }
+    }
+
+    @media (max-width: 600px){
+      .socorro{
+        display: flex;
+        flex-direction: column;
+      }
+    }    
+`
 
 export const BlocoUm = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center scroll;
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center
+    scroll;
   background-position: 30% 0%;
   background-size: cover;
 
   height: 100vh;
   width: 100%;
 
-  padding-left: 80px;
-
-  div{
+  div {
+    padding-left: 80px;
     animation: 1s ${rotateAnima};
-    
   }
 
   .heroText {
@@ -207,18 +242,17 @@ export const BlocoQuatro = styled.div`
 export const Trabalhos = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 4fr);
-  .trabAnima{
+  .trabAnima {
     height: 300px;
     width: 100%;
     img {
       height: 100%;
-    width: 100%;
-    cursor: pointer;
-    object-fit: cover;
-    transition: all 1s ease;
+      width: 100%;
+      cursor: pointer;
+      object-fit: cover;
+      transition: all 1s ease;
+    }
   }
-  }
-  
 
   .fotoTrab:hover {
     opacity: 60%;
@@ -235,8 +269,9 @@ export const BlocoCinco = styled.div`
   text-align: center;
   height: 100vh;
   width: 100%;
-  background: url(${({ theme }) => theme.background}) no-repeat bottom center
-    scroll;
+  background: url(${({ theme }) => theme.background}) no-repeat bottom center scroll;
+  background-position: 30% 0%;
+  background-size: cover;
   padding: 25px;
 `;
 
@@ -245,12 +280,12 @@ export const Form = styled.form`
   justify-content: center;
 
   margin-top: 30px;
-  background-color:  ${({ theme }) => theme.primary};
+  background-color: ${({ theme }) => theme.primary};
   min-height: 400px;
-  
-  .formContato{
+
+  .formContato {
     width: 500px;
-    
+
     color: ${({ theme }) => theme.text};
 
     padding: 30px;
@@ -272,7 +307,7 @@ export const Form = styled.form`
     width: 30vw;
   }
 
-  input{
+  input {
     height: 30px;
   }
 
