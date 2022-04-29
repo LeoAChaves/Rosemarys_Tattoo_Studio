@@ -49,7 +49,7 @@ export const Header = styled.header`
       width: 60px;
     }
 
-    .responsivo {
+    .logoResponsivo {
       display: block;
     }
 

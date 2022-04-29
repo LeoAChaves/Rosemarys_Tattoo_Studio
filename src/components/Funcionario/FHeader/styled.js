@@ -58,7 +58,7 @@ export const Header = styled.header`
       display: none;
     }
 
-    .responsivo {
+    .logoResponsivo {
       display: block;
     }
 
