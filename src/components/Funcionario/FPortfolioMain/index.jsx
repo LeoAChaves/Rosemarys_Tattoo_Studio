@@ -11,6 +11,9 @@ import iconNext from "../../../assets/iconNext.png";
 import { useNavigate } from "react-router-dom";
 import useFuncionario from "../../Hooks/funcionario.jsx";
 
+import { MdOutlineSearchOff } from "react-icons/md";
+
+
 function FPortfolioMain() {
   const [portfolio, setPortifolio] = useState([]);
   const [load, setLoad] = useState(true);
@@ -75,6 +78,9 @@ function FPortfolioMain() {
             <S.Quadro>
               <h2>Portfólio</h2>
               <div className="busca">
+                <div className="divIcon">
+                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                </div>
                 <Input
                   placeholder="palavra-chave"
                   type="text"

@@ -16,18 +16,31 @@ export const Main = styled.main`
         width: 100%;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         text-align: center;
 
         padding-right: 40px;
     }
 
+    .divIcon{
+        margin-left: 20px;
+    }
+
+    .cancelarFiltro{
+        font-size: 30px;
+        color: ${({ theme }) => theme.text};
+        cursor: pointer;
+    }
+
     input{
+        background-color: ${({ theme }) => theme.branco_rosado_opaco};
+
         border-radius: 10px 0px 0px 10px;
         border: none;
-        height: 40px;
         
         padding: 10px;
-
+        
+        height: 40px;
         width: 250px;
     }
 

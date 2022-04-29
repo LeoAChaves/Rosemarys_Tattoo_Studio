@@ -12,6 +12,8 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useFuncionario from "../../Hooks/funcionario.jsx";
 
+import { MdOutlineSearchOff } from "react-icons/md";
+
 function FAgendaMain() {
   const [agenda, setAgenda] = useState([]);
   const [load, setLoad] = useState(true);
@@ -91,6 +93,9 @@ function FAgendaMain() {
           <S.Quadro>
             <h2>Agenda</h2>
             <div className="busca">
+                <div className="divIcon">
+                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                </div>
               <Input
                 placeholder="digite a data desejada"
                 type="text"

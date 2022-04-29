@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import Carregando from "../../components/Carregando";
 
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { MdOutlineSearchOff } from "react-icons/md";
 
 import * as S from "./styled.js";
 
@@ -46,6 +47,9 @@ function Portfolio({changeTheme}) {
                             <div className="inputBtn">
                                 <Input placeholder="Filtrar" type="text" name="filtrar"/>
                                 <Button nome="Pesquisar"/>
+                                <div className="divIcon">
+                                    <MdOutlineSearchOff className="cancelarFiltro"/>
+                                </div>
                             </div>
                         </div>
                         <div className="grid">
