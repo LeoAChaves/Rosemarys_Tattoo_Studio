@@ -23,7 +23,6 @@ function FormEstoqueUpdate() {
     }
     buscaEstoque();
   }, []);
-  console.log(estoque);
 
   const handleOnChange = (e) => {
     setEstoque({ ...estoque, [e.target.name]: e.target.value });

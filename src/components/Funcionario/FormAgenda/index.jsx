@@ -28,12 +28,9 @@ function FormAgenda() {
     e.preventDefault();
     if(!(await validate())) return
     try {
-      const response = await apiAgenda.post("/agenda", agendamento);
-      
-    
-      console.log(response.data.message);
+      await apiAgenda.post("/agenda", agendamento);
     } catch (error) {
-      console.log(error.response.data.message);
+      throw new Error(error.message)
     }
   };
 

@@ -29,7 +29,7 @@ function Portfolio({changeTheme}) {
             setPalavra('')
             setLoad(false)
         } catch (error) {
-            console.log(error)
+            throw new Error(error.message)
         }
     }
     useEffect(() => {
@@ -46,7 +46,7 @@ function Portfolio({changeTheme}) {
             const reponse = await apiPortfolio.get("/portfolio/nome/" + palavraChave)
             setPortifolio(reponse.data.portfolio)
         } catch (error) {
-            console.log(error)
+            throw new Error(error.message)
         }
     }
   

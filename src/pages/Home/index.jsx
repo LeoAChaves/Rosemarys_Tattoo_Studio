@@ -68,7 +68,7 @@ function Home({ changeTheme }) {
         setPortifolio(response.data.portfolios);
         setLoad(false);
       } catch (error) {
-        console.log(error);
+        throw new Error(error.message)
       }
     }
     getPortfolios();

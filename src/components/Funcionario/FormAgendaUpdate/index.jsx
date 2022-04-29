@@ -40,8 +40,6 @@ function FormAgendaUpdate() {
       const response = await apiAgenda.put(`/agenda/id/${update}`, agendamento);
       toast.success(response.data.message);
     } catch (error) {
-      console.log(agendamento);
-      console.log(error);
       toast.error(error.response.data.message);
     }
   };

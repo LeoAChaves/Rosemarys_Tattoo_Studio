@@ -27,10 +27,9 @@ function FormEstoque() {
     e.preventDefault();
     if(!(await validate())) return
     try {
-      const response = await apiEstoque.post("/estoque", estoque);
-      console.log(response.data.mensagem);
+      await apiEstoque.post("/estoque", estoque);
     } catch (error) {
-      console.log(error);
+      throw new Error(error.message)
     }
   };
 

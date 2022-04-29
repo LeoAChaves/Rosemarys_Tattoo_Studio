@@ -12,7 +12,7 @@ function useFuncionario() {
        
          setFuncionario(response.data.funcionarios[0]);
        } catch (error) {
-         console.log(error);
+        throw new Error(error.message)
        }
      }
      buscaFuncionario()

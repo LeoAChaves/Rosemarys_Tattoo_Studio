@@ -21,10 +21,9 @@ function FormPortfolio() {
     e.preventDefault();
     if (!(await validate())) return;
     try {
-      const response = await apiPortfolio.post("/portfolio", portfolio);
-      console.log(response.data.mensagem);
+      await apiPortfolio.post("/portfolio", portfolio);
     } catch (error) {
-      console.log(error);
+      throw new Error(error.message)
     }
   };
 

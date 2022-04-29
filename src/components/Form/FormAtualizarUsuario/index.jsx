@@ -23,7 +23,7 @@ function AtualizarUsuario() {
                 const response = await apiCliente.get(`/cliente/${id}`)
                 setUsuario(response.data.cliente)
             } catch (error) {
-                console.log(error.response);
+                throw new Error(error.message)
             }
         }
         buscaUsuario()
@@ -40,7 +40,7 @@ function AtualizarUsuario() {
         try {
             await apiCliente.patch(`/cliente/${id}`, usuario)
         } catch (error) {
-            console.log(error.response);
+            throw new Error(error.message)
         }
     }
 
@@ -51,7 +51,7 @@ function AtualizarUsuario() {
          toast.success(response.data.message)
            navigate('/')
         } catch (error) {
-            console.log(error.response);
+            throw new Error(error.message)
         }
     }
 

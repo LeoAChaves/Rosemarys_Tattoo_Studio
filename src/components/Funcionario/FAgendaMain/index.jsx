@@ -38,12 +38,10 @@ function FAgendaMain() {
 
   const handleBackClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
   };
   const handleNextClick = (e) => {
     e.preventDefault();
-    console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 

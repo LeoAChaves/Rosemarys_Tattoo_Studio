@@ -28,7 +28,7 @@ function Usuario({changeTheme}){
                 setUsuario(response.data.cliente)
                 setLoad(false)
             } catch (error) {
-                console.log(error);
+                throw new Error(error.message)
             }
         }
         buscaUsuario()
