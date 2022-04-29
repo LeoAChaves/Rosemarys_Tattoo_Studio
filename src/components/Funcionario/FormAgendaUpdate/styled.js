@@ -5,6 +5,10 @@ export const Container = styled.main`
   height: calc(100vh - 130px);
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 export const Quadro = styled.section`
@@ -23,6 +27,10 @@ export const Quadro = styled.section`
     font-weight: 400;
     text-align: center;
   }
+
+  @media (max-width: 600px) {
+    margin-top: 60px;
+  }
 `;
 
 export const Form = styled.section`
@@ -31,7 +39,6 @@ export const Form = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 20px;
 
   .caixa {
     display: flex;
@@ -52,6 +59,7 @@ export const Form = styled.section`
 
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
+    font-family: "Amaranth";
   }
 
   input[type="time"] {
@@ -74,18 +82,52 @@ export const Form = styled.section`
     color: ${({ theme }) => theme.input_placeholder};
   }
 
+  label {
+    font-size: 14px;
+    color: ${({ theme }) => theme.text};
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
   Button {
     align-self: flex-end;
     width: 130px;
     height: 50px;
-    margin-top: 20px;
+    margin: 20px 0 20px 15px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
     color: ${({ theme }) => theme.button_text};
-    margin-left: 15px;
+    font-family: "Amaranth";
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+
+    Input {
+      width: 350px;
+      margin: 10px;
+    }
+
+    .inputduracao {
+      width: 350px;
+      margin: 10px;
+    }
+
+    .caixa {
+      margin: 10px 0 0 10px;
+    }
+
+    label {
+      margin-left: 10px;
+    }
+    Button {
+      margin-right: 10px;
+    }
   }
 `;

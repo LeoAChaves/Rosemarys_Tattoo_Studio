@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-function FHomeCard({ tipo, texto, onClickVisu, onClickInse }) {
-  const FHomeCard = styled.div`
+export const HomeCard = styled.div`
     width: 35%;
     height: 50%;
     background-color: ${({ theme }) => theme.primary};
@@ -78,22 +77,31 @@ function FHomeCard({ tipo, texto, onClickVisu, onClickInse }) {
       transition: 0.5s;
       border-bottom: solid 2px ${({ theme }) => theme.amarelo};
     }
-  `;
-  return (
-    <FHomeCard className={tipo}>
-      <p>{texto}</p>
-      <div className="opcoes">
-        <div className="visualizar" onClick={onClickVisu}>
-          <p className="visualizarP">visualizar</p>
-          <p className="visualizarP">{texto}</p>
-        </div>
-        <div className="inserir" onClick={onClickInse}>
-          <p className="inserirP">inserir</p>
-          <p className="inserirP">{texto}</p>
-        </div>
-      </div>
-    </FHomeCard>
-  );
-}
 
-export default FHomeCard;
+    @media (max-width: 600px) {
+      width: 100%;
+      height: 30%;
+      margin: 40px 0;
+      justify-content: space-around;
+      align-items: center;
+
+      &.agendamento {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+      &.portfolio {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+      &.estoque {
+        margin: 40px 0;
+        left: initial;
+        right: initial;
+        top: initial;
+      }
+    }
+  `;

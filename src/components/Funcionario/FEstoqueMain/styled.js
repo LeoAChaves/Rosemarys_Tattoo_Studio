@@ -5,6 +5,10 @@ export const Container = styled.main`
   height: calc(100vh - 130px);
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 export const Quadro = styled.section`
@@ -24,8 +28,23 @@ export const Quadro = styled.section`
   }
 
   .busca {
-    align-self: flex-end;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
     margin-right: 30px;
+  }
+
+  .divIcon{
+    margin-right: 20px;
+  }
+
+  .cancelarFiltro{
+    font-size: 30px;
+    color: ${({ theme }) => theme.text};
+    cursor: pointer;
   }
 
   Input {
@@ -61,6 +80,17 @@ export const Quadro = styled.section`
   .seta img {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 80px;
+    padding-bottom: 60px;
+    margin-bottom: 30px;
+    height: auto;
+
+    h2 {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -121,5 +151,13 @@ export const Cards = styled.section`
   }
   .botao Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
+  }
+
+  @media (max-width: 600px) {
+    .lista {
+      width: 80%;
+      height: 35vh;
+      flex: none;
+    }
   }
 `;

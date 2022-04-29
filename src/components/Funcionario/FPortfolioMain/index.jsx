@@ -4,27 +4,34 @@ import { apiPortfolio } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
-
 import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 import iconBack from "../../../assets/iconBack.png";
 import iconNext from "../../../assets/iconNext.png";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
+
+import { MdOutlineSearchOff } from "react-icons/md";
+
 
 function FPortfolioMain() {
   const [portfolio, setPortifolio] = useState([]);
   const [load, setLoad] = useState(true);
   const carousel = useRef(null);
+  const [palavraChave, setPalavra] = useState("");
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
-  useEffect(() => {
-    async function getPortfolios() {
-      try {
-        const response = await apiPortfolio.get("/portfolio");
-        setPortifolio(response.data.portfolios);
-        setLoad(false);
-      } catch (error) {
-        toast.error(error.response.data.mensagem);
-      }
+  async function getPortfolios() {
+    try {
+      const response = await apiPortfolio.get("/portfolio");
+      setPortifolio(response.data.portfolios);
+      setLoad(false);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
     }
+  }
+  useEffect(() => {
     getPortfolios();
   }, []);
 
@@ -34,6 +41,7 @@ function FPortfolioMain() {
         `/portfolio/portfolioId/${id}`
       );
       toast.success(response.data.mensagem);
+      getPortfolios();
     } catch (error) {
       toast.error(error.response.data.mensagem);
     }
@@ -48,6 +56,18 @@ function FPortfolioMain() {
     carousel.current.scrollLeft += carousel.current.offsetWidth;
   };
 
+  const handleChange = (e) => {
+    setPalavra(e.target.value);
+  };
+
+  async function getPalavraChave() {
+    try {
+      const reponse = await apiPortfolio.get("/portfolio/nome/" + palavraChave);
+      setPortifolio(reponse.data.portfolio);
+      console.log(reponse);
+    } catch (error) {}
+  }
+
   return (
     <>
       {load ? (
@@ -58,13 +78,21 @@ function FPortfolioMain() {
             <S.Quadro>
               <h2>Portfólio</h2>
               <div className="busca">
+                <div className="divIcon">
+                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                </div>
                 <Input
                   placeholder="palavra-chave"
                   type="text"
                   name="search"
                   id="search"
+                  onChange={(e) => handleChange(e)}
                 ></Input>
-                <Button type="submit" nome="Buscar"></Button>
+                <Button
+                  type="submit"
+                  nome="Buscar"
+                  onClick={getPalavraChave}
+                ></Button>
               </div>
               <S.Form ref={carousel}>
                 {portfolio.map((portfolio) => {
@@ -94,7 +122,14 @@ function FPortfolioMain() {
                             className="styleForm"
                             type="submit"
                             nome="Alterar"
-                            //onClick={(e) => alterarPortfolio(e)}
+                            onClick={() =>
+                              navigate(
+                                "/funcionario/portfolio-update/" +
+                                  funcionario.ID +
+                                  "/" +
+                                  portfolio.ID
+                              )
+                            }
                           ></Button>
                           <Button
                             className="styleForm"

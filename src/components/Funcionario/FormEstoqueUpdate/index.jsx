@@ -4,18 +4,31 @@ import Button from "../../Button/index.jsx";
 import Input from "../../Input/index.jsx";
 
 import toast from "react-hot-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { apiEstoque } from "../../../services/api.js";
+import { useParams } from "react-router-dom";
 
-function FormEstoqueUpdate({ botao }) {
-  const [estoque, setEstoque] = useState([]);
+function FormEstoqueUpdate() {
+  const [estoque, setEstoque] = useState({});
+  const { update } = useParams();
+
+  useEffect(() => {
+    async function buscaEstoque() {
+      try {
+        const response = await apiEstoque.get(`/estoque/id/${update}`);
+        setEstoque(response.data.estoque);
+      } catch (error) {
+        toast.error(error.response.data.message);
+      }
+    }
+    buscaEstoque();
+  }, []);
+  console.log(estoque);
 
   const handleOnChange = (e) => {
-    e.preventDefault();
     setEstoque({ ...estoque, [e.target.name]: e.target.value });
   };
   const handleOnChangeNumber = (e) => {
-    e.preventDefault();
     setEstoque({
       ...estoque,
       [e.target.name]: parseInt(e.target.value),
@@ -24,11 +37,9 @@ function FormEstoqueUpdate({ botao }) {
   const alterarEstoque = async (e) => {
     e.preventDefault();
     try {
-      const response = await apiEstoque.post("/estoque", estoque);
-      console.log(response.data.mensagem);
+      const response = await apiEstoque.post(`/estoque/id/${update}`, estoque);
       toast.success(response.data.mensagem);
     } catch (error) {
-      console.log(error);
       toast.error(error.response.data.mensagem);
     }
   };
@@ -37,37 +48,53 @@ function FormEstoqueUpdate({ botao }) {
       <S.Quadro>
         <h2>Estoque</h2>
         <S.Form>
-          <div>
-            <Input
-              placeholder="ITEM"
-              type="text"
-              name="NOME"
-              id="item"
-              onChange={(e) => handleOnChange(e)}
-            ></Input>
-            <Input
-              placeholder="QUANTIDADE"
-              type="number"
-              name="QUANTIDADE"
-              id="qtd"
-              onChange={(e) => handleOnChangeNumber(e)}
-            ></Input>
+          <div className="campos">
+            <section>
+              <label>ITEM:</label>
+              <Input
+                placeholder="ITEM"
+                type="text"
+                name="NOME"
+                id="item"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.NOME}
+              ></Input>
+            </section>
+            <section>
+              <label>QUANTIDADE:</label>
+              <Input
+                placeholder="QUANTIDADE"
+                type="number"
+                name="QUANTIDADE"
+                id="qtd"
+                onChange={(e) => handleOnChangeNumber(e)}
+                value={estoque.QUANTIDADE}
+              ></Input>
+            </section>
           </div>
-          <div>
-            <Input
-              placeholder="PRECO"
-              type="number"
-              name="PRECO"
-              id="preco"
-              onChange={(e) => handleOnChange(e)}
-            ></Input>
-            <Input
-              placeholder="TIPO"
-              type="text"
-              name="TIPO"
-              id="tipo"
-              onChange={(e) => handleOnChange(e)}
-            ></Input>
+          <div className="campos">
+            <section>
+              <label>PREÇO:</label>
+              <Input
+                placeholder="PRECO"
+                type="number"
+                name="PRECO"
+                id="preco"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.PRECO}
+              ></Input>
+            </section>
+            <section>
+              <label>TIPO:</label>
+              <Input
+                placeholder="TIPO"
+                type="text"
+                name="TIPO"
+                id="tipo"
+                onChange={(e) => handleOnChange(e)}
+                value={estoque.TIPO}
+              ></Input>
+            </section>
           </div>
 
           <Button

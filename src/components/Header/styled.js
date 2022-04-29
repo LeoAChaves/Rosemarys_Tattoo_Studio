@@ -10,8 +10,13 @@ export const Header = styled.header`
 
   padding: 30px;
 
-  img {
+  .logoGeral {
+    width: 200px;
+  }
+
+  .logoResponsivo {
     width: 65px;
+    display: none;
   }
 
   .divLinks {
@@ -37,10 +42,29 @@ export const Header = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    button {
+      width: 60px;
+    }
+
+    .logoResponsivo {
+      display: block;
+    }
+
+    .logoGeral {
+      display: none;
+    }
+  }
 `;
 
 export const Div = styled.div`
   display: ${(props) => props.div.display};
   color: ${({ theme }) => theme.text};
   font-size: 14px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;

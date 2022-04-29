@@ -8,11 +8,18 @@ import { apiEstoque } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
+
+import { MdOutlineSearchOff } from "react-icons/md";
 
 function FEstoqueMain() {
   const [estoque, setEstoque] = useState([]);
   const [load, setLoad] = useState(true);
+  const [palavraChave, setPalavra] = useState("");
   const carousel = useRef(null);
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
   useEffect(() => {
     async function getEstoque() {
@@ -32,10 +39,25 @@ function FEstoqueMain() {
     console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft -= carousel.current.offsetWidth;
   };
+
   const handleNextClick = (e) => {
     e.preventDefault();
     console.log(carousel.current.offsetWidth);
     carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
+
+  async function deletarEstoque(id) {
+    try {
+      const response = await apiEstoque.delete(`/estoque/id/${id}`);
+      toast.success(response.data.mensagem);
+    } catch (error) {
+      toast.error(error.response.data.mensagem);
+    }
+  }
+
+  const handleChange = (e) => {
+    setPalavra(e.target.value);
+    console.log(e.target.value);
   };
 
   return (
@@ -47,11 +69,15 @@ function FEstoqueMain() {
           <S.Quadro>
             <h2>Estoque</h2>
             <div className="busca">
+              <div className="divIcon">
+                <MdOutlineSearchOff className="cancelarFiltro"/>
+              </div>
               <Input
                 placeholder="palavra-chave"
                 type="text"
                 name="search"
                 id="search"
+                onChange={(e) => handleChange(e)}
               ></Input>
               <Button type="submit" nome="Buscar"></Button>
             </div>
@@ -82,13 +108,20 @@ function FEstoqueMain() {
                             className="styleForm"
                             type="submit"
                             nome="Alterar"
-                            //onClick={(e) => alterarEstoque(e)}
+                            onClick={() =>
+                              navigate(
+                                "/funcionario/estoque-update/" +
+                                  funcionario.ID +
+                                  "/" +
+                                  estoque.ID
+                              )
+                            }
                           ></Button>
                           <Button
                             className="styleForm"
                             type="submit"
                             nome="Deletar"
-                            //onClick={(e) => deletarEstoque(e)}
+                            onClick={() => deletarEstoque(estoque.ID)}
                           ></Button>
                         </div>
                       </ul>

@@ -10,11 +10,16 @@ export const Header = styled.header`
 
   padding: 30px;
 
-  img {
-    width: 65px;
+  .logoGeral {
+    width: 200px;
   }
 
-  p{
+  .logoResponsivo {
+    width: 80px;
+    display: none;
+  }
+
+  p {
     color: ${({ theme }) => theme.text};
     font-size: 14px;
   }
@@ -42,4 +47,23 @@ export const Header = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
-`
+
+  @media (max-width: 600px) {
+    width: 100%;
+    button {
+      width: 60px;
+    }
+
+    .dadosFunc {
+      display: none;
+    }
+
+    .logoResponsivo {
+      display: block;
+    }
+
+    .logoGeral {
+      display: none;
+    }
+  }
+`;

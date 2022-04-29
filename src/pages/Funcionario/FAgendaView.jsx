@@ -13,14 +13,16 @@ function FAgendaView({ changeTheme }) {
     background-image: url(${({ theme }) => theme.background});
     background-size: cover;
     background-position: center;
+
+    @media (max-width: 600px) {
+      background-size: cover;
+      height: auto;
+    }
   `;
   return (
     <FAgendaView>
       <FHeader
         btnHome={{ display: "none" }}
-        btnLogin={{ display: "none" }}
-        btnInicial={{ display: "none" }}
-        btnPortfolio={{ display: "none" }}
         className={"btn custom-btn styleHeader"}
         style={style}
         voltar="Voltar"

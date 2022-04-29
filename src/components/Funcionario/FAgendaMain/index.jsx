@@ -5,26 +5,33 @@ import Input from "../../Input/index.jsx";
 import iconBack from "../../../assets/iconBack.png";
 import iconNext from "../../../assets/iconNext.png";
 
-import { apiAgenda } from "../../../services/api.js";
+import { apiAgenda, apiEstoque } from "../../../services/api.js";
 import { useEffect, useState, useRef } from "react";
 import Carregando from "../../Carregando";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import useFuncionario from "../../Hooks/funcionario.jsx";
+
+import { MdOutlineSearchOff } from "react-icons/md";
 
 function FAgendaMain() {
   const [agenda, setAgenda] = useState([]);
   const [load, setLoad] = useState(true);
+  const [data, setData] = useState("");
   const carousel = useRef(null);
+  const navigate = useNavigate();
+  const [funcionario] = useFuncionario();
 
-  useEffect(() => {
-    async function getagenda() {
-      try {
-        const response = await apiAgenda.get("/agenda");
-        setAgenda(response.data.agenda);
-        setLoad(false);
-      } catch (error) {
-        toast.error(error.response.data);
-      }
+  async function getagenda() {
+    try {
+      const response = await apiAgenda.get("/agenda");
+      setAgenda(response.data.agenda);
+      setLoad(false);
+    } catch (error) {
+      toast.error(error.response.data);
     }
+  }
+  useEffect(() => {
     getagenda();
   }, []);
 
@@ -43,10 +50,36 @@ function FAgendaMain() {
     try {
       const response = await apiAgenda.delete(`/agenda/id/${id}`);
       toast.success(response.data.message);
+      getagenda();
     } catch (error) {
       toast.error(error.response.data.message);
     }
   }
+  const converteData = (data) => {
+    const dataSplit = data.split("-");
+    return `${dataSplit.pop()}-${dataSplit.pop()}-${dataSplit.shift()}`;
+  };
+
+  async function getAgendamentoData() {
+    try {
+      const response = await apiAgenda.get(
+        `/agenda/data/${converteData(data)}`
+      );
+      setAgenda(response.data.agenda);
+    } catch (error) {
+      toast.error(
+        error.response.data.message.replace(converteData(data), data)
+      );
+    }
+  }
+
+  const dataCorreta = (data) => {
+    const dataArr = data.split("-");
+    const ano = dataArr.shift();
+    const dia = dataArr.pop();
+
+    return `${dia}-${dataArr.pop()}-${ano}`;
+  };
 
   return (
     <>
@@ -57,13 +90,21 @@ function FAgendaMain() {
           <S.Quadro>
             <h2>Agenda</h2>
             <div className="busca">
+                <div className="divIcon">
+                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                </div>
               <Input
                 placeholder="digite a data desejada"
                 type="text"
                 name="search"
                 id="search"
+                onChange={(e) => setData(e.target.value)}
               ></Input>
-              <Button type="submit" nome="Buscar"></Button>
+              <Button
+                type="submit"
+                nome="Buscar"
+                onClick={getAgendamentoData}
+              ></Button>
             </div>
             <S.Form ref={carousel}>
               {agenda.map((agendamento) => {
@@ -81,7 +122,10 @@ function FAgendaMain() {
                         <span>{agendamento.Funcionario_ID}</span>
                       </li>
                       <li>
-                        DATA: <span>{agendamento.Data}</span>
+                        DATA:{" "}
+                        <span>
+                          {load === false ? dataCorreta(agendamento.Data) : ""}
+                        </span>
                       </li>
                       <li>
                         HORA: <span>{agendamento.Hora}</span>
@@ -97,7 +141,14 @@ function FAgendaMain() {
                           className="styleForm"
                           type="submit"
                           nome="Alterar"
-                          //onClick={(e) => alteraragenda(e)}
+                          onClick={() =>
+                            navigate(
+                              "/funcionario/agendamento-update/" +
+                                funcionario.ID +
+                                "/" +
+                                agendamento.ID
+                            )
+                          }
                         ></Button>
                         <Button
                           className="styleForm"
