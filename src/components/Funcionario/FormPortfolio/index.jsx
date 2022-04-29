@@ -86,7 +86,7 @@ function FormPortfolio() {
             <label>FOTO:</label>
             <Input
               placeholder="FOTO"
-              type="file"
+              type="text"
               name="foto"
               id="foto"
               onChange={(e) => handleOnChange(e)}

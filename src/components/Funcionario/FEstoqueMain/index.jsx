@@ -11,6 +11,8 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import useFuncionario from "../../Hooks/funcionario.jsx";
 
+import { MdOutlineSearchOff } from "react-icons/md";
+
 function FEstoqueMain() {
   const [estoque, setEstoque] = useState([]);
   const [load, setLoad] = useState(true);
@@ -78,6 +80,9 @@ function FEstoqueMain() {
           <S.Quadro>
             <h2>Estoque</h2>
             <div className="busca">
+              <div className="divIcon">
+                <MdOutlineSearchOff className="cancelarFiltro"/>
+              </div>
               <Input
                 placeholder="palavra-chave"
                 type="text"

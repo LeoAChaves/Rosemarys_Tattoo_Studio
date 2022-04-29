@@ -24,8 +24,23 @@ export const Quadro = styled.section`
   }
 
   .busca {
-    align-self: flex-end;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
     margin-right: 30px;
+  }
+
+  .divIcon{
+    margin-right: 20px;
+  }
+
+  .cancelarFiltro{
+    font-size: 30px;
+    color: ${({ theme }) => theme.text};
+    cursor: pointer;
   }
 
   .busca Button {
