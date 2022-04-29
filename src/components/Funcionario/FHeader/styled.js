@@ -14,7 +14,7 @@ export const Header = styled.header`
     width: 200px;
   }
 
-  .responsivo {
+  .logoResponsivo {
     width: 80px;
     display: none;
   }

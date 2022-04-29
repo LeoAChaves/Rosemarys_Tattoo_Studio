@@ -41,12 +41,12 @@ function Header({
           alt="logoLight"
         />
         {/* <Image
-          className="responsivo"
+          className="logoResponsivo"
           src="https://media.discordapp.net/attachments/923686382659059742/969457767175843910/logoDarkR.png?width=670&height=670"
           alt="logoDarkR"
         /> */}
         <Image
-          className="responsivo"
+          className="logoResponsivo"
           src="https://media.discordapp.net/attachments/923686382659059742/969457767582687323/logoLightR.png?width=670&height=670"
           alt="logoLightR"
         />
