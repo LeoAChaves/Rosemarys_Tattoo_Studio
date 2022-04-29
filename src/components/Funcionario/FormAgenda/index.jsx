@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { useState } from "react";
 import { apiAgenda } from "../../../services/api.js";
 
-function FormAgenda({ botao }) {
+function FormAgenda() {
   const [agendamento, setAgendamento] = useState({});
 
   const handleOnchange = (e) => {
@@ -29,6 +29,8 @@ function FormAgenda({ botao }) {
     if(!(await validate())) return
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
+      
+    
       console.log(response.data.message);
     } catch (error) {
       console.log(error.response.data.message);

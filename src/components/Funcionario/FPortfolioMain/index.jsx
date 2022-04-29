@@ -64,7 +64,6 @@ function FPortfolioMain() {
     try {
       const reponse = await apiPortfolio.get("/portfolio/nome/" + palavraChave);
       setPortifolio(reponse.data.portfolio);
-      console.log(reponse);
     } catch (error) {}
   }
 
@@ -79,7 +78,7 @@ function FPortfolioMain() {
               <h2>Portfólio</h2>
               <div className="busca">
                 <div className="divIcon">
-                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                  <MdOutlineSearchOff className="cancelarFiltro" onClick={()=>getPortfolios()}/>
                 </div>
                 <Input
                   placeholder="palavra-chave"
@@ -95,7 +94,9 @@ function FPortfolioMain() {
                 ></Button>
               </div>
               <S.Form ref={carousel}>
-                {portfolio.map((portfolio) => {
+                {portfolio.length === 0 ? <h2 className="mensagemNaoEncontrado">Portfolio não encontrado</h2> 
+                :
+                portfolio.map((portfolio) => {
                   return (
                     <div className="lista" key={portfolio.ID}>
                       <div className="dados">

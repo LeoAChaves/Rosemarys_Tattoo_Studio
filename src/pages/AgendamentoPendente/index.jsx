@@ -9,7 +9,6 @@ function AgendamentoPendente({changeTheme}) {
         height: "70px",
     }
 
-
     const [agendamentos, setAgendamentos] = useState([])
 
     useEffect(()=>{

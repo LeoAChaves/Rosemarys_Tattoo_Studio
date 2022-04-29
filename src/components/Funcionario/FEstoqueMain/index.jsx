@@ -21,16 +21,17 @@ function FEstoqueMain() {
   const navigate = useNavigate();
   const [funcionario] = useFuncionario();
 
-  useEffect(() => {
-    async function getEstoque() {
-      try {
-        const response = await apiEstoque.get("/estoque");
-        setEstoque(response.data.estoque);
-        setLoad(false);
-      } catch (error) {
-        toast.error(error.response.data);
-      }
+  async function getEstoque() {
+    try {
+      const response = await apiEstoque.get("/estoque");
+      setEstoque(response.data.estoque);
+      setLoad(false);
+    } catch (error) {
+      toast.error(error.response.data);
     }
+  }
+  useEffect(() => {
+    
     getEstoque();
   }, []);
 
@@ -50,15 +51,26 @@ function FEstoqueMain() {
     try {
       const response = await apiEstoque.delete(`/estoque/id/${id}`);
       toast.success(response.data.mensagem);
+      getEstoque()
     } catch (error) {
       toast.error(error.response.data.mensagem);
     }
   }
+      
+  const handleChange = (e)=>{
+    setPalavra(e.target.value)
+   
+  }
 
-  const handleChange = (e) => {
-    setPalavra(e.target.value);
-    console.log(e.target.value);
-  };
+  async function getPalavraChave() {
+    try {
+      const response = await apiEstoque.get('/estoque/nome-estoque/'+palavraChave)
+      setEstoque(response.data.estoque)
+
+    } catch (error) {
+      
+    }
+  }
 
   return (
     <>
@@ -70,7 +82,7 @@ function FEstoqueMain() {
             <h2>Estoque</h2>
             <div className="busca">
               <div className="divIcon">
-                <MdOutlineSearchOff className="cancelarFiltro"/>
+              <MdOutlineSearchOff className="cancelarFiltro" onClick={()=> getEstoque()()}/>
               </div>
               <Input
                 placeholder="palavra-chave"
@@ -79,12 +91,14 @@ function FEstoqueMain() {
                 id="search"
                 onChange={(e) => handleChange(e)}
               ></Input>
-              <Button type="submit" nome="Buscar"></Button>
+              <Button type="submit" nome="Buscar" onClick={getPalavraChave}></Button>
             </div>
 
             <S.Form ref={carousel}>
               <S.Cards>
-                {estoque.map((estoque) => {
+                {estoque.length === 0 ? <h2 className="mensagemNaoEncontrado">Estoque não encontrado</h2> 
+                :
+                estoque.map((estoque) => {
                   return (
                     <div className="lista dados" key={estoque.ID}>
                       <ul>

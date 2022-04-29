@@ -20,20 +20,33 @@ function Portfolio({changeTheme}) {
     }
     const [portfolio, setPortifolio] = useState([])
     const [load, setLoad] = useState(true)
-
-    useEffect(() => {
-        async function getPortfolios() {
-            try {
-                const response = await apiPortfolio.get('/portfolio')
-                setPortifolio(response.data.portfolios)
-                setLoad(false)
-            } catch (error) {
-                console.log(error)
-            }
+    const [palavraChave, setPalavra] = useState('')
+    async function getPortfolios() {
+        try {
+            const response = await apiPortfolio.get('/portfolio')
+            setPortifolio(response.data.portfolios)
+            setLoad(false)
+        } catch (error) {
+            console.log(error)
         }
+    }
+    useEffect(() => {
+       
         getPortfolios()
     }, []);
 
+    const handleChange = (e) =>{
+        setPalavra(e.target.value)
+    }
+
+    async function buscaPortfolioNome() {
+        try {
+            const reponse = await apiPortfolio.get("/portfolio/nome/" + palavraChave)
+            setPortifolio(reponse.data.portfolio)
+        } catch (error) {
+            console.log(error)
+        }
+    }
   
     return (
         <>
@@ -45,16 +58,18 @@ function Portfolio({changeTheme}) {
                         <div className="blocoUm">
                             <h1>Galeria</h1>
                             <div className="inputBtn">
-                                <Input placeholder="Filtrar" type="text" name="filtrar"/>
-                                <Button nome="Pesquisar"/>
+                                <Input placeholder="Filtrar" type="text" name="filtrar" onChange={(e)=>handleChange(e)}/>
+                                <Button nome="Pesquisar" onClick={buscaPortfolioNome}/>
                                 <div className="divIcon">
-                                    <MdOutlineSearchOff className="cancelarFiltro"/>
+                                    <MdOutlineSearchOff className="cancelarFiltro" onClick={getPortfolios}/>
                                 </div>
                             </div>
                         </div>
                         <div className="grid">
-                            {portfolio.map(portfolio=>{
-                            return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
+                            {portfolio.length === 0 ? <div className="divMsgPort"><h2 className="msgNEncontradoPort">Portfolio nao encontrado...</h2></div>
+                            :
+                            portfolio.map(portfolio=>{
+                                return <ImagemGaleria funcionario={portfolio.FUNCIONARIOID} key={portfolio.ID} id={portfolio.ID} href={'#'+portfolio.ID} alt={portfolio.DESCRICAO} descricao={portfolio.DESCRICAO} src={portfolio.FOTO} />
                             })}
                         </div>
                     </S.Main>

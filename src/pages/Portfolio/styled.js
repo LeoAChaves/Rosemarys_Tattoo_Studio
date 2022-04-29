@@ -69,6 +69,18 @@ export const Main = styled.main`
         align-items: center;
     }
 
+    .divMsgPort{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 90vh;
+    }
+
+    .msgNEncontradoPort{
+        color: ${({ theme }) => theme.text};
+    }
+
     @media(min-width: 1100px) {
         .grid{
             display: grid;

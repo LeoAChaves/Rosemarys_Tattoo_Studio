@@ -150,4 +150,8 @@ textarea{
 .iconLinkTopo{
   font-size: 40px;
 }
+
+.mensagemNaoEncontrado{
+  margin: 40%;
+}
 `;

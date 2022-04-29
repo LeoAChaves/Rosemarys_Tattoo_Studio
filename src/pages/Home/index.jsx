@@ -22,7 +22,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
-  const [contato, setContato] = useState([]);
+  const [contato, setContato] = useState({});
   const [load, setLoad] = useState(true);
 
   const handleOnchange = (e) => {

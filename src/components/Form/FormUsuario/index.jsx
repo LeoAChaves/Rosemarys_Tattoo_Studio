@@ -15,7 +15,7 @@ import { IoIosArrowForward } from "react-icons/io";
 function FormUsuario(){
 
     const navigate = useNavigate()
-    const [agendamento, setAgendamento] = useState([])
+    const [agendamento, setAgendamento] = useState({})
 
     const handleOnchange = (e)=>{
         setAgendamento({...agendamento, [e.target.name]: e.target.value})
