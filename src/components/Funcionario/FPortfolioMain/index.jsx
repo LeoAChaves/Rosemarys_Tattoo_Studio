@@ -26,6 +26,7 @@ function FPortfolioMain() {
     try {
       const response = await apiPortfolio.get("/portfolio");
       setPortifolio(response.data.portfolios);
+      setPalavra('')
       setLoad(false);
     } catch (error) {
       toast.error(error.response.data.mensagem);
@@ -85,7 +86,8 @@ function FPortfolioMain() {
                   type="text"
                   name="search"
                   id="search"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => handleChange(e) }
+                  value={palavraChave}
                 ></Input>
                 <Button
                   type="submit"

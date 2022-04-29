@@ -26,6 +26,7 @@ function FAgendaMain() {
     try {
       const response = await apiAgenda.get("/agenda");
       setAgenda(response.data.agenda);
+      setData('')
       setLoad(false);
     } catch (error) {
       toast.error(error.response.data);
@@ -98,7 +99,8 @@ function FAgendaMain() {
                 type="text"
                 name="search"
                 id="search"
-                onChange={(e) => setData(e.target.value)}
+                value={data}
+                onChange={(e) => setData(e.target.value) }
               ></Input>
               <Button
                 type="submit"
