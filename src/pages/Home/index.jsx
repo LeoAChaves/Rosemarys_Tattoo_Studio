@@ -3,13 +3,12 @@ import * as S from "./styled.js";
 import { useEffect, useState } from "react";
 
 import Header from "../../components/Header";
-import HeroText from "../../components/Hero";
 import Image from "../../components/Image";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 
 import * as yup from "yup";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 
 import { GiDaggerRose, GiRose, GiSacrificialDagger } from "react-icons/gi";
 import Carregando from "../../components/Carregando";
@@ -18,35 +17,47 @@ import { apiPortfolio } from "../../services/api.js";
 import Footer from "../../components/Footer/index.jsx";
 import FooterMain from "../../components/Footer/FooterMain/index.jsx";
 
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
   const [contato, setContato] = useState([]);
   const [load, setLoad] = useState(true);
 
-  const handleOnchange = (e)=>{
-    setContato({...contato, [e.target.name]: e.target.value})
-  }
+  const handleOnchange = (e) => {
+    setContato({ ...contato, [e.target.name]: e.target.value });
+  };
 
   const pegaContato = async (e) => {
-    e.preventDefault()
-    if(!(await validate())) return
-  }
+    e.preventDefault();
+    if (!(await validate())) return;
+  };
 
-  async function validate(){
+  async function validate() {
     let schema = yup.object().shape({
-        nome: yup.string("").required("Campo de nome não pode estar vazio"),
-        email: yup.string("Campo de email deve ser preenchido com letras").email("E-mail inválido.").required("Campo de email não pode estar vazio"),
-        celular: yup.string("Campo de celular deve ser preenchido com números").required("Campo de celular não pode estar vazio").min(11, 'O celular precisa ter 11 digitos'),
-        textarea: yup.string("").required("Campo de descrição não pode estar vazio"),
-    })
+      nome: yup.string("").required("Campo de nome não pode estar vazio"),
+      email: yup
+        .string("Campo de email deve ser preenchido com letras")
+        .email("E-mail inválido.")
+        .required("Campo de email não pode estar vazio"),
+      celular: yup
+        .string("Campo de celular deve ser preenchido com números")
+        .required("Campo de celular não pode estar vazio")
+        .min(11, "O celular precisa ter 11 digitos"),
+      textarea: yup
+        .string("")
+        .required("Campo de descrição não pode estar vazio"),
+    });
     try {
-        await schema.validate(contato)
-        toast.success("Seu comentário foi enviado para a equipe e será respondido em algumas horas em seu número de contato! ✨")
-        return true
+      await schema.validate(contato);
+      toast.success(
+        "Seu comentário foi enviado para a equipe e será respondido em algumas horas em seu número de contato! ✨"
+      );
+      return true;
     } catch (error) {
-        toast.error(error.errors)
+      toast.error(error.errors);
     }
-    return false
+    return false;
   }
 
   useEffect(() => {
@@ -95,28 +106,34 @@ function Home({ changeTheme }) {
           />
           <S.Main>
             <S.BlocoUm>
-              <HeroText texto="de artista" />
-              <HeroText texto=" para artista" />
+              <div>
+                <S.H1 className="heroText">de artista</S.H1>
+                <S.H1 className="heroText">para artista</S.H1>
+              </div>
             </S.BlocoUm>
 
             <S.BlocoDois>
               <S.DivCard>
+                <AnimationOnScroll animateIn="animate__fadeInLeft">
                 <S.DivTexto>
+                
                   <S.H1>Nossa filosofia</S.H1>
                   <S.Line />
                   <S.Paragrafo>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    Nós da Rosemary’s Tattoo Studio acreditamos na arte pela
+                    arte, de artista para artista. Nossos tatuadores, muito mais
+                    do que marcar peles, acreditam plenamente no trabalho e na
+                    conexão criada com os clientes. Com trabalhos autorais e
+                    cuidadosos, estamos aqui para proporcionar a melhor
+                    experiência possível, numa imersão artística única.
                   </S.Paragrafo>
                   <S.IconFD>
                     <GiDaggerRose />
                   </S.IconFD>
-                </S.DivTexto>
-                <S.DivImage>
+                  
+                </S.DivTexto></AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__fadeInRight"><S.DivImage>
+                
                   <Image
                     src="https://images.pexels.com/photos/1304469/pexels-photo-1304469.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                     alt="Foto de tatuagem sendo realizada"
@@ -125,11 +142,13 @@ function Home({ changeTheme }) {
                     src="https://images.pexels.com/photos/4123707/pexels-photo-4123707.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                     alt="Foto de flash de tatuagem"
                   />
-                </S.DivImage>
+                  
+                </S.DivImage></AnimationOnScroll>
               </S.DivCard>
               <S.Line2 />
-              <S.DivCard>
+              <S.DivCard><AnimationOnScroll animateIn="animate__fadeInLeft">
                 <S.DivImage>
+                
                   <Image
                     src="https://images.pexels.com/photos/4123712/pexels-photo-4123712.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
                     alt="Foto de livros de tatuagem sobre a mesa"
@@ -138,22 +157,22 @@ function Home({ changeTheme }) {
                     src="https://i.pinimg.com/564x/cc/d7/4d/ccd74dcfa5b67f092eb7cbe5674586f2.jpg"
                     alt="Foto de sofá de couro tatuado"
                   />
-                </S.DivImage>
-                <S.DivTexto>
+                  
+                </S.DivImage></AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__fadeInRight"><S.DivTexto>
+                
                   <S.H1>Quem somos</S.H1>
                   <S.Line />
                   <S.Paragrafo>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur.
+                    Fundados em 2021 por um time que queria criar um ambiente
+                    onde a arte vive e inunda cada canto, o Rosemary’s nasceu de
+                    um sonho e muito trabalho, cheio de dedicação e carinho.
                   </S.Paragrafo>
                   <S.IconFD>
-                    <GiDaggerRose className="themeMode" />
+                    <GiDaggerRose />
                   </S.IconFD>
-                </S.DivTexto>
+                  
+                </S.DivTexto></AnimationOnScroll>
               </S.DivCard>
             </S.BlocoDois>
 
@@ -165,7 +184,7 @@ function Home({ changeTheme }) {
                     alt="Foto da tatuadora Rose Herculano"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Rose Herculano</S.H3>
                 </S.Artista>
@@ -176,7 +195,7 @@ function Home({ changeTheme }) {
                     alt="Foto do tatuador Maurício Castro"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Maurício Castro</S.H3>
                 </S.Artista>
@@ -187,7 +206,7 @@ function Home({ changeTheme }) {
                     alt="Foto do tatuador Pietro ALves"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Pietro Alves</S.H3>
                 </S.Artista>
@@ -198,7 +217,7 @@ function Home({ changeTheme }) {
                     alt="Foto da tatuadora Amanda Santos"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Amanda Santos</S.H3>
                 </S.Artista>
@@ -209,7 +228,7 @@ function Home({ changeTheme }) {
                     alt="Foto da tatuadora Maria Andrade"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Maria Andrade</S.H3>
                 </S.Artista>
@@ -220,7 +239,7 @@ function Home({ changeTheme }) {
                     alt="Foto do tatuador Gabriel Fernandes"
                   />
                   <S.IconFD>
-                    <GiRose className="themeMode" />
+                    <GiRose />
                   </S.IconFD>
                   <S.H3>Gabriel Fernandes</S.H3>
                 </S.Artista>
@@ -231,7 +250,7 @@ function Home({ changeTheme }) {
                     alt="Foto da perfuradora Maria Eugenia Chaves"
                   />
                   <S.IconFD>
-                    <GiSacrificialDagger className="themeMode" />
+                    <GiSacrificialDagger />
                   </S.IconFD>
                   <S.H3>Maria Eugenia Chaves</S.H3>
                 </S.Artista>
@@ -242,7 +261,7 @@ function Home({ changeTheme }) {
                     alt="Foto da perfuradora Fernanda Vasconcelos"
                   />
                   <S.IconFD>
-                    <GiSacrificialDagger className="themeMode" />
+                    <GiSacrificialDagger />
                   </S.IconFD>
                   <S.H3>Fernanda Vasconcelos</S.H3>
                 </S.Artista>
@@ -253,7 +272,7 @@ function Home({ changeTheme }) {
                     alt="Foto do perfurador Lucca Rodrigues"
                   />
                   <S.IconFD>
-                    <GiSacrificialDagger className="themeMode" />
+                    <GiSacrificialDagger />
                   </S.IconFD>
                   <S.H3>Lucca Rodrigues</S.H3>
                 </S.Artista>
@@ -262,67 +281,84 @@ function Home({ changeTheme }) {
 
             <S.BlocoQuatro>
               <S.IconFD>
-                <GiDaggerRose className="themeMode" />
+                <GiDaggerRose />
               </S.IconFD>
               <S.H2>Últimos trabalhos</S.H2>
 
               <S.Trabalhos>
-                <Image
-                  key={ultimoTrabalho8.ID}
-                  id={ultimoTrabalho8.ID}
-                  alt={ultimoTrabalho8.DESCRICAO}
-                  src={ultimoTrabalho8.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho7.ID}
-                  id={ultimoTrabalho7.ID}
-                  alt={ultimoTrabalho7.DESCRICAO}
-                  src={ultimoTrabalho7.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho6.ID}
-                  id={ultimoTrabalho6.ID}
-                  alt={ultimoTrabalho6.DESCRICAO}
-                  src={ultimoTrabalho6.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho5.ID}
-                  id={ultimoTrabalho5.ID}
-                  alt={ultimoTrabalho5.DESCRICAO}
-                  src={ultimoTrabalho5.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho4.ID}
-                  id={ultimoTrabalho4.ID}
-                  alt={ultimoTrabalho4.DESCRICAO}
-                  src={ultimoTrabalho4.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho3.ID}
-                  id={ultimoTrabalho3.ID}
-                  alt={ultimoTrabalho3.DESCRICAO}
-                  src={ultimoTrabalho3.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho2.ID}
-                  id={ultimoTrabalho2.ID}
-                  alt={ultimoTrabalho2.DESCRICAO}
-                  src={ultimoTrabalho2.FOTO}
-                  className="fotoTrab"
-                />
-                <Image
-                  key={ultimoTrabalho1.ID}
-                  id={ultimoTrabalho1.ID}
-                  alt={ultimoTrabalho1.DESCRICAO}
-                  src={ultimoTrabalho1.FOTO}
-                  className="fotoTrab"
-                />
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho8.ID}
+                    id={ultimoTrabalho8.ID}
+                    alt={ultimoTrabalho8.DESCRICAO}
+                    src={ultimoTrabalho8.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho7.ID}
+                    id={ultimoTrabalho7.ID}
+                    alt={ultimoTrabalho7.DESCRICAO}
+                    src={ultimoTrabalho7.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  {" "}
+                  <Image
+                    key={ultimoTrabalho6.ID}
+                    id={ultimoTrabalho6.ID}
+                    alt={ultimoTrabalho6.DESCRICAO}
+                    src={ultimoTrabalho6.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho5.ID}
+                    id={ultimoTrabalho5.ID}
+                    alt={ultimoTrabalho5.DESCRICAO}
+                    src={ultimoTrabalho5.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho4.ID}
+                    id={ultimoTrabalho4.ID}
+                    alt={ultimoTrabalho4.DESCRICAO}
+                    src={ultimoTrabalho4.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho3.ID}
+                    id={ultimoTrabalho3.ID}
+                    alt={ultimoTrabalho3.DESCRICAO}
+                    src={ultimoTrabalho3.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho2.ID}
+                    id={ultimoTrabalho2.ID}
+                    alt={ultimoTrabalho2.DESCRICAO}
+                    src={ultimoTrabalho2.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
+                <AnimationOnScroll animateIn="animate__backInUp" className="trabAnima">
+                  <Image
+                    key={ultimoTrabalho1.ID}
+                    id={ultimoTrabalho1.ID}
+                    alt={ultimoTrabalho1.DESCRICAO}
+                    src={ultimoTrabalho1.FOTO}
+                    className="fotoTrab"
+                  />
+                </AnimationOnScroll>
               </S.Trabalhos>
             </S.BlocoQuatro>
 
@@ -332,13 +368,41 @@ function Home({ changeTheme }) {
                 <S.Paragrafo2>
                   Manda aí pra gente se tem uma sugestão ou dúvida que logo
                   entramos em contato!
-                  <S.Form onSubmit={(e=> pegaContato(e))}>
+                  <S.Form onSubmit={(e) => pegaContato(e)}>
                     <div className="formContato">
-                      <Input className="cardForm" placeholder="Nome" type="text" name="nome"  onChange={(e)=> handleOnchange(e)}/>
-                      <Input className="cardForm" placeholder="Email" type="text" name="email"  onChange={(e)=> handleOnchange(e)}/>
-                      <Input className="cardForm" placeholder="Celular" type="text" name="celular"  onChange={(e)=> handleOnchange(e)}/>
-                      <textarea className="cardForm" placeholder="Digite aqui sua sugestão ou dúvida" type="text" name="textarea"  onChange={(e)=> handleOnchange(e)}/>
-                      <Button className="styleForm enviar" onClick={(e)=>pegaContato(e)} nome="Enviar"/>
+                      <Input
+                        className="cardForm"
+                        placeholder="Nome"
+                        type="text"
+                        name="nome"
+                        onChange={(e) => handleOnchange(e)}
+                      />
+                      <Input
+                        className="cardForm"
+                        placeholder="Email"
+                        type="text"
+                        name="email"
+                        onChange={(e) => handleOnchange(e)}
+                      />
+                      <Input
+                        className="cardForm"
+                        placeholder="Celular"
+                        type="text"
+                        name="celular"
+                        onChange={(e) => handleOnchange(e)}
+                      />
+                      <textarea
+                        className="cardForm"
+                        placeholder="Digite aqui sua sugestão ou dúvida"
+                        type="text"
+                        name="textarea"
+                        onChange={(e) => handleOnchange(e)}
+                      />
+                      <Button
+                        className="styleForm enviar"
+                        onClick={(e) => pegaContato(e)}
+                        nome="Enviar"
+                      />
                     </div>
                   </S.Form>
                 </S.Paragrafo2>
@@ -346,8 +410,8 @@ function Home({ changeTheme }) {
             </S.BlocoCinco>
           </S.Main>
 
-         <FooterMain/>
-         <Footer />
+          <FooterMain />
+          <Footer />
         </div>
       )}
     </>
