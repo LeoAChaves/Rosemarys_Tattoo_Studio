@@ -5,6 +5,10 @@ export const Container = styled.main`
   height: calc(100vh - 130px);
   display: flex;
   align-items: flex-end;
+
+  @media (max-width: 600px) {
+    height: auto;
+  }
 `;
 
 export const Quadro = styled.section`
@@ -62,6 +66,17 @@ export const Quadro = styled.section`
   .seta img {
     widht: 30px;
     height: 30px;
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 80px;
+    padding-bottom: 60px;
+    margin-bottom: 30px;
+    height: auto;
+
+    h2 {
+      margin-bottom: 40px;
+    }
   }
 `;
 
@@ -133,5 +148,13 @@ export const Form = styled.section`
   .imagem img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 600px) {
+    .lista {
+      width: 160%;
+      height: 45vh;
+      flex: none;
+    }
   }
 `;
