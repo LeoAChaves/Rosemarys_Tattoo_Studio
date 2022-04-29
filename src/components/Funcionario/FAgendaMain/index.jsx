@@ -17,11 +17,10 @@ import { MdOutlineSearchOff } from "react-icons/md";
 function FAgendaMain() {
   const [agenda, setAgenda] = useState([]);
   const [load, setLoad] = useState(true);
-  const [data, setData] = useState('')
+  const [data, setData] = useState("");
   const carousel = useRef(null);
   const navigate = useNavigate();
   const [funcionario] = useFuncionario();
-
 
   async function getagenda() {
     try {
@@ -34,7 +33,6 @@ function FAgendaMain() {
   }
   useEffect(() => {
     getagenda();
-   
   }, []);
 
   const handleBackClick = (e) => {
@@ -57,32 +55,31 @@ function FAgendaMain() {
       toast.error(error.response.data.message);
     }
   }
-  const converteData=(data)=>{
-    
-     const dataSplit = data.split('-')
-     return `${dataSplit.pop()}-${dataSplit.pop()}-${dataSplit.shift()}`
-      
-  }
+  const converteData = (data) => {
+    const dataSplit = data.split("-");
+    return `${dataSplit.pop()}-${dataSplit.pop()}-${dataSplit.shift()}`;
+  };
 
- 
-  
   async function getAgendamentoData() {
     try {
-      const response = await apiAgenda.get(`/agenda/data/${converteData(data)}`);
+      const response = await apiAgenda.get(
+        `/agenda/data/${converteData(data)}`
+      );
       setAgenda(response.data.agenda);
-     
     } catch (error) {
-      toast.error(error.response.data.message.replace(converteData(data), data));
+      toast.error(
+        error.response.data.message.replace(converteData(data), data)
+      );
     }
   }
 
-  const dataCorreta= (data)=>{
-    const dataArr = data.split('-')
-    const ano = dataArr.shift()
-    const dia = dataArr.pop()
-   
-    return `${dia}-${dataArr.pop()}-${ano}`
-}
+  const dataCorreta = (data) => {
+    const dataArr = data.split("-");
+    const ano = dataArr.shift();
+    const dia = dataArr.pop();
+
+    return `${dia}-${dataArr.pop()}-${ano}`;
+  };
 
   return (
     <>
@@ -101,8 +98,13 @@ function FAgendaMain() {
                 type="text"
                 name="search"
                 id="search"
-              onChange={(e)=>setData(e.target.value)} ></Input>
-              <Button type="submit" nome="Buscar" onClick={getAgendamentoData}></Button>
+                onChange={(e) => setData(e.target.value)}
+              ></Input>
+              <Button
+                type="submit"
+                nome="Buscar"
+                onClick={getAgendamentoData}
+              ></Button>
             </div>
             <S.Form ref={carousel}>
               {agenda.map((agendamento) => {
@@ -120,7 +122,10 @@ function FAgendaMain() {
                         <span>{agendamento.Funcionario_ID}</span>
                       </li>
                       <li>
-                        DATA: <span>{load === false ? dataCorreta(agendamento.Data) : ''}</span>
+                        DATA:{" "}
+                        <span>
+                          {load === false ? dataCorreta(agendamento.Data) : ""}
+                        </span>
                       </li>
                       <li>
                         HORA: <span>{agendamento.Hora}</span>

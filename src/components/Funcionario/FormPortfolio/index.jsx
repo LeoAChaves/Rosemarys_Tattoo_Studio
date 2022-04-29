@@ -19,7 +19,7 @@ function FormPortfolio() {
 
   const inserirPortfolio = async (e) => {
     e.preventDefault();
-    if(!(await validate())) return
+    if (!(await validate())) return;
     try {
       const response = await apiPortfolio.post("/portfolio", portfolio);
       console.log(response.data.mensagem);
@@ -28,22 +28,30 @@ function FormPortfolio() {
     }
   };
 
-  async function validate(){
+  async function validate() {
     let schema = yup.object().shape({
-      clienteid: yup.number("Campo de clienteID deve ser preenchido com letras").required("Campo de ClienteID não pode estar vazio"),
-      funcionarioid: yup.number("Campo de FuncionarioID deve ser preenchido com letras").required("Campo de FuncionarioID não pode estar vazio"),
-      duracao: yup.number("Campo de duração deve ser preenchido com números").required("Campo de duração não pode estar vazio"),
-      descricao: yup.string("Campo de descrição deve ser preenchido com letras").required("Campo de descrição não pode estar vazio"),
-      foto: yup.string("").required("Campo de foto não pode estar vazio"),
-    })
+      clienteid: yup
+        .number("Campo de clienteID deve ser preenchido com letras")
+        .required("Campo de ClienteID não pode estar vazio"),
+      funcionarioid: yup
+        .number("Campo de FuncionarioID deve ser preenchido com letras")
+        .required("Campo de FuncionarioID não pode estar vazio"),
+      duracao: yup
+        .number("Campo de duração deve ser preenchido com números")
+        .required("Campo de duração não pode estar vazio"),
+      descricao: yup
+        .string("Campo de descrição deve ser preenchido com letras")
+        .required("Campo de descrição não pode estar vazio"),
+      /* foto: yup.string("").required("Campo de foto não pode estar vazio"), */
+    });
     try {
-        await schema.validate(portfolio)
-        toast.success("Portfolio inserido com sucesso! 📸")
-        return true
+      await schema.validate(portfolio);
+      toast.success("Portfolio inserido com sucesso! 📸");
+      return true;
     } catch (error) {
-        toast.error(error.errors)
+      toast.error(error.errors);
     }
-    return false
+    return false;
   }
 
   return (
@@ -83,14 +91,21 @@ function FormPortfolio() {
               id="duracao"
               onChange={(e) => handleOnChange(e)}
             ></Input>
-            <label>FOTO:</label>
+            <Input
+              placeholder="URL"
+              type="text"
+              name="url"
+              id="url"
+              onChange={(e) => handleOnChange(e)}
+            ></Input>
+            {/* <label>FOTO:</label>
             <Input
               placeholder="FOTO"
               type="text"
               name="foto"
               id="foto"
               onChange={(e) => handleOnChange(e)}
-            ></Input>
+            ></Input> */}
             <Button
               className="styleForm"
               type="submit"
