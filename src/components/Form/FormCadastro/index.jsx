@@ -27,8 +27,7 @@ function FormCadastro(){
         e.preventDefault()
         if(!(await validate())) return
         try {
-            const response = await apiCliente.post('/clientes', usuario)
-            console.log(response)
+          await apiCliente.post('/clientes', usuario)
             navigate('/login')
         } catch (error) {
             toast.error(error.response.data.message)
@@ -56,7 +55,7 @@ function FormCadastro(){
 
     return(
         <S.Container>
-            <S.Form onSubmit={(e=> cadastroCliente(e))}>
+            <S.Form onSubmit={cadastroCliente}>
             <h1>Cadastro</h1>
                 <Input placeholder="Nome completo" className="inputNormal" type="text" name="nome" id="nome" onChange={(e)=> handleOnchange(e)} />
                 <S.DivCenter>

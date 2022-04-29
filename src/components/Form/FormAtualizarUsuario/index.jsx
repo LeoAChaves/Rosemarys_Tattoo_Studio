@@ -38,9 +38,10 @@ function AtualizarUsuario() {
         e.preventDefault()
         if(!(await validate())) return
         try {
-            await apiCliente.patch(`/cliente/${id}`, usuario)
+             await apiCliente.patch(`/cliente/${id}`, usuario)
+            toast.success("Usuário atualizado com sucesso! ✨")
         } catch (error) {
-            console.log(error.response);
+            toast.error(error.response.data.message)
         }
     }
 
@@ -66,7 +67,6 @@ function AtualizarUsuario() {
         })
         try {
             await schema.validate(usuario)
-            toast.success("Usuário atualizado com sucesso! ✨")
             return true
         } catch (error) {
             toast.error(error.errors)

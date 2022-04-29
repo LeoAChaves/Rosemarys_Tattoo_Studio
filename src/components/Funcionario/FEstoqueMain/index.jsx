@@ -82,7 +82,7 @@ function FEstoqueMain() {
             <h2>Estoque</h2>
             <div className="busca">
               <div className="divIcon">
-                <MdOutlineSearchOff className="cancelarFiltro"/>
+              <MdOutlineSearchOff className="cancelarFiltro" onClick={()=> getEstoque()()}/>
               </div>
               <Input
                 placeholder="palavra-chave"

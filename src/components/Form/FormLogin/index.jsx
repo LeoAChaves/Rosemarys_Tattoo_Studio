@@ -18,6 +18,7 @@ function FormLogin(){
     const [usuarioLogin, setLogin] = useState({});
     const [tipoLogin, setTipoLogin] = useState("");
 
+
     const handleOnchange = (e) => {
         setLogin({...usuarioLogin, [e.target.name]: e.target.value})
     }

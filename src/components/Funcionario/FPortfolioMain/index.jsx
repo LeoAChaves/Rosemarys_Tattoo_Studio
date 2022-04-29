@@ -78,7 +78,7 @@ function FPortfolioMain() {
               <h2>Portfólio</h2>
               <div className="busca">
                 <div className="divIcon">
-                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                  <MdOutlineSearchOff className="cancelarFiltro" onClick={()=>getPortfolios()}/>
                 </div>
                 <Input
                   placeholder="palavra-chave"
