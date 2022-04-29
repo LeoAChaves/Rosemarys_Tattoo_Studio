@@ -26,8 +26,10 @@ function Header({
 }) {
   const navigate = useNavigate();
   return (
+   
     <S.Header style={style}>
     {/* <S.Header id={id} style={style}> */}
+    
       <div>
         <Image
           src="https://media.discordapp.net/attachments/968220165194014750/968303712965636156/unknown__2_-removebg-preview.png"
@@ -65,7 +67,7 @@ function Header({
           nome={sair}
           onClick={() => navigate(`/login`)}
         />
-        <VscColorMode className="themeMode" onClick={changeTheme} />
+        <VscColorMode className="themeMode" onClick={()=>{return changeTheme() && console.log( changeTheme().body)}} />
       </div>
     </S.Header>
   );
