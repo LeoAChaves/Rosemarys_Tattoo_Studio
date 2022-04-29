@@ -26,6 +26,7 @@ function FAgendaMain() {
     try {
       const response = await apiAgenda.get("/agenda");
       setAgenda(response.data.agenda);
+      setData('')
       setLoad(false);
     } catch (error) {
       toast.error(error.response.data);
@@ -91,14 +92,15 @@ function FAgendaMain() {
             <h2>Agenda</h2>
             <div className="busca">
                 <div className="divIcon">
-                  <MdOutlineSearchOff className="cancelarFiltro"/>
+                  <MdOutlineSearchOff className="cancelarFiltro" onClick={getagenda}/>
                 </div>
               <Input
                 placeholder="digite a data desejada"
                 type="text"
                 name="search"
                 id="search"
-                onChange={(e) => setData(e.target.value)}
+                value={data}
+                onChange={(e) => setData(e.target.value) }
               ></Input>
               <Button
                 type="submit"

@@ -22,9 +22,11 @@ function Portfolio({changeTheme}) {
     const [load, setLoad] = useState(true)
     const [palavraChave, setPalavra] = useState('')
     async function getPortfolios() {
+        
         try {
             const response = await apiPortfolio.get('/portfolio')
             setPortifolio(response.data.portfolios)
+            setPalavra('')
             setLoad(false)
         } catch (error) {
             console.log(error)
@@ -58,10 +60,10 @@ function Portfolio({changeTheme}) {
                         <div className="blocoUm">
                             <h1>Galeria</h1>
                             <div className="inputBtn">
-                                <Input placeholder="Filtrar" type="text" name="filtrar" onChange={(e)=>handleChange(e)}/>
+                                <Input placeholder="Filtrar" type="text" name="filtrar" onChange={(e)=>handleChange(e)} value={palavraChave}/>
                                 <Button nome="Pesquisar" onClick={buscaPortfolioNome}/>
                                 <div className="divIcon">
-                                    <MdOutlineSearchOff className="cancelarFiltro" onClick={getPortfolios}/>
+                                    <MdOutlineSearchOff className="cancelarFiltro" onClick={getPortfolios} />
                                 </div>
                             </div>
                         </div>

@@ -25,6 +25,7 @@ function FEstoqueMain() {
     try {
       const response = await apiEstoque.get("/estoque");
       setEstoque(response.data.estoque);
+      setPalavra('')
       setLoad(false);
     } catch (error) {
       toast.error(error.response.data);
@@ -90,6 +91,7 @@ function FEstoqueMain() {
                 name="search"
                 id="search"
                 onChange={(e) => handleChange(e)}
+                value={palavraChave}
               ></Input>
               <Button type="submit" nome="Buscar" onClick={getPalavraChave}></Button>
             </div>
