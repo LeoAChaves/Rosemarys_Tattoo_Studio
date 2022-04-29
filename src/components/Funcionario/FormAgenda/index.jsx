@@ -29,6 +29,8 @@ function FormAgenda({ botao }) {
     if(!(await validate())) return
     try {
       const response = await apiAgenda.post("/agenda", agendamento);
+      
+    
       console.log(response.data.message);
     } catch (error) {
       console.log(error.response.data.message);

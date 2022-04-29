@@ -21,7 +21,7 @@ import FooterMain from "../../components/Footer/FooterMain/index.jsx";
 
 function Home({ changeTheme }) {
   const [portfolio, setPortifolio] = useState([]);
-  const [contato, setContato] = useState([]);
+  const [contato, setContato] = useState({});
   const [load, setLoad] = useState(true);
 
   const handleOnchange = (e)=>{
