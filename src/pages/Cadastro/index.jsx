@@ -9,7 +9,7 @@ function Cadastro({changeTheme}){
 
     return(
         <>
-            <Header btnInicial={{display: "none"}} btnVoltar={{display: "none"}} btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} login="Login" changeTheme={changeTheme}/>
+            <Header btnCadastro={{display: "none"}} btnInicial={{display: "none"}} btnVoltar={{display: "none"}} btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} login="Login" changeTheme={changeTheme}/>
             <FormCadastro />
             <Footer />
         </>
