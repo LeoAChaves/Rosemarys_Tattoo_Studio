@@ -94,12 +94,11 @@ function FormPortfolioUpdate() {
             ></Input>
             <label>FOTO:</label>
             <Input
-              placeholder="FOTO"
-              type="file"
-              name="foto"
-              id="foto"
+              placeholder="URL"
+              type="text"
+              name="url"
+              id="url"
               onChange={(e) => handleOnChange(e)}
-              // value={portfolio.FOTO}
             ></Input>
             <Button
               className="styleForm"

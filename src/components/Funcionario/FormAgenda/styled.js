@@ -60,6 +60,7 @@ export const Form = styled.section`
 
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
+    font-family: "Amaranth";
   }
 
   input[type="time"] {
@@ -92,6 +93,7 @@ export const Form = styled.section`
     font-size: 14px;
     color: ${({ theme }) => theme.button_text};
     margin-left: 15px;
+    font-family: "Amaranth";
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
@@ -100,6 +102,7 @@ export const Form = styled.section`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
+    margin-left: 10px;
     Input {
       width: 350px;
       margin: 10px;
@@ -112,6 +115,9 @@ export const Form = styled.section`
 
     .caixa {
       margin: 10px 0 0 10px;
+    }
+    Button {
+      margin-right: 10px;
     }
   }
 `;

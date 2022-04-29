@@ -39,7 +39,6 @@ export const Form = styled.section`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin: 20px;
 
   .caixa {
     display: flex;
@@ -60,6 +59,7 @@ export const Form = styled.section`
 
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
+    font-family: "Amaranth";
   }
 
   input[type="time"] {
@@ -93,12 +93,12 @@ export const Form = styled.section`
     align-self: flex-end;
     width: 130px;
     height: 50px;
-    margin-top: 20px;
+    margin: 20px 0 20px 15px;
     background: ${({ theme }) => theme.button};
     border-radius: 10px;
     font-size: 14px;
     color: ${({ theme }) => theme.button_text};
-    margin-left: 15px;
+    font-family: "Amaranth";
   }
   Button:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.button_text};
@@ -107,6 +107,8 @@ export const Form = styled.section`
   @media (max-width: 600px) {
     flex-direction: column;
     align-items: center;
+    margin-right: 10px;
+
     Input {
       width: 350px;
       margin: 10px;
@@ -119,6 +121,13 @@ export const Form = styled.section`
 
     .caixa {
       margin: 10px 0 0 10px;
+    }
+
+    label {
+      margin-left: 10px;
+    }
+    Button {
+      margin-right: 10px;
     }
   }
 `;

@@ -14,7 +14,7 @@ export const Header = styled.header`
     width: 65px;
   }
 
-  p{
+  p {
     color: ${({ theme }) => theme.text};
     font-size: 14px;
   }
@@ -42,4 +42,15 @@ export const Header = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.text};
   }
-`
+
+  @media (max-width: 600px) {
+    width: 100%;
+    button {
+      width: 60px;
+    }
+
+    .dadosFunc {
+      display: none;
+    }
+  }
+`;

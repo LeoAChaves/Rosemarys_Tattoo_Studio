@@ -23,7 +23,7 @@ function Header({
   const [funcionario] = useFuncionario();
   return (
     <S.Header style={style}>
-      <div>
+      <div className="dadosFunc">
         <Paragrafo texto="ID:" atributo={funcionario.ID} />
         <Paragrafo texto="FUNCIONÁRIO:" atributo={funcionario.NOME} />
         <Paragrafo texto="FUNÇÃO:" atributo={funcionario.CARGO} />
