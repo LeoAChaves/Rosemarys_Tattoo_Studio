@@ -31,6 +31,7 @@ function App() {
 
   const changeTheme = () => {
     setTheme(theme === darkTheme ? lightTheme : darkTheme);
+    return theme
   };
   return (
     <ThemeProvider theme={theme}>
