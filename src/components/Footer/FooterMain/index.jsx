@@ -14,13 +14,13 @@ function FooterMain() {
           </div>
         <div>
           <h3>Endereço</h3>
-          <Paragrafo texto="Rua X, Nº X"/>
-          <Paragrafo texto="Bairro X, RJ"/>
+          <Paragrafo texto="Rua dos bobos, Nº 0"/>
+          <Paragrafo texto="Bairro Esmero, RJ"/>
         </div>
 
         <div>
           <h3>Contato</h3>
-          <Paragrafo texto="(21) 9 xxxx xxxx"/>
+          <Paragrafo texto="(21) 9 8765 4321"/>
           <Paragrafo texto="contato@rosemaryss.com.br"/>
         </div>
 

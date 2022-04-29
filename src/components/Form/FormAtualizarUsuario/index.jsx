@@ -50,7 +50,7 @@ function AtualizarUsuario() {
         try {
          const response =  await apiCliente.delete(`/cliente/${id}`)
          toast.success(response.data.message)
-           navigate('/home')
+           navigate('/')
         } catch (error) {
             console.log(error.response);
         }

@@ -9,7 +9,7 @@ function Login({changeTheme}){
 
     return(
         <>
-            <Header btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} home="Home" changeTheme={changeTheme}/>
+            <Header btnCadastro={{display: "none"}} btnVoltar={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} home="Home" changeTheme={changeTheme}/>
             <FormLogin />
             <Footer />
         </>

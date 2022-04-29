@@ -53,7 +53,7 @@ function Portfolio({changeTheme}) {
             {load ? <Carregando />
             :
                 <div>
-                    <Header id="inicio" btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" voltar="Voltar" changeTheme={changeTheme}/>
+                    <Header id="inicio" btnCadastro={{display: "none"}} btnInicial={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} btnSair={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} home="Home" voltar="Voltar" changeTheme={changeTheme}/>
                     <S.Main>
                         <div className="blocoUm">
                             <h1>Galeria</h1>

@@ -29,7 +29,7 @@ function AgendamentoPendente({changeTheme}) {
      }
     return (
         <>
-            <Header btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" sair="Sair" changeTheme={changeTheme}/>
+            <Header btnCadastro={{display: "none"}} btnHome={{display: "none"}} btnPortfolio={{display: "none"}} btnLogin={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} div={{display:"none"}} voltar="Voltar" sair="Sair" changeTheme={changeTheme}/>
             <S.Main> 
                 <div className="grid">
                     {agendamentos.length === 0 ? <h2 className="avisoAgendamento">Voce não tem agendamentos...</h2>

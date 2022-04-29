@@ -42,7 +42,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Rota Site Institucional */}
-          <Route path="/home" element={<Home changeTheme={changeTheme} />} />
+          <Route path="/" element={<Home changeTheme={changeTheme} />} />
 
           {/* Rotas Funcionário */}
           <Route path="/funcionario/home/:id" element={<FHome changeTheme={changeTheme} />}/>

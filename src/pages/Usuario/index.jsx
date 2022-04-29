@@ -47,7 +47,7 @@ function Usuario({changeTheme}){
             {load ? <Carregando />
             :
                 <div>
-                    <Header btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} portfolio="Galeria" sair="Sair" changeTheme={changeTheme} />
+                    <Header btnCadastro={{display: "none"}} btnHome={{display: "none"}} btnVoltar={{display: "none"}} btnLogin={{display: "none"}} btnInicial={{display: "none"}} className={"btn custom-btn styleHeader"} style={style} portfolio="Galeria" sair="Sair" changeTheme={changeTheme} />
                 
                     <S.Main>
                         <S.BlocoUm>

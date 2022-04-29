@@ -70,7 +70,7 @@ function Header({
           style={btnHome}
           className={className}
           nome={home}
-          onClick={() => navigate(`/home`)}
+          onClick={() => navigate(`/`)}
         />
         <Button
           style={btnLogin}
