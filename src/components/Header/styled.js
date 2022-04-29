@@ -10,8 +10,13 @@ export const Header = styled.header`
 
   padding: 30px;
 
-  img {
-    width: 65px;
+  .logoGeral {
+    width: 200px;
+  }
+
+  .responsivo {
+    width: 80px;
+    display: none;
   }
 
   .divLinks {
@@ -42,6 +47,14 @@ export const Header = styled.header`
     width: 100%;
     button {
       width: 60px;
+    }
+
+    .responsivo {
+      display: block;
+    }
+
+    .logoGeral {
+      display: none;
     }
   }
 `;

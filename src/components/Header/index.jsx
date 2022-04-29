@@ -27,11 +27,27 @@ function Header({
   const navigate = useNavigate();
   return (
     <S.Header style={style}>
-    {/* <S.Header id={id} style={style}> */}
+      {/* <S.Header id={id} style={style}> */}
       <div>
         <Image
-          src="https://media.discordapp.net/attachments/968220165194014750/968303712965636156/unknown__2_-removebg-preview.png"
-          alt="periquito azul"
+          className="logoGeral"
+          src="https://media.discordapp.net/attachments/923686382659059742/969457766894813224/logoDark.png"
+          alt="logoDark"
+        />
+        <Image
+          className="logoGeral"
+          src="https://media.discordapp.net/attachments/923686382659059742/969457767385563156/logoLight.png"
+          alt="logoLight"
+        />
+        <Image
+          className="responsivo"
+          src="https://media.discordapp.net/attachments/923686382659059742/969457767175843910/logoDarkR.png?width=670&height=670"
+          alt="logoDarkR"
+        />
+        <Image
+          className="responsivo"
+          src="https://media.discordapp.net/attachments/923686382659059742/969457767582687323/logoLightR.png?width=670&height=670"
+          alt="logoLightR"
         />
       </div>
       <div className="divLinks">

@@ -10,8 +10,13 @@ export const Header = styled.header`
 
   padding: 30px;
 
-  img {
-    width: 65px;
+  .logoGeral {
+    width: 200px;
+  }
+
+  .responsivo {
+    width: 80px;
+    display: none;
   }
 
   p {
@@ -50,6 +55,14 @@ export const Header = styled.header`
     }
 
     .dadosFunc {
+      display: none;
+    }
+
+    .responsivo {
+      display: block;
+    }
+
+    .logoGeral {
       display: none;
     }
   }
