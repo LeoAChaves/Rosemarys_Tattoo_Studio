@@ -120,12 +120,7 @@ function Home({ changeTheme }) {
                   <S.H1>Nossa filosofia</S.H1>
                   <S.Line />
                   <S.Paragrafo>
-                    Nós da Rosemary’s Tattoo Studio acreditamos na arte pela
-                    arte, de artista para artista. Nossos tatuadores, muito mais
-                    do que marcar peles, acreditam plenamente no trabalho e na
-                    conexão criada com os clientes. Com trabalhos autorais e
-                    cuidadosos, estamos aqui para proporcionar a melhor
-                    experiência possível, numa imersão artística única.
+                  Nós da Rosemary’s Tattoo Studio acreditamos na arte pela arte, de artista para artista. Nossos tatuadores, muito mais do que riscadores de pele, acreditam plenamente no trabalho e na conexão criada com os clientes. Munidos de desenhos autorais e traços certeiros, estamos aqui para proporcionar a melhor experiência possível, numa imersão artística única. 
                   </S.Paragrafo>
                   <S.IconFD>
                     <GiDaggerRose />
@@ -164,9 +159,7 @@ function Home({ changeTheme }) {
                   <S.H1>Quem somos</S.H1>
                   <S.Line />
                   <S.Paragrafo>
-                    Fundados em 2021 por um time que queria criar um ambiente
-                    onde a arte vive e inunda cada canto, o Rosemary’s nasceu de
-                    um sonho e muito trabalho, cheio de dedicação e carinho.
+                  Fundado em 2021 por um time que visava criar um ambiente onde a arte vive e inunda cada canto, o Rosemary’s nasceu de um sonho e por meio de muito trabalho, cheio de dedicação e carinho.
                   </S.Paragrafo>
                   <S.IconFD>
                     <GiDaggerRose />
