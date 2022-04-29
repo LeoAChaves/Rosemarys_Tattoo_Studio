@@ -27,7 +27,7 @@ function AtualizarUsuario() {
             }
         }
         buscaUsuario()
-    }, [])
+    }, [id])
 
      const handleChange = (e) => {
         setUsuario({...usuario, [e.target.name]: e.target.value})

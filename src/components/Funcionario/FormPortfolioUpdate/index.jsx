@@ -24,7 +24,7 @@ function FormPortfolioUpdate() {
       }
     }
     buscaPortfolio();
-  }, []);
+  }, [update]);
 
   const handleOnChange = (e) => {
     setPortfolio({ ...portfolio, [e.target.name]: e.target.value });

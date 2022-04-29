@@ -32,7 +32,7 @@ function Usuario({changeTheme}){
             }
         }
         buscaUsuario()
-    }, []);
+    }, [id]);
 
     const dataCorreta= (data)=>{
         const dataArr = data.split('-')

@@ -16,7 +16,7 @@ function useFuncionario() {
        }
      }
      buscaFuncionario()
- }, [])
+ }, [id])
 
  return [funcionario]
 }

@@ -22,7 +22,7 @@ function FormAgendaUpdate() {
       }
     }
     buscaAgendamento();
-  }, []);
+  }, [update]);
 
   const handleOnchange = (e) => {
     setAgendamento({ ...agendamento, [e.target.name]: e.target.value });
