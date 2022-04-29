@@ -44,7 +44,7 @@ textarea{
 }
 
 .custom-btn {
-  width: 100px;
+  width: 115px;
   height: 40px;
   padding: 10px 25px;
   border: none;
