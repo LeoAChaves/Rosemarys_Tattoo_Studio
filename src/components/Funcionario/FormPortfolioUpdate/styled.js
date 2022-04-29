@@ -43,7 +43,7 @@ export const Form = styled.section`
   }
 
   label {
-    font-size: 16px;
+    font-size: 14px;
     color: ${({ theme }) => theme.text};
     font-weight: 600;
     margin-bottom: 5px;

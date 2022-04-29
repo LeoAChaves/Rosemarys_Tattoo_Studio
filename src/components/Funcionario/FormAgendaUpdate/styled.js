@@ -82,6 +82,13 @@ export const Form = styled.section`
     color: ${({ theme }) => theme.input_placeholder};
   }
 
+  label {
+    font-size: 14px;
+    color: ${({ theme }) => theme.text};
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
   Button {
     align-self: flex-end;
     width: 130px;

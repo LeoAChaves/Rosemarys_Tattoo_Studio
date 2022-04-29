@@ -32,6 +32,13 @@ export const Form = styled.section`
   justify-content: space-around;
   margin: 40px 0;
 
+  .campos {
+    display: flex;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+  }
   Input {
     width: 500px;
     height: 50px;
@@ -45,6 +52,13 @@ export const Form = styled.section`
 
   input::placeholder {
     color: ${({ theme }) => theme.input_placeholder};
+  }
+
+  label {
+    font-size: 14px;
+    color: ${({ theme }) => theme.text};
+    font-weight: 600;
+    margin: 5px 40px;
   }
 
   Button {

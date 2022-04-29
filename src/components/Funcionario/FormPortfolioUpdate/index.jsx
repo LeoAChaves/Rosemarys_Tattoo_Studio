@@ -53,6 +53,7 @@ function FormPortfolioUpdate() {
         <h2>Portfólio</h2>
         <S.Form>
           <div className="caixa">
+            <label>CLIENTE_ID:</label>
             <Input
               placeholder="CLIENTE_ID"
               type="number"
@@ -61,6 +62,7 @@ function FormPortfolioUpdate() {
               onChange={(e) => handleOnChange(e)}
               value={portfolio.CLIENTEID}
             ></Input>
+            <label>FUNCIONARIO_ID:</label>
             <Input
               placeholder="FUNCIONARIO_ID"
               type="text"
@@ -69,6 +71,7 @@ function FormPortfolioUpdate() {
               onChange={(e) => handleOnChange(e)}
               value={portfolio.FUNCIONARIOID}
             ></Input>
+            <label>DESCRIÇÃO:</label>
             <textarea
               placeholder="DESCRICAO"
               type="text"
@@ -80,6 +83,7 @@ function FormPortfolioUpdate() {
             ></textarea>
           </div>
           <div className="caixa">
+            <label>DURAÇÃO:</label>
             <Input
               placeholder="DURACAO"
               type="text"
