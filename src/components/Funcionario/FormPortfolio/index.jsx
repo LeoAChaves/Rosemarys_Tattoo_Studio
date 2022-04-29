@@ -94,18 +94,10 @@ function FormPortfolio() {
             <Input
               placeholder="URL"
               type="text"
-              name="url"
+              name="foto"
               id="url"
               onChange={(e) => handleOnChange(e)}
             ></Input>
-            {/* <label>FOTO:</label>
-            <Input
-              placeholder="FOTO"
-              type="text"
-              name="foto"
-              id="foto"
-              onChange={(e) => handleOnChange(e)}
-            ></Input> */}
             <Button
               className="styleForm"
               type="submit"

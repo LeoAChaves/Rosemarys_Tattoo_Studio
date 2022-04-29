@@ -15,7 +15,6 @@ function FormPortfolioUpdate() {
   useEffect(() => {
     async function buscaPortfolio() {
       try {
-        console.log(`Update:${update}`);
         const response = await apiPortfolio.get(
           `/portfolio/portfolioId/${update}`
         );
@@ -27,10 +26,7 @@ function FormPortfolioUpdate() {
     buscaPortfolio();
   }, []);
 
-  console.log(portfolio);
-
   const handleOnChange = (e) => {
-    e.preventDefault();
     setPortfolio({ ...portfolio, [e.target.name]: e.target.value });
   };
 
@@ -39,7 +35,13 @@ function FormPortfolioUpdate() {
     try {
       const response = await apiPortfolio.put(
         `/portfolio/portfolioId/${update}`,
-        portfolio
+        {
+          clienteid: portfolio.CLIENTEID,
+          funcionarioid: portfolio.FUNCIONARIOID,
+          descricao: portfolio.DESCRICAO,
+          duracao: portfolio.DURACAO,
+          foto: portfolio.FOTO,
+        }
       );
       toast.success(response.data.mensagem);
     } catch (error) {
@@ -96,7 +98,7 @@ function FormPortfolioUpdate() {
             <Input
               placeholder="FOTO"
               type="text"
-              name="foto"
+              name="FOTO"
               id="foto"
               onChange={(e) => handleOnChange(e)}
               value={portfolio.FOTO}
