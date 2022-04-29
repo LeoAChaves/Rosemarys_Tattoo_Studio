@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styles/themes.js";
 import { GlobalStyle } from "./styles/global.js";
-
 // Page Site Institucional
 import Home from "./pages/Home/index.jsx";
 // Pages Funcionário
@@ -28,11 +27,14 @@ import Cadastro from "./pages/Cadastro";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
-
+ const [cor, setCor] = useState()
   const changeTheme = () => {
+    setCor(theme.body);
     setTheme(theme === darkTheme ? lightTheme : darkTheme);
-    return theme
+    return cor
+   
   };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -93,7 +95,9 @@ function App() {
           <Route path="/agendamentoPendente" element={<AgendamentoPendente changeTheme={changeTheme} />} />
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
+
+       </ThemeProvider>
+       
   );
 }
 
