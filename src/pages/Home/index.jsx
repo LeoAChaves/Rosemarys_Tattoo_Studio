@@ -102,6 +102,7 @@ function Home({ changeTheme }) {
             style={style}
             portfolio="Galeria"
             login="Login"
+            cadastro="Cadastre-se"
             changeTheme={changeTheme}
           />
           <S.Main>

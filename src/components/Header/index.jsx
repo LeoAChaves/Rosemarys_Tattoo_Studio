@@ -15,12 +15,14 @@ function Header({
   btnHome,
   btnLogin,
   btnSair,
+  btnCadastro,
   className,
   sair,
   portfolio,
   home,
   login,
   voltar,
+  cadastro,
   changeTheme,
 }) {
   const navigate = useNavigate();
@@ -69,6 +71,12 @@ function Header({
           className={className}
           nome={login}
           onClick={() => navigate(`/login`)}
+        />
+        <Button
+          style={btnCadastro}
+          className={className}
+          nome={cadastro}
+          onClick={() => navigate(`/cadastro`)}
         />
         <Button
           style={btnVoltar}
