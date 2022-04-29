@@ -11,7 +11,7 @@ export const Header = styled.header`
   padding: 30px;
 
   .logoGeral {
-    width: 200px;
+    width: 300px;
   }
 
   .responsivo {
