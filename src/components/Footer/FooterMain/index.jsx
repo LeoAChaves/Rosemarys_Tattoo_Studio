@@ -10,7 +10,7 @@ function FooterMain() {
     <S.FM>
       <div>
           <div>
-              <Image src="https://media.discordapp.net/attachments/923686382659059742/969005498965823528/rose-dark_3.png?width=468&height=468" alt="logo"/>
+              <Image src="https://media.discordapp.net/attachments/923686382659059742/969005498965823528/rose-dark_3.png?width=468&height=468" alt="Logo do Rosemary's Studio"/>
           </div>
         <div>
           <h3>Endereço</h3>

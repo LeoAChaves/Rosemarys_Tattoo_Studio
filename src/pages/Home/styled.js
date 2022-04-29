@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+import { rollIn, fadeIn } from 'react-animations'
+const rotateAnima = keyframes`${rollIn}`
+const fadeAnime = keyframes`${fadeIn}`
+
+
 
 export const Main = styled.main`
   color: ${({ theme }) => theme.text};
@@ -22,7 +27,18 @@ export const BlocoUm = styled.div`
   height: 100vh;
   width: 100%;
 
-  padding-left: 50px;
+  padding-left: 80px;
+
+  div{
+    animation: 1s ${rotateAnima};
+    
+  }
+
+  .heroText {
+    font-size: 75px;
+    text-transform: uppercase;
+    animation: 2.5s ${fadeAnime};
+  }
 `;
 
 export const BlocoDois = styled.div`
@@ -69,6 +85,7 @@ export const DivTexto = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
+  height: 100%;
 `;
 
 export const H1 = styled.h1`
@@ -102,6 +119,8 @@ export const Paragrafo2 = styled.p`
 export const DivImage = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100%;
   img {
     width: 250px;
     height: 309px;
@@ -146,14 +165,15 @@ export const Artista = styled.div`
     filter: blur(2px);
   }
 
-  border: 2px solid ${({ theme }) => theme.branco_rosado_opaco};
-  padding: 20px 20px 15px 20px;
-  border-radius: 5px;
   div {
     display: none;
   }
 
+  border: 2px solid ${({ theme }) => theme.branco_rosado_opaco};
+  padding: 20px 20px 15px 20px;
+  border-radius: 5px;
   transition: all 1s ease;
+
   &:hover div {
     display: block;
     position: absolute;
@@ -165,7 +185,7 @@ export const Artista = styled.div`
     right: 0;
     margin: auto;
     z-index: 999;
-
+    font-size: 45px;
 
     display: flex;
     justify-content: center;
@@ -187,15 +207,20 @@ export const BlocoQuatro = styled.div`
 export const Trabalhos = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 4fr);
-  img {
+  .trabAnima{
     height: 300px;
+    width: 100%;
+    img {
+      height: 100%;
     width: 100%;
     cursor: pointer;
     object-fit: cover;
     transition: all 1s ease;
   }
+  }
   
-  .fotoTrab:hover{
+
+  .fotoTrab:hover {
     opacity: 60%;
     transition: all 1s ease;
   }
@@ -237,10 +262,10 @@ export const Form = styled.form`
     flex-direction: column;
   }
 
-  .cardForm{
+  .cardForm {
     border-radius: 10px;
     border: none;
-    
+
     margin: 10px;
     padding: 10px;
 
@@ -251,16 +276,16 @@ export const Form = styled.form`
     height: 30px;
   }
 
-  textarea{
+  textarea {
     height: 60px;
   }
 
-  .enviar{
+  .enviar {
     background-color: ${({ theme }) => theme.btn_agendamento};
     color: ${({ theme }) => theme.button_text};
   }
 
-  .enviar:hover{
+  .enviar:hover {
     box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.btn_agendamento};
   }
-`
+`;
