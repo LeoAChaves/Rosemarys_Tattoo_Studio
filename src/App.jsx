@@ -25,6 +25,7 @@ import Usuario from "./pages/Usuario";
 import AgendamentoPendente from "./pages/AgendamentoPendente";
 import AtualizarUsuario from "./pages/AtualizarUsuario";
 import Cadastro from "./pages/Cadastro";
+import Erro from "./pages/Erro";
 
 function App() {
   const [theme, setTheme] = useState(darkTheme);
@@ -91,6 +92,7 @@ function App() {
           <Route path="/atualizarUsuario/:id" element={<AtualizarUsuario changeTheme={changeTheme} />} />
           <Route path="/portfolio" element={<Portfolio changeTheme={changeTheme} />} />
           <Route path="/agendamentoPendente" element={<AgendamentoPendente changeTheme={changeTheme} />} />
+          <Route path="*" element={<Erro changeTheme={changeTheme} />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
