@@ -212,8 +212,9 @@ https://www.linkedin.com/in/thaishcarvalho/
 <a href="https://github.com/thaihc">👽</a>
 <br>
 
-[![Linkedin Badge](https://img.shields.io/badge/-Thaís-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/thaishcarvalho/)](https://www.linkedin.com/in/thaishcarvalho/) 
-[![Gmail Badge](https://img.shields.io/badge/-thaisherculanodecarvalho@gmail.com?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thaisherculanodecarvalho@gmail.com)](mailto:thaisherculanodecarvalho@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Thaís-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https:https://www.linkedin.com/in/thaishcarvalho/)](https://www.linkedin.com/in/thaishcarvalho/)
+[![Gmail Badge](https://img.shields.io/badge/-thaisherculanodecarvalho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:thaisherculanodecarvalho@gmail.com)](mailto:thaisherculanodecarvalho@gmail.com)
+
 
 </td>
 <td>
