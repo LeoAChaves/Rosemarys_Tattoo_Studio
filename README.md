@@ -205,7 +205,7 @@ https://www.linkedin.com/in/thaishcarvalho/
 <tr>
 <td>
 <a href="https://github.com/thaihc">
-    <img style="border-radius: 50%;" src="" width="100px;" alt="">
+    <img style="border-radius: 50%;" src="https://media.discordapp.net/attachments/965000139922104340/969799122502692904/206085037_2061710623976577_4202935956638833044_n.jpg?width=452&height=452" width="100px;" alt="">
     <br>
     <sub><b>Thais Herculano</b></sub>
 </a> 
